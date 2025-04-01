@@ -109,9 +109,11 @@ hr {
 .years {
   display: flex;
   flex-direction: column;
-  min-width: 70px;
   align-items: center;
   justify-content: center;
+  gap: 4px;
+  width: 70px;
+  flex-shrink: 0;
 }
 
 .year {
@@ -120,10 +122,11 @@ hr {
   font-weight: 600;
   font-size: 13px;
   padding: 6px 12px;
-  margin-bottom: 6px;
   border-radius: 6px;
   text-align: center;
   letter-spacing: 0.5px;
+  width: 100%;
+  max-width: 70px;
 }
 
 .position {
