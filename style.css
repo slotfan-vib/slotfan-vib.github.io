@@ -158,7 +158,22 @@ hr {
   max-width: 100%;
 }
 
-.timeline-badge .institution {
+.timeline-entry.left .timeline-badge .institution {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  color: #003366;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.timeline-entry.right .timeline-badge .institution {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
   font-weight: bold;
   color: #003366;
   font-size: 16px;
@@ -179,14 +194,11 @@ hr {
 }
 
 .timeline-badge .duration {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  background-color: #e7ecf3;
+  font-size: 13px;
   color: #003366;
+  background-color: #e7ecf3;
   padding: 2px 8px;
   border-radius: 6px;
-  font-size: 12px;
 }
 
 @media (max-width: 768px) {
@@ -202,5 +214,9 @@ hr {
   .timeline-entry::before {
     left: 20px !important;
     right: auto;
+  }
+
+  .timeline-entry .timeline-badge .institution {
+    justify-content: flex-start !important;
   }
 }
