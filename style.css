@@ -8,7 +8,7 @@ body {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
   padding: 40px;
   background-color: white;
@@ -92,97 +92,87 @@ hr {
   transform: scale(1.1);
 }
 
-/* Clean vertical timeline (experience + education) */
+/* Centered vertical timeline structure */
 .timeline-block {
   position: relative;
   margin: 60px 0;
-  padding-left: 30px;
-  animation: fadeInTimeline 1s ease-in forwards;
+  padding: 0 0 0 0;
 }
 
 .timeline-block::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 3px;
   height: 100%;
   background: linear-gradient(to bottom, transparent, #003366 20%, #003366 80%, transparent);
-}
-
-@keyframes fadeInTimeline {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  z-index: 1;
 }
 
 .timeline-entry {
   position: relative;
-  margin-bottom: 40px;
-  padding-left: 20px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease forwards;
-  background: transparent;
+  width: 50%;
+  padding: 20px 30px;
+  box-sizing: border-box;
 }
 
-.timeline-entry:nth-child(even) {
-  animation-delay: 0.2s;
-}
-.timeline-entry:nth-child(odd) {
-  animation-delay: 0.4s;
+.timeline-entry.left {
+  left: 0;
+  text-align: right;
 }
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.timeline-entry.right {
+  left: 50%;
+  text-align: left;
 }
 
 .timeline-entry::before {
   content: '';
   position: absolute;
-  top: 5px;
-  left: -17px;
+  top: 28px;
   width: 14px;
   height: 14px;
   background-color: white;
   border: 3px solid #003366;
   border-radius: 50%;
-  box-shadow: 0 0 0 2px white;
+  z-index: 2;
+}
+
+.timeline-entry.left::before {
+  right: -7px;
+}
+
+.timeline-entry.right::before {
+  left: -7px;
 }
 
 .timeline-badge {
+  background-color: #f7f7f7;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
   margin-bottom: 8px;
-  background-color: transparent;
+  font-weight: bold;
+  color: #003366;
 }
 
 .timeline-badge .institution {
-  color: #003366;
   font-size: 15px;
 }
 
 .timeline-badge .duration {
   font-size: 13px;
   font-weight: normal;
-  color: #003366;
-  background-color: #f0f0f0;
-  padding: 3px 8px;
-  border-radius: 6px;
+  color: #666;
 }
 
 .timeline-body {
-  margin-left: 5px;
+  margin-top: 5px;
 }
 
 .position-title {
@@ -198,9 +188,18 @@ hr {
   margin-bottom: 2px;
 }
 
-/* Responsive layout tweak */
-@media (min-width: 768px) {
-  .top-section {
-    flex-wrap: nowrap;
+@media (max-width: 768px) {
+  .timeline-entry,
+  .timeline-entry.left,
+  .timeline-entry.right {
+    width: 100%;
+    left: 0;
+    text-align: left;
+    padding-left: 60px;
+  }
+
+  .timeline-entry::before {
+    left: 20px !important;
+    right: auto;
   }
 }
