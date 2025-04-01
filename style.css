@@ -193,48 +193,107 @@ a:hover {
 
 
 /* News Part */
-.news-timeline {
+.news-timeline-centered {
   position: relative;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  padding-left: 40px;
-  border-left: 3px solid #003366;
+  margin: 60px 0;
+  padding: 0 20px;
 }
 
-.news-entry {
-  position: relative;
-  margin-bottom: 30px;
-}
-
-.news-entry::before {
+.news-timeline-centered::before {
   content: '';
   position: absolute;
-  left: -11px;
-  top: 5px;
+  left: 50%;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #003366 20%, #003366 80%, transparent);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.news-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+}
+
+.news-item .content {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.news-item::before {
+  content: '';
+  position: absolute;
+  top: 24px;
   width: 14px;
   height: 14px;
   background-color: #003366;
+  border: 3px solid white;
   border-radius: 50%;
-  border: 2px solid white;
   box-shadow: 0 0 0 2px #003366;
+  z-index: 3;
 }
 
-.news-date {
+.news-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.news-item.left::before {
+  right: -7px;
+}
+
+.news-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+.news-item.right::before {
+  left: -7px;
+}
+
+.news-item .date {
+  display: block;
+  font-size: 13px;
   font-weight: bold;
-  font-size: 14px;
   color: #003366;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
-.news-content h3 {
-  margin: 0;
+.news-item h3 {
   font-size: 16px;
+  font-weight: bold;
   color: #003366;
+  margin: 0 0 6px;
 }
 
-.news-content p {
-  margin: 4px 0 0;
+.news-item p {
   font-size: 14px;
-  color: #333;
+  color: #444;
+  margin: 0;
 }
+
+/* Responsive stack on small screens */
+@media (max-width: 768px) {
+  .news-item,
+  .news-item.left,
+  .news-item.right {
+    width: 100%;
+    left: 0;
+    text-align: left;
+    padding-left: 60px;
+  }
+
+  .news-item::before {
+    left: 20px;
+    right: auto;
+  }
+}
+
 
