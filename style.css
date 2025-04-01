@@ -1,4 +1,4 @@
-/* Global layout */
+/* General page layout */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -33,7 +33,7 @@ body {
     background-color: #005599;
   }
   
-  /* Headings and spacing */
+  /* Headings and section spacing */
   h1, h2 {
     color: #003366;
     margin-top: 0;
@@ -46,12 +46,13 @@ body {
     margin: 30px 0;
   }
   
-  /* Top Section: Bio + Photo */
+  /* Top section: image left, bio right */
   .top-section {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-    align-items: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
   }
   
   .profile-pic img {
@@ -64,13 +65,14 @@ body {
     min-width: 250px;
   }
   
+  /* About section */
   .about-section {
-        margin-top: 20px;
-        font-size: 16px;
-        line-height: 1.6;
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.6;
   }
   
-  /* Social icons */
+  /* Social media icons */
   .social-icons {
     margin: 10px 0 20px;
   }
@@ -88,11 +90,12 @@ body {
     transform: scale(1.1);
   }
   
-  /* Academic + Education Columns */
+  /* Two-column section for Academic Positions & Education */
   .two-column-section {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
+    margin-top: 20px;
   }
   
   .column {
@@ -122,7 +125,7 @@ body {
     text-align: center;
   }
   
-  /* Links */
+  /* Link styles */
   a {
     color: #0066cc;
     text-decoration: none;
@@ -132,11 +135,10 @@ body {
     text-decoration: underline;
   }
   
-  /* Responsive tweak */
+  /* Responsive layout tweak */
   @media (min-width: 768px) {
     .top-section {
       flex-wrap: nowrap;
-      align-items: flex-start;
     }
   }
   
