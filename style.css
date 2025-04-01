@@ -92,6 +92,19 @@ hr {
   transform: scale(1.1);
 }
 
+.two-column-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.column {
+  flex: 1;
+  min-width: 300px;
+}
+
+
 /* Modern vertical timeline structure */
 .timeline-block {
   display: flex;
