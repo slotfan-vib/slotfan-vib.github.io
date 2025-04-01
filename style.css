@@ -92,211 +92,74 @@ hr {
   transform: scale(1.1);
 }
 
-/* Two-column section (e.g. positions and education) */
-.two-column-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-top: 30px;
-}
-
-.column {
-  flex: 1;
-  min-width: 300px;
-}
-
-/* Academic and education timeline style */
+/* Timeline structure for academic & education */
 .timeline-block {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  margin-top: 20px;
-}
-
-.entry {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-}
-
-.years {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  width: 50px;
-  flex-shrink: 0;
-}
-
-.year {
-  background-color: #003366;
-  color: white;
-  font-weight: 600;
-  font-size: 13px;
-  padding: 6px 12px;
-  border-radius: 6px;
-  text-align: center;
-  letter-spacing: 0.5px;
-  width: 100%;
-  max-width: 50px;
-}
-
-.position {
-  flex: 1;
-}
-
-.title {
-  font-size: 16px;
-  font-weight: bold;
-  color: #003366;
-  margin-bottom: 4px;
-  line-height: 1.4;
-}
-
-.institution {
-  font-size: 14px;
-  color: #555;
-  font-style: italic;
-  line-height: 1.4;
-}
-
-/* News timeline - center style */
-.news-timeline-centered {
   position: relative;
   margin: 60px 0;
-  padding: 0 20px;
+  padding-left: 30px;
+  border-left: 3px solid #003366;
 }
 
-.news-timeline-centered::before {
+.timeline-entry {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeline-entry::before {
   content: '';
   position: absolute;
-  left: 50%;
   top: 0;
-  width: 3px;
-  height: 100%;
-  background: linear-gradient(to bottom, transparent, #003366 20%, #003366 80%, transparent);
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-.news-item {
-  position: relative;
-  width: 50%;
-  padding: 20px 30px;
-  box-sizing: border-box;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-.news-item:nth-child(even) {
-  animation-delay: 0.2s;
-}
-.news-item:nth-child(odd) {
-  animation-delay: 0.4s;
-}
-
-.news-item .content {
-  background: white;
-  padding: 15px 20px;
-  border-radius: 8px;
-  position: relative;
-  z-index: 2;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.news-item::before {
-  content: '';
-  position: absolute;
-  top: 24px;
-  width: 12px;
-  height: 12px;
-  background-color: #003366;
-  border: 2px solid white;
+  left: -10px;
+  width: 14px;
+  height: 14px;
+  background-color: white;
+  border: 3px solid #003366;
   border-radius: 50%;
-  box-shadow: 0 0 4px rgba(0, 51, 102, 0.6);
-  z-index: 3;
 }
 
-.news-item.left {
-  left: 0;
-  text-align: right;
+.timeline-badge {
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #003366;
 }
 
-.news-item.left::before {
-  right: -7px;
+.timeline-badge .institution {
+  font-size: 15px;
 }
 
-.news-item.right {
-  left: 50%;
-  text-align: left;
-}
-
-.news-item.right::before {
-  left: -7px;
-}
-
-.news-item .date {
-  display: block;
+.timeline-badge .duration {
   font-size: 13px;
-  font-weight: bold;
-  color: #003366;
-  margin-bottom: 6px;
+  font-weight: normal;
+  color: #666;
 }
 
-.news-item h3 {
-  font-size: 16px;
-  font-weight: bold;
-  color: #003366;
-  margin: 0 0 6px;
+.timeline-body {
+  margin-left: 5px;
 }
 
-.news-item p {
+.position-title {
+  font-weight: bold;
   font-size: 14px;
-  color: #444;
-  margin: 0;
+  margin-bottom: 4px;
+  color: #003366;
 }
 
-/* Fade-in animation */
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.subtext {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 2px;
 }
 
-/* Responsive adjustments */
+/* Responsive layout tweak */
 @media (min-width: 768px) {
   .top-section {
     flex-wrap: nowrap;
-  }
-}
-
-@media (max-width: 768px) {
-  .entry {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .years {
-    flex-direction: row;
-    gap: 8px;
-    margin-bottom: 5px;
-  }
-
-  .news-item,
-  .news-item.left,
-  .news-item.right {
-    width: 100%;
-    left: 0;
-    text-align: left;
-    padding-left: 60px;
-    margin-bottom: 30px;
-  }
-
-  .news-item::before {
-    left: 20px;
-    right: auto;
   }
 }
