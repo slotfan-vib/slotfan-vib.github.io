@@ -1,6 +1,79 @@
-/* Existing styles (unchanged) ... */
-
-.timeline {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    background-color: #003366;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  .navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+  }
+  
+  .navbar a:hover {
+    background-color: #005599;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px;
+    background-color: white;
+  }
+  
+  h1, h2 {
+    color: #003366;
+    margin-top: 0;
+  }
+  
+  hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 30px 0;
+  }
+  
+  /* Top Section Layout */
+  .top-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  
+  .profile-pic img {
+    width: 180px;
+    border-radius: 10px;
+  }
+  
+  .bio {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  /* Academic + Education Columns */
+  .two-column-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .column {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .timeline {
     list-style: none;
     padding-left: 0;
   }
