@@ -125,7 +125,7 @@ hr {
   align-items: center;
   justify-content: center;
   gap: 4px;
-  width: 70px;
+  width: 60px;
   flex-shrink: 0;
 }
 
@@ -139,7 +139,7 @@ hr {
   text-align: center;
   letter-spacing: 0.5px;
   width: 100%;
-  max-width: 70px;
+  max-width: 60px;
 }
 
 .position {
