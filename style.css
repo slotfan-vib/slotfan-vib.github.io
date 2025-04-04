@@ -289,11 +289,13 @@ hr {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  transition: all 2s ease;
+  transition: max-height 0.6s ease, transform 0.6s ease;
+  max-height: 4.5em;
 }
 
 .news-item:hover .news-desc {
   -webkit-line-clamp: unset;
+  max-height: 1000px;
   transform: translateX(6px);
 }
 
