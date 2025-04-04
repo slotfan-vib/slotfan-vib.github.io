@@ -7,16 +7,18 @@
 </head>
 
 <script>
-  const entries = document.querySelectorAll('.timeline-entry');
-  const observer = new IntersectionObserver((entriesList) => {
-    entriesList.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
+  document.addEventListener("DOMContentLoaded", function () {
+    const entries = document.querySelectorAll('.timeline-entry');
+    const observer = new IntersectionObserver((entriesList) => {
+      entriesList.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
 
-  entries.forEach(entry => observer.observe(entry));
+    entries.forEach(entry => observer.observe(entry));
+  });
 </script>
 
 <body>
