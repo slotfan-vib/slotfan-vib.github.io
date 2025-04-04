@@ -5,6 +5,20 @@
   <title>Saeed Lotfan</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
+<script>
+  const entries = document.querySelectorAll('.timeline-entry');
+  const observer = new IntersectionObserver((entriesList) => {
+    entriesList.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  entries.forEach(entry => observer.observe(entry));
+</script>
+
 <body>
 
   <div class="navbar">
