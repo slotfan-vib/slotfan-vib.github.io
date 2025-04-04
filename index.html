@@ -8,7 +8,7 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const entries = document.querySelectorAll('.timeline-entry');
+    const entries = document.querySelectorAll('.timeline-entry, .news-item');
     const observer = new IntersectionObserver((entriesList) => {
       entriesList.forEach(entry => {
         if (entry.isIntersecting) {
@@ -131,6 +131,32 @@
             <div class="duration">2008 – 2012</div>
             <div class="position-title">B.S. Student</div>
             <div class="subtext">Department of Mechanical Engineering</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- News Section -->
+    <h2>News</h2>
+    <div class="news-list">
+
+      <div class="news-item">
+        <div class="news-date">July 2024</div>
+        <div class="news-content">
+          <div class="news-title">Conference Presentation</div>
+          <div class="news-desc">
+            Our paper titled “Design of a variable stiffness composite structure using spectral element method” has been presented at the 8th International Conference on Material Modelling (ICMM8), London.
+          </div>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-date">Jan 2024</div>
+        <div class="news-content">
+          <div class="news-title">Journal Submission</div>
+          <div class="news-desc">
+            Submitted paper on antibacterial microneedles to <em>Materials & Design</em>.
+          </div>
         </div>
       </div>
 
