@@ -289,7 +289,7 @@ hr {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  transition: all 0.4s ease;
+  transition: all 0.8s ease;
 }
 
 .news-item:hover .news-desc {
