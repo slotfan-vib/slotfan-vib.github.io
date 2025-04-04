@@ -32,6 +32,7 @@ body {
   text-decoration: none;
   font-weight: 600;
   display: inline-block;
+  transition: background-color 0.2s ease;
 }
 
 .navbar a:hover {
@@ -131,6 +132,14 @@ hr {
   width: 50%;
   padding: 20px 30px;
   box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.timeline-entry.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .timeline-entry.left {
@@ -175,6 +184,12 @@ hr {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
   max-width: 95%;
   display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-badge:hover {
+  background-color: #eaf0f8;
+  transform: translateY(-2px);
 }
 
 .timeline-badge .institution-row {
