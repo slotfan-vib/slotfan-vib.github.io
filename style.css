@@ -24,6 +24,10 @@ body {
   background-color: #003366;
   padding: 10px 0;
   text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .navbar a {
@@ -291,6 +295,17 @@ hr {
 .news-item:hover .news-desc {
   -webkit-line-clamp: unset;
   transform: translateX(6px);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  font-size: 14px;
+  color: #888;
+  background-color: #f0f0f0;
+  border-top: 1px solid #ddd;
 }
 
 @media (max-width: 768px) {
