@@ -281,6 +281,16 @@ hr {
   font-size: 15px;
   color: #444;
   line-height: 1.5;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  transition: all 0.4s ease;
+}
+
+.news-item:hover .news-desc {
+  -webkit-line-clamp: unset;
+  transform: translateX(6px);
 }
 
 @media (max-width: 768px) {
