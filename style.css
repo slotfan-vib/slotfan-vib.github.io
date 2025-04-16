@@ -287,6 +287,8 @@ hr {
   font-size: 15px;
   color: #444;
   line-height: 1.5;
+  text-align: justify;
+  text-justify: inter-word;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -299,6 +301,8 @@ hr {
   -webkit-line-clamp: unset;
   max-height: 1000px;
   transform: translateX(6px);
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* Footer */
