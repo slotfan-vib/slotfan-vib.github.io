@@ -259,6 +259,8 @@ hr {
 }
 
 .news-date {
+  width: 85px;
+  text-align: center;
   font-weight: bold;
   color: #fff;
   background-color: #003366;
@@ -285,6 +287,8 @@ hr {
   font-size: 15px;
   color: #444;
   line-height: 1.5;
+  text-align: justify;
+  text-justify: inter-word;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -297,6 +301,8 @@ hr {
   -webkit-line-clamp: unset;
   max-height: 1000px;
   transform: translateX(6px);
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* Footer */
@@ -337,22 +343,9 @@ hr {
   }
 
   .news-date {
+  width: 85px;
+  text-align: center;
     align-self: flex-start;
     margin-bottom: 8px;
   }
-}
-
-
-.section-divider-image {
-  text-align: center;
-  margin: 40px 0;
-}
-
-.section-divider-image img {
-  max-width: 600px;
-  width: 90%;
-  height: auto;
-  opacity: 0.95;
-  display: block;
-  margin: auto;
 }
