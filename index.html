@@ -1,466 +1,484 @@
-<!DOCTYPE html>
-<html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <title>
-   Saeed Lotfan
-  </title>
-  <link href="style.css" rel="stylesheet"/>
- </head>
- <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const entries = document.querySelectorAll('.timeline-entry, .news-item');
-    const observer = new IntersectionObserver((entriesList) => {
-      entriesList.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-    entries.forEach(entry => observer.observe(entry));
-  });
- </script>
- <body>
-  <div class="navbar">
-   <a href="index.html">
-    Home
-   </a>
-   <a href="research.html">
-    Research
-   </a>
-   <a href="publications.html">
-    Publications
-   </a>
-   <a href="teaching.html">
-    Teaching
-   </a>
-   <a href="contact.html">
-    Contact
-   </a>
-  </div>
-  <div class="container">
-   <!-- Name + Title + Socials -->
-   <div class="top-section">
-    <div class="profile-pic">
-     <img alt="Saeed Lotfan" src="profile.jpg"/>
-    </div>
-    <div class="bio">
-     <h1>
-      Saeed Lotfan
-     </h1>
-     <p>
-      Faculty Member at
-      <a href="https://www.gtu.edu.tr/" target="_blank">
-       Gebze Technical University
-      </a>
-      <br/>
-      Department of Mechanical Engineering
-     </p>
-     <!-- Email -->
-     <p>
-      <a href="mailto:slotfan@gtu.edu.tr">
-       slotfan@gtu.edu.tr
-      </a>
-     </p>
-     <!-- Social icons -->
-     <div class="social-icons">
-      <a href="https://scholar.google.com/citations?user=_agboNoAAAAJ&amp;hl=en/" target="_blank">
-       <img alt="Google Scholar" src="icons/scholar.png"/>
-      </a>
-      <a href="https://www.webofscience.com/wos/author/record/AAU-8767-2020/" target="_blank">
-       <img alt="Web of Science" src="icons/wos.png"/>
-      </a>
-      <a href="https://www.researchgate.net/profile/Saeed-Lotfan?ev=hdr_xprf/" target="_blank">
-       <img alt="ResearchGate" src="icons/rg.png"/>
-      </a>
-      <a href="https://www.linkedin.com/in/saeed-lotfan-47357898/?originalSubdomain=ir/" target="_blank">
-       <img alt="LinkedIn" src="icons/lin.png"/>
-      </a>
-      <a href="https://github.com/slotfan-vib/" target="_blank">
-       <img alt="GitHub" src="icons/github.png"/>
-      </a>
-     </div>
-    </div>
-   </div>
-   <!-- About Section -->
-   <div class="about-section">
-    <p>
-     I am an Assistant Professor in the Department of Mechanical Engineering at
-     <a href="https://www.gtu.edu.tr/" target="_blank">
-      Gebze Technical University
-     </a>
-     . 
-        I earned my B.S., M.S., and Ph.D. degrees in Mechanical Engineering at
-     <a href="https://tabrizu.ac.ir/en" target="_blank">
-      University of Tabriz
-     </a>
-     , 
-        Tabriz, Iran in 2012, 2014, and 2018, respectively. I later joined
-     <a href="https://www.sabanciuniv.edu/en" target="_blank">
-      Sabanci University
-     </a>
-     in Istanbul, Turkey 
-        as a postdoctoral researcher.
-    </p>
-   </div>
-   <div class="about-section">
-    <p>
-     My primary research interests center on mechanical vibrations, with a particular emphasis
-        on both linear and nonlinear systems. I focus on the development of advanced mathematical
-        models and efficient numerical methods to accurately characterize the complex dynamic 
-        behavior of structural systems. My work further encompasses reduced-order modeling in
-        nonlinear mechanics, signal processing for inverse problems and structural health monitoring,
-        and computational mechanics for high-fidelity simulations and and the integration of machine
-        learning techniques into these domains.
-    </p>
-   </div>
-   <hr/>
-   <!-- Timeline for Academic and Education -->
-   <h2>
-    Academic &amp; Education Timeline
-   </h2>
-   <div class="timeline-block">
-    <div class="timeline-entry left">
-     <div class="timeline-badge">
-      <div class="institution">
-       Gebze Technical University
-      </div>
-      <div class="duration">
-       2022 &ndash; Present
-      </div>
-      <div class="position-title">
-       Assistant Professor
-      </div>
-      <div class="subtext">
-       Department of Mechanical Engineering
-      </div>
-     </div>
-    </div>
-    <div class="timeline-entry right">
-     <div class="timeline-badge">
-      <div class="institution">
-       Sabanci University
-      </div>
-      <div class="duration">
-       2020 &ndash; 2022
-      </div>
-      <div class="position-title">
-       Postdoctoral Researcher
-      </div>
-      <div class="subtext">
-       Faculty of Engineering and Natural Sciences
-      </div>
-     </div>
-    </div>
-    <div class="timeline-entry left">
-     <div class="timeline-badge">
-      <div class="institution">
-       University of Tabriz
-      </div>
-      <div class="duration">
-       2014 &ndash; 2018
-      </div>
-      <div class="position-title">
-       Ph.D. Student
-      </div>
-      <div class="subtext">
-       Department of Mechanical Engineering,
-       <br/>
-       Vibration and Modal Analysis Lab.
-      </div>
-     </div>
-    </div>
-    <div class="timeline-entry right">
-     <div class="timeline-badge">
-      <div class="institution">
-       University of Tabriz
-      </div>
-      <div class="duration">
-       2012 &ndash; 2014
-      </div>
-      <div class="position-title">
-       M.S. Student
-      </div>
-      <div class="subtext">
-       Department of Mechanical Engineering
-      </div>
-     </div>
-    </div>
-    <div class="timeline-entry left">
-     <div class="timeline-badge">
-      <div class="institution">
-       University of Tabriz
-      </div>
-      <div class="duration">
-       2008 &ndash; 2012
-      </div>
-      <div class="position-title">
-       B.S. Student
-      </div>
-      <div class="subtext">
-       Department of Mechanical Engineering
-      </div>
-     </div>
-    </div>
-   </div>
-   <hr/>
-   <!-- News Section -->
-   <h2>
-    News
-   </h2>
-   <div class="news-list">
-    <div class="news-item featured-news">
-     <img alt="Spaghetti Bridge" class="news-thumbnail" src="images/spaghetti-thumb.jpg"/>
-     <div class="news-date">
-      December
-      <br/>
-      2024
-     </div>
-     <div class="news-content">
-      <div class="news-title">
-       Spaghetti Bridge Competition
-      </div>
-      <div class="news-desc">
-       We held a
-       <strong>
-        Spaghetti Bridge Competition
-       </strong>
-       as part of the
-       <em>
-        Statics
-       </em>
-       course at Gebze Technical University.
-          Students were challenged to design and construct bridges using only spaghetti and glue, aiming to maximize the load-to-weight ratio.
-          The event provided an engaging platform for applying theoretical knowledge to a real-world structural task.
-      </div>
-     </div>
-    </div>
-    <div class="news-item">
-     <div class="news-date">
-      November
-      <br/>
-      2024
-     </div>
-     <div class="news-content">
-      <div class="news-title">
-       Jet Engine Design Competition &ndash; Third Place Award
-      </div>
-      <div class="news-desc">
-       Our student team
-       <strong>
-        G&ouml;k Vatan
-       </strong>
-       at Gebze Technical University achieved
-       <strong>
-        third place
-       </strong>
-       in the
-       <em>
-        Jet Engine Design Competition
-       </em>
-       organized in collaboration with
-       <strong>
-        TEI &ndash; TUSA&Scedil; Engine Industries, Inc.
-       </strong>
-       and
-       <strong>
-        TEKNOFEST
-       </strong>
-       .
-       <br/>
-       <br/>
-       Congratulations to our dedicated team members
-       <strong>
-        Muratcan &Ccedil;al&inodot;&scedil;, Mustafa Kaan Bostanc&inodot;o&gbreve;lu, Gediz Bal, O&gbreve;uzhan Emre Sa&gbreve;er, Muhammed Talha Kara, Muhammed Eren T&inodot;ra&scedil;, Fatih Mehmet Kark&inodot;nl&inodot;
-       </strong>
-       ,
-            and team captain
-       <strong>
-        Eren Kalyoncu
-       </strong>
-       for their outstanding efforts and perseverance throughout the project.
-      </div>
-     </div>
-    </div>
-    <div class="news-item">
-     <div class="news-date">
-      August
-      <br/>
-      2024
-     </div>
-     <div class="news-content">
-      <div class="news-title">
-       Journal Paper
-      </div>
-      <div class="news-desc">
-       Our paper titled
-       <strong>
-        "Coupled thermo-elastic dynamics of rotating pre-twisted blades exposed to thermal shock including nonlinear rotational effects"
-       </strong>
-       ,
-            co-authored with Prof. E. Ci&gbreve;ero&gbreve;lu from Middle East Technical University,
-            has been accepted for publication in the
-       <em>
-        Journal of Sound and Vibration
-       </em>
-       .
-      </div>
-     </div>
-    </div>
-    <div class="news-item">
-     <div class="news-date">
-      September
-      <br/>
-      2024
-     </div>
-     <div class="news-content">
-      <div class="news-title">
-       Conference Presentation
-      </div>
-      <div class="news-desc">
-       Our conference paper titled
-       <strong>
-        "Dynamic modeling of rotating axially functionally graded pre-twisted blades with chord length variations"
-       </strong>
-       ,
-            co-authored with Prof. E. Ci&gbreve;ero&gbreve;lu from Middle East Technical University has been presented at the
-       <em>
-        27th International Conference on Composite Structures (ICCS27: 3-6 September, Ravenna, Italy)
-       </em>
-       .
-      </div>
-     </div>
-    </div>
-    <div class="news-item">
-     <div class="news-date">
-      January
-      <br/>
-      2024
-     </div>
-     <div class="news-content">
-      <div class="news-title">
-       Master&rsquo;s Thesis Defense
-      </div>
-      <div class="news-desc">
-       My master&rsquo;s student
-       <strong>
-        Furkan &Ccedil;opur
-       </strong>
-       has successfully defended his master&rsquo;s thesis titled
-       <em>
-        &ldquo;A Unified Model for Internal Rotordynamic Stability Based on Complex Coordinates Formulation&rdquo;
-       </em>
-       in January 2024. Congratulations to him on earning his
-       <strong>
-        Master&rsquo;s Degree
-       </strong>
-       and completing this important milestone.
-      </div>
-     </div>
-    </div>
-    <div class="news-item">
-     <div class="news-date">
-      March
-      <br/>
-      2023
-     </div>
-     <div class="news-content">
-      <div class="news-title">
-       Research Project
-      </div>
-      <div class="news-desc">
-       Our project titled
-       <strong>
-        "Nonlinear Vibrations of a High-Fidelity Model of Rotating Pre-Twisted Blades with Thickness and Chord Length Variations Including Nonlinear Centrifugal Effects"
-       </strong>
-       ,
-            co-led by Prof. E. Ci&gbreve;ero&gbreve;lu from Middle East Technical University,
-            has been accepted for funding under
-       <em>
-        T&Uuml;B&Idot;TAK 1001 &ndash; The Scientific and Technological Research Projects Funding Program
-       </em>
-       .
-      </div>
-     </div>
-    </div>
-    <div class="news-item">
-     <div class="news-date">
-      February
-      <br/>
-      2023
-     </div>
-     <div class="news-content">
-      <div class="news-title">
-       Journal Paper
-      </div>
-      <div class="news-desc">
-       Our paper titled
-       <strong>
-        "A weak-form spectral Chebyshev technique for nonlinear vibrations of rotating functionally graded beams"
-       </strong>
-       ,
-            co-authored with Prof. E. Ci&gbreve;ero&gbreve;lu from Middle East Technical University and Dr. B. Bediz from Sabanc&inodot; University,
-            has been accepted for publication in the journal of
-       <em>
-        Mechanics of Advanced Materials and Structures
-       </em>
-       .
-      </div>
-     </div>
-    </div>
-    <div class="news-item">
-     <div class="news-date">
-      June
-      <br/>
-      2022
-     </div>
-     <div class="news-content">
-      <div class="news-title">
-       Journal Paper
-      </div>
-      <div class="news-desc">
-       Our paper titled
-       <strong>
-        "Free Vibrations of Rotating Pre-Twisted Blades Including Geometrically Nonlinear Pre-Stressed Analysis"
-       </strong>
-       ,
-            co-authored with Dr. B. Bediz from Sabanc&inodot; University, has been accepted for publication in the
-       <em>
-        Journal of Sound and Vibration
-       </em>
-       .
-      </div>
-     </div>
-    </div>
-    <div class="news-item">
-     <div class="news-date">
-      July
-      <br/>
-      2021
-     </div>
-     <div class="news-content">
-      <div class="news-title">
-       Journal Paper
-      </div>
-      <div class="news-desc">
-       My paper titled
-       <strong>
-        "Nonlinear Modal Interactions in a Beam-Mass System Tuned to 3:1 and Combination Internal Resonances Based on
-              Correspondence Between MTS and NSI Methods"
-       </strong>
-       has been accepted for publication in the journal of
-       <em>
-        Mechanical Systems and Signal Processing
-       </em>
-       .
-      </div>
-     </div>
-    </div>
-   </div>
-  </div>
- </body>
- <div class="footer">
-  &copy; 2025 Saeed Lotfan. All rights reserved.
- </div>
-</html>
+/* General page layout */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px;
+  background-color: white;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #003366;
+  padding: 10px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+}
+
+.navbar a:hover {
+  background-color: #005599;
+}
+
+/* Headings and section spacing */
+h1 {
+  color: #003366;
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+h2 {
+  color: #003366;
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  margin: 30px 0;
+}
+
+/* Top section: image left, bio right */
+.top-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic img {
+  width: 180px;
+  border-radius: 10px;
+}
+
+.bio {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* About section */
+.about-section {
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Social media icons */
+.social-icons {
+  margin: 10px 0 20px;
+}
+
+.social-icons a img {
+  width: 22px;
+  height: 22px;
+  margin-right: 12px;
+  filter: grayscale(100%);
+  transition: 0.2s ease;
+}
+
+.social-icons a img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+/* Timeline */
+.timeline-block {
+  position: relative;
+  margin: 60px 0;
+  padding: 0;
+}
+
+.timeline-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #003366 20%, #003366 80%, transparent);
+  z-index: 1;
+}
+
+.timeline-entry {
+  position: relative;
+  width: 50%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.timeline-entry.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-entry.left {
+  left: 0;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.timeline-entry.right {
+  left: 50%;
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.timeline-entry::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  width: 14px;
+  height: 14px;
+  background-color: white;
+  border: 3px solid #003366;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.timeline-entry.left::before {
+  right: -7px;
+}
+
+.timeline-entry.right::before {
+  left: -7px;
+}
+
+.timeline-badge {
+  position: relative;
+  background-color: #f5f5f5;
+  padding: 12px 18px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  max-width: 95%;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-badge:hover {
+  background-color: #eaf0f8;
+  transform: translateY(-2px);
+}
+
+.timeline-badge .institution-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.timeline-badge .institution {
+  font-weight: 600;
+  color: #003366;
+  font-size: 16px;
+}
+
+.timeline-badge .duration {
+  font-size: 13px;
+  color: #003366;
+  background-color: #e7ecf3;
+  padding: 3px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.timeline-badge .position-title {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 4px;
+  color: #003366;
+}
+
+.timeline-badge .subtext {
+  font-size: 14px;
+  color: #555;
+  font-style: italic;
+}
+
+/* News Section */
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.news-item {
+  display: flex;
+  gap: 20px;
+  background-color: #f8f9fc;
+  padding: 16px 20px;
+  border-left: 6px solid #003366;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.news-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.news-date {
+  width: 85px;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  background-color: #003366;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.news-content {
+  flex: 1;
+}
+
+.news-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 6px;
+}
+
+.news-desc {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.5;
+  text-align: justify;
+  text-justify: inter-word;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  transition: max-height 0.6s ease, transform 0.6s ease;
+  max-height: 4.5em;
+}
+
+.news-item:hover .news-desc {
+  -webkit-line-clamp: unset;
+  max-height: 1000px;
+  transform: translateX(6px);
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  font-size: 14px;
+  color: #888;
+  background-color: #f0f0f0;
+  border-top: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+  .timeline-entry,
+  .timeline-entry.left,
+  .timeline-entry.right {
+    width: 100%;
+    left: 0;
+    text-align: left;
+    padding-left: 60px;
+    justify-content: flex-start;
+  }
+
+  .timeline-entry::before {
+    left: 20px !important;
+    right: auto;
+  }
+
+  .timeline-badge .institution-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .news-item {
+    flex-direction: column;
+  }
+
+  .news-date {
+  width: 85px;
+  text-align: center;
+    align-self: flex-start;
+    margin-bottom: 8px;
+  }
+}
+
+
+/* Research Section */
+.research-summary {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.research-summary p {
+  flex: 2;
+  text-align: justify;
+}
+
+.interests-box {
+  flex: 1;
+  background-color: #eaf0f8;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.interests-box h3 {
+  margin-top: 0;
+  color: #003366;
+  font-size: 18px;
+  border-bottom: 2px solid #003366;
+  padding-bottom: 6px;
+}
+
+.interests-box ul {
+  list-style-type: square;
+  padding-left: 20px;
+  margin: 10px 0 0;
+}
+
+.research-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.project-card {
+  background-color: #f8f9fc;
+  border: 2px solid #003366;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover {
+  background-color: #eaf0f8;
+  transform: scale(1.01);
+}
+
+.project-card img {
+  width: 150px;
+  border-radius: 6px;
+}
+
+.project-info {
+  flex: 1;
+}
+
+.project-info h3 {
+  margin-top: 0;
+  color: #003366;
+}
+
+.project-abstract {
+  display: none;
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #444;
+}
+
+.project-card.expanded .project-abstract {
+  display: block;
+}
+
+
+.news-thumbnail {
+  width: 120px;
+  height: auto;
+  border-radius: 6px;
+  margin-right: 20px;
+  align-self: flex-start;
+}
+
+.featured-news {
+  border: 2px solid #003366;
+  background: linear-gradient(to right, #eaf0f8, #ffffff);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transform: scale(1.01);
+}
+
+.featured-news {
+  border: 2px solid #003366;
+  background: linear-gradient(to right, #dfefff, #ffffff);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transform: scale(1.01);
+  position: relative;
+  border-left: 6px solid #005599;
+}
+
+.featured-news::before {
+  content: "FEATURED";
+  position: absolute;
+  top: -12px;
+  left: 12px;
+  background-color: #003366;
+  color: white;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.news-thumbnail {
+  width: 120px;
+  height: auto;
+  border-radius: 6px;
+  margin-left: 20px;
+  align-self: flex-start;
+  order: 2;
+}
