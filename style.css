@@ -561,3 +561,19 @@ hr {
     align-self: center;
   }
 }
+
+@media (max-width: 768px) {
+  .research-summary {
+    flex-direction: column;
+  }
+
+  .research-summary p {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .interests-box {
+    width: 100%;
+    order: 2; /* Ensures it comes after the paragraph */
+  }
+}
