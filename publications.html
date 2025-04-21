@@ -6,22 +6,26 @@
   <title>Publications - Saeed Lotfan | Mechanical Engineering Research</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Saeed Lotfan, Assistant Professor at Gebze Technical University. Research in vibrations, nonlinear vibrations, structural dynamics, and computational mechanics.">
-  <meta name="keywords" content="Saeed Lotfan, mechanical engineering, nonlinear vibrations, structural dynamics, GTU, Gebze Technical University, publications">
+  <meta name="description" content="Saeed Lotfan, Assistant Professor at Gebze Technical University. Publications in structural dynamics, vibrations, and mechanics.">
+  <meta name="keywords" content="Saeed Lotfan, mechanical engineering, GTU, nonlinear vibrations, publications, structural dynamics">
   <meta name="author" content="Saeed Lotfan">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Language" content="en">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Saeed Lotfan – Mechanical Engineering Publications">
-  <meta property="og:description" content="Explore journal articles and conference papers on nonlinear vibrations, structural dynamics, and engineering mechanics.">
+  <meta property="og:title" content="Saeed Lotfan – Publications">
+  <meta property="og:description" content="List of academic publications by Saeed Lotfan.">
   <meta property="og:image" content="https://slotfan-vib.github.io/profile.jpg">
   <meta property="og:url" content="https://slotfan-vib.github.io/publications.html">
   <meta name="twitter:card" content="summary_large_image">
 
+  <!-- Favicon -->
   <link rel="icon" href="favicon.png" type="image/png">
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="publications-style.css" />
+
+  <!-- Styles and Script -->
+  <link href="style.css" rel="stylesheet" />
+  <link href="publications-style.css" rel="stylesheet" />
+  <script src="publications.js" defer></script>
 </head>
 
 <body>
@@ -37,38 +41,14 @@
   <div class="container">
     <h2>Publications</h2>
 
-    <!-- Filters -->
-    <div class="filter-tags">
-      <button class="tag-filter active" data-tag="all">All</button>
-      <button class="tag-filter" data-tag="journal-indexed">Journal Article (Indexed)</button>
-      <button class="tag-filter" data-tag="journal-peer">Journal Article (Peer-reviewed)</button>
-      <button class="tag-filter" data-tag="conf-int">Conference Paper (International)</button>
-      <button class="tag-filter" data-tag="conf-nat">Conference Paper (National)</button>
+    <div class="pub-filters">
+      <button class="filter-btn active" data-type="all">All</button>
+      <button class="filter-btn" data-type="journal">Journal Article</button>
+      <button class="filter-btn" data-type="conference">Conference Paper</button>
     </div>
 
-    <!-- Publications list -->
-    <div class="pub-list">
-      <div class="pub-card" data-tags="journal-indexed">
-        <div class="pub-info">
-          <h3>Nonlinear Vibrations of Rotating Beams</h3>
-          <p><strong>Journal:</strong> Journal of Sound and Vibration, 2024</p>
-          <p><strong>Authors:</strong> S. Lotfan, E. Ciğeroğlu</p>
-          <button class="toggle-abstract">Show Abstract</button>
-          <a class="pub-link" href="https://doi.org/10.xxxxx" target="_blank">View Paper</a>
-        </div>
-        <div class="pub-tags">
-          <span class="tag journal-indexed">Journal Article (Indexed)</span>
-        </div>
-        <div class="pub-abstract">
-          <p>This paper investigates nonlinear dynamics of rotating pre-twisted beams with temperature-dependent properties...</p>
-          <img src="pub_figs/jsv2024.png" alt="Publication Figure">
-        </div>
-      </div>
-
-      <!-- Repeat more entries below as needed -->
-    </div>
+    <div id="publications-list" class="publications"></div>
   </div>
-
-  <script src="publications.js"></script>
 </body>
+
 </html>
