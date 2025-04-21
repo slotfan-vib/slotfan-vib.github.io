@@ -1,10 +1,7 @@
-
-/* ===================== Import Google Fonts ===================== */
+/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 /* General page layout */
-
-/* ===================== General Layout ===================== */
 body {
   font-family: 'Inter', sans-serif;
   background-color: #f4f4f4;
@@ -23,8 +20,6 @@ body {
 }
 
 /* Navbar */
-
-/* ===================== Navbar ===================== */
 .navbar {
   background-color: #003366;
   padding: 10px 0;
@@ -57,8 +52,6 @@ body {
 }
 
 /* Headings and section spacing */
-
-/* ===================== Typography ===================== */
 h1 {
   color: #003366;
   font-size: 28px;
@@ -82,8 +75,6 @@ hr {
 }
 
 /* Top section: image left, bio right */
-
-/* ===================== Top Section ===================== */
 .top-section {
   display: flex;
   flex-wrap: wrap;
@@ -103,19 +94,6 @@ hr {
 }
 
 /* About section */
-/* Add your existing mobile fixes for .top-section and .news-thumbnail */
-  .top-section {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .bio {
-    text-align: center;
-  }
-
-
-/* ===================== About Section ===================== */
 .about-section {
   margin-top: 20px;
   font-size: 16px;
@@ -125,8 +103,6 @@ hr {
 }
 
 /* Social media icons */
-
-/* ===================== Social Icons ===================== */
 .social-icons {
   margin: 10px 0 20px;
 }
@@ -154,8 +130,6 @@ hr {
 }
 
 /* Timeline */
-
-/* ===================== Timeline ===================== */
 .timeline-block {
   position: relative;
   margin: 60px 0;
@@ -276,62 +250,6 @@ hr {
 }
 
 /* News Section */
-  .timeline-entry,
-  .timeline-entry.left,
-  .timeline-entry.right {
-    width: 100%;
-    left: 0;
-    text-align: left;
-    padding-left: 60px;
-    justify-content: flex-start;
-  }
-
-  .timeline-entry::before {
-    left: 20px !important;
-    right: auto;
-  }
-
-  .timeline-badge .institution-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-  }
-
-  .timeline-block::before {
-    left: 20px;
-    transform: none;
-    height: 100%;
-    background: #003366;
-  }
-
-  .timeline-entry,
-  .timeline-entry.left,
-  .timeline-entry.right {
-    width: 100%;
-    left: 0;
-    padding-left: 60px;
-    padding-right: 20px;
-    text-align: left;
-    justify-content: flex-start;
-  }
-
-  .timeline-entry::before {
-    left: 20px !important;
-    right: auto;
-  }
-
-  .timeline-badge {
-    max-width: 100%;
-  }
-
-  .timeline-badge .institution-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-  }
-
-
-/* ===================== News Section ===================== */
 .news-list {
   display: flex;
   flex-direction: column;
@@ -405,6 +323,38 @@ hr {
 }
 
 /* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  font-size: 14px;
+  color: #888;
+  background-color: #f0f0f0;
+  border-top: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+  .timeline-entry,
+  .timeline-entry.left,
+  .timeline-entry.right {
+    width: 100%;
+    left: 0;
+    text-align: left;
+    padding-left: 60px;
+    justify-content: flex-start;
+  }
+
+  .timeline-entry::before {
+    left: 20px !important;
+    right: auto;
+  }
+
+  .timeline-badge .institution-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
   .news-item {
     flex-direction: column;
   }
@@ -419,58 +369,6 @@ hr {
 
 
 /* Research Section */
-.news-thumbnail {
-  width: 150px;
-  height: auto;
-  border-radius: 6px;
-  margin-right: 10px;
-  align-self: flex-start;
-  align-self: center;
-}
-
-.featured-news {
-  border: 2px solid #003366;
-  background: linear-gradient(to right, #eaf0f8, #ffffff);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transform: scale(1.01);
-}
-
-/* ... [Truncated: All styles from user remain unchanged up to the fixed part] ... */
-
-/* Timeline mobile fix */
-  .news-item {
-    flex-direction: column;
-  }
-
-  .news-date {
-    width: 85px;
-    text-align: center;
-    align-self: flex-start;
-    margin-bottom: 8px;
-  }
-}
-
-  .news-thumbnail {
-    width: 100%;
-    height: auto;
-    margin: 12px 0 0;
-    align-self: center;
-  }
-}
-
-/* ===================== Footer ===================== */
-.footer {
-  text-align: center;
-  padding: 20px;
-  margin-top: 60px;
-  font-size: 14px;
-  color: #888;
-  background-color: #f0f0f0;
-  border-top: 1px solid #ddd;
-}
-
-
-/* ===================== Research Section ===================== */
 .research-summary {
   display: flex;
   gap: 40px;
@@ -556,10 +454,87 @@ hr {
 }
 
 
+.news-thumbnail {
+  width: 150px;
+  height: auto;
+  border-radius: 6px;
+  margin-right: 10px;
+  align-self: flex-start;
+  align-self: center;
+}
 
-/* ===================== Media Queries ===================== */
-@media (max-width: 768px) {
-@media (max-width: 768px) {
-@media (max-width: 768px) {
+.featured-news {
+  border: 2px solid #003366;
+  background: linear-gradient(to right, #eaf0f8, #ffffff);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transform: scale(1.01);
+}
 
+/* ... [Truncated: All styles from user remain unchanged up to the fixed part] ... */
 
+/* Timeline mobile fix */
+@media (max-width: 768px) {
+  .timeline-block::before {
+    left: 20px;
+    transform: none;
+    height: 100%;
+    background: #003366;
+  }
+
+  .timeline-entry,
+  .timeline-entry.left,
+  .timeline-entry.right {
+    width: 100%;
+    left: 0;
+    padding-left: 60px;
+    padding-right: 20px;
+    text-align: left;
+    justify-content: flex-start;
+  }
+
+  .timeline-entry::before {
+    left: 20px !important;
+    right: auto;
+  }
+
+  .timeline-badge {
+    max-width: 100%;
+  }
+
+  .timeline-badge .institution-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .news-item {
+    flex-direction: column;
+  }
+
+  .news-date {
+    width: 85px;
+    text-align: center;
+    align-self: flex-start;
+    margin-bottom: 8px;
+  }
+}
+
+/* Add your existing mobile fixes for .top-section and .news-thumbnail */
+@media (max-width: 768px) {
+  .top-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bio {
+    text-align: center;
+  }
+
+  .news-thumbnail {
+    width: 100%;
+    height: auto;
+    margin: 12px 0 0;
+    align-self: center;
+  }
+}
