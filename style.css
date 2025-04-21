@@ -99,14 +99,23 @@ hr {
   margin: 10px 0 20px;
 }
 
+/* Fix the link underline */
+.social-icons a {
+  text-decoration: none;
+  border: none;
+}
+
 .social-icons a img {
   width: 22px;
   height: 22px;
   margin-right: 12px;
   filter: grayscale(100%);
   transition: 0.2s ease;
+  vertical-align: middle;
+  border: none;
 }
 
+/* Hover effect */
 .social-icons a img:hover {
   filter: grayscale(0%);
   transform: scale(1.1);
