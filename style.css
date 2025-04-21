@@ -449,7 +449,6 @@ hr {
 .news-thumbnail {
   width: 150px;
   height: auto;
-  max-height: 100px;
   border-radius: 6px;
   margin-right: 10px;
   align-self: flex-start;
