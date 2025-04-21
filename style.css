@@ -587,3 +587,148 @@ hr {
     margin: 0 auto;
   }
 }
+
+/* -------------------------------------------
+   Publications Page Styles
+-------------------------------------------- */
+
+.publication-page {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+  background-color: white;
+}
+
+.publication-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #003366;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filter-bar select {
+  padding: 6px 10px;
+  font-size: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.publication-card {
+  border: 1px solid #eee;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 6px solid #003366;
+  border-radius: 6px;
+  background-color: #f8f9fc;
+  transition: background-color 0.3s ease;
+}
+
+.publication-card:hover {
+  background-color: #eaf0f8;
+}
+
+.publication-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.publication-title-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 6px;
+}
+
+.publication-authors {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.publication-venue {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.publication-tags {
+  margin-bottom: 10px;
+}
+
+.publication-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  background-color: #28a745;
+  border-radius: 4px;
+  margin-right: 8px;
+  margin-top: 4px;
+}
+
+.publication-tag.conference {
+  background-color: #ffc107;
+  color: black;
+}
+
+.abstract-toggle {
+  display: inline-block;
+  font-size: 13px;
+  color: #003366;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.abstract-container {
+  margin-top: 15px;
+  display: none;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.abstract-image {
+  max-width: 200px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.publication-abstract-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.publication-link-button {
+  background-color: #003366;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.publication-link-button:hover {
+  background-color: #005599;
+}
+
