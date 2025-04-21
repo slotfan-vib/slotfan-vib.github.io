@@ -71,6 +71,21 @@
           </div>
 
 
+    <script>
+function toggleAbstract(button) {
+  const abstract = button.closest('.publication-card').querySelector('.publication-abstract');
+  if (abstract.style.display === "none") {
+    abstract.style.display = "block";
+    button.textContent = "➖ Hide Abstract";
+  } else {
+    abstract.style.display = "none";
+    button.textContent = "📄 Abstract";
+  }
+}
+</script>
+
+
+
 
     
   </div>
