@@ -416,10 +416,12 @@ hr {
   border-radius: 8px;
   padding: 20px;
   display: flex;
-  flex-direction: column; /* Change from row to column */
-  gap: 16px;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  flex-wrap: wrap; /* Prevent overflow */
 }
 
 .project-card:hover {
@@ -428,15 +430,16 @@ hr {
 }
 
 .project-card img {
-  width: 100%;
-  max-width: 250px;
+  width: 180px;
+  height: auto;
   border-radius: 6px;
-  align-self: flex-start;
+  flex-shrink: 0;
+  object-fit: contain;
 }
 
 .project-info {
   flex: 1;
-  text-align: left;
+  min-width: 200px;
 }
 
 .project-info h3 {
@@ -446,15 +449,17 @@ hr {
 
 .project-abstract {
   display: none;
+  width: 100%;
+  margin-top: 15px;
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.6;
   color: #444;
-  margin-top: 12px;
 }
 
 .project-card.expanded .project-abstract {
   display: block;
 }
+
 
 
 .news-thumbnail {
