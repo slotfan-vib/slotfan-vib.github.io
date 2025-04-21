@@ -180,15 +180,21 @@ hr {
 .timeline-entry::before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 28px;
   width: 14px;
   height: 14px;
   background-color: white;
   border: 3px solid #003366;
   border-radius: 50%;
   z-index: 2;
+}
+
+.timeline-entry.left::before {
+  right: -7px;
+}
+
+.timeline-entry.right::before {
+  left: -7px;
 }
 
 .timeline-badge {
@@ -467,17 +473,22 @@ hr {
 /* ... [Truncated: All styles from user remain unchanged up to the fixed part] ... */
 
 @media (max-width: 768px) {
+  .timeline-entry::before {
+    left: 20px !important;
+    right: auto;
+  }
+
   .timeline-block::before {
-    content: '';
-    position: absolute;
     top: 0;
     bottom: 0;
     left: 20px;
     width: 3px;
-    height: 100vh;
+    content: '';
+    position: absolute;
     background: linear-gradient(to bottom, transparent 0%, #003366 20%, #003366 80%, transparent 100%);
     z-index: 1;
   }
+}
 
   .timeline-entry,
   .timeline-entry.left,
