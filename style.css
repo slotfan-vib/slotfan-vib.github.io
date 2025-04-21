@@ -251,7 +251,8 @@ hr {
 
 @media (max-width: 768px) {
   .timeline-block::before {
-    display: none; /* hide the vertical line */
+    left: 20px; /* move the line to the left */
+    transform: none; /* stop centering it */
   }
 
   .timeline-entry,
@@ -259,13 +260,13 @@ hr {
   .timeline-entry.right {
     width: 100%;
     left: 0;
-    padding-left: 30px;
     text-align: left;
+    padding-left: 60px; /* space for the line and dot */
     justify-content: flex-start;
   }
 
   .timeline-entry::before {
-    left: 10px !important;
+    left: 20px !important; /* align dot with the new line */
     right: auto;
   }
 
