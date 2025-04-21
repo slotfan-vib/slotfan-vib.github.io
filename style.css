@@ -478,7 +478,7 @@ hr {
     left: 20px;
     transform: none;
     height: 100%;
-    background: #003366;
+    background: linear-gradient(to bottom, transparent, #003366 20%, #003366 80%, transparent);
   }
 
   .timeline-entry,
