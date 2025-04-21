@@ -430,7 +430,7 @@ hr {
 }
 
 .project-card img {
-  width: 160px;       /* increased width */
+  width: 250px;       /* increased width */
   height: auto;
   border-radius: 6px;
   object-fit: contain;
