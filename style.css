@@ -474,16 +474,16 @@ hr {
 
 /* Timeline Fix - Mobile View */
 @media (max-width: 768px) {
-  .timeline-block::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 26px; /* Adjusted to pass through center of circles */
-    width: 3px;
-    background: linear-gradient(to bottom, transparent 0%, #003366 20%, #003366 80%, transparent 100%);
-    z-index: 1;
-  }
+.timeline-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 26px;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 0%, #003366 20%, #003366 80%, transparent 100%);
+  z-index: 1;
+}
 
   .timeline-entry,
   .timeline-entry.left,
