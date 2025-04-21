@@ -414,12 +414,14 @@ hr {
   background-color: #f8f9fc;
   border: 2px solid #003366;
   border-radius: 8px;
-  padding: 20px;
+  padding: 16px 20px;
   display: flex;
-  flex-direction: column; /* Change from row to column */
-  gap: 16px;
+  gap: 20px;
+  align-items: flex-start;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  flex-wrap: wrap;
+  line-height: 1.4; /* less line spacing */
 }
 
 .project-card:hover {
@@ -428,34 +430,40 @@ hr {
 }
 
 .project-card img {
-  width: 100%;
-  max-width: 250px;
+  width: 160px;       /* increased width */
+  max-width: 160px;
+  height: auto;
   border-radius: 6px;
-  align-self: flex-start;
+  object-fit: contain;
+  margin-top: 4px;
 }
 
 .project-info {
   flex: 1;
-  text-align: left;
+  min-width: 240px;
+}
+
+.project-info p {
+  margin: 3px 0;       /* tighter spacing between lines */
 }
 
 .project-info h3 {
-  margin-top: 0;
+  margin: 0 0 8px;
   color: #003366;
 }
 
 .project-abstract {
   display: none;
+  width: 100%;
+  margin-top: 12px;
   font-size: 15px;
   line-height: 1.5;
   color: #444;
-  margin-top: 12px;
 }
 
 .project-card.expanded .project-abstract {
   display: block;
 }
-
 
 
 .news-thumbnail {
