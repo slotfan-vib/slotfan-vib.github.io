@@ -49,42 +49,32 @@
 
     <div id="publications-list" class="publications"></div>
 
-              <div class="publication-card" data-type="Journal Article">
-            <div class="publication-header">
-              <span class="tag journal">Journal Article</span>
-              <h3 class="publication-title">ANN-based modeling and reducing dual-fuel engine’s challenging emissions by multi-objective evolutionary algorithm NSGA-II</h3>
-              <p class="publication-authors">Lotfan, S., Ghiasi, R.A., Fallah, M., and Sadeghi, M.H.</p>
-              <p class="publication-journal"><em>Applied Energy</em>, 175, pp.91–99, 2016.</p>
-            </div>
-          
-            <div class="publication-buttons">
-              <a href="https://doi.org/10.1016/j.apenergy.2016.03.017" target="_blank" class="pub-link">🔗 View Paper</a>
-              <button class="toggle-abstract-btn" onclick="toggleAbstract(this)">📄 Abstract</button>
-            </div>
-          
-            <div class="publication-abstract" style="display: none;">
-              <div class="abstract-content">
-                <p><strong>Abstract:</strong> This paper develops an artificial neural network (ANN)-based modeling framework for predicting dual-fuel engine emissions. A multi-objective NSGA-II algorithm is used to minimize NOx and CO simultaneously, providing a data-driven method to assist emission control strategies under varying load conditions.</p>
-                <img src="figures/ann-emission-figure.png" alt="ANN Engine Emission Model Figure" class="abstract-figure"/>
-              </div>
-            </div>
-          </div>
+
+
+    <div class="publication-card" onclick="toggleAbstract(this)">
+  <div class="pub-summary">
+    <span class="pub-tag">Journal Article</span>
+    <h3 class="pub-title">
+      ANN-based modeling and reducing dual-fuel engine’s challenging emissions by multi-objective evolutionary algorithm NSGA-II
+    </h3>
+    <p class="pub-authors">Lotfan, S., Ghiasi, R.A., Fallah, M., and Sadeghi, M.H.</p>
+    <p class="pub-cite"><em>Applied Energy</em>, 175, pp.91–99, 2016.</p>
+  </div>
+
+  <div class="pub-details">
+    <p>This paper develops an artificial neural network (ANN)-based modeling framework for predicting dual-fuel engine emissions. A multi-objective NSGA-II algorithm is used to minimize NOx and CO simultaneously, providing a data-driven method to assist emission control strategies under varying load conditions.</p>
+    <img src="figures/ann-emission-figure.png" alt="ANN Emission Model Figure">
+    <a href="https://doi.org/10.1016/j.apenergy.2016.03.017" target="_blank">🔗 View Paper</a>
+  </div>
+</div>
+
 
 
     <script>
-function toggleAbstract(button) {
-  const abstract = button.closest('.publication-card').querySelector('.publication-abstract');
-  if (abstract.style.display === "none") {
-    abstract.style.display = "block";
-    button.textContent = "➖ Hide Abstract";
-  } else {
-    abstract.style.display = "none";
-    button.textContent = "📄 Abstract";
+  function toggleAbstract(card) {
+    card.classList.toggle('open');
   }
-}
 </script>
-
-
 
 
     
