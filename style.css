@@ -565,15 +565,25 @@ hr {
 @media (max-width: 768px) {
   .research-summary {
     flex-direction: column;
+    display: flex;
   }
 
   .research-summary p {
+    order: 1;
     width: 100%;
     margin-bottom: 20px;
   }
 
   .interests-box {
+    order: 2;
     width: 100%;
-    order: 2; /* Ensures it comes after the paragraph */
+    margin-bottom: 20px;
+  }
+
+  .section-divider-image {
+    order: 3;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
   }
 }
