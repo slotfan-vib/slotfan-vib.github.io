@@ -472,17 +472,14 @@ hr {
 
 /* ... [Truncated: All styles from user remain unchanged up to the fixed part] ... */
 
-/* Timeline mobile fix */
 @media (max-width: 768px) {
   .timeline-block::before {
-    left: 20px;
-    transform: none;
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    width: 3px;
     content: '';
     position: absolute;
+    top: 0;
+    left: 20px;
+    width: 3px;
+    height: 100vh;
     background: linear-gradient(to bottom, transparent 0%, #003366 20%, #003366 80%, transparent 100%);
     z-index: 1;
   }
@@ -492,9 +489,9 @@ hr {
   .timeline-entry.right {
     width: 100%;
     left: 0;
+    text-align: left;
     padding-left: 60px;
     padding-right: 20px;
-    text-align: left;
     justify-content: flex-start;
   }
 
@@ -523,10 +520,7 @@ hr {
     align-self: flex-start;
     margin-bottom: 8px;
   }
-}
 
-/* Add your existing mobile fixes for .top-section and .news-thumbnail */
-@media (max-width: 768px) {
   .top-section {
     flex-direction: column;
     align-items: center;
