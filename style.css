@@ -249,6 +249,31 @@ hr {
   font-style: italic;
 }
 
+@media (max-width: 768px) {
+  .timeline-block::before {
+    display: none; /* hide the vertical line */
+  }
+
+  .timeline-entry,
+  .timeline-entry.left,
+  .timeline-entry.right {
+    width: 100%;
+    left: 0;
+    padding-left: 30px;
+    text-align: left;
+    justify-content: flex-start;
+  }
+
+  .timeline-entry::before {
+    left: 10px !important;
+    right: auto;
+  }
+
+  .timeline-badge {
+    max-width: 100%;
+  }
+}
+
 /* News Section */
 .news-list {
   display: flex;
