@@ -478,7 +478,13 @@ hr {
     left: 20px;
     transform: none;
     height: 100%;
-    background: linear-gradient(to bottom, transparent, #003366 20%, #003366 80%, transparent);
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    content: '';
+    position: absolute;
+    background: linear-gradient(to bottom, transparent 0%, #003366 20%, #003366 80%, transparent 100%);
+    z-index: 1;
   }
 
   .timeline-entry,
