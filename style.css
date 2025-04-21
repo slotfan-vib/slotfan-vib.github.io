@@ -588,141 +588,132 @@ hr {
   }
 }
 
-/* -------------------------------------------
-   Publications Page Styles
--------------------------------------------- */
 
-/* Container */
-.publications-container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 40px;
-  background-color: white;
+
+/* =============================== Publications Page Styles ==================================== */
+
+/* Publication Container */
+.publication-container {
+  margin-top: 40px;
 }
 
-/* Section title */
-.publications-container h2 {
-  font-size: 26px;
-  color: #003366;
-  margin-bottom: 30px;
-  border-bottom: 2px solid #003366;
-  padding-bottom: 8px;
-}
-
-/* Filter buttons */
-.filter-buttons {
-  margin-bottom: 30px;
+/* Filter Section */
+.filter-bar {
   display: flex;
-  gap: 12px;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
 }
 
-.filter-buttons button {
-  background-color: #eaf0f8;
-  color: #003366;
-  border: 1px solid #003366;
-  padding: 6px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+.filter-bar select,
+.filter-bar button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
 
-.filter-buttons button.active,
-.filter-buttons button:hover {
-  background-color: #003366;
-  color: white;
-}
-
-/* Publication entry */
-.publication {
-  border-left: 4px solid #003366;
+/* Publication Card */
+.publication-item {
+  background: #f8f9fc;
+  border-left: 6px solid #003366;
+  border-radius: 6px;
   padding: 16px 20px;
   margin-bottom: 20px;
-  background-color: #f8f9fc;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.publication-item:hover {
+  background-color: #eaf0f8;
 }
 
 .publication-title {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
   color: #003366;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .publication-authors {
-  font-size: 15px;
+  font-size: 14px;
+  color: #333;
   margin-bottom: 4px;
-  color: #555;
 }
 
-.publication-meta {
-  font-size: 14px;
-  font-style: italic;
-  margin-bottom: 8px;
+.publication-venue {
+  font-size: 13px;
   color: #666;
+  font-style: italic;
+  margin-bottom: 6px;
 }
 
 .publication-tags {
   display: flex;
-  flex-wrap: wrap;
   gap: 6px;
-  margin-bottom: 10px;
-}
-
-.publication-tags span {
-  font-size: 12px;
-  background-color: #003366;
-  color: white;
-  padding: 2px 8px;
-  border-radius: 4px;
-}
-
-/* Buttons */
-.publication-actions {
-  display: flex;
-  gap: 10px;
+  margin-bottom: 8px;
   flex-wrap: wrap;
-  margin-top: 10px;
 }
 
-.publication-actions button {
-  padding: 6px 12px;
+.publication-tag {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 12px;
+  color: #fff;
+  background-color: #2e7d32;
+}
+
+.publication-tag.conference {
+  background-color: #f9a825;
+}
+
+.publication-tag.journal {
+  background-color: #2e7d32;
+}
+
+.publication-link-button {
+  padding: 6px 10px;
+  font-size: 12px;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #005599;
-  color: white;
-  transition: background-color 0.3s ease;
-}
-
-.publication-actions button:hover {
   background-color: #003366;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 5px;
 }
 
-/* Abstract section */
 .publication-abstract {
   display: none;
-  margin-top: 12px;
-  padding-top: 10px;
-  border-top: 1px dashed #ccc;
-  font-size: 15px;
-  color: #333;
-  line-height: 1.5;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #444;
   text-align: justify;
+  line-height: 1.5;
 }
 
-.publication.expanded .publication-abstract {
+.publication-item.expanded .publication-abstract {
   display: block;
 }
 
-/* Responsive */
+.publication-thumbnail {
+  width: 160px;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .filter-buttons {
+  .filter-bar {
     flex-direction: column;
+    align-items: flex-start;
   }
 
-  .publication-actions {
-    flex-direction: column;
+  .publication-thumbnail {
+    width: 100%;
   }
 }
