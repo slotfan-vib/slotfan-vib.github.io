@@ -41,10 +41,10 @@ body {
 
 .navbar a.active {
   font-weight: bold;
-  color: #ffffff;
-  background-color: #003366;
-  padding: 6px 12px;
+  color: #003366;
+  background-color: #ffffff;
   border-radius: 4px;
+  padding: 6px 12px;
 }
 
 .navbar a:hover {
