@@ -249,32 +249,6 @@ hr {
   font-style: italic;
 }
 
-@media (max-width: 768px) {
-  .timeline-block::before {
-    left: 20px; /* move the line to the left */
-    transform: none; /* stop centering it */
-  }
-
-  .timeline-entry,
-  .timeline-entry.left,
-  .timeline-entry.right {
-    width: 100%;
-    left: 0;
-    text-align: left;
-    padding-left: 60px; /* space for the line and dot */
-    justify-content: flex-start;
-  }
-
-  .timeline-entry::before {
-    left: 20px !important; /* align dot with the new line */
-    right: auto;
-  }
-
-  .timeline-badge {
-    max-width: 100%;
-  }
-}
-
 /* News Section */
 .news-list {
   display: flex;
@@ -496,8 +470,56 @@ hr {
   transform: scale(1.01);
 }
 
+/* ... [Truncated: All styles from user remain unchanged up to the fixed part] ... */
 
+/* Timeline mobile fix */
+@media (max-width: 768px) {
+  .timeline-block::before {
+    left: 20px;
+    transform: none;
+    height: 100%;
+    background: #003366;
+  }
 
+  .timeline-entry,
+  .timeline-entry.left,
+  .timeline-entry.right {
+    width: 100%;
+    left: 0;
+    padding-left: 60px;
+    padding-right: 20px;
+    text-align: left;
+    justify-content: flex-start;
+  }
+
+  .timeline-entry::before {
+    left: 20px !important;
+    right: auto;
+  }
+
+  .timeline-badge {
+    max-width: 100%;
+  }
+
+  .timeline-badge .institution-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .news-item {
+    flex-direction: column;
+  }
+
+  .news-date {
+    width: 85px;
+    text-align: center;
+    align-self: flex-start;
+    margin-bottom: 8px;
+  }
+}
+
+/* Add your existing mobile fixes for .top-section and .news-thumbnail */
 @media (max-width: 768px) {
   .top-section {
     flex-direction: column;
