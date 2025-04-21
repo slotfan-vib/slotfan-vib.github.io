@@ -454,6 +454,8 @@ hr {
   font-size: 15px;
   line-height: 1.6;
   color: #444;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .project-card.expanded .project-abstract {
