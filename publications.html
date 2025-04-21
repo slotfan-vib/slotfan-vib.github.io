@@ -6,26 +6,25 @@
   <title>Publications - Saeed Lotfan | Mechanical Engineering Research</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Saeed Lotfan, Assistant Professor at Gebze Technical University. Publications in structural dynamics, vibrations, and mechanics.">
-  <meta name="keywords" content="Saeed Lotfan, mechanical engineering, GTU, nonlinear vibrations, publications, structural dynamics">
+  <meta name="description" content="Saeed Lotfan, Assistant Professor at Gebze Technical University. Research in vibrations, nonlinear vibrations, structural dynamics, and computational mechanics.">
+  <meta name="keywords" content="Saeed Lotfan, mechanical engineering, nonlinear vibrations, structural dynamics, GTU, Gebze Technical University, research, machine learning in mechanics">
   <meta name="author" content="Saeed Lotfan">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Language" content="en">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Saeed Lotfan – Publications">
-  <meta property="og:description" content="List of academic publications by Saeed Lotfan.">
+  <meta property="og:title" content="Saeed Lotfan – Mechanical Engineering Researcher">
+  <meta property="og:description" content="Research in vibrations, structural dynamics, nonlinear vibrations, and high-fidelity simulations.">
   <meta property="og:image" content="https://slotfan-vib.github.io/profile.jpg">
-  <meta property="og:url" content="https://slotfan-vib.github.io/publications.html">
+  <meta property="og:url" content="https://slotfan-vib.github.io/">
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicon -->
   <link rel="icon" href="favicon.png" type="image/png">
 
-  <!-- Styles and Script -->
-  <link href="style.css" rel="stylesheet" />
-  <link href="publications-style.css" rel="stylesheet" />
-  <script src="publications.js" defer></script>
+  <!-- Styles -->
+  <link href="style.css" rel="stylesheet">
+  <link href="publications-style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -41,44 +40,30 @@
   <div class="container">
     <h2>Publications</h2>
 
-    <div class="pub-filters">
-      <button class="filter-btn active" data-type="all">All</button>
-      <button class="filter-btn" data-type="journal">Journal Article</button>
-      <button class="filter-btn" data-type="conference">Conference Paper</button>
+    <div class="publication-card" onclick="toggleAbstract(this)">
+      <div class="pub-summary">
+        <span class="pub-tag">Journal Article</span>
+        <h3 class="pub-title">
+          ANN-based modeling and reducing dual-fuel engine’s challenging emissions by multi-objective evolutionary algorithm NSGA-II
+        </h3>
+        <p class="pub-authors">Lotfan, S., Ghiasi, R.A., Fallah, M., and Sadeghi, M.H.</p>
+        <p class="pub-cite"><em>Applied Energy</em>, 175, pp.91–99, 2016.</p>
+      </div>
+
+      <div class="pub-details">
+        <p>This paper develops an artificial neural network (ANN)-based modeling framework for predicting dual-fuel engine emissions. A multi-objective NSGA-II algorithm is used to minimize NOx and CO simultaneously, providing a data-driven method to assist emission control strategies under varying load conditions.</p>
+        <img src="figures/ann-emission-figure.png" alt="ANN Emission Model Figure">
+        <a href="https://doi.org/10.1016/j.apenergy.2016.03.017" target="_blank">🔗 View Paper</a>
+      </div>
     </div>
 
-    <div id="publications-list" class="publications"></div>
-
-
-
-    <div class="publication-card" onclick="toggleAbstract(this)">
-  <div class="pub-summary">
-    <span class="pub-tag">Journal Article</span>
-    <h3 class="pub-title">
-      ANN-based modeling and reducing dual-fuel engine’s challenging emissions by multi-objective evolutionary algorithm NSGA-II
-    </h3>
-    <p class="pub-authors">Lotfan, S., Ghiasi, R.A., Fallah, M., and Sadeghi, M.H.</p>
-    <p class="pub-cite"><em>Applied Energy</em>, 175, pp.91–99, 2016.</p>
   </div>
 
-  <div class="pub-details">
-    <p>This paper develops an artificial neural network (ANN)-based modeling framework for predicting dual-fuel engine emissions. A multi-objective NSGA-II algorithm is used to minimize NOx and CO simultaneously, providing a data-driven method to assist emission control strategies under varying load conditions.</p>
-    <img src="figures/ann-emission-figure.png" alt="ANN Emission Model Figure">
-    <a href="https://doi.org/10.1016/j.apenergy.2016.03.017" target="_blank">🔗 View Paper</a>
-  </div>
-</div>
-
-
-
-    <script>
-  function toggleAbstract(card) {
-    card.classList.toggle('open');
-  }
-</script>
-
-
-    
-  </div>
+  <script>
+    function toggleAbstract(card) {
+      card.classList.toggle('open');
+    }
+  </script>
 </body>
 
 </html>
