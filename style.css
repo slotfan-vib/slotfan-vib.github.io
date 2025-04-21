@@ -177,11 +177,25 @@ hr {
   justify-content: flex-start;
 }
 
+.timeline-entry::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  width: 14px;
+  height: 14px;
+  background-color: white;
+  border: 3px solid #003366;
+  border-radius: 50%;
+  z-index: 2;
+}
 
+.timeline-entry.left::before {
+  right: -7px;
+}
 
-
-
-
+.timeline-entry.right::before {
+  left: -7px;
+}
 
 .timeline-badge {
   position: relative;
@@ -330,7 +344,10 @@ hr {
     justify-content: flex-start;
   }
 
-  
+  .timeline-entry::before {
+    left: 20px !important;
+    right: auto;
+  }
 
   .timeline-badge .institution-row {
     flex-direction: column;
@@ -475,7 +492,10 @@ hr {
     justify-content: flex-start;
   }
 
-  
+  .timeline-entry::before {
+    left: 20px !important;
+    right: auto;
+  }
 
   .timeline-badge {
     max-width: 100%;
@@ -516,34 +536,5 @@ hr {
     height: auto;
     margin: 12px 0 0;
     align-self: center;
-  }
-}
-
-.timeline-entry::before {
-  content: '';
-  position: absolute;
-  top: 28px;
-  width: 16px;
-  height: 16px;
-  background-color: white;
-  border: 3px solid #003366;
-  border-radius: 50%;
-  z-index: 2;
-  transform: translateX(-50%);
-}
-
-.timeline-entry.left::before {
-  left: 50%;
-}
-
-.timeline-entry.right::before {
-  left: 50%;
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .timeline-entry::before {
-    left: 20px !important;
-    transform: translateX(0); /* reset alignment on mobile */
   }
 }
