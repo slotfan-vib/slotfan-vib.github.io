@@ -431,7 +431,6 @@ hr {
 
 .project-card img {
   width: 160px;       /* increased width */
-  max-width: 160px;
   height: auto;
   border-radius: 6px;
   object-fit: contain;
