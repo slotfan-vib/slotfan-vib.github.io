@@ -416,8 +416,8 @@ hr {
   border-radius: 8px;
   padding: 20px;
   display: flex;
-  gap: 20px;
-  align-items: flex-start;
+  flex-direction: column; /* Change from row to column */
+  gap: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -428,12 +428,15 @@ hr {
 }
 
 .project-card img {
-  width: 150px;
+  width: 100%;
+  max-width: 250px;
   border-radius: 6px;
+  align-self: flex-start;
 }
 
 .project-info {
   flex: 1;
+  text-align: left;
 }
 
 .project-info h3 {
@@ -443,10 +446,10 @@ hr {
 
 .project-abstract {
   display: none;
-  margin-top: 10px;
   font-size: 15px;
   line-height: 1.5;
   color: #444;
+  margin-top: 12px;
 }
 
 .project-card.expanded .project-abstract {
