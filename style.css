@@ -469,3 +469,24 @@ hr {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   transform: scale(1.01);
 }
+
+
+
+@media (max-width: 768px) {
+  .top-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bio {
+    text-align: center;
+  }
+
+  .news-thumbnail {
+    width: 100%;
+    height: auto;
+    margin: 12px 0 0;
+    align-self: center;
+  }
+}
