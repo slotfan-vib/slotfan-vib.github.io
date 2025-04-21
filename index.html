@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Saeed Lotfan</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<script>
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Saeed Lotfan
+  </title>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <script>
   document.addEventListener("DOMContentLoaded", function () {
     const entries = document.querySelectorAll('.timeline-entry, .news-item');
     const observer = new IntersectionObserver((entriesList) => {
@@ -19,150 +20,447 @@
 
     entries.forEach(entry => observer.observe(entry));
   });
-</script>
-
-<body>
-
+ </script>
+ <body>
   <div class="navbar">
-    <a href="index.html">Home</a>
-    <a href="research.html">Research</a>
-    <a href="publications.html">Publications</a>
-    <a href="teaching.html">Teaching</a>
-    <a href="contact.html">Contact</a>
+   <a href="index.html">
+    Home
+   </a>
+   <a href="research.html">
+    Research
+   </a>
+   <a href="publications.html">
+    Publications
+   </a>
+   <a href="teaching.html">
+    Teaching
+   </a>
+   <a href="contact.html">
+    Contact
+   </a>
   </div>
-
   <div class="container">
-
-    <!-- Name + Title + Socials -->
-    <div class="top-section">
-      <div class="profile-pic">
-        <img src="profile.jpg" alt="Saeed Lotfan">
-      </div>
-      <div class="bio">
-        <h1>Saeed Lotfan</h1>
-        <p>
-          Faculty Member at 
-          <a href="https://www.gtu.edu.tr/" target="_blank">Gebze Technical University</a><br>
-          Department of Mechanical Engineering
-        </p>
-
-        <!-- Email -->
-        <p><a href="mailto:slotfan@gtu.edu.tr">slotfan@gtu.edu.tr</a></p>
-
-        <!-- Social icons -->
-        <div class="social-icons">
-          <a href="https://scholar.google.com/citations?user=_agboNoAAAAJ&hl=en/" target="_blank"><img src="icons/scholar.png" alt="Google Scholar"></a>
-          <a href="https://www.webofscience.com/wos/author/record/AAU-8767-2020/" target="_blank"><img src="icons/wos.png" alt="Web of Science"></a>
-          <a href="https://www.researchgate.net/profile/Saeed-Lotfan?ev=hdr_xprf/" target="_blank"><img src="icons/rg.png" alt="ResearchGate"></a>
-          <a href="https://www.linkedin.com/in/saeed-lotfan-47357898/?originalSubdomain=ir/" target="_blank"><img src="icons/lin.png" alt="LinkedIn"></a>
-          <a href="https://github.com/slotfan-vib/" target="_blank"><img src="icons/github.png" alt="GitHub"></a>
-        </div>
-      </div>
+   <!-- Name + Title + Socials -->
+   <div class="top-section">
+    <div class="profile-pic">
+     <img alt="Saeed Lotfan" src="profile.jpg"/>
     </div>
-
-    <!-- About Section -->
-    <div class="about-section">
-      <p>
-        I am an Assistant Professor in the Department of Mechanical Engineering at 
-        <a href="https://www.gtu.edu.tr/" target="_blank">Gebze Technical University</a>. 
-        I earned my B.S., M.S., and Ph.D. degrees in Mechanical Engineering at 
-        <a href="https://tabrizu.ac.ir/en" target="_blank">University of Tabriz</a>, 
-        Tabriz, Iran in 2012, 2014, and 2018, respectively. I later joined 
-        <a href="https://www.sabanciuniv.edu/en" target="_blank">Sabanci University</a> in Istanbul, Turkey 
+    <div class="bio">
+     <h1>
+      Saeed Lotfan
+     </h1>
+     <p>
+      Faculty Member at
+      <a href="https://www.gtu.edu.tr/" target="_blank">
+       Gebze Technical University
+      </a>
+      <br/>
+      Department of Mechanical Engineering
+     </p>
+     <!-- Email -->
+     <p>
+      <a href="mailto:slotfan@gtu.edu.tr">
+       slotfan@gtu.edu.tr
+      </a>
+     </p>
+     <!-- Social icons -->
+     <div class="social-icons">
+      <a href="https://scholar.google.com/citations?user=_agboNoAAAAJ&amp;hl=en/" target="_blank">
+       <img alt="Google Scholar" src="icons/scholar.png"/>
+      </a>
+      <a href="https://www.webofscience.com/wos/author/record/AAU-8767-2020/" target="_blank">
+       <img alt="Web of Science" src="icons/wos.png"/>
+      </a>
+      <a href="https://www.researchgate.net/profile/Saeed-Lotfan?ev=hdr_xprf/" target="_blank">
+       <img alt="ResearchGate" src="icons/rg.png"/>
+      </a>
+      <a href="https://www.linkedin.com/in/saeed-lotfan-47357898/?originalSubdomain=ir/" target="_blank">
+       <img alt="LinkedIn" src="icons/lin.png"/>
+      </a>
+      <a href="https://github.com/slotfan-vib/" target="_blank">
+       <img alt="GitHub" src="icons/github.png"/>
+      </a>
+     </div>
+    </div>
+   </div>
+   <!-- About Section -->
+   <div class="about-section">
+    <p>
+     I am an Assistant Professor in the Department of Mechanical Engineering at
+     <a href="https://www.gtu.edu.tr/" target="_blank">
+      Gebze Technical University
+     </a>
+     . 
+        I earned my B.S., M.S., and Ph.D. degrees in Mechanical Engineering at
+     <a href="https://tabrizu.ac.ir/en" target="_blank">
+      University of Tabriz
+     </a>
+     , 
+        Tabriz, Iran in 2012, 2014, and 2018, respectively. I later joined
+     <a href="https://www.sabanciuniv.edu/en" target="_blank">
+      Sabanci University
+     </a>
+     in Istanbul, Turkey 
         as a postdoctoral researcher.
-      </p>
-    </div>
-
-    <div class="about-section">
-      <p>
-        My primary research interests center on mechanical vibrations, with a particular emphasis
+    </p>
+   </div>
+   <div class="about-section">
+    <p>
+     My primary research interests center on mechanical vibrations, with a particular emphasis
         on both linear and nonlinear systems. I focus on the development of advanced mathematical
         models and efficient numerical methods to accurately characterize the complex dynamic 
         behavior of structural systems. My work further encompasses reduced-order modeling in
         nonlinear mechanics, signal processing for inverse problems and structural health monitoring,
         and computational mechanics for high-fidelity simulations and and the integration of machine
         learning techniques into these domains.
-      </p>
-    </div>
-
-    <hr>
-
-    <!-- Timeline for Academic and Education -->
-    <!-- (no change to timeline section here) -->
-
-    <hr>
-
-    <!-- News Section -->
-    <h2>News</h2>
-    <div class="news-list">
-      <div class="news-item featured" style="position: relative;">
-        <div class="news-thumb">
-          <img src="images/spaghetti-bridge.jpg" alt="Spaghetti Bridge">
-        </div>
-        <div class="news-date">December<br>2024</div>
-        <div class="news-content">
-          <div class="news-title">Spaghetti Bridge Competition</div>
-          <div class="news-desc">
-            We held a <strong>Spaghetti Bridge Competition</strong> as part of the <em>Statics</em> course at Gebze Technical University.
-            Students were challenged to design and construct bridges using only spaghetti and glue, aiming to maximize the load-to-weight ratio.
-            The event provided an engaging platform for applying theoretical knowledge to a real-world structural task.    
-          </div>
-        </div>
+    </p>
+   </div>
+   <hr/>
+   <!-- Timeline for Academic and Education -->
+   <h2>
+    Academic &amp; Education Timeline
+   </h2>
+   <div class="timeline-block">
+    <div class="timeline-entry left">
+     <div class="timeline-badge">
+      <div class="institution">
+       Gebze Technical University
       </div>
-
-      <!-- (rest of the news items remain unchanged) -->
+      <div class="duration">
+       2022 &ndash; Present
+      </div>
+      <div class="position-title">
+       Assistant Professor
+      </div>
+      <div class="subtext">
+       Department of Mechanical Engineering
+      </div>
+     </div>
     </div>
-
+    <div class="timeline-entry right">
+     <div class="timeline-badge">
+      <div class="institution">
+       Sabanci University
+      </div>
+      <div class="duration">
+       2020 &ndash; 2022
+      </div>
+      <div class="position-title">
+       Postdoctoral Researcher
+      </div>
+      <div class="subtext">
+       Faculty of Engineering and Natural Sciences
+      </div>
+     </div>
+    </div>
+    <div class="timeline-entry left">
+     <div class="timeline-badge">
+      <div class="institution">
+       University of Tabriz
+      </div>
+      <div class="duration">
+       2014 &ndash; 2018
+      </div>
+      <div class="position-title">
+       Ph.D. Student
+      </div>
+      <div class="subtext">
+       Department of Mechanical Engineering,
+       <br/>
+       Vibration and Modal Analysis Lab.
+      </div>
+     </div>
+    </div>
+    <div class="timeline-entry right">
+     <div class="timeline-badge">
+      <div class="institution">
+       University of Tabriz
+      </div>
+      <div class="duration">
+       2012 &ndash; 2014
+      </div>
+      <div class="position-title">
+       M.S. Student
+      </div>
+      <div class="subtext">
+       Department of Mechanical Engineering
+      </div>
+     </div>
+    </div>
+    <div class="timeline-entry left">
+     <div class="timeline-badge">
+      <div class="institution">
+       University of Tabriz
+      </div>
+      <div class="duration">
+       2008 &ndash; 2012
+      </div>
+      <div class="position-title">
+       B.S. Student
+      </div>
+      <div class="subtext">
+       Department of Mechanical Engineering
+      </div>
+     </div>
+    </div>
+   </div>
+   <hr/>
+   <!-- News Section -->
+   <h2>
+    News
+   </h2>
+   <div class="news-list">
+    <div class="news-item featured-news">
+     <img alt="Spaghetti Bridge" class="news-thumbnail" src="images/spaghetti-thumb.jpg"/>
+     <div class="news-date">
+      December
+      <br/>
+      2024
+     </div>
+     <div class="news-content">
+      <div class="news-title">
+       Spaghetti Bridge Competition
+      </div>
+      <div class="news-desc">
+       We held a
+       <strong>
+        Spaghetti Bridge Competition
+       </strong>
+       as part of the
+       <em>
+        Statics
+       </em>
+       course at Gebze Technical University.
+          Students were challenged to design and construct bridges using only spaghetti and glue, aiming to maximize the load-to-weight ratio.
+          The event provided an engaging platform for applying theoretical knowledge to a real-world structural task.
+      </div>
+     </div>
+    </div>
+    <div class="news-item">
+     <div class="news-date">
+      November
+      <br/>
+      2024
+     </div>
+     <div class="news-content">
+      <div class="news-title">
+       Jet Engine Design Competition &ndash; Third Place Award
+      </div>
+      <div class="news-desc">
+       Our student team
+       <strong>
+        G&ouml;k Vatan
+       </strong>
+       at Gebze Technical University achieved
+       <strong>
+        third place
+       </strong>
+       in the
+       <em>
+        Jet Engine Design Competition
+       </em>
+       organized in collaboration with
+       <strong>
+        TEI &ndash; TUSA&Scedil; Engine Industries, Inc.
+       </strong>
+       and
+       <strong>
+        TEKNOFEST
+       </strong>
+       .
+       <br/>
+       <br/>
+       Congratulations to our dedicated team members
+       <strong>
+        Muratcan &Ccedil;al&inodot;&scedil;, Mustafa Kaan Bostanc&inodot;o&gbreve;lu, Gediz Bal, O&gbreve;uzhan Emre Sa&gbreve;er, Muhammed Talha Kara, Muhammed Eren T&inodot;ra&scedil;, Fatih Mehmet Kark&inodot;nl&inodot;
+       </strong>
+       ,
+            and team captain
+       <strong>
+        Eren Kalyoncu
+       </strong>
+       for their outstanding efforts and perseverance throughout the project.
+      </div>
+     </div>
+    </div>
+    <div class="news-item">
+     <div class="news-date">
+      August
+      <br/>
+      2024
+     </div>
+     <div class="news-content">
+      <div class="news-title">
+       Journal Paper
+      </div>
+      <div class="news-desc">
+       Our paper titled
+       <strong>
+        "Coupled thermo-elastic dynamics of rotating pre-twisted blades exposed to thermal shock including nonlinear rotational effects"
+       </strong>
+       ,
+            co-authored with Prof. E. Ci&gbreve;ero&gbreve;lu from Middle East Technical University,
+            has been accepted for publication in the
+       <em>
+        Journal of Sound and Vibration
+       </em>
+       .
+      </div>
+     </div>
+    </div>
+    <div class="news-item">
+     <div class="news-date">
+      September
+      <br/>
+      2024
+     </div>
+     <div class="news-content">
+      <div class="news-title">
+       Conference Presentation
+      </div>
+      <div class="news-desc">
+       Our conference paper titled
+       <strong>
+        "Dynamic modeling of rotating axially functionally graded pre-twisted blades with chord length variations"
+       </strong>
+       ,
+            co-authored with Prof. E. Ci&gbreve;ero&gbreve;lu from Middle East Technical University has been presented at the
+       <em>
+        27th International Conference on Composite Structures (ICCS27: 3-6 September, Ravenna, Italy)
+       </em>
+       .
+      </div>
+     </div>
+    </div>
+    <div class="news-item">
+     <div class="news-date">
+      January
+      <br/>
+      2024
+     </div>
+     <div class="news-content">
+      <div class="news-title">
+       Master&rsquo;s Thesis Defense
+      </div>
+      <div class="news-desc">
+       My master&rsquo;s student
+       <strong>
+        Furkan &Ccedil;opur
+       </strong>
+       has successfully defended his master&rsquo;s thesis titled
+       <em>
+        &ldquo;A Unified Model for Internal Rotordynamic Stability Based on Complex Coordinates Formulation&rdquo;
+       </em>
+       in January 2024. Congratulations to him on earning his
+       <strong>
+        Master&rsquo;s Degree
+       </strong>
+       and completing this important milestone.
+      </div>
+     </div>
+    </div>
+    <div class="news-item">
+     <div class="news-date">
+      March
+      <br/>
+      2023
+     </div>
+     <div class="news-content">
+      <div class="news-title">
+       Research Project
+      </div>
+      <div class="news-desc">
+       Our project titled
+       <strong>
+        "Nonlinear Vibrations of a High-Fidelity Model of Rotating Pre-Twisted Blades with Thickness and Chord Length Variations Including Nonlinear Centrifugal Effects"
+       </strong>
+       ,
+            co-led by Prof. E. Ci&gbreve;ero&gbreve;lu from Middle East Technical University,
+            has been accepted for funding under
+       <em>
+        T&Uuml;B&Idot;TAK 1001 &ndash; The Scientific and Technological Research Projects Funding Program
+       </em>
+       .
+      </div>
+     </div>
+    </div>
+    <div class="news-item">
+     <div class="news-date">
+      February
+      <br/>
+      2023
+     </div>
+     <div class="news-content">
+      <div class="news-title">
+       Journal Paper
+      </div>
+      <div class="news-desc">
+       Our paper titled
+       <strong>
+        "A weak-form spectral Chebyshev technique for nonlinear vibrations of rotating functionally graded beams"
+       </strong>
+       ,
+            co-authored with Prof. E. Ci&gbreve;ero&gbreve;lu from Middle East Technical University and Dr. B. Bediz from Sabanc&inodot; University,
+            has been accepted for publication in the journal of
+       <em>
+        Mechanics of Advanced Materials and Structures
+       </em>
+       .
+      </div>
+     </div>
+    </div>
+    <div class="news-item">
+     <div class="news-date">
+      June
+      <br/>
+      2022
+     </div>
+     <div class="news-content">
+      <div class="news-title">
+       Journal Paper
+      </div>
+      <div class="news-desc">
+       Our paper titled
+       <strong>
+        "Free Vibrations of Rotating Pre-Twisted Blades Including Geometrically Nonlinear Pre-Stressed Analysis"
+       </strong>
+       ,
+            co-authored with Dr. B. Bediz from Sabanc&inodot; University, has been accepted for publication in the
+       <em>
+        Journal of Sound and Vibration
+       </em>
+       .
+      </div>
+     </div>
+    </div>
+    <div class="news-item">
+     <div class="news-date">
+      July
+      <br/>
+      2021
+     </div>
+     <div class="news-content">
+      <div class="news-title">
+       Journal Paper
+      </div>
+      <div class="news-desc">
+       My paper titled
+       <strong>
+        "Nonlinear Modal Interactions in a Beam-Mass System Tuned to 3:1 and Combination Internal Resonances Based on
+              Correspondence Between MTS and NSI Methods"
+       </strong>
+       has been accepted for publication in the journal of
+       <em>
+        Mechanical Systems and Signal Processing
+       </em>
+       .
+      </div>
+     </div>
+    </div>
+   </div>
   </div>
-
-  <div class="footer">
-    &copy; 2025 Saeed Lotfan. All rights reserved.
-  </div>
-
-  <style>
-    .news-thumb img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 6px;
-      flex-shrink: 0;
-    }
-
-    .news-thumb {
-      display: flex;
-      align-items: center;
-    }
-
-    .news-item.featured {
-      border-left-color: #d42b1e;
-      background: linear-gradient(90deg, #fff8f3 0%, #fbe2dd 100%);
-      box-shadow: 0 4px 10px rgba(212, 43, 30, 0.15);
-      transform: scale(1.01);
-    }
-
-    .news-item.featured::after {
-      content: "Featured";
-      background-color: #d42b1e;
-      color: white;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 4px 8px;
-      border-radius: 4px;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    }
-
-    @media (max-width: 768px) {
-      .news-thumb img {
-        width: 100%;
-        height: auto;
-      }
-      .news-thumb {
-        width: 100%;
-      }
-    }
-  </style>
-
-</body>
+ </body>
+ <div class="footer">
+  &copy; 2025 Saeed Lotfan. All rights reserved.
+ </div>
 </html>
