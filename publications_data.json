@@ -1,6 +1,15 @@
 [
   {
     "type": "Journal",
+    "title": "",
+    "authors": "",
+    "cite": "",
+    "abstract": "",
+    "image": "",
+    "doi": ""
+  },
+  {
+    "type": "Journal",
     "title": "Non-linear nonlocal vibration and stability analysis of axially moving nanoscale beams with time-dependent velocity",
     "authors": "Rezaee, M., and Lotfan, S.",
     "cite": "International Journal of Mechanical Sciences, 96-97, pp.36-46, 2015.",
