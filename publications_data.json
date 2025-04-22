@@ -1,10 +1,20 @@
 [
+
+  {
+    "type": "Journal",
+    "title": "Non-linear nonlocal vibration and stability analysis of axially moving nanoscale beams with time-dependent velocity",
+    "authors": "Rezaee, M., and Lotfan, S.",
+    "cite": "International Journal of Mechanical Sciences, 96-97, pp.36-46, 2015.",
+    "abstract": "The extraordinary properties of carbon nanotubes enable a variety of applications such as axially moving elements in nanoscale systems. For vibration analysis of axially moving nanoscale beams with time-dependent velocity, the small-scale effects could make considerable changes in the vibration behavior. In this research, by applying the nonlocal theory and considering small fluctuations in the axial velocity, the stability and non-linear vibrations of an axially moving nanoscale visco-elastic Rayleigh beam are studied. It is assumed that the non-linearity is geometric and is due to the axial stress changes. The energy loss in the system is considered by using the Kelvin–Voigt model. The governing higher order nonlocal equation of motion is derived by using Hamilton׳s principle and is analyzed by applying the multiple scales and power series methods. Then the non-linear resonance frequencies and response of the system are obtained. Considering the solvability condition, the stability of the system is studied parametrically through Lyapunov׳s first method. An interesting result is that, considering the small-scale effects changes the slope of the frequency response curves due to the fluctuations in the axial velocity, considerably.",
+    "image": "PublicationPage/ANN-Applied Energy-2016.png",
+    "doi": "https://doi.org/10.1016/j.ijmecsci.2015.03.017"
+  },
   {
     "type": "Journal",
     "title": "ANN-based modeling and reducing dual-fuel engine’s challenging emissions by multi-objective evolutionary algorithm NSGA-II",
     "authors": "Lotfan, S., Ghiasi, R.A., Fallah, M., and Sadeghi, M.H.",
     "cite": "Applied Energy, 175, pp.91–99, 2016.",
-    "abstract": "This paper develops an artificial neural network (ANN)-based modeling framework for predicting dual-fuel engine emissions. A multi-objective NSGA-II algorithm is used to minimize NOx and CO simultaneously, providing a data-driven method to assist emission control strategies under varying load conditions.",
+    "abstract": "In this study, the combination of artificial neural network (ANN) and non-dominated sorting genetic algorithm II (NSGA-II) has been implemented for modeling and reducing CO and NOx emissions from a direct injection dual-fuel engine. A multi-layer perceptron (MLP) network is developed to predict the values of the emissions based on experimental data. The controllable variables such as engine speed, output power, intake temperature, mass flow rate of diesel fuel, and mass flow rate of the gaseous fuel are considered as input parameters. In order to identify the uncertainties due to the experiments and the ANN-based model, uncertainty analysis is carried out. Finally, optimum values of intake temperature, mass flow rate of diesel and gaseous fuels are obtained for a desired output power and engine speed via NSGA-II. The use of the developed evolutionary optimization algorithm allows the calculation of the Pareto-optimal set of designs under any combination of engine speed and output power, defined in the range of the experiments.",
     "image": "PublicationPage/ANN-Applied Energy-2016.png",
     "doi": "https://doi.org/10.1016/j.apenergy.2016.04.099"
   },
