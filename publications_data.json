@@ -9,6 +9,24 @@
     "doi": ""
   },
 {
+    "type": "Presentation",
+    "title": "Internal dynamic stability of a turbojet engine’s rotor based on complex coordinates formulation",
+    "authors": "Çopur, F., Lotfan, S.",
+    "cite": "7th Graduate Research Symposium, Gebze Technical University, Kocaeli, Turkey, 30-31 May 2023.",
+    "abstract": "Rotor-bearing systems have a wide range of applications in many machines including jet engines, turbines, compressors, pumps, etc. Internal instability in these systems has been a well-known problem since the early days of turbomachinery. Rotordynamic instability is generally observed as sub-synchronous vibrations above the first critical speed of the rotor and cannot be improved with enhanced balancing. A rotor system must be free of destructive vibrations for safe operation. Therefore, accurate prediction of eigenvalues and related stability thresholds have critical importance for turbomachinery designers. Frictional joints and structural damping are the main sources of internal instability, that will produce a damping force in the rotating reference frame. Speed dependent instability terms are introduced to the equation of the motion when these damping forces are transformed from rotating reference frame to stationary reference frame. Accurate implementation of rotating damping is a controversial topic in rotordynamic literature [1] and even some of the commonly used commercial software predicts erroneous results. In this study, equations governing the dynamics of the rotor of a turbojet engine are obtained based on a Timoshenko beam model. Rotating viscous and structural damping are properly incorporated into rotordynamic governing equations. The formulation is based on complex coordinates which allow accurate calculation of structural damping forces. Equations of motion with viscous and structural rotating damping are provided for both rotors on isotropic and anisotropic supports. Then, by providing the discretized equations based on finite element method, stability thresholds are calculated. Results are compared with the literature to show accurate implementation of rotating damping with complex vectors. The destabilizing effect of rotating structural damping is shown by analytical results. Additionally, results of isotropic and anisotropic supports are compared to show positive effects of support asymmetry on rotor stability.",
+    "image": "PublicationPage/Rotor-Furkan-Lotfan-2023.png",
+    "doi": "https://www.gtu.edu.tr/fileman/Files/UserFiles/fbe/Sempozyum2023/files/basic-html/page83.html"
+  },
+{
+    "type": "Journal",
+    "title": "Free vibrations of rotating pre-twisted blades including geometrically nonlinear pre-stressed analysis",
+    "authors": "Lotfan, S., Bediz, B.",
+    "cite": "Journal of Sound and Vibration, 535, pp.117109, 2022.",
+    "abstract": "The steady-state equilibrium deformations (SSEDs) caused by centrifugal force field in rotating blades are not necessarily perturbed disturbances. These deformations can be considered as large amplitude deformations, especially for high values of the rotating speed. Accordingly, in the current study, geometrically nonlinear terms are included in the static analysis under centrifugal forces (SACF) to accurately model the stiffening/softening effects in the vibrations of rotating pre-twisted blades. To this end, by developing a shell model based on first-order shear deformation theory (FSDT), nonlinear and linear integral boundary value problems (IBVPs) governing the SSEDs and vibrations of the blade are obtained, respectively. Multi-mode discretization of these IBVPs is carried out by the spectral Chebyshev technique. The discretization of the nonlinear IBVP results in nonlinear algebraic equations. By solving these equations, nonlinear pre-stressed analysis (NPA) is performed to achieve the SACF. Then, the free vibrations of the rotating pre-twisted blade about the determined equilibrium position is investigated. The numerical results show that the natural frequencies obtained in the presence of the nonlinear terms are extremely lower than those of the linear pre-stressed analysis.}",
+    "image": "PublicationPage/Freevib-2022.svg",
+    "doi": "https://doi.org/10.1016/j.jsv.2022.117109"
+  },
+{
     "type": "Journal",
     "title": "Nonlinear resonances of axially functionally graded beams rotating with varying speed including Coriolis effects",
     "authors": "Lotfan, S., Anamagh, M.R., Bediz, B. and Ciğeroğlu, E.",
