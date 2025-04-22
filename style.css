@@ -714,7 +714,7 @@ hr {
   flex: 1;
   min-width: 180px;
   max-width: 300px;
-  align-self: start;
+  align-self: center;
 }
 .pub-figure img {
   width: 100%;
@@ -755,6 +755,9 @@ hr {
   }
   .pub-details-layout {
     flex-direction: column;
+  }
+  .pub-figure {
+    align-self: flex-start; /* reset to top-aligned for mobile */
   }
 }
 
