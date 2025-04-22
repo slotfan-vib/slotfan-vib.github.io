@@ -583,8 +583,8 @@ hr {
   .section-divider-image img {
   order: 3;
   width: 100% !important;
-  height: auto;
-  max-height: 280px;
+  height: 280px;
+  /*max-height: 280px;*/
   display: block;
   margin: 10px 0;
 }
