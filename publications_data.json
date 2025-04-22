@@ -10,12 +10,12 @@
   },
 {
     "type": "Journal",
-    "title": "",
-    "authors": "",
-    "cite": "",
-    "abstract": "",
-    "image": "PublicationPage/.png",
-    "doi": ""
+    "title": "Nonlinear resonances of axially functionally graded beams rotating with varying speed including Coriolis effects",
+    "authors": "Lotfan, S., Anamagh, M.R., Bediz, B. and Ciğeroğlu, E.",
+    "cite": "Nonlinear Dynamics, 107, pp.533-558, 2022.",
+    "abstract": "The purpose of the current study was to develop an accurate model to investigate the nonlinear resonances in an axially functionally graded beam rotating with time-dependent speed. To this end, two important features including stiffening and Coriolis effects are modeled based on nonlinear strain relations. Equations governing the axial, chordwise, and flapwise deformations about the determined steady-state equilibrium position are obtained, and the rotating speed variation is considered as a periodic disturbance about this equilibrium condition. Multi-mode discretization of the equations is performed via the spectral Chebyshev approach and the method of multiple scales for gyroscopic systems is employed to study the nonlinear behavior. After determining the required polynomial number based on convergence analysis, results obtained are verified by comparing to those found in literature and numerical simulations. Moreover, the model is validated based on simulations carried out by commercial finite element software. Properties of the functionally graded material and the values of average rotating speed leading to 2:1 internal resonance in the system are found. Time and steady-state responses of the system under primary and parametric resonances caused by the time-dependent rotating speed are investigated when the system is tuned to 2:1 internal resonance. A comprehensive study on the time response, frequency response, and stability behavior shows that the rotating axially functionally graded beam exhibits a complicated nonlinear behavior under the effect of the rotating speed fluctuation frequency, damping coefficient, and properties of the functionally graded material.",
+    "image": "PublicationPage/Rotating FGM Beam.svg",
+    "doi": "https://doi.org/10.1007/s11071-021-07055-1"
   },
 {
     "type": "Journal",
