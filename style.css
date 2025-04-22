@@ -571,13 +571,13 @@ hr {
   .research-summary p {
     order: 1;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .interests-box {
     order: 2;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .section-divider-image img {
@@ -586,7 +586,7 @@ hr {
   height: 280px;
   /*max-height: 280px;*/
   display: block;
-  margin: 10px 0;
+  margin: 10px;
 }
 
 }
