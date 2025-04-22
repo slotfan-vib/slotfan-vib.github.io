@@ -8,6 +8,24 @@
     "image": "",
     "doi": ""
   },
+  {
+    "type": "Journal",
+    "title": "Support vector machine classification of brain states exposed to social stress test using EEG-based brain network measures",
+    "authors": "Lotfan, S., Shahyad, S., Khosrowabadi, R., Mohammadi, A., and Hatef, B.",
+    "cite": "Biocybernetics and Biomedical Engineering, 39(1), pp.199-213, 2019.",
+    "abstract": "Stress is one of the most significant health problems in the 21st century, and should be dealt with due to the costs of primary and secondary cares of stress-associated psychological and psychiatric problems. In this study, the brain network states exposed to stress were monitored based on electroencephalography (EEG) measures extracted by complex network analysis. To this regard, 23 healthy male participants aged 18–28 were exposed to a stress test. EEG data and salivary cortisol level were recorded for three different conditions including before, right after, and 20 min after exposure to stress. Then, synchronization likelihood (SL) was calculated for the set of EEG data to construct complex networks, which are scale reduced datasets acquired from multi-channel signals. These networks with weighted connectivity matrices were constructed based on original EEG data and also by using four different waves of the recorded signals including δ, θ, α, and β. In addition to these networks with weighted connectivity, networks with binary connectivity matrices were also derived using threshold T. For each constructed network, four measures including transitivity, modularity, characteristic path length, and global efficiency were calculated. To select the sensitive optimal features from the set of the calculated measures, compensation distance evaluation technique (CDET) was applied. Finally, multi-class support vector machine (SVM) was trained in order to classify the brain network states. The results of testing the SVM models showed that the features based on the original EEG, α and β waves have got better performances in monitoring the brain network states.",
+    "image": "PublicationPage/SVM-Bio-Lotfan-2019.png",
+    "doi": "https://doi.org/10.1016/j.bbe.2018.10.008"
+  },
+{
+    "type": "Journal",
+    "title": "Cavitation intensity monitoring in an axial flow pump based on vibration signals using multi-class support vector machine",
+    "authors": "Shervani-Tabar M.T., Ettefagh, M.M., Lotfan, S., and Safarzadeh, H.",
+    "cite": "Proceedings of the Institution of Mechanical Engineers, Part C., 232(17), pp.3013-3026, 2017.",
+    "abstract": "The cavitation phenomenon, which is rampant in axial flow pumps, should be avoided due to its undesirable effects on the pump’s performance. Therefore, in this study the cavitation performance of an axial flow pump is monitored based on vibration signals. For this purpose, experimental vibration data is collected for five different levels of cavitation. Time-domain features are extracted based on statistical behavior of the measured signals. Considering the nonlinear and high-frequency nature of the cavitation noise in the signal, the second set of features including both time- and frequency-domain parameters are obtained based on statistical behavior of the first intrinsic mode function, via empirical mode decomposition combined with Hilbert Huang transform. Compensation distance evaluation technique is applied to pick the appropriate features. Multi-class support vector machine is trained for classification of the various levels of cavitation intensity. The results of testing the support vector machine algorithm show that the developed methodology can monitor the pump’s cavitation intensity in onsite operation with high accuracy.",
+    "image": "PublicationPage/Cavitation-PartC-Lotfan-2017.png",
+    "doi": "https://doi.org/10.1177/0954406217729416"
+  },
 {
     "type": "Journal",
     "title": "Parametric modeling of carbon nanotubes and estimating nonlocal constant using simulated vibration signals-ARMA and ANN based approach",
