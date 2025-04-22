@@ -652,18 +652,6 @@ hr {
   box-shadow: 0 3px 10px rgba(0,0,0,0.06);
 }
 
-.pub-summary {
-  position: relative;
-  padding-bottom: 40px; /* create room for tag */
-}
-
-.pub-tag-wrapper {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 6px 12px;
-}
-
 .pub-tag {
   padding: 4px 12px;
   font-size: 12px;
@@ -673,6 +661,30 @@ hr {
   color: white;
   font-weight: 500;
 }
+
+.pub-meta-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 2px 0 8px;
+}
+
+.pub-meta-line .pub-authors {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.pub-meta-line .pub-tag {
+  font-size: 11px;
+  padding: 2px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+  margin-bottom: 0;
+}
+
 .pub-tag.Journal { background-color: #2a5298; }
 .pub-tag.Conference { background-color: #4e9fd1; }
 .pub-tag.Preprint { background-color: #6c757d; }
@@ -772,10 +784,5 @@ hr {
     align-self: flex-start; /* reset to top-aligned for mobile */
   }
   {
-  .pub-tag-wrapper {
-    position: static;
-    padding: 0;
-    margin-top: 8px;
-  }
 }
 
