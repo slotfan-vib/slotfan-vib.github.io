@@ -1,0 +1,20 @@
+[
+  {
+    "type": "Journal",
+    "title": "ANN-based modeling and reducing dual-fuel engine’s challenging emissions by multi-objective evolutionary algorithm NSGA-II",
+    "authors": "Lotfan, S., Ghiasi, R.A., Fallah, M., and Sadeghi, M.H.",
+    "cite": "Applied Energy, 175, pp.91–99, 2016.",
+    "abstract": "This paper develops an artificial neural network (ANN)-based modeling framework for predicting dual-fuel engine emissions. A multi-objective NSGA-II algorithm is used to minimize NOx and CO simultaneously, providing a data-driven method to assist emission control strategies under varying load conditions.",
+    "image": "PublicationPage/ANN-Applied Energy-2016.png",
+    "doi": "https://doi.org/10.1016/j.apenergy.2016.04.099"
+  },
+  {
+    "type": "Conference",
+    "title": "Deep Learning-Based Optimization for Vibration Damping in Smart Structures",
+    "authors": "Lotfan, S., and Keshavarzian, P.",
+    "cite": "Proceedings of the 18th International Conference on Smart Structures, pp. 45–52, 2023.",
+    "abstract": "This paper presents a neural network-based framework for optimizing the damping performance of smart composite structures under vibration loads.",
+    "image": "PublicationPage/smart-structure.png",
+    "doi": "https://conference.org/paper123"
+  }
+]
