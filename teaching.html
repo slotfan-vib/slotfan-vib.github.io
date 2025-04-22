@@ -1,182 +1,256 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8"/>
-  <title>Research - Saeed Lotfan | Assistant Professor at GTU | Mechanical Engineering </title>
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Saeed Lotfan, Assistant Professor at Gebze Technical University. Research in vibrationd, nonlinear vibrations, structural dynamics, and computational mechanics.">
-  <meta name="keywords" content="Saeed Lotfan, mechanical engineering, nonlinear vibrations, structural dynamics, GTU, Gebze Technical University, research, machine learning in mechanics, postdoc positions">
-  <meta name="author" content="Saeed Lotfan">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Language" content="en">
-
-  <!-- Open Graph for social sharing -->
-  <meta property="og:title" content="Saeed Lotfan – Mechanical Engineering Researcher">
-  <meta property="og:description" content="Research in vibrations, structural dynamics, nonlinear vibrations, and high-fidelity simulations.">
-  <meta property="og:image" content="https://slotfan-vib.github.io/profile.jpg">
-  <meta property="og:url" content="https://slotfan-vib.github.io/">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .role-badge {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 500;
-      padding: 2px 8px;
-      border-radius: 12px;
-      color: white;
-      background-color: #2a5298;
-      margin-left: 10px;
-    }
-    .Lecturer { background-color: #4e9fd1; }
-    .TA { background-color: #6c757d; }
-    .Invited { background-color: #9b59b6; }
-    .teaching-section {
-      background-color: #f7fafd;
-      padding: 30px;
-      border-radius: 10px;
-      margin-bottom: 40px;
-    }
-    .teaching-card {
-      background-color: #f3f7fb;
-      border-left: 4px solid #4e9fd1;
-      padding: 16px 20px;
-      border-radius: 10px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-      margin-bottom: 24px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      position: relative;
-    }
-    .teaching-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-    .teaching-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      margin-bottom: 8px;
-    }
-    .course-title {
-      font-weight: 600;
-      font-size: 16px;
-      color: #003366;
-    }
-    .teaching-semester {
-      font-size: 14px;
-      color: #777;
-      margin-left: auto;
-    }
-    .teaching-desc {
-      font-size: 14px;
-      color: #444;
-      margin-top: 4px;
-    }
-    .materials-toggle {
-      background-color: #eaf0f8;
-      border: none;
-      color: #003366;
-      font-size: 13px;
-      padding: 6px 12px;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    .materials-list {
-      display: none;
-      margin-top: 10px;
-      padding-left: 16px;
-    }
-    .materials-list a {
-      display: block;
-      font-size: 14px;
-      color: #1a4f8b;
-      text-decoration: none;
-      margin-bottom: 4px;
-    }
-    .materials-list a:hover {
-      text-decoration: underline;
-    }
-    .tag-list {
-      position: absolute;
-      bottom: 10px;
-      right: 20px;
-    }
-    .tag-list span {
-      display: inline-block;
-      background-color: #e4ecf7;
-      color: #003366;
-      border-radius: 12px;
-      padding: 2px 8px;
-      font-size: 12px;
-      margin-left: 6px;
-    }
-    .teaching-philosophy {
-      text-align: justify;
-    }
-    @media (max-width: 500px) {
-      .teaching-meta {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .teaching-semester {
-        margin-left: 0;
-      }
-      .tag-list {
-        position: static;
-        margin-top: 12px;
-      }
-    }
-  </style>
-  <script>
-    function toggleMaterials(button) {
-      const list = button.nextElementSibling;
-      list.style.display = list.style.display === 'block' ? 'none' : 'block';
-      button.textContent = list.style.display === 'block' ? '🔽 Hide Materials' : '📂 Show Materials';
-    }
-  </script>
-</head>
-
-<body>
-  <div class="navbar">
-    <a href="index.html">Home</a>
-    <a href="research.html">Research</a>
-    <a href="publications.html">Publications</a>
-    <a href="teaching.html" class="active">Teaching</a>
-    <a href="people.html">People</a>
-    <a href="contact.html">Contact</a>
-  </div>
-
-  <div class="container">
-    <h1>Teaching</h1>
-
-    <h2>Current Courses</h2>
-    <div class="teaching-section">
-      <!-- Current course cards go here -->
-    </div>
-
-    <h2>Past Teaching</h2>
-    <div class="teaching-section">
-      <!-- Past course cards go here -->
-    </div>
-
-    <h2>Teaching Philosophy</h2>
-    <p class="teaching-philosophy">
-      I view teaching as a collaborative exploration where theoretical rigor meets real-world application. My approach integrates
-      active learning, open-ended assignments, and research-driven examples to foster deep understanding. I aim to create an
-      inclusive, feedback-driven classroom where students grow technically and critically.
-    </p>
-  </div>
-
-  <div class="footer">
-    &copy; 2025 Saeed Lotfan. All rights reserved.
-  </div>
-  
-</body>
-
-</html>
+ <html lang="en">
+ 
+ <head>
+   <meta charset="utf-8"/>
+   <title>Research - Saeed Lotfan | Assistant Professor at GTU | Mechanical Engineering </title>
+ 
+   <!-- SEO Meta Tags -->
+   <meta name="description" content="Saeed Lotfan, Assistant Professor at Gebze Technical University. Research in vibrationd, nonlinear vibrations, structural dynamics, and computational mechanics.">
+   <meta name="keywords" content="Saeed Lotfan, mechanical engineering, nonlinear vibrations, structural dynamics, GTU, Gebze Technical University, research, machine learning in mechanics, postdoc positions">
+   <meta name="author" content="Saeed Lotfan">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="Content-Language" content="en">
+ 
+   <!-- Open Graph for social sharing -->
+   <meta property="og:title" content="Saeed Lotfan – Mechanical Engineering Researcher">
+   <meta property="og:description" content="Research in vibrations, structural dynamics, nonlinear vibrations, and high-fidelity simulations.">
+   <meta property="og:image" content="https://slotfan-vib.github.io/profile.jpg">
+   <meta property="og:url" content="https://slotfan-vib.github.io/">
+   <meta name="twitter:card" content="summary_large_image">
+ 
+   <!-- Stylesheet -->
+   <link rel="stylesheet" href="style.css">
+   <style>
+     .role-badge {
+       display: inline-block;
+       font-size: 11px;
+       font-weight: 500;
+       padding: 2px 8px;
+       border-radius: 12px;
+       color: white;
+       background-color: #2a5298;
+       margin-left: 10px;
+     }
+     .Lecturer { background-color: #4e9fd1; }
+     .TA { background-color: #6c757d; }
+     .Invited { background-color: #9b59b6; }
+     .teaching-section {
+       background-color: #f7fafd;
+       padding: 30px;
+       border-radius: 10px;
+       margin-bottom: 40px;
+     }
+     .teaching-card {
+       background-color: #f3f7fb;
+       border-left: 4px solid #4e9fd1;
+       padding: 16px 20px;
+       border-radius: 10px;
+       box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+       margin-bottom: 24px;
+       transition: transform 0.2s ease, box-shadow 0.2s ease;
+       position: relative;
+     }
+     .teaching-card:hover {
+       transform: translateY(-3px);
+       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+     }
+     .teaching-meta {
+       display: flex;
+       flex-wrap: wrap;
+       gap: 10px;
+       align-items: center;
+       margin-bottom: 8px;
+     }
+     .course-title {
+       font-weight: 600;
+       font-size: 16px;
+       color: #003366;
+     }
+     .teaching-philosophy {
+       text-align: justify;
+     }
+     .teaching-semester {
+       font-size: 14px;
+       color: #777;
+       margin-left: auto;
+     }
+     .teaching-desc {
+       font-size: 14px;
+       color: #444;
+       margin-top: 4px;
+     }
+     .materials-toggle {
+       background-color: #eaf0f8;
+       border: none;
+       color: #003366;
+       font-size: 13px;
+       padding: 6px 12px;
+       border-radius: 6px;
+       cursor: pointer;
+       margin-top: 10px;
+     }
+     .materials-list {
+       display: none;
+       margin-top: 10px;
+       padding-left: 16px;
+     }
+     .materials-list a {
+       display: block;
+       font-size: 14px;
+       color: #1a4f8b;
+       text-decoration: none;
+       margin-bottom: 4px;
+     }
+     .materials-list a:hover {
+       text-decoration: underline;
+     }
+     .tag-list {
+       position: absolute;
+       bottom: 10px;
+       right: 20px;
+     }
+     .tag-list span {
+       display: inline-block;
+       background-color: #e4ecf7;
+       color: #003366;
+       border-radius: 12px;
+       padding: 2px 8px;
+       font-size: 12px;
+       margin-left: 6px;
+     }
+     .teaching-philosophy {
+       text-align: justify;
+     }
+     @media (max-width: 500px) {
+       .teaching-meta {
+         flex-direction: column;
+         align-items: flex-start;
+       }
+       .teaching-semester {
+         margin-left: 0;
+       }
+       .tag-list {
+         position: static;
+         margin-top: 12px;
+       }
+     }
+   </style>
+   <script>
+     function toggleMaterials(button) {
+       const list = button.nextElementSibling;
+       list.style.display = list.style.display === 'block' ? 'none' : 'block';
+       button.textContent = list.style.display === 'block' ? '🔽 Hide Materials' : '📂 Show Materials';
+     }
+   </script>
+ </head>
+ 
+ <body>
+   <div class="navbar">
+     <a href="index.html">Home</a>
+     <a href="research.html">Research</a>
+     <a href="publications.html">Publications</a>
+     <a href="teaching.html" class="active">Teaching</a>
+     <a href="people.html">People</a>
+     <a href="contact.html">Contact</a>
+   </div>
+ 
+   <div class="container">
+     <h1>Teaching</h1>
+ 
+     <h2>Current Courses</h2>
+     <hr>
+     <div class="teaching-card">
+       <div class="teaching-meta">
+         <span class="course-title">ME401 – Vibration Theory</span>
+         <span class="role-badge Lecturer">🎓 Lecturer</span>
+         <span class="teaching-semester">Spring 2025</span>
+       </div>
+       <p class="teaching-desc">
+         Undergraduate course covering free and forced vibrations, multi-degree systems, and modal analysis.
+       </p>
+       <button class="materials-toggle" onclick="toggleMaterials(this)">📂 Show Materials</button>
+       <div class="materials-list">
+         <a href="#">📄 Lecture Slides</a>
+         <a href="#">📘 Solved Examples</a>
+         <a href="#">📁 Syllabus</a>
+       </div>
+       <div class="tag-list">
+         <span>#Undergraduate</span><span>#Theoretical</span><span>#Simulation-based</span>
+       </div>
+     <div class="teaching-section">
+       <!-- Current course cards go here -->
+     </div>
+ 
+     <h2>Past Teaching</h2>
+     <div class="teaching-card">
+       <div class="teaching-meta">
+         <span class="course-title">ME202 – Statics</span>
+         <span class="role-badge TA">👩‍🏫 Teaching Assistant</span>
+         <span class="teaching-semester">Fall 2022 – GTU</span>
+       </div>
+       <p class="teaching-desc">Supported lectures, graded homework, and held problem-solving sessions.</p>
+       <button class="materials-toggle" onclick="toggleMaterials(this)">📂 Show Materials</button>
+       <div class="materials-list">
+         <a href="#">📄 Lecture Notes</a>
+         <a href="#">📘 Problem Sets</a>
+         <a href="#">📁 Syllabus</a>
+       </div>
+       <div class="tag-list">
+         <span>#Undergraduate</span><span>#Theoretical</span>
+       </div>
+     </div>
+ 
+     <div class="teaching-card">
+       <div class="teaching-meta">
+         <span class="course-title">ME210 – Dynamics</span>
+         <span class="role-badge Lecturer">🎓 Lecturer</span>
+         <span class="teaching-semester">Spring 2021 – Sabanci University</span>
+       </div>
+       <p class="teaching-desc">Delivered lectures and prepared exams for a 60+ student undergraduate course.</p>
+       <button class="materials-toggle" onclick="toggleMaterials(this)">📂 Show Materials</button>
+       <div class="materials-list">
+         <a href="#">📄 Lecture Notes</a>
+         <a href="#">📘 Midterm Archive</a>
+         <a href="#">📁 Syllabus</a>
+       </div>
+       <div class="tag-list">
+         <span>#Undergraduate</span><span>#Project-based</span>
+       </div>
+     </div>
+ 
+     <div class="teaching-card">
+       <div class="teaching-meta">
+         <span class="course-title">Refresher Course on FEM</span>
+         <span class="role-badge Invited">📘 Invited Lecturer</span>
+         <span class="teaching-semester">Fall 2020 – SU Continuing Education</span>
+       </div>
+       <p class="teaching-desc">Invited to deliver a focused short course on FEM fundamentals for professionals.</p>
+       <button class="materials-toggle" onclick="toggleMaterials(this)">📂 Show Materials</button>
+       <div class="materials-list">
+         <a href="#">📄 Slides</a>
+         <a href="#">💡 Example Problems</a>
+         <a href="#">📁 Syllabus</a>
+       </div>
+       <div class="tag-list">
+         <span>#Theoretical</span><span>#Simulation-based</span><span>#Graduate</span>
+       </div>
+     <div class="teaching-section">
+       <!-- Past course cards go here -->
+     </div>
+ 
+     <h2>Teaching Philosophy</h2>
+     <p class="teaching-philosophy">
+       I view teaching as a collaborative exploration where theoretical rigor meets real-world application. My approach integrates
+       active learning, open-ended assignments, and research-driven examples to foster deep understanding. I aim to create an
+       inclusive, feedback-driven classroom where students grow technically and critically.
+     </p>
+   </div>
+ 
+   <div class="footer">
+     &copy; 2025 Saeed Lotfan. All rights reserved.
+   </div>
+ 
+ </body>
+ 
+ </html>
