@@ -605,9 +605,32 @@ hr {
 
 
 /* =============================== Publications Page Styles ==================================== */
+/** === PUBLICATION CARD CSS WITH FILTER BAR & ACCORDION === */
 
-/* === Publication Card Redesign === */
-/* === Publication Card Redesign === */
+.publication-filter {
+  display: flex;
+  gap: 12px;
+  margin: 30px 0 20px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 6px 14px;
+  border: 2px solid #003366;
+  background-color: white;
+  color: #003366;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background-color: #003366;
+  color: white;
+}
+
 .publication-card {
   border-left: 4px solid #003366;
   padding: 18px 24px;
@@ -617,6 +640,11 @@ hr {
   cursor: pointer;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  display: none; /* hidden by default, shown by JS */
+}
+
+.publication-card.show {
+  display: block;
 }
 
 .publication-card:hover {
@@ -624,7 +652,6 @@ hr {
   box-shadow: 0 3px 10px rgba(0,0,0,0.06);
 }
 
-/* --- Color-coded tags --- */
 .pub-tag {
   padding: 4px 12px;
   font-size: 12px;
@@ -634,12 +661,11 @@ hr {
   color: white;
   font-weight: 500;
 }
-.pub-tag.Journal { background-color: #2a5298; }       /* more elegant navy-blue */
+.pub-tag.Journal { background-color: #2a5298; }
 .pub-tag.Conference { background-color: #4e9fd1; }
 .pub-tag.Preprint { background-color: #6c757d; }
 .pub-tag.Thesis { background-color: #9b59b6; }
 
-/* --- Title & Citation --- */
 .pub-title {
   color: #0a2a43;
   font-size: 18px;
@@ -653,7 +679,6 @@ hr {
   margin: 2px 0;
 }
 
-/* --- Expandable Details --- */
 .pub-details {
   max-height: 0;
   overflow: hidden;
@@ -667,7 +692,6 @@ hr {
   margin-top: 16px;
 }
 
-/* --- Abstract layout with side-by-side content --- */
 .pub-details p {
   font-size: 15px;
   line-height: 1.6;
@@ -697,7 +721,6 @@ hr {
   box-shadow: 0 1px 5px rgba(0,0,0,0.1);
 }
 
-/* --- Link Styling --- */
 .pub-details a {
   display: inline-block;
   margin-top: 14px;
@@ -712,7 +735,6 @@ hr {
   border-bottom-color: transparent;
 }
 
-/* --- Toggle Indicator --- */
 .toggle-indicator {
   float: right;
   font-size: 16px;
@@ -723,7 +745,6 @@ hr {
   transform: rotate(180deg);
 }
 
-/* --- Responsive Tuning --- */
 @media (max-width: 768px) {
   .publication-card {
     padding: 14px;
@@ -735,3 +756,4 @@ hr {
     flex-direction: column;
   }
 }
+
