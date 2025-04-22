@@ -607,6 +607,7 @@ hr {
 /* =============================== Publications Page Styles ==================================== */
 
 /* === Publication Card Redesign === */
+/* === Publication Card Redesign === */
 .publication-card {
   border-left: 4px solid #003366;
   padding: 18px 24px;
@@ -633,10 +634,10 @@ hr {
   color: white;
   font-weight: 500;
 }
-.pub-tag.Journal { background-color: #003366; }
-.pub-tag.Conference { background-color: #2274a5; }
+.pub-tag.Journal { background-color: #2a5298; }       /* more elegant navy-blue */
+.pub-tag.Conference { background-color: #4e9fd1; }
 .pub-tag.Preprint { background-color: #6c757d; }
-.pub-tag.Thesis { background-color: #4a4e69; }
+.pub-tag.Thesis { background-color: #9b59b6; }
 
 /* --- Title & Citation --- */
 .pub-title {
@@ -696,6 +697,21 @@ hr {
   box-shadow: 0 1px 5px rgba(0,0,0,0.1);
 }
 
+/* --- Link Styling --- */
+.pub-details a {
+  display: inline-block;
+  margin-top: 14px;
+  font-weight: 500;
+  color: #1a4f8b;
+  text-decoration: none;
+  border-bottom: 1px solid #1a4f8b;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+.pub-details a:hover {
+  color: #003366;
+  border-bottom-color: transparent;
+}
+
 /* --- Toggle Indicator --- */
 .toggle-indicator {
   float: right;
@@ -719,4 +735,3 @@ hr {
     flex-direction: column;
   }
 }
-
