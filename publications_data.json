@@ -10,12 +10,39 @@
   },
 {
     "type": "Journal",
-    "title": "",
-    "authors": "",
-    "cite": "",
-    "abstract": "",
-    "image": "",
-    "doi": ""
+    "title": "Large amplitude free vibration of a viscoelastic beam carrying a lumped mass–spring–damper",
+    "authors": "Lotfan, S., and Sadeghi, M.H.",
+    "cite": "Nonlinear Dynamics, 90, pp.1053-1075, 2017.",
+    "abstract": "Numerous engineering structures can be modeled as flexible beams carrying appendages. Physical time-dependent phenomena in such structures appear by considering nonlinear models. Accordingly, the free vibration of a nonlinear Rayleigh beam carrying a linear mass–spring–damper is investigated in this research. The nonlinearity is due to the axial stress changes, and the viscoelastic characteristic of the beam is described by the Kelvin–Voigt model. The governing nonlinear equations of motion are derived by using Hamilton’s principle and solved by the multiple scales method. The presence of the linear damper in the mass–spring–damper system causes a contradiction in the time response of the mass obtained from the classical procedure of the multiple scales method. Therefore, the problem is solved by some manipulations in the process of the multiple scales method. Then, the complex-valued resonance frequencies and mode-shapes are derived by applying the method of power series with the aid of Green function concept. Considering the solvability condition, the nonlinear time-dependent resonance frequencies and the vibration response are obtained. The stability of the solution is studied by using the forward and pullback attractor ideas. Finally, the vibration of the system involving 3:1 internal resonance is investigated, and the stability boundaries of the trivial and non-trivial steady-state solutions are derived based on Lyapunov’s first method. It is shown that the main parameters of the MSD can provide 3:1 internal resonance condition.",
+    "image": "PublicationPage/Large-amplitude-NODY-Lotfan-2017.png",
+    "doi": "https://doi.org/10.1007/s11071-017-3710-z"
+  },
+{
+    "type": "Journal",
+    "title": "Stability and bifurcation analysis of a beam-mass-spring-damper system under primary and one-to-three internal resonances",
+    "authors": "Sadeghi, M.H., and Lotfan, S.",
+    "cite": "Modares Mechanical Engineering (in Persian, National Journal), 17(2), pp.166-176, 2015.",
+    "abstract": "In this paper nonlinear modal interactions and stability of a Rayleigh beam carrying a mass-springdamper system are investigated. For this purpose, the dimensionless equations governing the vibration of the system are analyzed based on multiple scales method. By considering viscoelastic Kelvin-Voigt damping in the beam, complex mode shapes and time-dependent resonance frequencies are extracted. Using the traditional form of the multiple scales method results in physical contradiction in the time response of the concentrated mass, which should be resolved. After free vibration analysis, the forced response of the system under harmonic force with frequency close to the first natural frequency and occurrence of one-to-three internal resonance is studied. The parameters of the one degree of freedom system are considered in a way that the modal interaction occurs via internal resonance mechanism. In this condition, frequency response of the system and its stability are investigated and it is shown that the instability associated with the jump and Hopf bifurcation occurs in the vibration amplitude. Plots of the time response, phase and Poincare show that periodic, quasi-periodic and chaotic vibration may take place in the system. In order to verify the present paper’s results, the natural frequencies of the system are compared to those of the previous studies; in addition to this comparison, the frequency response based on numerical integration validates the results of the present paper.",
+    "image": "PublicationPage/Stability-MME-Lotfan-2015.png",
+    "doi": "https://mme.modares.ac.ir/article-15-154-en.pdf"
+  },  
+{
+    "type": "Journal",
+    "title": "Influence of imperfect end boundary condition on the nonlocal dynamics of CNTs",
+    "authors": "Fathi, R., Lotfan, S., and Sadeghi, M.H.",
+    "cite": "Mechanical Systems and Signal Processing, 87, pp.124-135, 2017.",
+    "abstract": "Imperfections that unavoidably occur during the fabrication process of carbon nanotubes (CNTs) have a significant influence on the vibration behavior of CNTs. Among these imperfections, the boundary condition defect is studied in this investigation based on the nonlocal elasticity theory. To this end, a mathematical model of the non-ideal end condition in a cantilever CNT is developed by a strongly non-linear spring to study its effect on the vibration behavior. The weak form equation of motion is derived via Hamilton’s principle and solved based on Rayleigh–Ritz approach. Once the frequency response function (FRF) of the CNT is simulated, it is found that the defect parameter injects noise to the FRF in the range of lower frequencies and as a result the small scale effect on the FRF remains undisturbed in high frequency ranges. Besides, in this work a process is introduced to estimate the nonlocal and defect parameters for establishing the mathematical model of the CNT based on FRF, which can be competitive because of its lower instrumentation and data analysis costs. The estimation process relies on the resonance frequencies and the magnitude of noise in the frequency response function of the CNT. The results show that the constructed dynamic response of the system based on estimated parameters is in good agreement with the original response of the CNT.",
+    "image": "PublicationPage/Imperfect-MSSP-Lotfan-2017.png",
+    "doi": "https://doi.org/10.1016/j.ymssp.2016.10.015"
+  },
+{
+    "type": "Journal",
+    "title": "Nonparametric system identification of a cantilever beam model with local nonlinearity in the presence of artificial noise",
+    "authors": "Sadeghi, M.H., and Lotfan, S.",
+    "cite": "Modares Mechanical Engineering (in Persian, National Journal), 16(11), pp.177-186, 2016.",
+    "abstract": "In this paper the effect of artificial noise on the performance of nonlinear system identification method in reconstructing the response of a cantilever beam model having local nonlinearity is investigated. For this purpose, the weak form equation governing the transverse vibration of a linear beam having a strongly nonlinear spring at the end is discretized by using Rayleigh-Ritz approach. Then, the derived equations are solved via Rung-Kutta method and the simulated response of the beam to impulse force is obtained. By contaminating the simulated response to artificial measurement noise, nonparametric nonlinear system identification is applied to reconstruct the response. Accordingly, intrinsic mode functions of the response are obtained by using advanced empirical mode decomposition, and nonlinear interaction model including intrinsic modal oscillators is constructed. Primary results show that the presence of noise in the response highly affects the sifting process which results in extraction of spurious intrinsic mode functions. In order to eradicate the effect of noise on this process, noise signals are used as masking signals in the advanced empirical mode decomposition method and intrinsic mode functions corresponding to the noise are extracted. Based on this approach, the dynamic of the noise in the response is identified and noise reduced signals are reconstructed by the intrinsic modal oscillators with suitable accuracy.",
+    "image": "PublicationPage/Nonparametric-MME-Lotfan-2016.png",
+    "doi": "https://www.researchgate.net/profile/Saeed-Lotfan/publication/311674834_Nonparametric_system_identification_of_a_cantilever_beam_model_with_local_nonlinearity_in_the_presence_of_artificial_noise_In_Persian/links/5853bbe408ae0c0f322425b9/Nonparametric-system-identification-of-a-cantilever-beam-model-with-local-nonlinearity-in-the-presence-of-artificial-noise-In-Persian.pdf"
   },  
 {
     "type": "Journal",
@@ -23,7 +50,7 @@
     "authors": "Lotfan, S., Fathi, R., and Ettefagh, M.M.",
     "cite": "International Journal of Mechanical Sciences, 115-116, pp.723-735, 2016.",
     "abstract": "An understanding of the dynamic behavior of the carbon nanotubes (CNTs) conveying fluid is very important for exploring the applications in nanoscale systems. Due to the molecular network disruption, the passing flow has multiphase nature. In this regard, the nonlinear vibration behavior of the CNT conveying multiphase flow is investigated by considering the small scale effects based on the nonlocal theory. The effect of the multiphase flow on the CNT's vibration behavior is modeled by the resultant random uncertainty in the external excitation along with considering the slip flow velocity profile. After extraction of the governing equation by implementing Hamilton's principle and discretizing it by the Galerkin method, the resulting equations are solved numerically. Due to the stochastic nature of the differential equations, the statistical parameters of the response have been obtained by Monte–Carlo simulation. By studying the deflection of the midpoint of the CNT and also considering corresponding upper and lower limit band (confidence interval), extended results of uncertainty effects have been obtained. Moreover the effect of nonlocal parameter, flow velocity and Knudsen number on the statistical dynamic behavior of the system have been investigated. The results show that as the molecular behavior of the flow increases the uncertainty in the system and the confidence interval increase.",
-    "image": "PublicationPage/Size-dependent-IJMS-Lotfan-2016",
+    "image": "PublicationPage/Size-dependent-IJMS-Lotfan-2016.png",
     "doi": "https://doi.org/10.1016/j.ijmecsci.2016.07.034"
   },
   {
