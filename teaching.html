@@ -35,20 +35,6 @@
     .Lecturer { background-color: #4e9fd1; }
     .TA { background-color: #6c757d; }
     .Invited { background-color: #9b59b6; }
-    .tag-list {
-      margin-top: 8px;
-      font-size: 13px;
-      color: #555;
-    }
-    .tag-list span {
-      display: inline-block;
-      background-color: #e4ecf7;
-      color: #003366;
-      border-radius: 12px;
-      padding: 2px 8px;
-      font-size: 12px;
-      margin-right: 6px;
-    }
     .teaching-card {
       background-color: #f3f7fb;
       border-left: 4px solid #4e9fd1;
@@ -57,6 +43,7 @@
       box-shadow: 0 1px 4px rgba(0,0,0,0.05);
       margin-bottom: 24px;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
     }
     .teaching-card:hover {
       transform: translateY(-3px);
@@ -109,6 +96,20 @@
     .materials-list a:hover {
       text-decoration: underline;
     }
+    .tag-list {
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+    }
+    .tag-list span {
+      display: inline-block;
+      background-color: #e4ecf7;
+      color: #003366;
+      border-radius: 12px;
+      padding: 2px 8px;
+      font-size: 12px;
+      margin-left: 6px;
+    }
     @media (max-width: 500px) {
       .teaching-meta {
         flex-direction: column;
@@ -116,6 +117,10 @@
       }
       .teaching-semester {
         margin-left: 0;
+      }
+      .tag-list {
+        position: static;
+        margin-top: 12px;
       }
     }
   </style>
@@ -151,14 +156,14 @@
       <p class="teaching-desc">
         Undergraduate course covering free and forced vibrations, multi-degree systems, and modal analysis.
       </p>
-      <div class="tag-list">
-        <span>🎓 Undergraduate</span><span>📘 Theoretical</span><span>💻 Simulation-based</span>
-      </div>
       <button class="materials-toggle" onclick="toggleMaterials(this)">📂 Show Materials</button>
       <div class="materials-list">
         <a href="#">📄 Lecture Slides</a>
         <a href="#">📘 Solved Examples</a>
-        <a href="#">💻 MATLAB Files</a>
+        <a href="#">📁 Syllabus</a>
+      </div>
+      <div class="tag-list">
+        <span>#Undergraduate</span><span>#Theoretical</span><span>#Simulation-based</span>
       </div>
     </div>
 
@@ -170,8 +175,14 @@
         <span class="teaching-semester">Fall 2022 – GTU</span>
       </div>
       <p class="teaching-desc">Supported lectures, graded homework, and held problem-solving sessions.</p>
+      <button class="materials-toggle" onclick="toggleMaterials(this)">📂 Show Materials</button>
+      <div class="materials-list">
+        <a href="#">📄 Lecture Notes</a>
+        <a href="#">📘 Problem Sets</a>
+        <a href="#">📁 Syllabus</a>
+      </div>
       <div class="tag-list">
-        <span>🎓 Undergraduate</span><span>📘 Theoretical</span>
+        <span>#Undergraduate</span><span>#Theoretical</span>
       </div>
     </div>
 
@@ -182,8 +193,14 @@
         <span class="teaching-semester">Spring 2021 – Sabanci University</span>
       </div>
       <p class="teaching-desc">Delivered lectures and prepared exams for a 60+ student undergraduate course.</p>
+      <button class="materials-toggle" onclick="toggleMaterials(this)">📂 Show Materials</button>
+      <div class="materials-list">
+        <a href="#">📄 Lecture Notes</a>
+        <a href="#">📘 Midterm Archive</a>
+        <a href="#">📁 Syllabus</a>
+      </div>
       <div class="tag-list">
-        <span>🎓 Undergraduate</span><span>💻 Project-based</span>
+        <span>#Undergraduate</span><span>#Project-based</span>
       </div>
     </div>
 
@@ -194,8 +211,14 @@
         <span class="teaching-semester">Fall 2020 – SU Continuing Education</span>
       </div>
       <p class="teaching-desc">Invited to deliver a focused short course on FEM fundamentals for professionals.</p>
+      <button class="materials-toggle" onclick="toggleMaterials(this)">📂 Show Materials</button>
+      <div class="materials-list">
+        <a href="#">📄 Slides</a>
+        <a href="#">💡 Example Problems</a>
+        <a href="#">📁 Syllabus</a>
+      </div>
       <div class="tag-list">
-        <span>📘 Theoretical</span><span>💻 Simulation-based</span><span>🎯 Graduate</span>
+        <span>#Theoretical</span><span>#Simulation-based</span><span>#Graduate</span>
       </div>
     </div>
 
