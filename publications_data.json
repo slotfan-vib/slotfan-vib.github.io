@@ -1,21 +1,30 @@
 [
   {
     "type": "Journal",
-    "title": "",
-    "authors": "",
-    "cite": "",
-    "abstract": "",
-    "image": "PublicationPage/.png",
-    "doi": ""
+    "title": "Coupled thermo-elastic dynamics of rotating pre-twisted blades exposed to thermal shock including nonlinear rotational effects",
+    "authors": "Lotfan, S., Ciğeroğlu, E.",
+    "cite": "Journal of Sound and Vibration, 594, pp.118669, 2025.",
+    "abstract": "Rotating blades operating under high-temperature experience intense mechanical and thermal stresses induced by centrifugal forces and thermal shock. In this research, to address this critical yet understudied topic, coupled thermo-elastic dynamics of rotating blades incorporating precise rotational effects is investigated. A comprehensive modeling approach, characterizing blade geometry in terms of pre-twist and pre-set angles is employed based on the theory of surfaces. Thermal strain–displacement field is defined based on third-order shear deformation theory in the model integrated with a third-order expansion of temperature change distribution within the blade. Rotational factors related to Coriolis, centrifugal stiffening, and rotational softening effects are considered. In the case of stiffening effects, two different modeling approaches including direct integration of centrifugal forces (DICFs), and pre-stressed dynamics about steady-state equilibrium deformations (SSEDs) are employed. When incorporating large-amplitude SSEDs in the latter, nonlinear rotational effects are incorporated into the model. To overcome the complexity arising from coupled thermo-elasticity, and rotational motion, the spectral Chebyshev technique is applied to the derived integral boundary value problems and coupled energy equations. Finally, natural frequencies, and thermal and centrifugal deformations are investigated comprehensively by including DICFs and pre-stressed dynamics. Results show that thermo-elastic dynamics of the system is highly affected by the modeling approaches used for centrifugal stiffening effects.",
+    "image": "PublicationPage/Coupled-JSV-2025.svg",
+    "doi": "https://doi.org/10.1016/j.jsv.2024.118669"
+  },
+{
+    "type": "Presentation",
+    "title": "Dynamic modeling of rotating axially functionally graded pre-twisted blades with chord length variations",
+    "authors": "Lotfan, S., Ciğeroğlu, E.",
+    "cite": "27th International Conference on Composite Structures (ICCS27), Ravenna, Italy, 3 - 6 September 2024.",
+    "abstract": "In this study, dynamics of rotating blades is investigated considering geometric, material, and rotational complexities. A comprehensive modeling approach, characterizing blade geometry in terms of pre-twist and pre-set angles, as well as chord length curved variations is employed based on the theory of surfaces. Depending on the chord length variation, the width of the blade can narrow towards one end. Axially functionally graded material is considered for the blade operating under intense centrifugal stresses. The rotational stiffening effects are incorporated into the model via direct integration of centrifugal forces (DICF). The integral boundary value problem governing the dynamics of the rotating blade, is derived following extended Hamilton’s method. A framework based on Spectral Chebyshev technique is developed that enables accurately and efficiently predicting the dynamics of the problem. This framework can handle geometry and material variations in the spatial domain and provides a compact standard form formulation for complexities due to rotational effects. To validate the precision of the presented solution method, the present results are compared to those obtained through finite element method. The results are in excellent agreement, yet the presented method can solve the integral boundary value problem in a fraction of time compared to the FEM.",
+    "image": "PublicationPage/ICCS27.jpg",
+    "doi": "https://www.researchgate.net/publication/383871636_Dynamic_modeling_of_rotating_axially_functionally_graded_pre-twisted_blades_with_chord_length_variations"
   },
 {
     "type": "Journal",
-    "title": "",
-    "authors": "",
-    "cite": "",
-    "abstract": "",
-    "image": "PublicationPage/.png",
-    "doi": ""
+    "title": "A weak-form spectral Chebyshev technique for nonlinear vibrations of rotating functionally graded beams",
+    "authors": "Lotfan, S., Dedekoy, D., Bediz, B., and Ciğeroğlu, E.",
+    "cite": "Mechanics of Advanced Materials and Structures, 31(16), pp.3651–3665, 2024.",
+    "abstract": "This study presents the spectral Chebyshev technique (SCT) for nonlinear vibrations of rotating beams based on a weak formulation. In addition to providing a fast-converging and precise solution for linear vibrations of structures with complex geometry, material, and physics, this method is further advanced to be able to analyze the nonlinear vibration behavior of continuous systems. Rotational motion and material gradation further complicate this nonlinear behavior. Accordingly, the beam is considered to be axially functionally graded (FG) and a model representing the forced nonlinear vibrations of the beam about steady-state equilibrium deformations (SSEDs) is developed. The model includes Coriolis, centrifugal softening, and nonlinear stiffening effects caused by coupling of the axial, chordwise, and flapwise motions, and large amplitude deformations. The integral boundary value problem for the rotating structure is discretized using the SCT and element-wise multiplication definition. As a result, mass, damping, and stiffness matrices, as well as internal nonlinear forcing functions and external forcing vectors, are obtained for a given rotating beam. This formulation provides a general representation of nonlinear strain relations in matrix form and circumvents the complexity rising from obtaining and solving the partial differential equations directly. In addition, nonlinear forcing functions are obtained in matrix form which facilitates the application of harmonic balance method easier to obtain the forced nonlinear response.",
+    "image": "PublicationPage/Rotating FGM Beam.svg",
+    "doi": "https://doi.org/10.1080/15376494.2023.2181472"
   },
 {
     "type": "Conference",
