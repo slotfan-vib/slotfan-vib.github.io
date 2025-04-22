@@ -606,46 +606,44 @@ hr {
 
 /* =============================== Publications Page Styles ==================================== */
 
+/* === Publication Card Redesign === */
 .publication-card {
   border-left: 4px solid #003366;
-  padding: 18px;
-  border-radius: 8px;
-  background-color: #f8f9fc;
-  margin-bottom: 20px;
+  padding: 18px 24px;
+  border-radius: 12px;
+  background-color: #f9fbfe;
+  margin-bottom: 24px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  position: relative;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
 }
 
 .publication-card:hover {
-  background-color: #eaf0f8;
+  background-color: #eef4fb;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
 }
 
+/* --- Color-coded tags --- */
 .pub-tag {
-  background-color: #003366;
-  color: white;
-  padding: 2px 10px;
+  padding: 4px 12px;
   font-size: 12px;
-  border-radius: 12px;
+  border-radius: 20px;
   display: inline-block;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: 500;
 }
+.pub-tag.Journal { background-color: #003366; }
+.pub-tag.Conference { background-color: #2274a5; }
+.pub-tag.Preprint { background-color: #6c757d; }
+.pub-tag.Thesis { background-color: #4a4e69; }
 
-.toggle-indicator {
-  float: right;
-  font-size: 16px;
-  color: #003366;
-  transition: transform 0.3s ease;
-}
-
-.publication-card.open .toggle-indicator {
-  transform: rotate(180deg);
-}
-
+/* --- Title & Citation --- */
 .pub-title {
-  color: #003366;
+  color: #0a2a43;
   font-size: 18px;
   margin: 4px 0 6px;
+  font-weight: 600;
 }
 
 .pub-authors, .pub-cite {
@@ -654,46 +652,71 @@ hr {
   margin: 2px 0;
 }
 
+/* --- Expandable Details --- */
 .pub-details {
   max-height: 0;
   overflow: hidden;
-  margin-top: 0;
   opacity: 0;
+  margin-top: 0;
   transition: all 0.4s ease;
-  font-size: 15px;
-  color: #333;
+}
+.publication-card.open .pub-details {
+  max-height: 2000px;
+  opacity: 1;
+  margin-top: 16px;
 }
 
-.publication-card.open .pub-details {
-  max-height: 1000px;
-  opacity: 1;
+/* --- Abstract layout with side-by-side content --- */
+.pub-details p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+}
+
+.pub-details-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   margin-top: 14px;
 }
-
-.publication-card img {
-  max-width: 100%;
-  margin-top: 10px;
+.pub-abstract {
+  flex: 2;
+  min-width: 240px;
+}
+.pub-figure {
+  flex: 1;
+  min-width: 180px;
+  max-width: 300px;
+  align-self: start;
+}
+.pub-figure img {
+  width: 100%;
   border-radius: 6px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
 }
 
-/* Responsive improvements */
+/* --- Toggle Indicator --- */
+.toggle-indicator {
+  float: right;
+  font-size: 16px;
+  color: #003366;
+  transition: transform 0.3s ease;
+}
+.publication-card.open .toggle-indicator {
+  transform: rotate(180deg);
+}
+
+/* --- Responsive Tuning --- */
 @media (max-width: 768px) {
   .publication-card {
     padding: 14px;
   }
-
   .pub-title {
     font-size: 16px;
   }
-
-  .pub-authors,
-  .pub-cite,
-  .pub-details {
-    font-size: 14px;
-  }
-
-  .toggle-indicator {
-    font-size: 14px;
+  .pub-details-layout {
+    flex-direction: column;
   }
 }
 
