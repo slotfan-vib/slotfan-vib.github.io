@@ -802,13 +802,15 @@ hr {
 }
 
 .teaching-semester {
-  font-size: 14px;
-  color: #777;
   margin-left: auto;
+  font-size: 13px;
+  color: #888;
 }
 
 .teaching-item {
-  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e6ecf1;
+  margin-bottom: 20px;
 }
 
 .teaching-desc {
@@ -816,5 +818,13 @@ hr {
   color: #444;
   margin-top: 4px;
 }
+
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
 
 
