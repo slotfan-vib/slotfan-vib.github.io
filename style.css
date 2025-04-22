@@ -383,7 +383,7 @@ hr {
 }
 
 .interests-box {
-  flex: 1;
+  flex: none;
   background-color: #eaf0f8;
   padding: 16px;
   border-radius: 8px;
