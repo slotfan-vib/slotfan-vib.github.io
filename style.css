@@ -581,9 +581,10 @@ hr {
   }
 
   .section-divider-image img {
-  width: 300% !important;
+  order: 3;
+  width: 500% !important;
   height: auto;
-  max-height: 280px;
+  max-height: 180px;
   display: block;
   margin: 30px 0;
 }
