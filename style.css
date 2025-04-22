@@ -584,6 +584,11 @@ hr {
     box-sizing: border-box;
   }
 
+  .section-divider-image {
+  width: 100%;
+  background: white; /* optional, if your site has gray background */
+}
+
   .section-divider-image img {
   order: 3;
   width: 100% !important;
