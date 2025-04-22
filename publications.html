@@ -38,9 +38,18 @@
   </div>
 
 <div class="container">
-  <h2>Publications</h2>
+<h2>Publications</h2>
 
-            <div class="publication-card" onclick="toggleAbstract(this)">
+<div class="publication-filter">
+  <button class="filter-btn active" onclick="filterPublications('All')">All</button>
+  <button class="filter-btn" onclick="filterPublications('Journal')">Journal</button>
+  <button class="filter-btn" onclick="filterPublications('Conference')">Conference</button>
+  <button class="filter-btn" onclick="filterPublications('Preprint')">Preprint</button>
+  <button class="filter-btn" onclick="filterPublications('Thesis')">Thesis</button>
+</div>
+
+  
+            <div class="publication-card Journal" onclick="toggleAbstract(this)">
             <div class="pub-summary">
               <span class="pub-tag Journal">Journal Article</span>
               <span class="toggle-indicator">▼</span>
@@ -72,7 +81,7 @@
 
 
 
-                <div class="publication-card" onclick="toggleAbstract(this)">
+              <div class="publication-card Journal" onclick="toggleAbstract(this)">
                 <div class="pub-summary">
                   <span class="pub-tag Conference">Conference Paper</span>
                   <span class="toggle-indicator">▼</span>
@@ -106,9 +115,28 @@
 
 <script>
   function toggleAbstract(card) {
-    card.classList.toggle("open");
+    document.querySelectorAll('.publication-card.open').forEach(function(openCard) {
+      if (openCard !== card) openCard.classList.remove('open');
+    });
+    card.classList.toggle('open');
   }
+
+  function filterPublications(type) {
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+
+    document.querySelectorAll('.publication-card').forEach(card => {
+      card.classList.remove('show');
+      if (type === 'All' || card.classList.contains(type)) {
+        card.classList.add('show');
+      }
+    });
+  }
+
+  // Show all on initial load
+  window.addEventListener('DOMContentLoaded', () => filterPublications('All'));
 </script>
+
 
 </body>
 
