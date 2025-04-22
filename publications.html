@@ -40,85 +40,56 @@
 <div class="container">
 <h2>Publications</h2>
 
+<!-- Container to hold publications dynamically -->
 <div class="publication-filter">
   <button class="filter-btn active" onclick="filterPublications('All')">All</button>
   <button class="filter-btn" onclick="filterPublications('Journal')">Journal</button>
   <button class="filter-btn" onclick="filterPublications('Conference')">Conference</button>
-  <button class="filter-btn" onclick="filterPublications('Preprint')">Preprint</button>
-  <button class="filter-btn" onclick="filterPublications('Thesis')">Thesis</button>
 </div>
 
-  
-            <div class="publication-card Journal show" onclick="toggleAbstract(this)" aria-expanded="false">
-            <div class="pub-summary">
-              <span class="pub-tag Journal">Journal Article</span>
-              <span class="toggle-indicator">▼</span>
-              <h3 class="pub-title">ANN-based modeling and reducing dual-fuel engine’s challenging emissions by multi-objective evolutionary algorithm NSGA-II</h3>
-              <p class="pub-authors"><strong>Lotfan, S.</strong>, Ghiasi, R.A., Fallah, M., and Sadeghi, M.H.</p>
-              <p class="pub-cite"><em>Applied Energy</em>, 175, pp.91–99, 2016.</p>
-            </div>
-          
-            <div class="pub-details">
-              <div class="pub-details-layout">
-                <div class="pub-abstract">
-                  <p>In this study, the combination of artificial neural network (ANN) and non-dominated sorting genetic algorithm II (NSGA-II)
-                      has been implemented for modeling and reducing CO and NOx emissions from a direct injection dual-fuel engine.
-                      A multi-layer perceptron (MLP) network is developed to predict the values of the emissions based on experimental data.
-                      The controllable variables such as engine speed, output power, intake temperature, mass flow rate of diesel fuel,
-                      and mass flow rate of the gaseous fuel are considered as input parameters. In order to identify the uncertainties
-                      due to the experiments and the ANN-based model, uncertainty analysis is carried out. Finally, optimum values of 
-                      intake temperature, mass flow rate of diesel and gaseous fuels are obtained for a desired output power and engine
-                      speed via NSGA-II. The use of the developed evolutionary optimization algorithm allows the calculation of the 
-                      Pareto-optimal set of designs under any combination of engine speed and output power, defined in the range of the experiments.</p>
-                </div>
-                <div class="pub-figure">
-                  <img src="PublicationPage/ANN-Applied Energy-2016.png" alt="ANN-Lotfan-Applied Energy" />
-                </div>
-              </div>
-              <a href="https://doi.org/10.1016/j.apenergy.2016.04.099" target="_blank" rel="noopener noreferrer">🔗 View Paper</a>
-            </div>
-          </div>
-
-
-
-              <div class="publication-card Journal" onclick="toggleAbstract(this)">
-                <div class="pub-summary">
-                  <span class="pub-tag Conference">Conference Paper</span>
-                  <span class="toggle-indicator">▼</span>
-                  <h3 class="pub-title">ANN-based modeling and reducing dual-fuel engine’s challenging emissions by multi-objective evolutionary algorithm NSGA-II</h3>
-                  <p class="pub-authors"><strong>Lotfan, S.</strong>, Ghiasi, R.A., Fallah, M., and Sadeghi, M.H.</p>
-                  <p class="pub-cite"><em>Applied Energy</em>, 175, pp.91-99, 2016.</p>
-                </div>
-              
-                <div class="pub-details">
-                  <div class="pub-details-layout">
-                    <div class="pub-abstract">
-                      <p>In this study, the combination of artificial neural network (ANN) and non-dominated sorting genetic algorithm II (NSGA-II)
-                      has been implemented for modeling and reducing CO and NOx emissions from a direct injection dual-fuel engine.
-                      A multi-layer perceptron (MLP) network is developed to predict the values of the emissions based on experimental data.
-                      The controllable variables such as engine speed, output power, intake temperature, mass flow rate of diesel fuel,
-                      and mass flow rate of the gaseous fuel are considered as input parameters. In order to identify the uncertainties
-                      due to the experiments and the ANN-based model, uncertainty analysis is carried out. Finally, optimum values of 
-                      intake temperature, mass flow rate of diesel and gaseous fuels are obtained for a desired output power and engine
-                      speed via NSGA-II. The use of the developed evolutionary optimization algorithm allows the calculation of the 
-                      Pareto-optimal set of designs under any combination of engine speed and output power, defined in the range of the experiments.</p>
-                    </div>
-                    <div class="pub-figure">
-                      <img src="PublicationPage/ANN-Applied Energy-2016.png" alt="ANN-Lotfan-Applied Energ" />
-                    </div>
-                  </div>
-                  <a href="https://doi.org/10.1016/j.apenergy.2016.04.099" target="_blank">🔗 View Paper</a>
-                </div>
-              </div>
-  
-</div>
+<div id="publication-list"></div>
 
 <script>
-  function toggleAbstract(card) {
-    document.querySelectorAll('.publication-card.open').forEach(function(openCard) {
-      if (openCard !== card) openCard.classList.remove('open');
+  async function loadPublications() {
+    const response = await fetch('publications_data.json');
+    const data = await response.json();
+    const container = document.getElementById('publication-list');
+    container.innerHTML = '';
+
+    data.forEach((pub, index) => {
+      const card = document.createElement('div');
+      card.className = `publication-card ${pub.type} show`;
+      card.onclick = function () {
+        document.querySelectorAll('.publication-card.open').forEach(openCard => {
+          if (openCard !== card) openCard.classList.remove('open');
+        });
+        card.classList.toggle('open');
+      };
+
+      card.innerHTML = `
+        <div class="pub-summary">
+          <span class="pub-tag ${pub.type}">${pub.type} ${pub.type === 'Journal' ? 'Article' : 'Paper'}</span>
+          <span class="toggle-indicator">▼</span>
+          <h3 class="pub-title">${pub.title}</h3>
+          <p class="pub-authors">${pub.authors}</p>
+          <p class="pub-cite"><em>${pub.cite}</em></p>
+        </div>
+
+        <div class="pub-details">
+          <div class="pub-details-layout">
+            <div class="pub-abstract">
+              <p>${pub.abstract}</p>
+            </div>
+            <div class="pub-figure">
+              <img src="${pub.image}" alt="Figure for ${pub.title}" />
+            </div>
+          </div>
+          <a href="${pub.doi}" target="_blank" rel="noopener noreferrer">🔗 View Paper</a>
+        </div>
+      `;
+
+      container.appendChild(card);
     });
-    card.classList.toggle('open');
   }
 
   function filterPublications(type) {
@@ -133,11 +104,8 @@
     });
   }
 
-  // Show all on initial load
-  window.addEventListener('DOMContentLoaded', () => filterPublications('All'));
+  document.addEventListener('DOMContentLoaded', loadPublications);
 </script>
-
-
 </body>
 
 </html>
