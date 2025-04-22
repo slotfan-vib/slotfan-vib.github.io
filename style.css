@@ -652,6 +652,18 @@ hr {
   box-shadow: 0 3px 10px rgba(0,0,0,0.06);
 }
 
+.pub-summary {
+  position: relative;
+  padding-bottom: 40px; /* create room for tag */
+}
+
+.pub-tag-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 6px 12px;
+}
+
 .pub-tag {
   padding: 4px 12px;
   font-size: 12px;
@@ -758,6 +770,12 @@ hr {
   }
   .pub-figure {
     align-self: flex-start; /* reset to top-aligned for mobile */
+  }
+  {
+  .pub-tag-wrapper {
+    position: static;
+    padding: 0;
+    margin-top: 8px;
   }
 }
 
