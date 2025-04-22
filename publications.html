@@ -81,8 +81,13 @@
           <h3 class="pub-title">${pub.title}</h3>
           <div class="pub-meta-line">
                 <p class="pub-authors">${pub.authors}</p>
-                ${pub.type} ${pub.type === 'Journal' ? 'Article' : pub.type === 'Conference' ? 'Paper' : ''}
+                <span class="pub-tag ${pub.type}">
+                  ${pub.type === 'Journal' ? 'Journal Article' :
+                    pub.type === 'Conference' ? 'Conference Paper' :
+                    pub.type}
+                </span>
           </div>
+          
           <p class="pub-cite"><em>${pub.cite}</em></p>
         </div>
 
