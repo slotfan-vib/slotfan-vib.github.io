@@ -8,6 +8,15 @@
     "image": "",
     "doi": ""
   },
+{
+    "type": "Journal",
+    "title": "",
+    "authors": "",
+    "cite": "",
+    "abstract": "",
+    "image": "",
+    "doi": ""
+  },
  {
     "type": "Journal",
     "title": "Statistical analysis of random uncertainty in the pipes conveying multi-phase flow based on nonlinear dynamic model",
@@ -37,11 +46,11 @@
   },
   {
     "type": "Conference",
-    "title": "Deep Learning-Based Optimization for Vibration Damping in Smart Structures",
-    "authors": "Lotfan, S., and Keshavarzian, P.",
-    "cite": "Proceedings of the 18th International Conference on Smart Structures, pp. 45–52, 2023.",
-    "abstract": "This paper presents a neural network-based framework for optimizing the damping performance of smart composite structures under vibration loads.",
-    "image": "PublicationPage/smart-structure.png",
-    "doi": "https://conference.org/paper123"
+    "title": "Bearing fault detection using fuzzy C-means and hybrid C-means-subtractive algorithms",
+    "authors": "Lotfan, S., Salehpour, N., Adiban, H., and Mashroutechi, A.",
+    "cite": "2015 IEEE International Conference on Fuzzy Systems (FUZZ-IEEE), Istanbul, Turkey, pp.1-7, 02-05 August 2015.",
+    "abstract": "In this research, ball bearing fault diagnosis based on experimental vibration signals is studied. For this purpose, vibration signals are measured by an acceleration sensor from undamaged and damaged ball bearings. By estimating the power spectral density, frequency-domain transform signals are obtained. The locus of the first four extremes of the frequency-domain signals are used as visual patterns for fault detection. The features for detection of bearing faults are extracted from the extremes of the training signals based on proposed clustering algorithms. In line with the conventional fuzzy C-means (FCM) clustering method, we have proposed the improved fuzzy clustering technique based on heuristic subtractive approach. While the FCM suffers from the convergence and efficiency, the hybrid C-means-Subtractive (FCM-S) clustering benefits from the optimal initial point selection that highly improves its performance and convergence. Not only the experimental results for different test signal scenarios show that the proposed FCM-S clustering approach outperforms the conventional FCM method, but also the FCM-S detects the bearing faults better than the previous ones.",
+    "image": "PublicationPage/Bearing-IEEE-Lotfan-2015.png",
+    "doi": "https://doi.org/10.1109/FUZZ-IEEE.2015.7338049"
   }
 ]
