@@ -614,6 +614,7 @@ hr {
   margin-bottom: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  position: relative;
 }
 
 .publication-card:hover {
@@ -630,6 +631,17 @@ hr {
   margin-bottom: 8px;
 }
 
+.toggle-indicator {
+  float: right;
+  font-size: 16px;
+  color: #003366;
+  transition: transform 0.3s ease;
+}
+
+.publication-card.open .toggle-indicator {
+  transform: rotate(180deg);
+}
+
 .pub-title {
   color: #003366;
   font-size: 18px;
@@ -643,14 +655,19 @@ hr {
 }
 
 .pub-details {
-  display: none;
-  margin-top: 14px;
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 0;
+  opacity: 0;
+  transition: all 0.4s ease;
   font-size: 15px;
   color: #333;
 }
 
 .publication-card.open .pub-details {
-  display: block;
+  max-height: 1000px;
+  opacity: 1;
+  margin-top: 14px;
 }
 
 .publication-card img {
@@ -658,3 +675,25 @@ hr {
   margin-top: 10px;
   border-radius: 6px;
 }
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .publication-card {
+    padding: 14px;
+  }
+
+  .pub-title {
+    font-size: 16px;
+  }
+
+  .pub-authors,
+  .pub-cite,
+  .pub-details {
+    font-size: 14px;
+  }
+
+  .toggle-indicator {
+    font-size: 14px;
+  }
+}
+
