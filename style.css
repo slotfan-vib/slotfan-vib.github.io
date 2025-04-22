@@ -572,13 +572,16 @@ hr {
     order: 1;
     width: 100%;
     margin-bottom: 10px;
+    padding: 0 16px;
+    box-sizing: border-box;
   }
 
   .interests-box {
     order: 2;
-    flex: 1;
     width: 100%;
     margin-bottom: 10px;
+    padding: 16px;
+    box-sizing: border-box;
   }
 
   .section-divider-image img {
