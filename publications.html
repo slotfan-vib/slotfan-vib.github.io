@@ -79,11 +79,11 @@
         <div class="pub-summary">
           <span class="toggle-indicator">▼</span>
           <h3 class="pub-title">${pub.title}</h3>
-          <p class="pub-authors">${pub.authors}</p>
-          <p class="pub-cite"><em>${pub.cite}</em></p>
-          <div class="pub-tag-wrapper">
-            <span class="pub-tag ${pub.type}">${pub.type} ${pub.type === 'Journal' ? 'Article' : 'Paper'}</span>
+          <div class="pub-meta-line">
+                <p class="pub-authors">${pub.authors}</p>
+                <span class="pub-tag ${pub.type}">${pub.type} ${pub.type === 'Journal' ? 'Article' : 'Paper'}</span>
           </div>
+          <p class="pub-cite"><em>${pub.cite}</em></p>
         </div>
 
         <div class="pub-details">
