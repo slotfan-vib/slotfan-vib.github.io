@@ -5,28 +5,24 @@
   <meta charset="utf-8" />
   <title>Saeed Lotfan | Assistant Professor at GTU | Mechanical Engineering</title>
 
-  <!-- SEO Meta Tags -->
   <meta name="description" content="Saeed Lotfan, Assistant Professor at Gebze Technical University. Research in vibration, nonlinear vibrations, structural dynamics, and computational mechanics.">
   <meta name="keywords" content="Saeed Lotfan, mechanical engineering, nonlinear vibrations, structural dynamics, GTU, Gebze Technical University, research, machine learning in mechanics, postdoc positions">
   <meta name="author" content="Saeed Lotfan">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Language" content="en">
 
-  <!-- Open Graph for social sharing -->
   <meta property="og:title" content="Saeed Lotfan – Mechanical Engineering Researcher">
   <meta property="og:description" content="Research in vibrations, structural dynamics, nonlinear vibrations, and high-fidelity simulations.">
   <meta property="og:image" content="https://slotfan-vib.github.io/profile.jpg">
   <meta property="og:url" content="https://slotfan-vib.github.io/">
   <meta name="twitter:card" content="summary_large_image">
 
-  
   <link href="style.css" rel="stylesheet">
-  
   <style>
     .people-filter {
       display: flex;
       gap: 12px;
-      margin: 30px 0 20px;
+      margin: 30px 0 10px;
       flex-wrap: wrap;
     }
 
@@ -117,10 +113,17 @@
     <h2>People</h2>
 
     <div class="people-filter">
-      <button class="filter-btn active" onclick="filterPeople('All')">All</button>
-      <button class="filter-btn" onclick="filterPeople('Graduate')">Graduate</button>
-      <button class="filter-btn" onclick="filterPeople('Undergraduate')">Undergraduate</button>
-      <button class="filter-btn" onclick="filterPeople('Alumni')">Alumni</button>
+      <strong>Filter by Role:</strong>
+      <button class="filter-btn active" onclick="setRoleFilter('All')">All</button>
+      <button class="filter-btn" onclick="setRoleFilter('Graduate')">Graduate</button>
+      <button class="filter-btn" onclick="setRoleFilter('Undergraduate')">Undergraduate</button>
+    </div>
+
+    <div class="people-filter">
+      <strong>Filter by Status:</strong>
+      <button class="filter-btn active" onclick="setStatusFilter('All')">All</button>
+      <button class="filter-btn" onclick="setStatusFilter('Current')">Current</button>
+      <button class="filter-btn" onclick="setStatusFilter('Alumni')">Alumni</button>
     </div>
 
     <div class="people-list">
@@ -174,17 +177,36 @@
 
       
     </div>
+
+    
   </div>
 
   <script>
-    function filterPeople(type) {
-      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
+    let selectedRole = 'All';
+    let selectedStatus = 'All';
 
+    function setRoleFilter(role) {
+      selectedRole = role;
+      document.querySelectorAll('.people-filter')[0].querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      applyFilters();
+    }
+
+    function setStatusFilter(status) {
+      selectedStatus = status;
+      document.querySelectorAll('.people-filter')[1].querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      applyFilters();
+    }
+
+    function applyFilters() {
       document.querySelectorAll('.person-card').forEach(card => {
-        card.style.display = 'none';
-        if (type === 'All' || card.classList.contains(type)) {
+        const matchesRole = (selectedRole === 'All') || card.classList.contains(selectedRole);
+        const matchesStatus = (selectedStatus === 'All') || card.classList.contains(selectedStatus);
+        if (matchesRole && matchesStatus) {
           card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
         }
       });
     }
