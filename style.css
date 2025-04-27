@@ -790,7 +790,7 @@ hr {
 /* ================================================ Teaching Page Styles ============================================= */
 
 .lecture-section {
-  background-color: #f7fafd; /* light educational blue */
+  background-color: linear-gradient(to right, #eaf4fb, #ffffff);
   padding: 30px;
   border-radius: 12px;
   margin-bottom: 40px;
