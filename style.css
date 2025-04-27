@@ -789,6 +789,14 @@ hr {
 
 /* ================================================ Teaching Page Styles ============================================= */
 
+.lecture-section {
+  background-color: #f7fafd; /* light educational blue */
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* very light shadow */
+}
+
 .youtube-grid {
   display: flex;
   flex-wrap: wrap;
