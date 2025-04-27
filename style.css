@@ -790,12 +790,13 @@ hr {
 /* ================================================ Teaching Page Styles ============================================= */
 
 .lecture-section {
-  background-color: linear-gradient(to right, #eaf4fb, #ffffff);
+  background: linear-gradient(to right, #eaf4fb, #ffffff);
   padding: 30px;
   border-radius: 12px;
   margin-bottom: 40px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* very light shadow */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
+
 
 .youtube-grid {
   display: flex;
