@@ -1,5 +1,14 @@
 [
-  {
+{
+    "type": "Journal",
+    "title": "Reduced-order spectral Chebyshev models for geometrically nonlinear vibrations of thin-walled structures",
+    "authors": "Lotfan, S., Ciğeroğlu, E.",
+    "cite": "Nonlinear Dynamics, 113, pp.25753–25785, 2025.",
+    "abstract": "Geometrically nonlinear effects commonly arise in thin-walled structures, such as beams, plates, and shells, when subjected to large-amplitude vibrations. Accurate modeling of these effects is crucial in various applications, as nonlinear coupling between in-plane and out-of-plane motions generates unique dynamic responses. Conventional methods for spatial discretization, including series-based and finite element techniques, often face challenges in efficiency, adaptability, and computational cost when applied to structures with intricate geometries or boundary conditions. To address these challenges, this study extends the spectral Chebyshev technique (SCT), renowned for its efficiency and high convergence in linear systems, to geometrically nonlinear systems. By further advancing SCT and utilizing its compact formulation, nonlinear restoring forces-including contributions from in-plane tension, shear, and moments-are precisely discretized, while an analytical Jacobian is derived to enhance computational efficiency in iterative solutions for nonlinear problems. Additionally, a novel reduced-order modeling framework, enhancing the classical modal truncation method, is developed to capture the full dynamics of both nonlinear responses and restoring forces, enabling efficient large-scale analysis. Nonlinear frequency responses are computed using the harmonic balance method across various configurations, including flat, curved, and twisted structures with arbitrary boundary shapes. The results are validated against commercial finite element analysis software and existing literature, demonstrating the computational efficiency and accuracy of the developed framework. This approach establishes a robust foundation for analyzing the complex, large-scale dynamics of thin-walled structures in engineering applications.",
+    "image": "PublicationPage/ROM-NoDy-2025.svg",
+    "doi": "https://doi.org/10.1007/s11071-025-11434-3"
+  },
+{
     "type": "Journal",
     "title": "Internal damping instability of rotors with isotropic and anisotropic supports based on complex coordinates formulation",
     "authors": "Çopur, F., Lotfan, S.",
