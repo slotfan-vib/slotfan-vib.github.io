@@ -1,16 +1,7 @@
-/* ========================================================================== 
-   SHARED SITE STYLES
-   Cleaned version of the original CSS
-   Goal: keep the same overall visual language while improving maintainability,
-   reducing duplicate rules, and fixing key mobile issues.
-   ========================================================================== */
-
-/* ========================================================================== 
-   1) Base / Typography
-   ========================================================================== */
-
+/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+/* General page layout */
 body {
   font-family: 'Inter', sans-serif;
   background-color: #f4f4f4;
@@ -25,10 +16,42 @@ body {
   max-width: 1000px;
   margin: auto;
   padding: 40px;
-  background-color: #ffffff;
-  box-sizing: border-box;
+  background-color: white;
 }
 
+/* Navbar */
+.navbar {
+  background-color: #003366;
+  padding: 10px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+}
+
+.navbar a.active {
+  font-weight: bold;
+  color: #003366;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 6px 12px;
+}
+
+.navbar a:hover {
+  background-color: #005599;
+}
+
+/* Headings and section spacing */
 h1 {
   color: #003366;
   font-size: 28px;
@@ -44,10 +67,6 @@ h2 {
   margin-bottom: 20px;
 }
 
-h3 {
-  color: #003366;
-}
-
 hr {
   border: 0;
   height: 1px;
@@ -55,56 +74,7 @@ hr {
   margin: 30px 0;
 }
 
-/* Use left-aligned text for a cleaner, more modern web feel */
-.about-section,
-.news-desc,
-.research-summary p,
-.project-abstract,
-.pub-details p,
-.lecture-intro {
-  text-align: left;
-  text-justify: auto;
-}
-
-/* ========================================================================== 
-   2) Navbar
-   ========================================================================== */
-
-.navbar {
-  background-color: #003366;
-  padding: 10px 0;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.navbar a {
-  color: #ffffff;
-  padding: 14px 20px;
-  text-decoration: none;
-  font-weight: 600;
-  display: inline-block;
-  transition: background-color 0.2s ease;
-}
-
-.navbar a.active {
-  font-weight: 700;
-  color: #003366;
-  background-color: #ffffff;
-  border-radius: 4px;
-  padding: 6px 12px;
-}
-
-.navbar a:hover {
-  background-color: #005599;
-}
-
-/* ========================================================================== 
-   3) Home Page: Top Section / Profile / Socials
-   ========================================================================== */
-
+/* Top section: image left, bio right */
 .top-section {
   display: flex;
   flex-wrap: wrap;
@@ -116,7 +86,6 @@ hr {
 .profile-pic img {
   width: 180px;
   border-radius: 10px;
-  display: block;
 }
 
 .bio {
@@ -124,16 +93,21 @@ hr {
   min-width: 250px;
 }
 
+/* About section */
 .about-section {
   margin-top: 20px;
   font-size: 16px;
   line-height: 1.7;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
+/* Social media icons */
 .social-icons {
   margin: 10px 0 20px;
 }
 
+/* Fix the link underline */
 .social-icons a {
   text-decoration: none;
   border: none;
@@ -149,15 +123,13 @@ hr {
   border: none;
 }
 
+/* Hover effect */
 .social-icons a img:hover {
   filter: grayscale(0%);
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
-/* ========================================================================== 
-   4) Timeline
-   ========================================================================== */
-
+/* Timeline */
 .timeline-block {
   position: relative;
   margin: 60px 0;
@@ -211,7 +183,7 @@ hr {
   top: 28px;
   width: 14px;
   height: 14px;
-  background-color: #ffffff;
+  background-color: white;
   border: 3px solid #003366;
   border-radius: 50%;
   z-index: 2;
@@ -277,10 +249,7 @@ hr {
   font-style: italic;
 }
 
-/* ========================================================================== 
-   5) News Section
-   ========================================================================== */
-
+/* News Section */
 .news-list {
   display: flex;
   flex-direction: column;
@@ -295,7 +264,7 @@ hr {
   padding: 16px 20px;
   border-left: 6px solid #003366;
   border-radius: 6px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.5s ease;
@@ -309,8 +278,8 @@ hr {
 .news-date {
   width: 85px;
   text-align: center;
-  font-weight: 700;
-  color: #ffffff;
+  font-weight: bold;
+  color: #fff;
   background-color: #003366;
   padding: 6px 12px;
   border-radius: 4px;
@@ -335,6 +304,8 @@ hr {
   font-size: 15px;
   color: #444;
   line-height: 1.5;
+  text-align: justify;
+  text-justify: inter-word;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -346,28 +317,12 @@ hr {
 .news-item:hover .news-desc {
   -webkit-line-clamp: unset;
   max-height: 1000px;
-  transform: translateX(4px);
+  transform: translateX(6px);
+  text-align: justify;
+  text-justify: inter-word;
 }
 
-.news-thumbnail {
-  width: 150px;
-  height: auto;
-  border-radius: 6px;
-  margin-right: 10px;
-  align-self: center;
-}
-
-.featured-news {
-  border: 2px solid #003366;
-  background: linear-gradient(to right, #eaf0f8, #ffffff);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transform: scale(1.01);
-}
-
-/* ========================================================================== 
-   6) Footer
-   ========================================================================== */
-
+/* Footer */
 .footer {
   text-align: center;
   padding: 20px;
@@ -378,10 +333,42 @@ hr {
   border-top: 1px solid #ddd;
 }
 
-/* ========================================================================== 
-   7) Research Page
-   ========================================================================== */
+@media (max-width: 768px) {
+  .timeline-entry,
+  .timeline-entry.left,
+  .timeline-entry.right {
+    width: 100%;
+    left: 0;
+    text-align: left;
+    padding-left: 60px;
+    justify-content: flex-start;
+  }
 
+  .timeline-entry::before {
+    left: 20px !important;
+    right: auto;
+  }
+
+  .timeline-badge .institution-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .news-item {
+    flex-direction: column;
+  }
+
+  .news-date {
+  width: 85px;
+  text-align: center;
+    align-self: flex-start;
+    margin-bottom: 8px;
+  }
+}
+
+
+/* Research Section */
 .research-summary {
   display: flex;
   gap: 40px;
@@ -392,6 +379,7 @@ hr {
 
 .research-summary p {
   flex: 2;
+  text-align: justify;
 }
 
 .interests-box {
@@ -399,7 +387,7 @@ hr {
   background-color: #eaf0f8;
   padding: 16px;
   border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 }
 
 .interests-box h3 {
@@ -433,7 +421,7 @@ hr {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
   flex-wrap: wrap;
-  line-height: 1.4;
+  line-height: 1.4; /* less line spacing */
 }
 
 .project-card:hover {
@@ -442,7 +430,7 @@ hr {
 }
 
 .project-card img {
-  width: 250px;
+  width: 250px;       /* increased width */
   height: auto;
   border-radius: 6px;
   object-fit: contain;
@@ -455,7 +443,7 @@ hr {
 }
 
 .project-info p {
-  margin: 3px 0;
+  margin: 3px 0;       /* tighter spacing between lines */
 }
 
 .project-info h3 {
@@ -470,15 +458,154 @@ hr {
   font-size: 15px;
   line-height: 1.5;
   color: #444;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .project-card.expanded .project-abstract {
   display: block;
 }
 
-/* ========================================================================== 
-   8) Publications Page
-   ========================================================================== */
+
+.news-thumbnail {
+  width: 150px;
+  height: auto;
+  border-radius: 6px;
+  margin-right: 10px;
+  align-self: flex-start;
+  align-self: center;
+}
+
+.featured-news {
+  border: 2px solid #003366;
+  background: linear-gradient(to right, #eaf0f8, #ffffff);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transform: scale(1.01);
+}
+
+/* ... [Truncated: All styles from user remain unchanged up to the fixed part] ... */
+
+/* Timeline Fix - Mobile View */
+@media (max-width: 768px) {
+.timeline-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 26px;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 0%, #003366 20%, #003366 80%, transparent 100%);
+  z-index: 1;
+}
+
+  .timeline-entry,
+  .timeline-entry.left,
+  .timeline-entry.right {
+    width: 100%;
+    left: 0;
+    text-align: left;
+    padding-left: 70px; /* space from left for the vertical line + circle */
+    padding-right: 20px;
+    justify-content: flex-start;
+  }
+
+  .timeline-entry::before {
+    left: 26px !important; /* perfectly aligned with line */
+    right: auto;
+    top: 26px; /* visually centers with badge box */
+    background-color: white;
+    border: 3px solid #003366;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    content: '';
+    position: absolute;
+    z-index: 2;
+  }
+
+  .timeline-badge {
+    max-width: 100%;
+  }
+
+  .timeline-badge .institution-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .news-item {
+    flex-direction: column;
+  }
+
+  .news-date {
+    width: 85px;
+    text-align: center;
+    align-self: flex-start;
+    margin-bottom: 8px;
+  }
+
+  .top-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bio {
+    text-align: center;
+  }
+
+  .news-thumbnail {
+    width: 100%;
+    height: auto;
+    margin: 12px 0 0;
+    align-self: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .research-summary {
+    flex-direction: column;
+    display: flex;
+  }
+
+  .research-summary p {
+    order: 1;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+
+  .interests-box {
+    order: 2;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
+  .section-divider-image {
+  width: 100%;
+  background: white; /* optional, if your site has gray background */
+}
+
+  .section-divider-image img {
+  order: 3;
+  width: 100% !important;
+  height: 280px;
+  /*max-height: 280px;*/
+  display: block;
+  margin: 10px;
+  filter: brightness(0.95) contrast(1.2);
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+}
+
+
+/* =============================== Publications Page Styles ==================================== */
+/** === PUBLICATION CARD CSS WITH FILTER BAR & ACCORDION === */
 
 .publication-filter {
   display: flex;
@@ -490,7 +617,7 @@ hr {
 .filter-btn {
   padding: 6px 14px;
   border: 2px solid #003366;
-  background-color: #ffffff;
+  background-color: white;
   color: #003366;
   border-radius: 20px;
   font-size: 14px;
@@ -501,7 +628,7 @@ hr {
 .filter-btn.active,
 .filter-btn:hover {
   background-color: #003366;
-  color: #ffffff;
+  color: white;
 }
 
 .publication-card {
@@ -512,8 +639,8 @@ hr {
   margin-bottom: 24px;
   cursor: pointer;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  display: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  display: none; /* hidden by default, shown by JS */
 }
 
 .publication-card.show {
@@ -522,7 +649,7 @@ hr {
 
 .publication-card:hover {
   background-color: #eef4fb;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
 }
 
 .pub-tag {
@@ -531,7 +658,7 @@ hr {
   border-radius: 20px;
   display: inline-block;
   margin-bottom: 10px;
-  color: #ffffff;
+  color: white;
   font-weight: 500;
 }
 
@@ -562,7 +689,7 @@ hr {
 .pub-tag.Conference { background-color: #4e9fd1; }
 .pub-tag.Preprint { background-color: #6c757d; }
 .pub-tag.Thesis { background-color: #9b59b6; }
-.pub-tag.Presentation { background-color: #2c786c; }
+.pub-tag.Presentation {background-color: #2c786c; /* forest green */}
 
 .pub-title {
   color: #0a2a43;
@@ -571,8 +698,7 @@ hr {
   font-weight: 600;
 }
 
-.pub-authors,
-.pub-cite {
+.pub-authors, .pub-cite {
   font-size: 14px;
   color: #555;
   margin: 2px 0;
@@ -585,7 +711,6 @@ hr {
   margin-top: 0;
   transition: all 0.4s ease;
 }
-
 .publication-card.open .pub-details {
   max-height: 2000px;
   opacity: 1;
@@ -596,6 +721,7 @@ hr {
   font-size: 15px;
   line-height: 1.6;
   color: #333;
+  text-align: justify;
 }
 
 .pub-details-layout {
@@ -604,23 +730,20 @@ hr {
   gap: 20px;
   margin-top: 14px;
 }
-
 .pub-abstract {
   flex: 2;
   min-width: 240px;
 }
-
 .pub-figure {
   flex: 1;
   min-width: 180px;
   max-width: 300px;
   align-self: center;
 }
-
 .pub-figure img {
   width: 100%;
   border-radius: 6px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
 }
 
 .pub-details a {
@@ -632,7 +755,6 @@ hr {
   border-bottom: 1px solid #1a4f8b;
   transition: color 0.3s ease, border-bottom-color 0.3s ease;
 }
-
 .pub-details a:hover {
   color: #003366;
   border-bottom-color: transparent;
@@ -644,21 +766,73 @@ hr {
   color: #003366;
   transition: transform 0.3s ease;
 }
-
 .publication-card.open .toggle-indicator {
   transform: rotate(180deg);
 }
 
-/* ========================================================================== 
-   9) Teaching Page
-   ========================================================================== */
+@media (max-width: 768px) {
+  .publication-card {
+    padding: 14px;
+  }
+  .pub-title {
+    font-size: 16px;
+  }
+  .pub-details-layout {
+    flex-direction: column;
+  }
+  .pub-figure {
+    align-self: flex-start; /* reset to top-aligned for mobile */
+  }
+
+}
+
+
+/* ================================================ Teaching Page Styles ============================================= */
 
 .lecture-section {
   background: linear-gradient(to right, #eaf4fb, #ffffff);
   padding: 30px;
   border-radius: 12px;
   margin-bottom: 40px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+
+.youtube-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 30px 0 40px;
+}
+
+.youtube-video {
+  flex: 1 1 30%; /* shrinkable, growable, but prefer 30% width */
+  max-width: 350px;
+  min-width: 250px;
+}
+
+.youtube-video iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.youtube-video iframe:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .youtube-video {
+    flex: 1 1 100%; /* full width on mobile */
+    max-width: 100%;
+  }
+
+  .youtube-video iframe {
+    height: 180px;
+  }
 }
 
 .lecture-intro {
@@ -666,6 +840,8 @@ hr {
   margin-bottom: 30px;
   font-size: 16px;
   color: #555;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .lecture-intro a {
@@ -678,32 +854,6 @@ hr {
   text-decoration: underline;
 }
 
-.youtube-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin: 30px 0 40px;
-}
-
-.youtube-video {
-  flex: 1 1 30%;
-  max-width: 350px;
-  min-width: 250px;
-}
-
-.youtube-video iframe {
-  width: 100%;
-  height: 200px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.youtube-video iframe:hover {
-  transform: scale(1.02);
-}
-
 .video-title {
   font-size: 16px;
   font-weight: 600;
@@ -712,158 +862,4 @@ hr {
   text-align: center;
 }
 
-/* ========================================================================== 
-   10) Mobile / Tablet
-   ========================================================================== */
 
-@media (max-width: 768px) {
-  .container {
-    padding: 20px;
-  }
-
-  .navbar {
-    padding: 8px 6px;
-  }
-
-  .navbar a {
-    padding: 10px 12px;
-    font-size: 14px;
-  }
-
-  .top-section {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .bio {
-    text-align: center;
-  }
-
-  /* Timeline mobile layout */
-  .timeline-block::before {
-    left: 26px;
-    transform: none;
-  }
-
-  .timeline-entry,
-  .timeline-entry.left,
-  .timeline-entry.right {
-    width: 100%;
-    left: 0;
-    text-align: left;
-    padding-left: 70px;
-    padding-right: 20px;
-    justify-content: flex-start;
-  }
-
-  .timeline-entry::before {
-    left: 26px !important;
-    right: auto;
-    top: 26px;
-  }
-
-  .timeline-badge {
-    max-width: 100%;
-  }
-
-  .timeline-badge .institution-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-  }
-
-  /* News mobile layout */
-  .news-item {
-    flex-direction: column;
-  }
-
-  .news-date {
-    width: 85px;
-    text-align: center;
-    align-self: flex-start;
-    margin-bottom: 8px;
-  }
-
-  .news-desc {
-    -webkit-line-clamp: unset;
-    max-height: none;
-    overflow: visible;
-  }
-
-  .news-thumbnail {
-    width: 100%;
-    height: auto;
-    margin: 12px 0 0;
-    align-self: center;
-  }
-
-  /* Research page mobile */
-  .research-summary {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .research-summary p,
-  .interests-box {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .section-divider-image {
-    width: 100%;
-    background: #ffffff;
-  }
-
-  .section-divider-image img {
-    width: 100% !important;
-    height: 280px;
-    display: block;
-    margin: 10px 0;
-    filter: brightness(0.95) contrast(1.2);
-    opacity: 0.9;
-    transition: all 0.3s ease;
-  }
-
-  /* Publications mobile */
-  .publication-card {
-    padding: 14px;
-  }
-
-  .pub-title {
-    font-size: 16px;
-  }
-
-  .pub-details-layout {
-    flex-direction: column;
-  }
-
-  .pub-figure {
-    align-self: flex-start;
-  }
-
-  /* Teaching mobile */
-  .youtube-video {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-
-  .youtube-video iframe {
-    height: 180px;
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar a {
-    padding: 8px 10px;
-    font-size: 13px;
-  }
-
-  h1 {
-    font-size: 24px;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-}
