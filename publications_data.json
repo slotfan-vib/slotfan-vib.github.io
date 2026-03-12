@@ -1,4 +1,14 @@
 [
+    {
+    "type": "Journal",
+    "title": "Nonlinear vibrations and modal interactions in rotating pre-twisted blades with thickness and chord variations using high-fidelity models with DICFs and PA",
+    "authors": "Lotfan, S., Ciğeroğlu, E.",
+    "cite": "Thin-Walled Structures, 218, pp.114134, 2026.",
+    "abstract": "This study presents a high-fidelity investigation into the coupled in-plane and out-of-plane nonlinear vibration characteristics and modal interactions of rotating pre-twisted blades with variable thickness and chord length. A geometrically nonlinear structural model is developed based on first-order shear deformation theory, with all nonlinear terms of the Green’s strain tensor retained to accurately capture large deformation effects. The formulation is constructed within a surface-based framework that incorporates pre-set, pre-twist, spanwise and chordwise cross-sectional variation, and chord tapering. Two centrifugal stiffening strategies, i.e., Direct Integration of Centrifugal Forces (DICFs) and Pre-Stressed Analysis (PA), are systematically compared to evaluate their influence on both free and forced vibration responses. The spatial domain is discretized using the Spectral Chebyshev Technique (SCT), allowing a high number of modes to be retained across complex geometries. An enhanced reduced-order modeling framework is employed to preserve key nonlinear restoring forces and multi-mode interactions. The resulting equations are solved using the harmonic balance method with arc-length continuation to compute steady-state solutions and nonlinear frequency response curves. Numerical results reveal significant differences in resonance behavior and internal modal couplings under different centrifugal stiffening assumptions. This comprehensive approach offers new insights into the nonlinear dynamics of rotating blades, highlighting the critical influence of modeling strategy and model order on accurately capturing the full spectrum of nonlinear dynamics.",
+    "image": "newsimages/NBlade-TWST-2025.svg",
+    "doi": "https://doi.org/10.1016/j.tws.2025.114134"
+  },
+    
 {
     "type": "Journal",
     "title": "Reduced-order spectral Chebyshev models for geometrically nonlinear vibrations of thin-walled structures",
