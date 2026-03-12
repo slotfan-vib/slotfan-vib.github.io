@@ -1,137 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
-  <title>Saeed Lotfan | Assistant Professor at GTU | Mechanical Engineering</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Language" content="en" />
+  <title>Publications | Saeed Lotfan | Assistant Professor at GTU</title>
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Saeed Lotfan, Assistant Professor at Gebze Technical University. Research in vibrations, nonlinear vibrations, structural dynamics, and computational mechanics.">
-  <meta name="keywords" content="Saeed Lotfan, mechanical engineering, nonlinear vibrations, structural dynamics, GTU, Gebze Technical University, research, machine learning in mechanics">
-  <meta name="author" content="Saeed Lotfan">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Language" content="en">
+  <!-- =========================================
+       SEO / SEARCH META
+       ========================================= -->
+  <meta
+    name="description"
+    content="Publications by Saeed Lotfan, Assistant Professor at Gebze Technical University, in nonlinear vibrations, structural dynamics, computational mechanics, and related areas."
+  />
+  <meta
+    name="keywords"
+    content="Saeed Lotfan publications, nonlinear vibrations, structural dynamics, computational mechanics, mechanical engineering, Gebze Technical University"
+  />
+  <meta name="author" content="Saeed Lotfan" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://saeedlotfan.com/publications.html" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Saeed Lotfan – Mechanical Engineering Researcher">
-  <meta property="og:description" content="Research in vibrations, structural dynamics, nonlinear vibrations, and high-fidelity simulations.">
-  <meta property="og:image" content="https://slotfan-vib.github.io/profile.jpg">
-  <meta property="og:url" content="https://slotfan-vib.github.io/">
-  <meta name="twitter:card" content="summary_large_image">
+  <!-- =========================================
+       OPEN GRAPH / SOCIAL META
+       ========================================= -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Publications | Saeed Lotfan" />
+  <meta
+    property="og:description"
+    content="Journal articles, conference papers, and presentations by Saeed Lotfan in vibrations, structural dynamics, and computational mechanics."
+  />
+  <meta property="og:image" content="https://saeedlotfan.com/profile.jpg" />
+  <meta property="og:url" content="https://saeedlotfan.com/publications.html" />
+  <meta property="og:site_name" content="Saeed Lotfan" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Publications | Saeed Lotfan" />
+  <meta
+    name="twitter:description"
+    content="Publications by Saeed Lotfan in nonlinear vibrations, structural dynamics, and computational mechanics."
+  />
+  <meta name="twitter:image" content="https://saeedlotfan.com/profile.jpg" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.png" type="image/png">
+  <!-- =========================================
+       FAVICON + STYLES
+       ========================================= -->
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="publications-style.css" />
 
-  <!-- Styles -->
-  <link href="style.css" rel="stylesheet">
-  <link href="publications-style.css" rel="stylesheet">
+  <!-- =========================================
+       STRUCTURED DATA
+       ========================================= -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Publications | Saeed Lotfan",
+      "url": "https://saeedlotfan.com/publications.html",
+      "description": "Publications by Saeed Lotfan in nonlinear vibrations, structural dynamics, computational mechanics, and related areas.",
+      "author": {
+        "@type": "Person",
+        "name": "Saeed Lotfan",
+        "url": "https://saeedlotfan.com/"
+      }
+    }
+  </script>
 </head>
 
 <body>
-  <div class="navbar">
+  <!-- =========================================
+       SITE NAVIGATION
+       ========================================= -->
+  <nav class="navbar" aria-label="Main navigation">
     <a href="index.html">Home</a>
     <a href="research.html">Research</a>
-    <a href="publications.html" class="active">Publications</a>
+    <a href="publications.html" class="active" aria-current="page">Publications</a>
     <a href="teaching.html">Teaching</a>
     <a href="people.html">People</a>
     <a href="contact.html">Contact</a>
-  </div>
+  </nav>
 
-<div class="container">
-<h2>Publications</h2>
+  <main class="container">
+    <!-- =========================================
+         PAGE HEADER
+         Edit this section if you want to change the
+         intro text above the filter bar.
+         ========================================= -->
+    <header>
+      <h2>Publications</h2>
+      <p>
+        This page lists journal articles, conference papers, and presentations.
+        Use the filters below to browse the publications by type.
+      </p>
+    </header>
 
-<!-- Container to hold publications dynamically -->
-<div class="publication-filter">
-  <button class="filter-btn active" onclick="filterPublications('All')">All</button>
-  <button class="filter-btn" onclick="filterPublications('Journal')">Journal</button>
-  <button class="filter-btn" onclick="filterPublications('Conference')">Conference</button>
-  <button class="filter-btn" onclick="filterPublications('Presentation')">Presentation</button>
-</div>
+    <!-- =========================================
+         FILTER BAR
+         Add / remove filter buttons here only if
+         you also update the publication types in
+         publications_data.json.
+         ========================================= -->
+    <section aria-labelledby="publication-filter-heading">
+      <h3 id="publication-filter-heading" class="sr-only">Publication filters</h3>
+      <div class="publication-filter" role="toolbar" aria-label="Publication filters">
+        <button type="button" class="filter-btn active" data-filter="All" aria-pressed="true">All</button>
+        <button type="button" class="filter-btn" data-filter="Journal" aria-pressed="false">Journal</button>
+        <button type="button" class="filter-btn" data-filter="Conference" aria-pressed="false">Conference</button>
+        <button type="button" class="filter-btn" data-filter="Presentation" aria-pressed="false">Presentation</button>
+      </div>
+    </section>
 
-<div id="publication-list"></div>
+    <!-- =========================================
+         PUBLICATION LIST
+         Cards are loaded dynamically from
+         publications_data.json.
 
-<script>
-  async function loadPublications() {
-    const response = await fetch('publications_data.json');
-    let data = await response.json();
+         To add a new publication:
+         1) Open publications_data.json
+         2) Add a new JSON object with the same keys
+         3) The page will render it automatically
+         ========================================= -->
+    <section aria-labelledby="publication-list-heading">
+      <h3 id="publication-list-heading" class="sr-only">Publication list</h3>
+      <div id="publication-list"></div>
+      <div id="publication-error" hidden>
+        Unable to load publications at the moment.
+      </div>
+    </section>
+  </main>
 
-    // Sort by year DESC (latest first)
-    data.sort((a, b) => {
-      const yearA = extractYear(a.cite);
-      const yearB = extractYear(b.cite);
-      return yearB - yearA;
-    });
+  <!-- =========================================
+       SITE FOOTER
+       ========================================= -->
+  <footer class="footer">
+    &copy; 2025 Saeed Lotfan. All rights reserved.
+  </footer>
 
-    const container = document.getElementById('publication-list');
-    container.innerHTML = '';
+  <!-- =========================================
+       PAGE SCRIPT
+       Clean dynamic rendering for publication cards
+       ========================================= -->
+  <script>
+    const publicationList = document.getElementById('publication-list');
+    const publicationError = document.getElementById('publication-error');
+    const filterButtons = document.querySelectorAll('.filter-btn');
 
-    data.forEach((pub, index) => {
-      const card = document.createElement('div');
+    function extractYear(citation) {
+      const match = citation.match(/(19|20)\d{2}/);
+      return match ? parseInt(match[0], 10) : 0;
+    }
+
+    function getPublicationLabel(type) {
+      if (type === 'Journal') return 'Journal Article';
+      if (type === 'Conference') return 'Conference Paper';
+      return type;
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text || '';
+      return div.innerHTML;
+    }
+
+    function createPublicationCard(pub) {
+      const card = document.createElement('article');
       card.className = `publication-card ${pub.type} show`;
-      card.onclick = function () {
-        document.querySelectorAll('.publication-card.open').forEach(openCard => {
-          if (openCard !== card) openCard.classList.remove('open');
-        });
-        card.classList.toggle('open');
-      };
+      card.setAttribute('data-type', pub.type);
+      card.tabIndex = 0;
+
+      const safeTitle = escapeHtml(pub.title);
+      const safeAuthors = escapeHtml(pub.authors);
+      const safeCite = escapeHtml(pub.cite);
+      const safeAbstract = escapeHtml(pub.abstract);
+      const safeImage = escapeHtml(pub.image);
+      const safeDoi = escapeHtml(pub.doi);
+      const safeTypeLabel = escapeHtml(getPublicationLabel(pub.type));
 
       card.innerHTML = `
         <div class="pub-summary">
-          <span class="toggle-indicator">▼</span>
-          <h3 class="pub-title">${pub.title}</h3>
+          <span class="toggle-indicator" aria-hidden="true">▼</span>
+          <h3 class="pub-title">${safeTitle}</h3>
           <div class="pub-meta-line">
-                <p class="pub-authors">${pub.authors}</p>
-                <span class="pub-tag ${pub.type}">
-                  ${pub.type === 'Journal' ? 'Journal Article' :
-                    pub.type === 'Conference' ? 'Conference Paper' :
-                    pub.type}
-                </span>
+            <p class="pub-authors">${safeAuthors}</p>
+            <span class="pub-tag ${pub.type}">${safeTypeLabel}</span>
           </div>
-          
-          <p class="pub-cite"><em>${pub.cite}</em></p>
+          <p class="pub-cite"><em>${safeCite}</em></p>
         </div>
 
-        <div class="pub-details">
+        <div class="pub-details" aria-hidden="true">
           <div class="pub-details-layout">
             <div class="pub-abstract">
-              <p>${pub.abstract}</p>
+              <p>${safeAbstract}</p>
             </div>
             <div class="pub-figure">
-              <img src="${pub.image}" alt="Figure for ${pub.title}" />
+              <img src="${safeImage}" alt="Figure for ${safeTitle}" loading="lazy" />
             </div>
           </div>
-          <a href="${pub.doi}" target="_blank" rel="noopener noreferrer">🔗 View Paper</a>
+          <a href="${safeDoi}" target="_blank" rel="noopener noreferrer">View Paper</a>
         </div>
       `;
 
-      container.appendChild(card);
-    });
-  }
+      const toggleCard = () => {
+        document.querySelectorAll('.publication-card.open').forEach(openCard => {
+          if (openCard !== card) {
+            openCard.classList.remove('open');
+            const details = openCard.querySelector('.pub-details');
+            if (details) details.setAttribute('aria-hidden', 'true');
+          }
+        });
 
-  function extractYear(citation) {
-    const match = citation.match(/(19|20)\d{2}/);
-    return match ? parseInt(match[0]) : 0;
-  }
+        card.classList.toggle('open');
+        const details = card.querySelector('.pub-details');
+        if (details) {
+          details.setAttribute('aria-hidden', card.classList.contains('open') ? 'false' : 'true');
+        }
+      };
 
-  function filterPublications(type) {
-    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+      card.addEventListener('click', toggleCard);
+      card.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggleCard();
+        }
+      });
 
-    document.querySelectorAll('.publication-card').forEach(card => {
-      card.classList.remove('show');
-      if (type === 'All' || card.classList.contains(type)) {
-        card.classList.add('show');
+      return card;
+    }
+
+    function updateFilterButtons(activeType) {
+      filterButtons.forEach(button => {
+        const isActive = button.dataset.filter === activeType;
+        button.classList.toggle('active', isActive);
+        button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+    }
+
+    function filterPublications(type) {
+      document.querySelectorAll('.publication-card').forEach(card => {
+        const matches = type === 'All' || card.classList.contains(type);
+        card.classList.toggle('show', matches);
+      });
+      updateFilterButtons(type);
+    }
+
+    async function loadPublications() {
+      try {
+        const response = await fetch('publications_data.json');
+        if (!response.ok) {
+          throw new Error('Failed to fetch publication data.');
+        }
+
+        const data = await response.json();
+        data.sort((a, b) => extractYear(b.cite) - extractYear(a.cite));
+
+        publicationList.innerHTML = '';
+        data.forEach(pub => {
+          publicationList.appendChild(createPublicationCard(pub));
+        });
+
+        filterPublications('All');
+      } catch (error) {
+        publicationError.hidden = false;
+        publicationList.innerHTML = '';
+        console.error(error);
       }
+    }
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterPublications(button.dataset.filter);
+      });
     });
-  }
 
-  document.addEventListener('DOMContentLoaded', loadPublications);
-</script>
-  
-<div class="footer">
-    &copy; 2025 Saeed Lotfan. All rights reserved.
-  </div>
-  
+    document.addEventListener('DOMContentLoaded', loadPublications);
+  </script>
+
+  <!-- Screen-reader-only helper -->
+  <style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
 </body>
-
 </html>
