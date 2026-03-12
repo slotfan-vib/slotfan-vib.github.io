@@ -863,3 +863,124 @@ hr {
 }
 
 
+
+
+/* ========================================================================== 
+   HOMEPAGE POLISH
+   Minimal homepage-only refinements:
+   - clearer separation of the intro/top area
+   - cleaner section dividers
+   - slightly more intentional homepage spacing
+   - improved mobile spacing without changing the site identity
+   ========================================================================== */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.home-page {
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+
+.home-intro-panel {
+  margin-bottom: 48px;
+  padding: 34px 32px 30px;
+  background: linear-gradient(to bottom, #fbfdff 0%, #f7fafd 100%);
+  border: 1px solid #dbe4ee;
+  border-radius: 14px;
+}
+
+.home-intro-panel .top-section {
+  margin-bottom: 28px;
+}
+
+.home-intro-panel .about-section:first-of-type {
+  margin-top: 0;
+}
+
+.home-intro-panel .about-section:last-of-type {
+  margin-bottom: 0;
+}
+
+.home-intro-panel .profile-pic img {
+  border: 1px solid #d9e2ec;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.section-divider {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #cfd8e3, transparent);
+  margin: 44px 0;
+}
+
+#timeline,
+#news {
+  scroll-margin-top: 90px;
+}
+
+#timeline h2,
+#news h2 {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 22px;
+  }
+
+  .navbar {
+    padding: 8px 6px;
+  }
+
+  .navbar a {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .navbar a.active {
+    padding: 6px 10px;
+  }
+
+  .home-page {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .home-intro-panel {
+    padding: 24px 18px 22px;
+    margin-bottom: 34px;
+  }
+
+  .home-intro-panel .top-section {
+    margin-bottom: 22px;
+  }
+
+  .section-divider {
+    margin: 32px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 18px;
+  }
+
+  .navbar a {
+    padding: 9px 10px;
+    font-size: 13px;
+  }
+
+  .home-intro-panel {
+    padding: 20px 16px;
+  }
+}
