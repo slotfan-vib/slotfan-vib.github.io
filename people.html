@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
-  <title>Saeed Lotfan | Assistant Professor at GTU | Mechanical Engineering</title>
+  <title>People | Saeed Lotfan | Assistant Professor at GTU</title>
 
-  <meta name="description" content="Saeed Lotfan, Assistant Professor at Gebze Technical University. Research in vibration, nonlinear vibrations, structural dynamics, and computational mechanics.">
-  <meta name="keywords" content="Saeed Lotfan, mechanical engineering, nonlinear vibrations, structural dynamics, GTU, Gebze Technical University, research, machine learning in mechanics, postdoc positions">
+  <!-- ========================= SEO / Metadata ========================= -->
+  <meta name="description" content="Students and alumni working with Saeed Lotfan at Gebze Technical University in mechanical engineering, vibrations, structural dynamics, and related research topics.">
+  <meta name="keywords" content="Saeed Lotfan, people, students, alumni, mechanical engineering, structural dynamics, vibrations, GTU, Gebze Technical University">
   <meta name="author" content="Saeed Lotfan">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Language" content="en">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://saeedlotfan.com/people.html">
 
-  <meta property="og:title" content="Saeed Lotfan – Mechanical Engineering Researcher">
-  <meta property="og:description" content="Research in vibrations, structural dynamics, nonlinear vibrations, and high-fidelity simulations.">
-  <meta property="og:image" content="https://slotfan-vib.github.io/profile.jpg">
-  <meta property="og:url" content="https://slotfan-vib.github.io/">
+  <!-- Open Graph -->
+  <meta property="og:title" content="People | Saeed Lotfan">
+  <meta property="og:description" content="Current students and alumni working in the research group of Saeed Lotfan.">
+  <meta property="og:image" content="https://saeedlotfan.com/profile.jpg">
+  <meta property="og:url" content="https://saeedlotfan.com/people.html">
+  <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="favicon.png" type="image/png">
 
+  <link rel="icon" href="favicon.png" type="image/png">
   <link href="style.css" rel="stylesheet">
+
+  <!-- ========================= Page-Specific Styles ========================= -->
   <style>
     .people-filter {
       display: flex;
       gap: 12px;
       margin: 30px 0 10px;
       flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .people-filter strong {
+      color: #003366;
     }
 
     .filter-btn {
@@ -80,7 +91,6 @@
     }
 
     .person-role,
-    .person-status,
     .person-topic {
       font-size: 14px;
       color: #555;
@@ -98,9 +108,21 @@
       text-decoration: underline;
     }
   </style>
+
+  <!-- ========================= Structured Data ========================= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "People | Saeed Lotfan",
+    "url": "https://saeedlotfan.com/people.html",
+    "description": "Current students and alumni working with Saeed Lotfan."
+  }
+  </script>
 </head>
 
 <body>
+  <!-- ========================= Navigation ========================= -->
   <div class="navbar">
     <a href="index.html">Home</a>
     <a href="research.html">Research</a>
@@ -111,149 +133,148 @@
   </div>
 
   <div class="container">
+    <!-- ========================= Page Header ========================= -->
     <h2>People</h2>
 
-    <div class="people-filter">
+    <!-- ========================= Filters ========================= -->
+    <div class="people-filter" data-filter-group="role">
       <strong>Filter by Role:</strong>
-      <button class="filter-btn active" onclick="setRoleFilter('All')">All</button>
-      <button class="filter-btn" onclick="setRoleFilter('Graduate')">Graduate</button>
-      <button class="filter-btn" onclick="setRoleFilter('Undergraduate')">Undergraduate</button>
+      <button class="filter-btn active" type="button" data-role="All">All</button>
+      <button class="filter-btn" type="button" data-role="Graduate">Graduate</button>
+      <button class="filter-btn" type="button" data-role="Undergraduate">Undergraduate</button>
     </div>
 
-    <div class="people-filter">
+    <div class="people-filter" data-filter-group="status">
       <strong>Filter by Status:</strong>
-      <button class="filter-btn active" onclick="setStatusFilter('All')">All</button>
-      <button class="filter-btn" onclick="setStatusFilter('Current')">Current</button>
-      <button class="filter-btn" onclick="setStatusFilter('Alumni')">Alumni</button>
+      <button class="filter-btn active" type="button" data-status="All">All</button>
+      <button class="filter-btn" type="button" data-status="Current">Current</button>
+      <button class="filter-btn" type="button" data-status="Alumni">Alumni</button>
     </div>
 
+    <!-- ========================= People List ========================= -->
+    <!-- Copy one person-card block below to add a new person. -->
     <div class="people-list">
-      
-      <!-- Graduate Student -->
+
+      <!-- Graduate Alumni -->
       <div class="person-card Graduate Alumni">
         <img src="PeoplePage/Murat Kutlu.jpg" alt="Murat Kutlu">
         <div class="person-name">Murat Kutlu</div>
-        <div class="person-role">MSc Alumni</div>
+        <div class="person-role">M.Sc. alumnus</div>
         <div class="person-topic">Dynamic Behavior of Rotor Systems With Belleville Washer-Induced Support Nonlinearity</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/muratkutlu/" target="_blank">LinkedIn Profile</a>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/muratkutlu/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
       </div>
 
       <div class="person-card Graduate Alumni">
         <img src="PeoplePage/Onur Erdoğan.jpg" alt="Onur Erdoğan">
         <div class="person-name">Onur Erdoğan</div>
-        <div class="person-role">MSc Alumni</div>
+        <div class="person-role">M.Sc. alumnus</div>
         <div class="person-topic">Mathematical Modeling and Analysis of a Ship-Mounted Crane With Shock Absorber</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/onur--erdogan/" target="_blank">LinkedIn Profile</a>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/onur--erdogan/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
       </div>
-      
+
       <div class="person-card Graduate Alumni">
         <img src="PeoplePage/Furkan Çopur.jpg" alt="Furkan Çopur">
         <div class="person-name">Furkan Çopur</div>
-        <div class="person-role">MSc Alumni</div>
+        <div class="person-role">M.Sc. alumnus</div>
         <div class="person-topic">A Unified Model for Internal Rotordynamic Stability Based on Complex Coordinates Formulation</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/furkancopur/" target="_blank">LinkedIn Profile</a>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/furkancopur/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
       </div>
-           
-      
-      <!-- Undergraduate -->
+
+      <!-- Undergraduate Alumni -->
       <div class="person-card Undergraduate Alumni">
         <img src="PeoplePage/Onur Söylemez.jpg" alt="Onur Söylemez">
         <div class="person-name">Onur Söylemez</div>
-        <div class="person-role">Undergraduate Alumni</div>
+        <div class="person-role">Undergraduate alumnus</div>
         <div class="person-topic">Health Monitoring of Rotor Bearing System Based on Time–Frequency Vibration Signals Using EMD and Clustering Techniques</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/onur-s%C3%B6ylemez-089674362/" target="_blank">LinkedIn Profile</a>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/onur-s%C3%B6ylemez-089674362/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
       </div>
-      
+
       <div class="person-card Undergraduate Alumni">
-        <img src="PeoplePage/Hıdır Can KAYA.jpg" alt="Hıdır Can KAYA">
+        <img src="PeoplePage/Hıdır Can KAYA.jpg" alt="Hıdır Can Kaya">
         <div class="person-name">Hıdır Can Kaya</div>
-        <div class="person-role">Undergraduate Alumni</div>
+        <div class="person-role">Undergraduate alumnus</div>
         <div class="person-topic">Health Monitoring of Rotor Bearing System Based on Time–Frequency Vibration Signals Using EMD and Clustering Techniques</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/h%C4%B1d%C4%B1r-can-kaya-907712355/" target="_blank">LinkedIn Profile</a>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/h%C4%B1d%C4%B1r-can-kaya-907712355/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
       </div>
-      
+
       <div class="person-card Undergraduate Alumni">
         <img src="PeoplePage/Eren Bilici.jpg" alt="Eren Bilici">
         <div class="person-name">Eren Bilici</div>
-        <div class="person-role">Undergraduate Alumni</div>
+        <div class="person-role">Undergraduate alumnus</div>
         <div class="person-topic">Health Monitoring of Rotor Bearing System Based on Time–Frequency Vibration Signals Using EMD and Clustering Techniques</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/eren-bilici-32814024a/" target="_blank">LinkedIn Profile</a>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/eren-bilici-32814024a/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
       </div>
-      
+
       <div class="person-card Undergraduate Alumni">
         <img src="PeoplePage/İbrahim Ethem Kaya.jpg" alt="İbrahim Ethem Kaya">
         <div class="person-name">İbrahim Ethem Kaya</div>
-        <div class="person-role">Undergraduate Alumni</div>
+        <div class="person-role">Undergraduate alumnus</div>
         <div class="person-topic">Kinematics of Multi-Degree-of-Freedom Robot Arm</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/ibrahim-ethem-kaya-8b82b9209/" target="_blank">LinkedIn Profile</a>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/ibrahim-ethem-kaya-8b82b9209/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
       </div>
-      
+
       <div class="person-card Undergraduate Alumni">
         <img src="PeoplePage/Emre Eyüboğlu.jpg" alt="Emre Eyüboğlu">
         <div class="person-name">Emre Eyüboğlu</div>
-        <div class="person-role">Undergraduate Alumni</div>
+        <div class="person-role">Undergraduate alumnus</div>
         <div class="person-topic">Dynamics of Rotating Blades</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/emreeyuboglu/" target="_blank">LinkedIn Profile</a>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/emreeyuboglu/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
       </div>
-      
+
       <div class="person-card Undergraduate Alumni">
         <img src="PeoplePage/Merve Kaya.jpg" alt="Merve Kaya">
         <div class="person-name">Merve Kaya</div>
-        <div class="person-role">Undergraduate Alumni</div>
+        <div class="person-role">Undergraduate alumna</div>
         <div class="person-topic">Anomaly Detection of Rotor Bearing Systems With AI and Vibration Signals</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/mervekayaa/" target="_blank">LinkedIn Profile</a>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/mervekayaa/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
       </div>
-      
+
       <div class="person-card Undergraduate Alumni">
         <img src="PeoplePage/Kadir Sağlam.jpg" alt="Kadir Sağlam">
         <div class="person-name">Kadir Sağlam</div>
-        <div class="person-role">Undergraduate Alumni</div>
+        <div class="person-role">Undergraduate alumnus</div>
         <div class="person-topic">Health Monitoring of Rotor-Bearing Systems Based on Vibration Signals</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/saglamkadir/" target="_blank">LinkedIn Profile</a>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/saglamkadir/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
       </div>
 
-    
-
-      
     </div>
-
-    
   </div>
 
+  <!-- ========================= Filtering Script ========================= -->
   <script>
     let selectedRole = 'All';
     let selectedStatus = 'All';
-
-    function setRoleFilter(role) {
-      selectedRole = role;
-      document.querySelectorAll('.people-filter')[0].querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-      applyFilters();
-    }
-
-    function setStatusFilter(status) {
-      selectedStatus = status;
-      document.querySelectorAll('.people-filter')[1].querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-      applyFilters();
-    }
 
     function applyFilters() {
       document.querySelectorAll('.person-card').forEach(card => {
         const matchesRole = (selectedRole === 'All') || card.classList.contains(selectedRole);
         const matchesStatus = (selectedStatus === 'All') || card.classList.contains(selectedStatus);
-        if (matchesRole && matchesStatus) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
+        card.style.display = (matchesRole && matchesStatus) ? 'flex' : 'none';
       });
     }
+
+    document.querySelectorAll('[data-role]').forEach(button => {
+      button.addEventListener('click', function () {
+        selectedRole = this.dataset.role;
+        document.querySelectorAll('[data-role]').forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        applyFilters();
+      });
+    });
+
+    document.querySelectorAll('[data-status]').forEach(button => {
+      button.addEventListener('click', function () {
+        selectedStatus = this.dataset.status;
+        document.querySelectorAll('[data-status]').forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        applyFilters();
+      });
+    });
   </script>
 
+  <!-- ========================= Footer ========================= -->
   <div class="footer">
     &copy; 2025 Saeed Lotfan. All rights reserved.
   </div>
 </body>
-
 </html>
