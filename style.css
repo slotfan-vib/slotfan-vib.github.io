@@ -863,3 +863,289 @@ hr {
 }
 
 
+
+
+/* ========================================================================== 
+   HOME PAGE IMPROVEMENTS
+   Add this block to the END of style.css so homepage-specific rules override
+   older generic rules cleanly without breaking other pages.
+   ========================================================================== */
+
+.home-page {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.homepage-section {
+  margin-top: 56px;
+}
+
+.section-heading-wrap {
+  margin-bottom: 22px;
+}
+
+.section-intro {
+  margin: 0;
+  color: #5f6b7a;
+  font-size: 15px;
+}
+
+.eyebrow {
+  color: #003366;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.hero-section {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.hero-photo-card {
+  background: linear-gradient(180deg, #eef4fb 0%, #ffffff 100%);
+  border: 1px solid #d8e2ef;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0, 51, 102, 0.08);
+}
+
+.hero-photo {
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+}
+
+.hero-content h1 {
+  font-size: 38px;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.hero-lead {
+  font-size: 18px;
+  color: #334155;
+  margin-bottom: 20px;
+  max-width: 760px;
+}
+
+.hero-meta {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 22px;
+}
+
+.hero-meta p {
+  margin: 0;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background-color: #003366;
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(0, 51, 102, 0.16);
+}
+
+.btn-primary:hover {
+  background-color: #004b88;
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: #003366;
+  border: 1px solid #c9d5e3;
+}
+
+.btn-secondary:hover {
+  background-color: #eef4fb;
+}
+
+.about-grid,
+.focus-grid,
+.highlights-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.about-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.focus-grid,
+.highlights-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.info-card,
+.focus-card,
+.highlight-card {
+  background-color: #f8fbff;
+  border: 1px solid #d8e2ef;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.2s ease;
+}
+
+.info-card.visible,
+.focus-card.visible,
+.highlight-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.info-card:hover,
+.focus-card:hover,
+.highlight-card:hover {
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.info-card h3,
+.focus-card h3,
+.highlight-card h3 {
+  color: #003366;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.info-card p,
+.focus-card p,
+.highlight-card p {
+  margin: 0;
+  color: #475569;
+}
+
+.callout-card {
+  background: linear-gradient(135deg, #003366 0%, #0f4c81 100%);
+  color: #ffffff;
+  border-radius: 18px;
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.callout-card h2,
+.callout-card p {
+  color: #ffffff;
+}
+
+.callout-card h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.callout-card p {
+  margin-bottom: 0;
+  max-width: 760px;
+}
+
+.callout-card .btn-primary {
+  background-color: #ffffff;
+  color: #003366;
+  box-shadow: none;
+  white-space: nowrap;
+}
+
+.callout-card .btn-primary:hover {
+  background-color: #e7eef7;
+}
+
+.highlight-tag {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #003366;
+  background-color: #e7eef7;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Keep older timeline animation behavior compatible */
+.timeline-entry.visible,
+.news-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .hero-section,
+  .about-grid,
+  .focus-grid,
+  .highlights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .callout-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page {
+    padding: 28px 20px 40px;
+  }
+
+  .hero-photo-card {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .hero-content {
+    text-align: left;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-lead {
+    font-size: 17px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
