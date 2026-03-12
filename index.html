@@ -121,13 +121,21 @@
   <!-- =========================================================
        MAIN PAGE CONTENT
        ========================================================= -->
-  <main class="container">
+  <main class="container home-page">
 
     <!-- =======================================================
-         HERO / TOP SECTION
-         Edit here for name, title, affiliation, email, and socials.
+         HOMEPAGE INTRO PANEL
+         This block visually separates the homepage intro from the rest.
+         Edit the top section and about text inside this panel.
          ======================================================= -->
-    <header class="top-section">
+    <section class="home-intro-panel" aria-labelledby="home-intro-heading">
+      <h2 id="home-intro-heading" class="visually-hidden">Homepage Introduction</h2>
+
+      <!-- =======================================================
+           HERO / TOP SECTION
+           Edit here for name, title, affiliation, email, and socials.
+           ======================================================= -->
+      <header class="top-section">
       <div class="profile-pic">
         <img src="profile.jpg" alt="Saeed Lotfan">
       </div>
@@ -194,8 +202,9 @@
         of machine learning techniques into these domains.
       </p>
     </section>
+    </section>
 
-    <hr>
+    <hr class="section-divider">
 
     <!-- =======================================================
          ACADEMIC & EDUCATION TIMELINE
@@ -255,8 +264,9 @@
         </div>
       </div>
     </section>
+    </section>
 
-    <hr>
+    <hr class="section-divider">
 
     <!-- =======================================================
          NEWS SECTION
