@@ -1,215 +1,190 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-  <meta charset="utf-8"/>
-  <title>Saeed Lotfan | Assistant Professor at GTU | Mechanical Engineering</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Language" content="en" />
+  <title>Saeed Lotfan | Assistant Professor | Mechanical Vibrations, Structural Dynamics, Nonlinear Mechanics</title>
+  <meta name="description" content="Official academic website of Saeed Lotfan, Assistant Professor of Mechanical Engineering at Gebze Technical University. Research in mechanical vibrations, structural dynamics, nonlinear mechanics, reduced-order modeling, inverse problems, and computational mechanics." />
+  <meta name="keywords" content="Saeed Lotfan, mechanical engineering, mechanical vibrations, structural dynamics, nonlinear mechanics, reduced-order modeling, inverse problems, structural health monitoring, computational mechanics, Gebze Technical University" />
+  <meta name="author" content="Saeed Lotfan" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://saeedlotfan.com/" />
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Saeed Lotfan, Assistant Professor at Gebze Technical University. Research in vibrations, nonlinear vibrations, structural dynamics, and computational mechanics.">
-  <meta name="keywords" content="Saeed Lotfan, mechanical engineering, nonlinear vibrations, structural dynamics, GTU, Gebze Technical University, research, machine learning in mechanics, postdoc positions">
-  <meta name="author" content="Saeed Lotfan">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Language" content="en">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Saeed Lotfan | Mechanical Vibrations and Structural Dynamics" />
+  <meta property="og:description" content="Assistant Professor at Gebze Technical University working on mechanical vibrations, nonlinear dynamics, computational mechanics, and inverse problems." />
+  <meta property="og:url" content="https://saeedlotfan.com/" />
+  <meta property="og:image" content="https://saeedlotfan.com/profile.jpg" />
+  <meta property="og:site_name" content="Saeed Lotfan" />
 
-  <!-- Open Graph for social sharing -->
-  <meta property="og:title" content="Saeed Lotfan – Mechanical Engineering Researcher">
-  <meta property="og:description" content="Research in vibrations, structural dynamics, nonlinear vibrations, and high-fidelity simulations.">
-  <meta property="og:image" content="https://slotfan-vib.github.io/profile.jpg">
-  <meta property="og:url" content="https://slotfan-vib.github.io/">
-  <meta name="twitter:card" content="summary_large_image">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Saeed Lotfan | Mechanical Vibrations and Structural Dynamics" />
+  <meta name="twitter:description" content="Official academic website of Saeed Lotfan, Assistant Professor at Gebze Technical University." />
+  <meta name="twitter:image" content="https://saeedlotfan.com/profile.jpg" />
 
-  <!-- Favicon (optional) -->
-  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
 
-  <!-- Main CSS -->
-  <link href="style.css" rel="stylesheet"/>
+  <!-- Structured data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Saeed Lotfan",
+    "url": "https://saeedlotfan.com/",
+    "image": "https://saeedlotfan.com/profile.jpg",
+    "jobTitle": "Assistant Professor",
+    "worksFor": {
+      "@type": "CollegeOrUniversity",
+      "name": "Gebze Technical University"
+    },
+    "department": "Department of Mechanical Engineering",
+    "email": "mailto:slotfan@gtu.edu.tr",
+    "sameAs": [
+      "https://scholar.google.com/citations?user=_agboNoAAAAJ&hl=en",
+      "https://www.researchgate.net/profile/Saeed-Lotfan",
+      "https://www.linkedin.com/in/saeed-lotfan-47357898/",
+      "https://youtube.com/@saeedlotfan",
+      "https://github.com/slotfan-vib"
+    ],
+    "knowsAbout": [
+      "Mechanical vibrations",
+      "Structural dynamics",
+      "Nonlinear mechanics",
+      "Reduced-order modeling",
+      "Computational mechanics",
+      "Inverse problems",
+      "Structural health monitoring"
+    ]
+  }
+  </script>
 </head>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const entries = document.querySelectorAll('.timeline-entry, .news-item');
-    const observer = new IntersectionObserver((entriesList) => {
-      entriesList.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    entries.forEach(entry => observer.observe(entry));
-  });
- </script>
 <body>
+  <!-- ========================= GLOBAL NAVIGATION ========================= -->
+  <nav class="navbar" aria-label="Main navigation">
+    <a href="index.html" class="active" aria-current="page">Home</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="people.html">People</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-<div class="navbar">
-  <a href="index.html" class="active">Home</a>
-  <a href="research.html">Research</a>
-  <a href="publications.html">Publications</a>
-  <a href="teaching.html">Teaching</a>
-  <a href="people.html">People</a>
-  <a href="contact.html">Contact</a>
-</div>
+  <main class="container home-page">
+    <!-- ========================= HERO SECTION ========================= -->
+    <section class="hero-section" aria-labelledby="home-title">
+      <div class="hero-photo-card">
+        <img src="profile.jpg" alt="Portrait of Saeed Lotfan" class="hero-photo" />
+      </div>
 
-<div class="container">
-<!-- Name + Title + Socials -->
-<div class="top-section">
-<div class="profile-pic">
-<img alt="Saeed Lotfan" src="profile.jpg"/>
-</div>
-<div class="bio">
-<h1>
-      Saeed Lotfan
-     </h1>
-<p>
-      Faculty Member at
-      <a href="https://www.gtu.edu.tr/" target="_blank">
-       Gebze Technical University
-      </a>
-<br/>
-      Department of Mechanical Engineering
-     </p>
-<!-- Email -->
-<p>
-<a href="mailto:slotfan@gtu.edu.tr">
-       slotfan@gtu.edu.tr
-      </a>
-</p>
-<!-- Social icons -->
-<div class="social-icons">
-<a href="https://scholar.google.com/citations?user=_agboNoAAAAJ&amp;hl=en/" target="blank">
-<img alt="Google Scholar" src="icons/scholar.png"/>
-</a>
-<a href="https://www.researchgate.net/profile/Saeed-Lotfan?ev=hdr_xprf/" target="blank">
-<img alt="ResearchGate" src="icons/rg.png"/>
-</a>
-<a href="https://www.linkedin.com/in/saeed-lotfan-47357898/?originalSubdomain=ir/" target="blank">
-<img alt="LinkedIn" src="icons/lin.png"/>
-</a>
-<a href="https://youtube.com/@saeedlotfan?si=trh394KMYbhJ3Kip/" target="blank">
-<img alt="YouTube" src="icons/YouTube.png"/>
-</a>
-<a href="https://github.com/slotfan-vib/" target="blank">
-<img alt="GitHub" src="icons/github.png"/>
-</a>
-</div>
-</div>
-</div>
-<!-- About Section -->
-<div class="about-section">
-<p>
-     I am an Assistant Professor in the Department of Mechanical Engineering at
-     <a href="https://www.gtu.edu.tr/" target="_blank">
-      Gebze Technical University</a>. I earned my B.S., M.S., and Ph.D. degrees in Mechanical Engineering at
-     <a href="https://tabrizu.ac.ir/en" target="_blank">
-      University of Tabriz</a>, Tabriz, Iran in 2012, 2014, and 2018, respectively. I later joined
-     <a href="https://www.sabanciuniv.edu/en" target="_blank">Sabanci University</a> in Istanbul, Turkey 
-        as a postdoctoral researcher.
-    </p>
-</div>
-<div class="about-section">
-<p>
-     My primary research interests center on mechanical vibrations, with a particular emphasis
-        on both linear and nonlinear systems. I focus on the development of advanced mathematical
-        models and efficient numerical methods to accurately characterize the complex dynamic 
-        behavior of structural systems. My work further encompasses reduced-order modeling in
-        nonlinear mechanics, signal processing for inverse problems and structural health monitoring,
-        computational mechanics for high-fidelity simulations, and the integration of machine learning
-        techniques into these domains.
-    </p>
-</div>
-<hr/>
-<!-- Timeline for Academic and Education -->
-<h2>
-    Academic &amp; Education Timeline
-   </h2>
-<div class="timeline-block">
-<div class="timeline-entry left">
-<div class="timeline-badge">
-<div class="institution">
-       Gebze Technical University
+      <div class="hero-content">
+        <p class="eyebrow">Assistant Professor · Mechanical Engineering · Gebze Technical University</p>
+        <h1 id="home-title">Mechanical vibrations, structural dynamics, and nonlinear computational mechanics</h1>
+        <p class="hero-lead">
+          I develop high-fidelity mathematical and numerical models for linear and nonlinear structural systems,
+          with emphasis on vibration analysis, reduced-order modeling, inverse problems, and data-enabled mechanics.
+        </p>
+
+        <div class="hero-meta" aria-label="Professional details">
+          <p><strong>Affiliation:</strong> Department of Mechanical Engineering, <a href="https://www.gtu.edu.tr/" target="_blank" rel="noopener noreferrer">Gebze Technical University</a></p>
+          <p><strong>Email:</strong> <a href="mailto:slotfan@gtu.edu.tr">slotfan@gtu.edu.tr</a></p>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="research.html">Explore Research</a>
+          <a class="btn btn-secondary" href="publications.html">View Publications</a>
+          <a class="btn btn-secondary" href="contact.html">Contact</a>
+        </div>
+
+        <div class="social-icons" aria-label="External profiles">
+          <a href="https://scholar.google.com/citations?user=_agboNoAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
+            <img src="icons/scholar.png" alt="Google Scholar" />
+          </a>
+          <a href="https://www.researchgate.net/profile/Saeed-Lotfan" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate">
+            <img src="icons/rg.png" alt="ResearchGate" />
+          </a>
+          <a href="https://www.linkedin.com/in/saeed-lotfan-47357898/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <img src="icons/lin.png" alt="LinkedIn" />
+          </a>
+          <a href="https://youtube.com/@saeedlotfan" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <img src="icons/YouTube.png" alt="YouTube" />
+          </a>
+          <a href="https://github.com/slotfan-vib" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <img src="icons/github.png" alt="GitHub" />
+          </a>
+        </div>
       </div>
-<div class="duration">
-       2022 – Present
+    </section>
+
+    <!-- ========================= QUICK SUMMARY ========================= -->
+    <section class="homepage-section" aria-labelledby="about-heading">
+      <div class="section-heading-wrap">
+        <h2 id="about-heading">About</h2>
+        <p class="section-intro">A concise overview for visitors, collaborators, and prospective students.</p>
       </div>
-<div class="position-title">
-       Assistant Professor
+
+      <div class="about-grid">
+        <div class="info-card">
+          <h3>Background</h3>
+          <p>
+            I am an Assistant Professor in the Department of Mechanical Engineering at
+            <a href="https://www.gtu.edu.tr/" target="_blank" rel="noopener noreferrer">Gebze Technical University</a>.
+            I received my B.S., M.S., and Ph.D. degrees in Mechanical Engineering from
+            <a href="https://tabrizu.ac.ir/en" target="_blank" rel="noopener noreferrer">the University of Tabriz</a>
+            in 2012, 2014, and 2018, respectively, and later worked as a postdoctoral researcher at
+            <a href="https://www.sabanciuniv.edu/en" target="_blank" rel="noopener noreferrer">Sabancı University</a>.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Current focus</h3>
+          <p>
+            My work centers on vibration-driven mechanics problems that require strong physical modeling,
+            efficient numerical methods, and interpretable computational tools. I am particularly interested in
+            nonlinear structural dynamics, reduced-order models, inverse problems, and mechanics-informed data analysis.
+          </p>
+        </div>
       </div>
-<div class="subtext">
-       Department of Mechanical Engineering
+    </section>
+
+    <!-- ========================= RESEARCH SNAPSHOT ========================= -->
+    <section class="homepage-section" aria-labelledby="focus-heading">
+      <div class="section-heading-wrap">
+        <h2 id="focus-heading">Research focus</h2>
+        <p class="section-intro">Core topics presented in a way that is easy to scan and easy to update later.</p>
       </div>
-</div>
-</div>
-<div class="timeline-entry right">
-<div class="timeline-badge">
-<div class="institution">
-       Sabanci University
+
+      <div class="focus-grid">
+        <article class="focus-card">
+          <h3>Mechanical vibrations</h3>
+          <p>Modeling and analysis of vibration behavior in engineering structures and rotating components.</p>
+        </article>
+
+        <article class="focus-card">
+          <h3>Nonlinear structural dynamics</h3>
+          <p>High-fidelity formulations for geometrically nonlinear systems, modal interactions, and complex dynamic responses.</p>
+        </article>
+
+        <article class="focus-card">
+          <h3>Reduced-order and computational modeling</h3>
+          <p>Efficient numerical methods that preserve physical accuracy while reducing model complexity and cost.</p>
+        </article>
+
+        <article class="focus-card">
+          <h3>Inverse problems and data-enabled mechanics</h3>
+          <p>Signal processing and computational tools for structural identification, health monitoring, and model-informed learning.</p>
+        </article>
       </div>
-<div class="duration">
-       2020 – 2022
-      </div>
-<div class="position-title">
-       Postdoctoral Researcher
-      </div>
-<div class="subtext">
-       Faculty of Engineering and Natural Sciences
-      </div>
-</div>
-</div>
-<div class="timeline-entry left">
-<div class="timeline-badge">
-<div class="institution">
-       University of Tabriz
-      </div>
-<div class="duration">
-       2014 – 2018
-      </div>
-<div class="position-title">
-       Ph.D. Student
-      </div>
-<div class="subtext">
-       Department of Mechanical Engineering,
-       <br/>
-       Vibration and Modal Analysis Lab.
-      </div>
-</div>
-</div>
-<div class="timeline-entry right">
-<div class="timeline-badge">
-<div class="institution">
-       University of Tabriz
-      </div>
-<div class="duration">
-       2012 – 2014
-      </div>
-<div class="position-title">
-       M.S. Student
-      </div>
-<div class="subtext">
-       Department of Mechanical Engineering
-      </div>
-</div>
-</div>
-<div class="timeline-entry left">
-<div class="timeline-badge">
-<div class="institution">
-       University of Tabriz
-      </div>
-<div class="duration">
-       2008 – 2012
-      </div>
-<div class="position-title">
-       B.S. Student
-      </div>
-<div class="subtext">
-       Department of Mechanical Engineering
-      </div>
-</div>
-</div>
-</div>
-<hr/>
-<!----------------------------------------- News Section ------------------------------------------->
+    </section>
+
+
+    
+    
+    
+<!-- ========================= OPPORTUNITIES ========================= -->
 <h2>
     News
    </h2>
@@ -429,6 +404,7 @@
   © 2025 Saeed Lotfan. All rights reserved.
  </div>
 </html>
+
 
 
 
