@@ -1,34 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- =========================================================
-       BASIC DOCUMENT META
-       ========================================================= -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Language" content="en">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Saeed Lotfan">
 
-  <!-- =========================================================
-       PAGE TITLE + SEO META
-       Keep title under ~60 characters if possible.
-       Keep description around 150–160 characters.
-       ========================================================= -->
   <title>Saeed Lotfan | Assistant Professor | Mechanical Vibrations &amp; Structural Dynamics</title>
   <meta name="description" content="Saeed Lotfan is an Assistant Professor at Gebze Technical University working on mechanical vibrations, nonlinear dynamics, structural dynamics, and computational mechanics.">
   <meta name="keywords" content="Saeed Lotfan, mechanical engineering, mechanical vibrations, nonlinear dynamics, structural dynamics, computational mechanics, Gebze Technical University, GTU, reduced-order modeling, structural health monitoring">
-
-  <!-- =========================================================
-       CANONICAL URL
-       Use the live domain instead of the old GitHub Pages address.
-       ========================================================= -->
   <link rel="canonical" href="https://saeedlotfan.com/">
 
-  <!-- =========================================================
-       OPEN GRAPH / SOCIAL SHARING
-       These help when the homepage is shared on LinkedIn, X, etc.
-       ========================================================= -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Saeed Lotfan">
   <meta property="og:title" content="Saeed Lotfan | Assistant Professor | Mechanical Vibrations &amp; Structural Dynamics">
@@ -37,29 +20,14 @@
   <meta property="og:image" content="https://saeedlotfan.com/profile.jpg">
   <meta property="og:image:alt" content="Portrait of Saeed Lotfan">
 
-  <!-- =========================================================
-       TWITTER / X CARD
-       ========================================================= -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Saeed Lotfan | Assistant Professor | Mechanical Vibrations &amp; Structural Dynamics">
   <meta name="twitter:description" content="Research in mechanical vibrations, nonlinear dynamics, structural dynamics, and computational mechanics.">
   <meta name="twitter:image" content="https://saeedlotfan.com/profile.jpg">
 
-  <!-- =========================================================
-       FAVICON
-       Keep/remove depending on whether favicon.png exists.
-       ========================================================= -->
   <link rel="icon" href="favicon.png" type="image/png">
-
-  <!-- =========================================================
-       MAIN STYLESHEET
-       ========================================================= -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- =========================================================
-       STRUCTURED DATA (JSON-LD)
-       Helps search engines understand this as a personal academic site.
-       ========================================================= -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -84,10 +52,6 @@
   }
   </script>
 
-  <!-- =========================================================
-       HOMEPAGE ANIMATION SCRIPT
-       Keeps timeline/news fade-in effect.
-       ========================================================= -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const animatedItems = document.querySelectorAll('.timeline-entry, .news-item');
@@ -106,9 +70,6 @@
 </head>
 
 <body>
-  <!-- =========================================================
-       SITE NAVIGATION
-       ========================================================= -->
   <nav class="navbar" aria-label="Main navigation">
     <a href="index.html" class="active" aria-current="page">Home</a>
     <a href="research.html">Research</a>
@@ -118,99 +79,77 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- =========================================================
-       MAIN PAGE CONTENT
-       ========================================================= -->
   <main class="container home-page">
-
-    <!-- =======================================================
-         HOMEPAGE INTRO PANEL
-         This block visually separates the homepage intro from the rest.
-         Edit the top section and about text inside this panel.
-         ======================================================= -->
     <section class="home-intro-panel" aria-labelledby="home-intro-heading">
       <h2 id="home-intro-heading" class="visually-hidden">Homepage Introduction</h2>
 
-      <!-- =======================================================
-           HERO / TOP SECTION
-           Edit here for name, title, affiliation, email, and socials.
-           ======================================================= -->
       <header class="top-section">
-      <div class="profile-pic">
-        <img src="profile.jpg" alt="Saeed Lotfan">
-      </div>
-
-      <div class="bio">
-        <h1>Saeed Lotfan</h1>
-
-        <p>
-          Assistant Professor at
-          <a href="https://www.gtu.edu.tr/" target="_blank" rel="noopener noreferrer">Gebze Technical University</a>
-          <br>
-          Department of Mechanical Engineering
-        </p>
-
-        <p>
-          <a href="mailto:slotfan@gtu.edu.tr">slotfan@gtu.edu.tr</a>
-        </p>
-
-        <div class="social-icons" aria-label="Academic and social links">
-          <a href="https://scholar.google.com/citations?user=_agboNoAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
-            <img src="icons/scholar.png" alt="Google Scholar">
-          </a>
-          <a href="https://www.researchgate.net/profile/Saeed-Lotfan" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate">
-            <img src="icons/rg.png" alt="ResearchGate">
-          </a>
-          <a href="https://www.linkedin.com/in/saeed-lotfan-47357898/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <img src="icons/lin.png" alt="LinkedIn">
-          </a>
-          <a href="https://youtube.com/@saeedlotfan" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-            <img src="icons/YouTube.png" alt="YouTube">
-          </a>
-          <a href="https://github.com/slotfan-vib" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <img src="icons/github.png" alt="GitHub">
-          </a>
+        <div class="profile-pic">
+          <img src="profile.jpg" alt="Saeed Lotfan">
         </div>
-      </div>
-    </header>
 
-    <!-- =======================================================
-         ABOUT SECTION
-         Edit biography / research summary paragraphs here.
-         ======================================================= -->
-    <section class="about-section" aria-labelledby="about-heading" id="about">
-      <h2 id="about-heading" style="display:none;">About</h2>
-      <p>
-        I am an Assistant Professor in the Department of Mechanical Engineering at
-        <a href="https://www.gtu.edu.tr/" target="_blank" rel="noopener noreferrer">Gebze Technical University</a>.
-        I earned my B.S., M.S., and Ph.D. degrees in Mechanical Engineering at
-        <a href="https://tabrizu.ac.ir/en" target="_blank" rel="noopener noreferrer">University of Tabriz</a>,
-        Tabriz, Iran in 2012, 2014, and 2018, respectively. I later joined
-        <a href="https://www.sabanciuniv.edu/en" target="_blank" rel="noopener noreferrer">Sabancı University</a>
-        in Istanbul, Turkey as a postdoctoral researcher.
-      </p>
-    </section>
+        <div class="bio">
+          <h1>Saeed Lotfan</h1>
 
-    <section class="about-section" aria-labelledby="research-summary-heading" id="research-summary">
-      <h2 id="research-summary-heading" style="display:none;">Research Summary</h2>
-      <p>
-        My primary research interests center on mechanical vibrations, with a particular emphasis on both
-        linear and nonlinear systems. I focus on the development of advanced mathematical models and efficient
-        numerical methods to accurately characterize the complex dynamic behavior of structural systems. My work
-        further encompasses reduced-order modeling in nonlinear mechanics, signal processing for inverse problems
-        and structural health monitoring, computational mechanics for high-fidelity simulations, and the integration
-        of machine learning techniques into these domains.
-      </p>
-    </section>
+          <p>
+            Assistant Professor at
+            <a href="https://www.gtu.edu.tr/" target="_blank" rel="noopener noreferrer">Gebze Technical University</a>
+            <br>
+            Department of Mechanical Engineering
+          </p>
+
+          <p>
+            <a href="mailto:slotfan@gtu.edu.tr">slotfan@gtu.edu.tr</a>
+          </p>
+
+          <div class="social-icons" aria-label="Academic and social links">
+            <a href="https://scholar.google.com/citations?user=_agboNoAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
+              <img src="icons/scholar.png" alt="Google Scholar">
+            </a>
+            <a href="https://www.researchgate.net/profile/Saeed-Lotfan" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate">
+              <img src="icons/rg.png" alt="ResearchGate">
+            </a>
+            <a href="https://www.linkedin.com/in/saeed-lotfan-47357898/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <img src="icons/lin.png" alt="LinkedIn">
+            </a>
+            <a href="https://youtube.com/@saeedlotfan" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <img src="icons/YouTube.png" alt="YouTube">
+            </a>
+            <a href="https://github.com/slotfan-vib" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <img src="icons/github.png" alt="GitHub">
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <section class="about-section" aria-labelledby="about-heading" id="about">
+        <h2 id="about-heading" class="visually-hidden">About</h2>
+        <p>
+          I am an Assistant Professor in the Department of Mechanical Engineering at
+          <a href="https://www.gtu.edu.tr/" target="_blank" rel="noopener noreferrer">Gebze Technical University</a>.
+          I earned my B.S., M.S., and Ph.D. degrees in Mechanical Engineering at
+          <a href="https://tabrizu.ac.ir/en" target="_blank" rel="noopener noreferrer">University of Tabriz</a>,
+          Tabriz, Iran in 2012, 2014, and 2018, respectively. I later joined
+          <a href="https://www.sabanciuniv.edu/en" target="_blank" rel="noopener noreferrer">Sabancı University</a>
+          in Istanbul, Turkey as a postdoctoral researcher.
+        </p>
+      </section>
+
+      <section class="about-section" aria-labelledby="research-summary-heading" id="research-summary">
+        <h2 id="research-summary-heading" class="visually-hidden">Research Summary</h2>
+        <p>
+          My primary research interests center on mechanical vibrations, with a particular emphasis on both
+          linear and nonlinear systems. I focus on the development of advanced mathematical models and efficient
+          numerical methods to accurately characterize the complex dynamic behavior of structural systems. My work
+          further encompasses reduced-order modeling in nonlinear mechanics, signal processing for inverse problems
+          and structural health monitoring, computational mechanics for high-fidelity simulations, and the integration
+          of machine learning techniques into these domains.
+        </p>
+      </section>
     </section>
 
     <hr class="section-divider">
 
-    <!-- =======================================================
-         ACADEMIC & EDUCATION TIMELINE
-         Add/remove timeline entries inside .timeline-block.
-         Keep left/right class pattern for alternating layout.
-         ======================================================= -->
     <section aria-labelledby="timeline-heading" id="timeline">
       <h2 id="timeline-heading">Academic &amp; Education Timeline</h2>
 
@@ -264,24 +203,13 @@
         </div>
       </div>
     </section>
-    </section>
 
     <hr class="section-divider">
 
-    <!-- =======================================================
-         NEWS SECTION
-         ADDING A NEW NEWS ITEM:
-         1) Copy one complete <div class="news-item"> ... </div>
-         2) Paste it directly BELOW the featured news item if it is new.
-         3) Keep newest items near the top.
-         4) Update date, title, description, and image path.
-         ======================================================= -->
     <section aria-labelledby="news-heading" id="news">
       <h2 id="news-heading">News</h2>
 
       <div class="news-list">
-
-        <!-- ===== FEATURED NEWS ITEM ===== -->
         <div class="news-item featured-news">
           <div class="news-date">2026</div>
           <div class="news-content">
@@ -294,8 +222,6 @@
           <img src="newsimages/GTU.png" alt="GTU" class="news-thumbnail">
         </div>
 
-        <!-- ===== INSERT NEW NEWS ITEMS BELOW THIS LINE ===== -->
-
         <div class="news-item">
           <div class="news-date">February<br>2026</div>
           <div class="news-content">
@@ -307,7 +233,7 @@
           </div>
           <img src="newsimages/Tubitak1001-2025.svg" alt="TÜBİTAK 1001 project" class="news-thumbnail">
         </div>
-        
+
         <div class="news-item">
           <div class="news-date">October<br>2025</div>
           <div class="news-content">
@@ -477,13 +403,8 @@
     </section>
   </main>
 
-  <!-- =========================================================
-       FOOTER
-       ========================================================= -->
   <footer class="footer">
     © 2026 Saeed Lotfan. All rights reserved.
   </footer>
 </body>
 </html>
-
-
