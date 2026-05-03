@@ -1,0 +1,106 @@
+/* Shared visual polish for consistent academic cards, filters, and panels. */
+:root {
+  --site-blue: #003366;
+  --site-blue-soft: #eaf0f8;
+  --site-panel: #f8fafc;
+  --site-border: #dbe4ee;
+  --site-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --site-shadow-hover: 0 6px 16px rgba(0, 51, 102, 0.10);
+  --site-radius: 8px;
+}
+
+.container {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
+}
+
+.home-intro-panel,
+.lecture-section,
+.teaching-section,
+.contact-info,
+.interests-box {
+  border: 1px solid var(--site-border) !important;
+  border-radius: var(--site-radius) !important;
+  box-shadow: var(--site-shadow) !important;
+}
+
+.news-item,
+.timeline-badge,
+.project-card,
+.publication-card,
+.teaching-card,
+.person-card {
+  background-color: var(--site-panel) !important;
+  border-radius: var(--site-radius) !important;
+  box-shadow: var(--site-shadow) !important;
+}
+
+.news-item,
+.publication-card,
+.teaching-card,
+.person-card {
+  border-left: 4px solid var(--site-blue) !important;
+}
+
+.project-card {
+  border: 1px solid var(--site-border) !important;
+  border-left: 4px solid var(--site-blue) !important;
+}
+
+.news-item:hover,
+.timeline-badge:hover,
+.project-card:hover,
+.publication-card:hover,
+.teaching-card:hover,
+.person-card:hover {
+  background-color: #eef4fb !important;
+  box-shadow: var(--site-shadow-hover) !important;
+  transform: translateY(-2px) !important;
+}
+
+.featured-news {
+  border: 1px solid var(--site-border) !important;
+  border-left: 4px solid var(--site-blue) !important;
+  background: linear-gradient(to right, var(--site-blue-soft), #ffffff) !important;
+}
+
+.filter-btn,
+.materials-toggle,
+.role-badge,
+.pub-tag,
+.news-date,
+.tag-list span,
+.timeline-badge .duration {
+  border-radius: 6px !important;
+}
+
+.filter-btn,
+.materials-toggle {
+  border: 1px solid var(--site-blue) !important;
+  background-color: #ffffff !important;
+  color: var(--site-blue) !important;
+  font-weight: 600 !important;
+}
+
+.filter-btn.active,
+.filter-btn:hover,
+.materials-toggle:hover {
+  background-color: var(--site-blue) !important;
+  color: #ffffff !important;
+}
+
+.news-thumbnail,
+.project-card img,
+.pub-figure img,
+.profile-pic img {
+  border-radius: var(--site-radius) !important;
+}
+
+@media (max-width: 768px) {
+  .news-item,
+  .project-card,
+  .publication-card,
+  .teaching-card,
+  .person-card {
+    padding: 16px !important;
+  }
+}
