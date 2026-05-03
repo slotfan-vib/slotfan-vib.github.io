@@ -104,3 +104,35 @@
     padding: 16px !important;
   }
 }
+
+@media (max-width: 640px) {
+  .navbar {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    padding: 8px !important;
+  }
+
+  .navbar a {
+    display: block !important;
+    width: 100%;
+    min-width: 0;
+    padding: 8px 6px !important;
+    font-size: 13px !important;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 380px) {
+  .navbar {
+    gap: 5px;
+    padding: 6px !important;
+  }
+
+  .navbar a {
+    padding: 7px 4px !important;
+    font-size: 12px !important;
+  }
+}
