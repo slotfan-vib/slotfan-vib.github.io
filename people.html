@@ -107,6 +107,22 @@
     .linkedin-link:hover {
       text-decoration: underline;
     }
+
+    .people-empty-state {
+      margin-top: 22px;
+      padding: 18px 20px;
+      border-left: 4px solid #003366;
+      border-radius: 8px;
+      background-color: #f8fafc;
+      color: #555;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .people-empty-state strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #003366;
+    }
   </style>
 
   <!-- ========================= Structured Data ========================= -->
@@ -238,6 +254,11 @@
       </div>
 
     </div>
+
+    <div id="people-empty-state" class="people-empty-state" hidden aria-live="polite">
+      <strong>No people found</strong>
+      <span id="people-empty-text">No people match the selected filters.</span>
+    </div>
   </div>
 
   <!-- ========================= Filtering Script ========================= -->
@@ -245,12 +266,33 @@
     let selectedRole = 'All';
     let selectedStatus = 'All';
 
+    function getEmptyStateMessage() {
+      if (selectedStatus === 'Current' && selectedRole === 'All') {
+        return 'No current members are listed at the moment. Please check back later or contact me for openings.';
+      }
+      if (selectedStatus === 'Current') {
+        return `No current ${selectedRole.toLowerCase()} members are listed at the moment.`;
+      }
+      if (selectedRole !== 'All') {
+        return `No ${selectedRole.toLowerCase()} people match the selected status.`;
+      }
+      return 'No people match the selected filters.';
+    }
+
     function applyFilters() {
+      let visibleCount = 0;
       document.querySelectorAll('.person-card').forEach(card => {
         const matchesRole = (selectedRole === 'All') || card.classList.contains(selectedRole);
         const matchesStatus = (selectedStatus === 'All') || card.classList.contains(selectedStatus);
-        card.style.display = (matchesRole && matchesStatus) ? 'flex' : 'none';
+        const isVisible = matchesRole && matchesStatus;
+        card.style.display = isVisible ? 'flex' : 'none';
+        if (isVisible) visibleCount += 1;
       });
+
+      const emptyState = document.getElementById('people-empty-state');
+      const emptyText = document.getElementById('people-empty-text');
+      emptyState.hidden = visibleCount !== 0;
+      emptyText.textContent = getEmptyStateMessage();
     }
 
     document.querySelectorAll('[data-role]').forEach(button => {
