@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" role="img" aria-labelledby="title desc">
+  <title id="title">TÜBİTAK 2209-A and 2209-B Student Projects</title>
+  <desc id="desc">Academic news graphic for accepted TÜBİTAK 2209-A and 2209-B student research projects.</desc>
+  <rect width="720" height="420" rx="24" fill="#f7fbff"/>
+  <rect x="28" y="28" width="664" height="364" rx="20" fill="#ffffff" stroke="#dbe4ee" stroke-width="3"/>
+  <rect x="28" y="28" width="664" height="92" rx="20" fill="#003366"/>
+  <path d="M28 96h664v36H28z" fill="#003366"/>
+  <text x="58" y="84" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700">TÜBİTAK 2209</text>
+  <text x="58" y="151" fill="#003366" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700">Student Projects</text>
+  <text x="58" y="193" fill="#26384d" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="600">Accepted for 2209-A and 2209-B funding</text>
+  <g transform="translate(58 230)">
+    <rect width="176" height="76" rx="12" fill="#eaf0f8" stroke="#b9c8d9" stroke-width="2"/>
+    <text x="26" y="47" fill="#003366" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">2209-A</text>
+  </g>
+  <g transform="translate(254 230)">
+    <rect width="176" height="76" rx="12" fill="#eaf0f8" stroke="#b9c8d9" stroke-width="2"/>
+    <text x="26" y="47" fill="#003366" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">2209-B</text>
+  </g>
+  <g transform="translate(504 204)">
+    <circle cx="54" cy="54" r="52" fill="#f1f7ff" stroke="#b9c8d9" stroke-width="3"/>
+    <path d="M54 22l9.5 19.2 21.2 3.1-15.3 14.9 3.6 21.1L54 70.3 35 80.3l3.6-21.1-15.3-14.9 21.2-3.1L54 22z" fill="#003366"/>
+  </g>
+  <line x1="58" y1="334" x2="662" y2="334" stroke="#dbe4ee" stroke-width="2"/>
+  <text x="58" y="367" fill="#5f6f80" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600">Gebze Technical University | Mechanical Engineering</text>
+</svg>
