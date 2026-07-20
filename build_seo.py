@@ -24,7 +24,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 TODAY = date.today().isoformat()
 
 # ORCID iD, e.g. "0000-0002-1825-0097". Leave "" to omit ORCID markup.
-ORCID = ""
+ORCID = "0000-0001-8616-2120"
 
 STATIC_PAGES = [
     ("index.html", "1.0", "weekly"),
@@ -138,13 +138,21 @@ def build_paper_page(pub, slug):
         meta.append(f'<meta name="citation_abstract_html_url" content="{esc(source)}">')
     citation_meta = "\n  ".join(meta)
 
-    # JSON-LD ScholarlyArticle
+    # JSON-LD ScholarlyArticle — attach ORCID to the site owner's author entry.
+    def author_node(name):
+        node = {"@type": "Person", "name": name}
+        if ORCID and name.lower().startswith("lotfan"):
+            node["url"] = f"{SITE}/"
+            node["identifier"] = f"https://orcid.org/{ORCID}"
+            node["sameAs"] = f"https://orcid.org/{ORCID}"
+        return node
+
     jsonld = {
         "@context": "https://schema.org",
         "@type": "ScholarlyArticle",
         "headline": title,
         "name": title,
-        "author": [{"@type": "Person", "name": a} for a in authors],
+        "author": [author_node(a) for a in authors],
         "isPartOf": {"@type": "Periodical", "name": venue},
         "abstract": pub["abstract"],
         "url": url,
@@ -154,9 +162,6 @@ def build_paper_page(pub, slug):
     if doi:
         jsonld["identifier"] = {"@type": "PropertyValue", "propertyName": "DOI", "value": doi}
         jsonld["sameAs"] = f"https://doi.org/{doi}"
-    author_page = {"@type": "Person", "name": "Saeed Lotfan", "url": f"{SITE}/"}
-    if ORCID:
-        author_page["identifier"] = f"https://orcid.org/{ORCID}"
 
     type_label = {"Journal": "Journal Article", "Conference": "Conference Paper"}.get(
         pub["type"], pub["type"]
