@@ -48,157 +48,36 @@
   }
   </script>
 
-  <!-- ========================= STYLES ========================= -->
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* ==========================================================
-       TEACHING PAGE ONLY
-       Keep page-specific rules here so future edits are easy.
-       ========================================================== */
-
-    .role-badge {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 500;
-      padding: 2px 8px;
-      border-radius: 12px;
-      color: white;
-      background-color: #2a5298;
-      margin-left: 10px;
-    }
-
-    .Lecturer { background-color: #4e9fd1; }
-    .TA { background-color: #6c757d; }
-    .Invited { background-color: #9b59b6; }
-
-    .teaching-section {
-      background-color: #eaf4fb;
-      padding: 30px;
-      border-radius: 10px;
-      margin-bottom: 40px;
-    }
-
-    .teaching-card {
-      background-color: #f3f7fb;
-      border-left: 4px solid #4e9fd1;
-      padding: 16px 20px;
-      border-radius: 10px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-      margin-bottom: 24px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      position: relative;
-    }
-
-    .teaching-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-
-    .teaching-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      margin-bottom: 8px;
-    }
-
-    .course-title {
-      font-weight: 600;
-      font-size: 16px;
-      color: #003366;
-    }
-
-    .teaching-semester {
-      font-size: 14px;
-      color: #777;
-      margin-left: auto;
-    }
-
-    .teaching-desc {
-      font-size: 14px;
-      color: #444;
-      margin-top: 4px;
-    }
-
-    .materials-toggle {
-      background-color: #eaf0f8;
-      border: none;
-      color: #003366;
-      font-size: 13px;
-      padding: 6px 12px;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    .materials-list {
-      display: none;
-      margin-top: 10px;
-      padding-left: 16px;
-    }
-
-    .materials-list a {
-      display: block;
-      font-size: 14px;
-      color: #1a4f8b;
-      text-decoration: none;
-      margin-bottom: 4px;
-    }
-
-    .materials-list a:hover {
-      text-decoration: underline;
-    }
-
-    .tag-list {
-      position: absolute;
-      bottom: 10px;
-      right: 20px;
-    }
-
-    .tag-list span {
-      display: inline-block;
-      background-color: #e4ecf7;
-      color: #003366;
-      border-radius: 12px;
-      padding: 2px 8px;
-      font-size: 12px;
-      margin-left: 6px;
-    }
-
-    .teaching-philosophy {
-      text-align: justify;
-    }
-
-    @media (max-width: 500px) {
-      .teaching-meta {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .teaching-semester {
-        margin-left: 0;
-      }
-
-      .tag-list {
-        position: static;
-        margin-top: 12px;
-      }
-    }
-  </style>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
   <!-- ========================= NAVIGATION ========================= -->
-  <div class="navbar">
-    <a href="index.html">Home</a>
-    <a href="research.html">Research</a>
-    <a href="publications.html">Publications</a>
-    <a href="teaching.html" class="active">Teaching</a>
-    <a href="people.html">People</a>
-    <a href="contact.html">Contact</a>
-  </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="navbar" aria-label="Main navigation">
+    <a class="nav-brand" href="index.html">Saeed&nbsp;Lotfan <span class="brand-tag">Vibrations Lab</span></a>
+    <div class="nav-links" id="site-nav">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="teaching.html" class="active" aria-current="page">Teaching</a>
+      <a href="people.html">People</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      </button>
+      <button class="icon-btn nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </nav>
 
-  <main class="container">
+  <main id="main" class="container">
     <!-- ========================= CURRENT COURSES ========================= -->
+    <p class="eyebrow"><span class="idx">01</span> Now teaching</p>
     <h2>Current Courses</h2>
     <div class="teaching-section">
 
@@ -207,17 +86,20 @@
         <div class="teaching-meta">
           <span class="course-title">ME 332 – Control Systems Theory</span>
           <span class="role-badge Lecturer">Lecturer</span>
-          <span class="teaching-semester">2022–Present – GTU</span>
+          <span class="teaching-semester">2022–Present · GTU</span>
         </div>
         <p class="teaching-desc">
           This course covers mathematical modeling of mechanical, electrical, and electromechanical systems,
           with emphasis on transient response, steady-state error, stability, and control design using PID and lag–lead compensators.
         </p>
-        <button class="materials-toggle" type="button" aria-expanded="false">📂 Show Materials</button>
+        <button class="materials-toggle" type="button" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.7.9L11.6 7H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>
+          <span class="materials-label">Show materials</span>
+        </button>
         <div class="materials-list">
-          <a href="https://gtu-my.sharepoint.com/:u:/g/personal/slotfan_gtu_edu_tr/EZsl64rI4mxPpHyxKPW9PEYBXHvEKm-EprcClz8WpUqDRw?e=fo6DeX" target="_blank" rel="noopener noreferrer">📄 Lecture Notes</a>
-          <a href="TeachingMaterials/ME 332 Control Systems Theory Exam Samples GTU.pdf" target="_blank" rel="noopener noreferrer">📘 Exam Archive</a>
-          <a href="https://abl.gtu.edu.tr/ects/?duzey=ucuncu&amp;modul=ders_bilgi_formu&amp;dno=ME%20332&amp;bolum=109&amp;tip=lisans&amp;dil=en" target="_blank" rel="noopener noreferrer">📁 Syllabus</a>
+          <a href="https://gtu-my.sharepoint.com/:u:/g/personal/slotfan_gtu_edu_tr/EZsl64rI4mxPpHyxKPW9PEYBXHvEKm-EprcClz8WpUqDRw?e=fo6DeX" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v5h5"/><path d="M7 3h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/></svg>Lecture Notes</a>
+          <a href="TeachingMaterials/ME 332 Control Systems Theory Exam Samples GTU.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Exam Archive</a>
+          <a href="https://abl.gtu.edu.tr/ects/?duzey=ucuncu&amp;modul=ders_bilgi_formu&amp;dno=ME%20332&amp;bolum=109&amp;tip=lisans&amp;dil=en" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.7.9L11.6 7H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>Syllabus</a>
         </div>
         <div class="tag-list">
           <span>#Undergraduate</span><span>#Theoretical</span>
@@ -229,17 +111,13 @@
         <div class="teaching-meta">
           <span class="course-title">ME 331 – System Dynamics and Vibrations</span>
           <span class="role-badge Lecturer">Lecturer</span>
-          <span class="teaching-semester">2025–Present – GTU</span>
+          <span class="teaching-semester">2025–Present · GTU</span>
         </div>
         <p class="teaching-desc">
           This course covers the fundamental concepts of how systems vibrate.
           Basic aspects of vibrations for mathematical modeling,
           derivation/solution of equations of motion, and subsequent system analysis is covered for discrete systems.
         </p>
-        <!--<button class="materials-toggle" type="button" aria-expanded="false">📂 Show Materials</button>
-        <div class="materials-list">
-          <a href="https://abl.gtu.edu.tr/ects/?duzey=ucuncu&amp;modul=ders_bilgi_formu&amp;dno=ME%20332&amp;bolum=109&amp;tip=lisans&amp;dil=en" target="_blank" rel="noopener noreferrer">📁 Syllabus</a>
-        </div>-->
         <div class="tag-list">
           <span>#Undergraduate</span><span>#Theoretical</span>
         </div>
@@ -249,14 +127,17 @@
         <div class="teaching-meta">
           <span class="course-title">ME 524 – Artificial Intelligence in Mechanical Engineering</span>
           <span class="role-badge Lecturer">Lecturer</span>
-          <span class="teaching-semester">2022–Present – GTU</span>
+          <span class="teaching-semester">2022–Present · GTU</span>
         </div>
         <p class="teaching-desc">
           This course introduces the fundamentals of artificial intelligence and machine learning in mechanical engineering applications.
         </p>
-        <button class="materials-toggle" type="button" aria-expanded="false">📂 Show Materials</button>
+        <button class="materials-toggle" type="button" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.7.9L11.6 7H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>
+          <span class="materials-label">Show materials</span>
+        </button>
         <div class="materials-list">
-          <a href="https://abl.gtu.edu.tr/ects/?duzey=ucuncu&amp;modul=ders_bilgi_formu&amp;dno=MAK%20524&amp;bolum=109&amp;tip=yukseklisans&amp;dil=en" target="_blank" rel="noopener noreferrer">📁 Syllabus</a>
+          <a href="https://abl.gtu.edu.tr/ects/?duzey=ucuncu&amp;modul=ders_bilgi_formu&amp;dno=MAK%20524&amp;bolum=109&amp;tip=yukseklisans&amp;dil=en" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.7.9L11.6 7H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>Syllabus</a>
         </div>
         <div class="tag-list">
           <span>#Graduate</span><span>#Theoretical</span><span>#Project-based</span>
@@ -266,6 +147,7 @@
 
     <!-- ========================= SAMPLE LECTURE VIDEOS ========================= -->
     <div class="lecture-section">
+      <p class="eyebrow"><span class="idx">02</span> Watch</p>
       <h2>Sample Lecture Videos</h2>
       <p class="lecture-intro">
         Here are selected lecture recordings from my courses at Gebze Technical University.
@@ -276,22 +158,23 @@
       <div class="youtube-grid">
         <div class="youtube-video">
           <h4 class="video-title">Compensator Design (Part 1)</h4>
-          <iframe src="https://www.youtube.com/embed/cHS0Pcb3-bA" title="Compensator Design Part 1" frameborder="0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/cHS0Pcb3-bA" title="Compensator Design Part 1" loading="lazy" frameborder="0" allowfullscreen></iframe>
         </div>
 
         <div class="youtube-video">
           <h4 class="video-title">Compensator Design (Part 2)</h4>
-          <iframe src="https://www.youtube.com/embed/0iPFbgStM8c" title="Compensator Design Part 2" frameborder="0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/0iPFbgStM8c" title="Compensator Design Part 2" loading="lazy" frameborder="0" allowfullscreen></iframe>
         </div>
 
         <div class="youtube-video">
           <h4 class="video-title">Compensator Design (Part 3)</h4>
-          <iframe src="https://www.youtube.com/embed/hVrfgH28-Ms" title="Compensator Design Part 3" frameborder="0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/hVrfgH28-Ms" title="Compensator Design Part 3" loading="lazy" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     </div>
 
     <!-- ========================= PAST TEACHING ========================= -->
+    <p class="eyebrow"><span class="idx">03</span> Archive</p>
     <h2>Past Teaching</h2>
     <div class="teaching-section">
 
@@ -300,16 +183,19 @@
         <div class="teaching-meta">
           <span class="course-title">ME 231 – Statics</span>
           <span class="role-badge Lecturer">Lecturer</span>
-          <span class="teaching-semester">2022–2025 – GTU</span>
+          <span class="teaching-semester">2022–2025 · GTU</span>
         </div>
         <p class="teaching-desc">
           The main purpose of this course is to provide students with a clear and thorough presentation of the theory and application of engineering mechanics.
         </p>
-        <button class="materials-toggle" type="button" aria-expanded="false">📂 Show Materials</button>
+        <button class="materials-toggle" type="button" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.7.9L11.6 7H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>
+          <span class="materials-label">Show materials</span>
+        </button>
         <div class="materials-list">
-          <a href="https://gtu-my.sharepoint.com/:u:/g/personal/slotfan_gtu_edu_tr/Ebfxg8o-Db5OpEbXa8JY4ssB_UIfbo0W1e_I3ArdPqsz9w?e=58QauY" target="_blank" rel="noopener noreferrer">📄 Lecture Notes</a>
-          <a href="TeachingMaterials/ME 231 Statics Exam Samples GTU.pdf" target="_blank" rel="noopener noreferrer">📘 Exam Archive</a>
-          <a href="TeachingMaterials/ME231-Statics-Syllabus.pdf" target="_blank" rel="noopener noreferrer">📁 Syllabus</a>
+          <a href="https://gtu-my.sharepoint.com/:u:/g/personal/slotfan_gtu_edu_tr/Ebfxg8o-Db5OpEbXa8JY4ssB_UIfbo0W1e_I3ArdPqsz9w?e=58QauY" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v5h5"/><path d="M7 3h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/></svg>Lecture Notes</a>
+          <a href="TeachingMaterials/ME 231 Statics Exam Samples GTU.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Exam Archive</a>
+          <a href="TeachingMaterials/ME231-Statics-Syllabus.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.7.9L11.6 7H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>Syllabus</a>
         </div>
         <div class="tag-list">
           <span>#Undergraduate</span><span>#Theoretical</span>
@@ -320,15 +206,18 @@
         <div class="teaching-meta">
           <span class="course-title">ME 434 – Introduction to Robotics</span>
           <span class="role-badge Lecturer">Lecturer</span>
-          <span class="teaching-semester">2022–2025 – GTU</span>
+          <span class="teaching-semester">2022–2025 · GTU</span>
         </div>
         <p class="teaching-desc">
           This course introduces robotics from a mechanical engineering perspective, with emphasis on computational aspects,
           forward kinematics, and inverse kinematics.
         </p>
-        <button class="materials-toggle" type="button" aria-expanded="false">📂 Show Materials</button>
+        <button class="materials-toggle" type="button" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.7.9L11.6 7H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>
+          <span class="materials-label">Show materials</span>
+        </button>
         <div class="materials-list">
-          <a href="TeachingMaterials/ME434-Syllabus.pdf" target="_blank" rel="noopener noreferrer">📁 Syllabus</a>
+          <a href="TeachingMaterials/ME434-Syllabus.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.7.9L11.6 7H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>Syllabus</a>
         </div>
         <div class="tag-list">
           <span>#Undergraduate</span><span>#Elective</span><span>#Project-based</span>
@@ -339,7 +228,7 @@
         <div class="teaching-meta">
           <span class="course-title">ME 431 – Control Systems Design</span>
           <span class="role-badge Lecturer">Lecturer</span>
-          <span class="teaching-semester">2022 – GTU</span>
+          <span class="teaching-semester">2022 · GTU</span>
         </div>
         <p class="teaching-desc">
           This course focuses on control-system design using root-locus, frequency-domain, and state-space techniques.
@@ -353,7 +242,7 @@
         <div class="teaching-meta">
           <span class="course-title">ME 515 – Mechanical Vibrations</span>
           <span class="role-badge TA">Teaching Assistant</span>
-          <span class="teaching-semester">2014–2018 – University of Tabriz</span>
+          <span class="teaching-semester">2014–2018 · University of Tabriz</span>
         </div>
         <p class="teaching-desc">
           The course covered modeling of free and forced vibrations in single- and multi-degree-of-freedom systems,
@@ -368,7 +257,7 @@
         <div class="teaching-meta">
           <span class="course-title">ME 995 – Dynamics I</span>
           <span class="role-badge TA">Teaching Assistant</span>
-          <span class="teaching-semester">2011–2014 – University of Tabriz</span>
+          <span class="teaching-semester">2011–2014 · University of Tabriz</span>
         </div>
         <p class="teaching-desc">
           The course covered kinematics, kinetics, and force-momentum formulation for systems of particles in planar and three-dimensional motion,
@@ -383,7 +272,7 @@
         <div class="teaching-meta">
           <span class="course-title">ME 985 – Dynamics II</span>
           <span class="role-badge TA">Teaching Assistant</span>
-          <span class="teaching-semester">2012–2015 – University of Tabriz</span>
+          <span class="teaching-semester">2012–2015 · University of Tabriz</span>
         </div>
         <p class="teaching-desc">
           The course covered kinematics, kinetics, and force-momentum formulation for systems of particles and rigid bodies in three-dimensional motion.
@@ -395,6 +284,7 @@
     </div>
 
     <!-- ========================= TEACHING PHILOSOPHY ========================= -->
+    <p class="eyebrow"><span class="idx">04</span> Approach</p>
     <h2>Teaching Philosophy</h2>
     <p class="teaching-philosophy">
       I view teaching as a collaborative exploration where theoretical rigor meets real-world application.
@@ -405,25 +295,23 @@
 
   <!-- ========================= FOOTER ========================= -->
   <div class="footer">
-    &copy; 2026 Saeed Lotfan. All rights reserved.
+    &copy; 2026 Saeed Lotfan · Gebze Technical University · All rights reserved.
   </div>
 
   <!-- ========================= PAGE SCRIPT ========================= -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const toggleButtons = document.querySelectorAll('.materials-toggle');
-
-      toggleButtons.forEach((button) => {
+      document.querySelectorAll('.materials-toggle').forEach(function (button) {
         button.addEventListener('click', function () {
-          const list = this.nextElementSibling;
-          const isOpen = list.style.display === 'block';
-
-          list.style.display = isOpen ? 'none' : 'block';
-          this.textContent = isOpen ? '📂 Show Materials' : '🔽 Hide Materials';
-          this.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+          var list = this.nextElementSibling;
+          var isOpen = list.classList.toggle('open');
+          var label = this.querySelector('.materials-label');
+          if (label) label.textContent = isOpen ? 'Hide materials' : 'Show materials';
+          this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
       });
     });
   </script>
+  <script src="site.js" defer></script>
 </body>
 </html>
