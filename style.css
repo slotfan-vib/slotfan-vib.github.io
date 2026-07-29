@@ -297,11 +297,13 @@ main.container { min-height: 60vh; }
 }
 
 /* ------------------------------------------------------------- Home / hero */
-.home-page { padding-bottom: 20px; }
-/* Center the intro + metrics (everything above the wave) so the hero reads
-   as a balanced column rather than pinned to the left. */
-.home-page .home-intro-panel { max-width: var(--measure); margin-left: auto; margin-right: auto; }
-.home-page .metrics { margin: 4px auto 0; }
+/* Home is one centered ~820px column — intro, metrics, wave, timeline, and
+   news all share the same edges. Wider than a reading measure, still balanced. */
+.home-page { max-width: 880px; padding-bottom: 20px; }
+.home-page .about-section, .home-page .metrics { max-width: none; }
+.home-page .metrics { margin: 4px 0 0; }
+.home-page #timeline { max-width: none; margin: 0; }
+.home-page .timeline-block { max-width: none; margin: 28px 0 8px; }
 
 .home-intro-panel { margin-bottom: 56px; }
 
@@ -378,10 +380,10 @@ main.container { min-height: 60vh; }
 .waveform { display: block; width: 100%; height: auto; }
 .waveform-baseline { stroke: var(--line-strong); stroke-width: 1; stroke-dasharray: 2 6; opacity: 0.7; }
 .waveform-line {
-  fill: none; stroke: var(--accent); stroke-width: 2.2; opacity: 0.6;
+  fill: none; stroke: var(--accent); stroke-width: 2.6; opacity: 0.72;
   stroke-linecap: round; stroke-linejoin: round;
   stroke-dasharray: 1000; stroke-dashoffset: 1000;
-  animation: draw-wave 2.1s var(--ease) 0.25s forwards;
+  animation: draw-wave 1.5s var(--ease) 0.2s forwards;
 }
 .waveform-dot { fill: var(--accent); opacity: 0; animation: dot-in 0.5s var(--ease) 2s forwards; }
 @keyframes draw-wave { to { stroke-dashoffset: 0; } }
@@ -605,6 +607,12 @@ main.container { min-height: 60vh; }
 .publication-card.open .pub-details { max-height: 3000px; opacity: 1; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
 .pub-details-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; align-items: start; }
 .pub-abstract p { margin: 0; color: var(--ink-2); font-size: 0.92rem; line-height: 1.72; }
+.pub-abstract.clamp p { display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
+.pub-seemore {
+  margin-top: 8px; padding: 0; background: none; border: 0; cursor: pointer;
+  font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.03em; color: var(--accent);
+}
+.pub-seemore:hover { text-decoration: underline; }
 .pub-figure img { width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--line); box-shadow: var(--shadow-sm); background: var(--surface-2); }
 .pub-details a {
   display: inline-flex; align-items: center; gap: 6px; margin-top: 16px;

@@ -83,8 +83,8 @@
   var wave = document.querySelector('.waveform-line');
   var sig = document.querySelector('.hero-signature');
   if (wave) {
-    var W = 1200, base = 42, A = 36, k = 2.4, f = 4.6, N = 200;  // TRIAL: A 30->36 (taller)
-    var travel = 2 * Math.PI * 0.20;   // TRIAL: 0.26->0.20 (slower) — waves propagate along the beam
+    var W = 1200, base = 42, A = 36, k = 1.8, f = 6.0, N = 240;  // richer: more cycles, slower decay
+    var travel = 2 * Math.PI * 0.55;   // faster propagation along the beam
     var onscreen = true, running = false, startTs = null;
 
     function frame(ts) {

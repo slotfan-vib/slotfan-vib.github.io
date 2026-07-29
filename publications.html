@@ -1233,6 +1233,7 @@
       const safeImage = escapeHtml(pub.image);
       const safeDoi = escapeHtml(pub.doi);
       const safeTypeLabel = escapeHtml(getPublicationLabel(pub.type));
+      const isLongAbstract = (pub.abstract || '').length > 320;
 
       card.innerHTML = `
         <div class="pub-summary">
@@ -1247,8 +1248,9 @@
 
         <div class="pub-details" aria-hidden="true">
           <div class="pub-details-layout">
-            <div class="pub-abstract">
+            <div class="pub-abstract${isLongAbstract ? ' clamp' : ''}">
               <p>${safeAbstract}</p>
+              ${isLongAbstract ? '<button class="pub-seemore" type="button">See more</button>' : ''}
             </div>
             <div class="pub-figure">
               <img src="${safeImage}" alt="Figure for ${safeTitle}" loading="lazy" />
@@ -1257,6 +1259,15 @@
           <a href="${safeDoi}" target="_blank" rel="noopener noreferrer">View Paper</a>
         </div>
       `;
+
+      const seeMore = card.querySelector('.pub-seemore');
+      if (seeMore) {
+        seeMore.addEventListener('click', event => {
+          event.stopPropagation();
+          const box = seeMore.closest('.pub-abstract');
+          seeMore.textContent = box.classList.toggle('clamp') ? 'See more' : 'See less';
+        });
+      }
 
       const toggleCard = () => {
         document.querySelectorAll('.publication-card.open').forEach(openCard => {
