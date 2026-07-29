@@ -49,6 +49,30 @@
     });
   }
 
+  /* ------------------------------------------------------ News interaction */
+  /* Desktop (hover-capable) reveals news on hover via CSS — nothing to click.
+     Touch devices have no hover, so make each card tap-to-toggle instead. */
+  var canHover = window.matchMedia &&
+    window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (!canHover) {
+    document.querySelectorAll('.news-item').forEach(function (item) {
+      item.setAttribute('role', 'button');
+      item.setAttribute('tabindex', '0');
+      item.setAttribute('aria-expanded', 'false');
+      var toggle = function () {
+        var open = item.classList.toggle('open');
+        item.setAttribute('aria-expanded', open ? 'true' : 'false');
+      };
+      item.addEventListener('click', function (e) {
+        if (e.target.closest('a')) return; // let links work normally
+        toggle();
+      });
+      item.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+      });
+    });
+  }
+
   /* ------------------------------------------------------- Scroll reveal */
   var reduce = window.matchMedia &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;

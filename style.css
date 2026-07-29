@@ -467,9 +467,30 @@ main.container { min-height: 60vh; }
   border-left: 3px solid var(--accent);
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
-  transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+  transform-origin: center top;
+  transition: border-color 0.4s var(--ease), transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
 }
-.news-item:hover { border-color: var(--line-strong); border-left-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+/* Expanded (slow zoom-open) state.
+   Desktop (hover-capable) reveals on hover / keyboard focus — no click needed.
+   Touch devices have no hover, so they toggle it with a tap (.open, added by site.js). */
+@media (hover: hover) and (pointer: fine) {
+  .news-list .news-item:hover,
+  .news-list .news-item:focus-within {
+    position: relative; z-index: 2;
+    border-color: var(--line-strong); box-shadow: var(--shadow-md);
+    transform: scale(1.02);
+  }
+  .news-item:hover .news-desc,
+  .news-item:focus-within .news-desc { -webkit-line-clamp: unset; max-height: 46em; }
+  .news-item:hover .news-thumbnail,
+  .news-item:focus-within .news-thumbnail { transform: scale(1.05); }
+}
+.news-list .news-item.open {
+  position: relative; z-index: 2;
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-md);
+  transform: scale(1.02);
+}
 .featured-news { background: linear-gradient(120deg, var(--accent-soft), var(--surface) 60%); }
 
 .news-date {
@@ -483,17 +504,19 @@ main.container { min-height: 60vh; }
 .news-title { color: var(--ink); font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
 .news-desc {
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
-  overflow: hidden; max-height: 3.1em;
+  overflow: hidden; max-height: 3.4em;
   color: var(--ink-2); font-size: 0.9rem; line-height: 1.55;
-  transition: max-height 0.5s var(--ease);
+  transition: max-height 0.55s var(--ease);
 }
-.news-item:hover .news-desc, .news-item:focus-within .news-desc { -webkit-line-clamp: unset; max-height: 60em; }
+.news-item.open .news-desc { -webkit-line-clamp: unset; max-height: 46em; }
 
 .news-thumbnail {
   width: 164px; height: 108px; object-fit: contain;
   padding: 7px; border-radius: var(--radius-sm); border: 1px solid var(--line);
   background: var(--surface-2);
+  transition: transform 0.5s var(--ease);
 }
+.news-item.open .news-thumbnail { transform: scale(1.05); }
 
 /* --------------------------------------------------------------- Research */
 .research-summary { display: grid; grid-template-columns: 2fr 1fr; gap: 32px; align-items: start; margin-bottom: 8px; }
