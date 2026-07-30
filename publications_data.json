@@ -92,6 +92,15 @@
   },
 {
     "type": "Journal",
+    "title": "Nonlinear modal interactions in a beam-mass system tuned to 3:1 and combination internal resonances based on correspondence between MTS and NSI methods",
+    "authors": "Lotfan, S.",
+    "cite": "Mechanical Systems and Signal Processing, 164, pp.108221, 2022.",
+    "abstract": "This study establishes a correspondence between the multiple time scales (MTS) method and the nonlinear system identification (NSI) approach to identify nonlinear modal interactions in the large-amplitude vibrations of a coupled dynamical system. The system considered is a beam carrying a mass-spring-damper (MSD) whose parameters are tuned to 3:1 and combination internal resonances among the first vibration modes. The equations governing the transverse vibrations of the beam and the motion of the mass are analyzed via the MTS method, from which the modulation equations, the modal amplitudes, and their stability and bifurcations are obtained, and the energy-exchange mechanisms among the interacting modes are interpreted. In parallel, the vibration response is decomposed into mono-frequency intrinsic mode functions using an advanced empirical mode decomposition with masking signals, so that the modes participating in the internal resonance can be separated without mode mixing. The frequency contents and amplitude variations of these intrinsic mode functions are then compared with the modal amplitudes predicted by the MTS method. The close agreement between the two independent approaches demonstrates that the identification-based framework can reveal the same modal interactions, energy exchanges, and non-stationary behavior obtained from the analytical solution, providing a reliable tool for characterizing internal resonances in coupled continuous systems from their vibration response.",
+    "image": "newsimages/Nonlinear-2021.jpg",
+    "doi": "https://doi.org/10.1016/j.ymssp.2021.108221"
+  },
+{
+    "type": "Journal",
     "title": "A general higher-order model for vibration analysis of axially moving doubly-curved panels/shells",
     "authors": "Lotfan, S., Anamagh, M.R. and Bediz, B.",
     "cite": "Thin-Walled Structures, 164, pp.107813, 2021.",
