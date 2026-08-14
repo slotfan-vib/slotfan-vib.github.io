@@ -2,229 +2,235 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://saeedlotfan.com/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/research.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/publications.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/teaching.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/people.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/contact.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://saeedlotfan.com/papers/inverse-spectral-chebyshev-and-compressed-sensing-framework-for-full-field-recon.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://saeedlotfan.com/papers/nonlinear-vibrations-and-modal-interactions-in-rotating-pre-twisted-blades-with.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/reduced-order-spectral-chebyshev-models-for-geometrically-nonlinear-vibrations-o.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/internal-damping-instability-of-rotors-with-isotropic-and-anisotropic-supports-b.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/coupled-thermo-elastic-dynamics-of-rotating-pre-twisted-blades-exposed-to-therma.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/dynamic-modeling-of-rotating-axially-functionally-graded-pre-twisted-blades-with.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/a-weak-form-spectral-chebyshev-technique-for-nonlinear-vibrations-of-rotating-fu.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/on-the-misinterpretation-of-structural-damping-in-harmonic-response-of-rotordyna.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/internal-dynamic-stability-of-a-turbojet-engine-s-rotor-based-on-complex-coordin.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/free-vibrations-of-rotating-pre-twisted-blades-including-geometrically-nonlinear.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/nonlinear-resonances-of-axially-functionally-graded-beams-rotating-with-varying.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/nonlinear-modal-interactions-in-a-beam-mass-system-tuned-to-3-1-and-combination.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/a-general-higher-order-model-for-vibration-analysis-of-axially-moving-doubly-cur.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/dynamics-of-carbon-nanotubes-under-thermally-induced-nanoparticle-transport-on-h.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/nonlinear-vibration-and-stability-analysis-of-viscoelastic-rayleigh-beams-axiall.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/a-new-approach-for-optimization-of-combined-cycle-system-based-on-first-level-of.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/experimental-study-on-the-effect-of-excitation-type-on-the-output-only-modal-ana.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/identification-of-nonlinear-modal-interactions-in-a-beam-mass-spring-damper-syst.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/support-vector-machine-classification-of-brain-states-exposed-to-social-stress-t.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/cavitation-intensity-monitoring-in-an-axial-flow-pump-based-on-vibration-signals.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/parametric-modeling-of-carbon-nanotubes-and-estimating-nonlocal-constant-using-s.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/identification-of-non-linear-parameter-of-a-cantilever-beam-model-with-boundary.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/large-amplitude-free-vibration-of-a-viscoelastic-beam-carrying-a-lumped-mass-spr.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/stability-and-bifurcation-analysis-of-a-beam-mass-spring-damper-system-under-pri.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/influence-of-imperfect-end-boundary-condition-on-the-nonlocal-dynamics-of-cnts.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/nonparametric-system-identification-of-a-cantilever-beam-model-with-local-nonlin.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/size-dependent-nonlinear-vibration-analysis-of-carbon-nanotubes-conveying-multip.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/the-effect-of-calibrated-nonlocal-constant-on-the-modal-parameters-and-stability.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/nonlinear-vibration-and-stability-of-carbon-nanotube-conveying-fluid-embedded-in.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/statistical-analysis-of-random-uncertainty-in-the-pipes-conveying-multi-phase-fl.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/non-linear-nonlocal-vibration-and-stability-analysis-of-axially-moving-nanoscale.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/ann-based-modeling-and-reducing-dual-fuel-engine-s-challenging-emissions-by-mult.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://saeedlotfan.com/papers/bearing-fault-detection-using-fuzzy-c-means-and-hybrid-c-means-subtractive-algor.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
