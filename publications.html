@@ -1416,7 +1416,13 @@
       applyPublicationControls();
     });
 
-    document.addEventListener('DOMContentLoaded', loadPublications);
+    document.addEventListener('DOMContentLoaded', function () {
+      const requested = new URLSearchParams(location.search).get('type');
+      if (requested && ['All', 'Journal', 'Conference', 'Presentation'].includes(requested)) {
+        activeFilter = requested;
+      }
+      loadPublications();
+    });
   </script>
   <script src="site.js" defer></script>
 </body>

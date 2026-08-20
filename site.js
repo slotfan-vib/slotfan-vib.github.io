@@ -73,6 +73,22 @@
     });
   }
 
+  /* --------------------------------------------- Self-healing stat counts */
+  /* Keep the homepage "Journal articles" / "Publications" numbers in sync with
+     publications_data.json, so they never drift when a paper is added. */
+  if (document.querySelector('[data-count]')) {
+    fetch('publications_data.json')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        if (!Array.isArray(data)) return;
+        var total = data.length;
+        var journal = data.filter(function (p) { return p.type === 'Journal'; }).length;
+        document.querySelectorAll('[data-count="publications"]').forEach(function (el) { el.textContent = total; });
+        document.querySelectorAll('[data-count="journal"]').forEach(function (el) { el.textContent = journal; });
+      })
+      .catch(function () {});
+  }
+
   /* ------------------------------------------------------- Scroll reveal */
   var reduce = window.matchMedia &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;

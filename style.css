@@ -367,6 +367,18 @@ main.container { min-height: 60vh; }
 }
 .metric { display: flex; flex-direction: column; gap: 6px; padding: 22px 22px; border-left: 1px solid var(--line); }
 .metric:first-child { border-left: 0; }
+/* Clickable stat cards — link to the detail page. Quiet at rest; refined on hover. */
+a.metric {
+  text-decoration: none; color: inherit;
+  -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+  transition: background var(--dur) var(--ease), transform 0.12s var(--ease);
+}
+a.metric .metric-label { transition: color var(--dur) var(--ease); }
+a.metric:hover, a.metric:focus-visible { background: var(--accent-soft); }
+a.metric:hover .metric-label, a.metric:focus-visible .metric-label { color: var(--accent); }
+a.metric:focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; box-shadow: none; }
+a.metric:active { transform: scale(0.99); }
+@media (prefers-reduced-motion: reduce) { a.metric:active { transform: none; } }
 .metric-num {
   font-family: var(--font-mono); font-weight: 600; font-variant-numeric: tabular-nums;
   font-size: clamp(2rem, 1.3rem + 2vw, 2.9rem); line-height: 1; letter-spacing: -0.02em;
@@ -401,7 +413,7 @@ main.container { min-height: 60vh; }
 }
 
 /* Section wrappers on home */
-#timeline, #news { scroll-margin-top: calc(var(--nav-h) + 16px); }
+#timeline, #news, #research-projects { scroll-margin-top: calc(var(--nav-h) + 24px); }
 #timeline h2, #news h2 { margin-top: 0; }
 
 /* --------------------------------------------------------------- Timeline */
@@ -534,9 +546,21 @@ main.container { min-height: 60vh; }
 .interests-box li { position: relative; padding-left: 18px; color: var(--ink-2); font-size: 0.94rem; }
 .interests-box li::before { content: ''; position: absolute; left: 0; top: 0.62em; width: 6px; height: 6px; border-radius: 2px; background: var(--accent); }
 
-.section-divider-image { width: 100%; margin: 8px 0; }
-.section-divider-image img { width: 100%; max-height: 240px; object-fit: contain; opacity: 0.9; border-radius: var(--radius-sm); }
-:root[data-theme='dark'] .section-divider-image img { filter: invert(0.9) hue-rotate(180deg) brightness(0.95); opacity: 0.7; }
+/* Signature FRF figure — real research data shown as a data-art band.
+   Colours are kept (they carry the science); the ends dissolve so it reads as
+   an intentional band rather than a boxed plot. Works in light and dark. */
+.frf-divider { margin: 30px 0 10px; }
+.frf-divider img {
+  width: 100%; max-height: 190px; object-fit: contain; display: block; opacity: 0.95;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%);
+}
+:root[data-theme='dark'] .frf-divider img { opacity: 1; }
+.frf-divider figcaption {
+  margin-top: 12px;
+  font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.07em;
+  text-transform: uppercase; color: var(--muted);
+}
 
 .project-card {
   display: grid; grid-template-columns: 240px 1fr; gap: 24px; align-items: start;
