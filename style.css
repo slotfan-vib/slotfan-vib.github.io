@@ -738,17 +738,17 @@ a.metric:active { transform: scale(0.99); }
 .materials-list a:hover { color: var(--accent); }
 
 /* Premium file rows — teaching materials (Lecture / Recitation / Syllabus …) */
-.materials-files { gap: 8px; padding-left: 0; }
+.materials-files { gap: 8px; padding-left: 0; max-height: 360px; overflow-y: auto; }
 .materials-files .file-row {
   display: flex; align-items: center; gap: 12px;
   padding: 10px 12px;
   background: var(--surface); border: 1px solid var(--line);
   border-radius: var(--radius-sm);
   color: var(--ink); font-size: 0.9rem; font-weight: 500;
-  transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease), transform var(--dur) var(--ease);
+  transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
 .materials-files .file-row:hover {
-  border-color: var(--line-strong); background: var(--surface-2); transform: translateX(2px);
+  border-color: var(--line-strong); background: var(--surface-2); box-shadow: var(--shadow-sm);
 }
 .materials-files .file-icon {
   display: inline-flex; align-items: center; justify-content: center;
@@ -759,6 +759,8 @@ a.metric:active { transform: scale(0.99); }
 .materials-files .file-row.lecture    .file-icon { color: var(--c-journal); }
 .materials-files .file-row.recitation .file-icon { color: var(--c-presentation); }
 .materials-files .file-row.syllabus   .file-icon { color: var(--c-thesis); }
+.materials-files .file-row.exam       .file-icon { color: var(--c-preprint); }
+.materials-files .file-row.link       .file-icon { color: var(--c-conference); }
 .materials-files .file-name { color: var(--ink); }
 .materials-files .file-meta {
   font-family: var(--font-mono); font-size: 0.7rem; font-weight: 400;
@@ -769,6 +771,7 @@ a.metric:active { transform: scale(0.99); }
   transition: transform var(--dur) var(--ease), color var(--dur) var(--ease);
 }
 .materials-files .file-row:hover .file-dl { color: var(--accent); transform: translateY(2px); }
+.materials-files .file-row.link:hover .file-dl { transform: translate(1px, -1px); }
 
 .tag-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
 .tag-list span {
