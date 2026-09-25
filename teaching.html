@@ -49,9 +49,25 @@
   </script>
 
   <link rel="stylesheet" href="style.css" />
-  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+  <script>(function(){document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
+  <!-- ========================= ICON SPRITE (used by course materials) ========================= -->
+  <svg class="icon-sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.7.9L11.6 7H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-syllabus" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></symbol>
+    <symbol id="i-notes" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 3H20v18H6.5A2.5 2.5 0 0 1 4 18.5v-13A2.5 2.5 0 0 1 6.5 3Z"/></symbol>
+    <symbol id="i-exam" viewBox="0 0 24 24"><path d="M14 3v5h5"/><path d="M7 3h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/><path d="m9 14 2 2 4-4"/></symbol>
+    <symbol id="i-lecture" viewBox="0 0 24 24"><path d="M3 4h18"/><path d="M4 4v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4"/><path d="M12 16v4M8 20h8"/></symbol>
+    <symbol id="i-recitation" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-prev" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></symbol>
+    <symbol id="i-next" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+  </svg>
+
   <!-- ========================= NAVIGATION ========================= -->
   <a class="skip-link" href="#main">Skip to content</a>
   <nav class="navbar" aria-label="Main navigation">
@@ -75,6 +91,16 @@
     </div>
   </nav>
 
+  <!--
+    ========================= HOW TO ADD COURSE MATERIALS =========================
+    1. Put the PDF in TeachingMaterials/ (write spaces in the href as %20).
+    2. Course-wide file (syllabus, notes, exam archive) → copy one <li class="mat-doc"> row
+       into the course's "Course documents" list and pick the icon: #i-syllabus, #i-notes, #i-exam.
+    3. Weekly file → copy one <li class="mat-week"> row into "Weekly materials",
+       or add another <a class="mat-chip"> to an existing week.
+    File counts and file sizes are filled in automatically.
+  -->
+
   <main id="main" class="container">
     <!-- ========================= CURRENT COURSES ========================= -->
     <p class="eyebrow"><span class="idx">01</span> Now teaching</p>
@@ -82,7 +108,7 @@
     <div class="teaching-section">
 
       <!-- Copy one full teaching-card block below to add a new current course -->
-      <div class="teaching-card">
+      <div class="teaching-card" id="me331">
         <div class="teaching-meta">
           <span class="course-title">ME 331 – System Dynamics and Vibrations</span>
           <span class="role-badge Lecturer">Lecturer</span>
@@ -93,15 +119,44 @@
           Basic aspects of vibrations for mathematical modeling,
           derivation/solution of equations of motion, and subsequent system analysis is covered for discrete systems.
         </p>
-        <button class="materials-toggle" type="button" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.7.9L11.6 7H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>
-          <span class="materials-label">Show materials</span>
+        <button class="materials-toggle" type="button" aria-expanded="false" aria-controls="me331-materials">
+          <svg class="i" aria-hidden="true"><use href="#i-folder"/></svg>
+          <span class="materials-label">Course materials</span>
+          <span class="materials-count"></span>
+          <svg class="i chev" aria-hidden="true"><use href="#i-chevron"/></svg>
         </button>
-        <div class="materials-list">
-          <!-- WEEKLY MATERIALS: upload each PDF to TeachingMaterials/, then copy one <a>…</a> line
-               below, point its href at the uploaded file, and set the label (e.g. Lecture 2 / Recitation 2). -->
-          <a href="TeachingMaterials/1._Introduction_and_Fundamentals.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Lecture 1</a>
-          <a href="TeachingMaterials/Recitation_1_2026.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Recitation 1</a>
+        <div class="materials-panel" id="me331-materials">
+          <div class="materials-inner">
+            <section class="mat-group" aria-label="Course documents">
+              <p class="mat-group-label">Course documents</p>
+              <ul class="mat-docs">
+                <li class="mat-doc">
+                  <a class="mat-open" href="TeachingMaterials/ME331%20Syllabus%20Fall%202026.pdf" target="_blank" rel="noopener" data-pdf>
+                    <span class="mat-icon k-syllabus"><svg class="i" aria-hidden="true"><use href="#i-syllabus"/></svg></span>
+                    <span class="mat-text"><span class="mat-title">Syllabus</span><span class="mat-meta">PDF<span class="mat-size"></span></span></span>
+                  </a>
+                  <a class="mat-dl" href="TeachingMaterials/ME331%20Syllabus%20Fall%202026.pdf" download aria-label="Download syllabus (PDF)"><svg class="i" aria-hidden="true"><use href="#i-download"/></svg></a>
+                </li>
+              </ul>
+            </section>
+            <section class="mat-group" aria-label="Weekly materials">
+              <p class="mat-group-label">Weekly materials</p>
+              <ol class="mat-weeks">
+                <li class="mat-week">
+                  <span class="mat-week-no">W01</span>
+                  <div class="mat-week-body">
+                    <div class="mat-topic">
+                      <span class="mat-week-topic">Introduction and Fundamentals</span>
+                      <span class="mat-week-files">
+                        <a class="mat-chip k-lecture" href="TeachingMaterials/1._Introduction_and_Fundamentals.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 1 · Lecture: Introduction and Fundamentals"><svg class="i" aria-hidden="true"><use href="#i-lecture"/></svg>Lecture</a>
+                        <a class="mat-chip k-recitation" href="TeachingMaterials/Recitation_1_2026.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 1 · Recitation"><svg class="i" aria-hidden="true"><use href="#i-recitation"/></svg>Recitation</a>
+                      </span>
+                    </div>
+                  </div>
+                </li>
+              </ol>
+            </section>
+          </div>
         </div>
         <div class="tag-list">
           <span>#Undergraduate</span><span>#Theoretical</span>
@@ -109,7 +164,7 @@
       </div>
 
       <!-- Copy one full teaching-card block below to add a new current course -->
-      <div class="teaching-card">
+      <div class="teaching-card" id="me332">
         <div class="teaching-meta">
           <span class="course-title">ME 332 – Control Systems Theory</span>
           <span class="role-badge Lecturer">Lecturer</span>
@@ -119,21 +174,48 @@
           This course covers mathematical modeling of mechanical, electrical, and electromechanical systems,
           with emphasis on transient response, steady-state error, stability, and control design using PID and lag–lead compensators.
         </p>
-        <button class="materials-toggle" type="button" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.7.9L11.6 7H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>
-          <span class="materials-label">Show materials</span>
+        <button class="materials-toggle" type="button" aria-expanded="false" aria-controls="me332-materials">
+          <svg class="i" aria-hidden="true"><use href="#i-folder"/></svg>
+          <span class="materials-label">Course materials</span>
+          <span class="materials-count"></span>
+          <svg class="i chev" aria-hidden="true"><use href="#i-chevron"/></svg>
         </button>
-        <div class="materials-list">
-          <a href="https://gtu-my.sharepoint.com/:u:/g/personal/slotfan_gtu_edu_tr/EZsl64rI4mxPpHyxKPW9PEYBXHvEKm-EprcClz8WpUqDRw?e=fo6DeX" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v5h5"/><path d="M7 3h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/></svg>Lecture Notes</a>
-          <a href="TeachingMaterials/ME 332 Control Systems Theory Exam Samples GTU.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Exam Archive</a>
-          <a href="https://abl.gtu.edu.tr/ects/?duzey=ucuncu&amp;modul=ders_bilgi_formu&amp;dno=ME%20332&amp;bolum=109&amp;tip=lisans&amp;dil=en" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.7.9L11.6 7H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>Syllabus</a>
+        <div class="materials-panel" id="me332-materials">
+          <div class="materials-inner">
+            <section class="mat-group" aria-label="Course documents">
+              <p class="mat-group-label">Course documents</p>
+              <ul class="mat-docs">
+                <li class="mat-doc is-external">
+                  <a class="mat-open" href="https://abl.gtu.edu.tr/ects/?duzey=ucuncu&amp;modul=ders_bilgi_formu&amp;dno=ME%20332&amp;bolum=109&amp;tip=lisans&amp;dil=en" target="_blank" rel="noopener noreferrer">
+                    <span class="mat-icon k-syllabus"><svg class="i" aria-hidden="true"><use href="#i-syllabus"/></svg></span>
+                    <span class="mat-text"><span class="mat-title">Syllabus</span><span class="mat-meta">External link</span></span>
+                  </a>
+                  <span class="mat-dl" aria-hidden="true"><svg class="i"><use href="#i-external"/></svg></span>
+                </li>
+                <li class="mat-doc is-external">
+                  <a class="mat-open" href="https://gtu-my.sharepoint.com/:u:/g/personal/slotfan_gtu_edu_tr/EZsl64rI4mxPpHyxKPW9PEYBXHvEKm-EprcClz8WpUqDRw?e=fo6DeX" target="_blank" rel="noopener noreferrer">
+                    <span class="mat-icon k-notes"><svg class="i" aria-hidden="true"><use href="#i-notes"/></svg></span>
+                    <span class="mat-text"><span class="mat-title">Lecture notes</span><span class="mat-meta">External link</span></span>
+                  </a>
+                  <span class="mat-dl" aria-hidden="true"><svg class="i"><use href="#i-external"/></svg></span>
+                </li>
+                <li class="mat-doc">
+                  <a class="mat-open" href="TeachingMaterials/ME%20332%20Control%20Systems%20Theory%20Exam%20Samples%20GTU.pdf" target="_blank" rel="noopener" data-pdf>
+                    <span class="mat-icon k-exam"><svg class="i" aria-hidden="true"><use href="#i-exam"/></svg></span>
+                    <span class="mat-text"><span class="mat-title">Exam archive</span><span class="mat-meta">PDF<span class="mat-size"></span></span></span>
+                  </a>
+                  <a class="mat-dl" href="TeachingMaterials/ME%20332%20Control%20Systems%20Theory%20Exam%20Samples%20GTU.pdf" download aria-label="Download exam archive (PDF)"><svg class="i" aria-hidden="true"><use href="#i-download"/></svg></a>
+                </li>
+              </ul>
+            </section>
+          </div>
         </div>
         <div class="tag-list">
           <span>#Undergraduate</span><span>#Theoretical</span>
         </div>
       </div>
 
-      <div class="teaching-card">
+      <div class="teaching-card" id="me524">
         <div class="teaching-meta">
           <span class="course-title">ME 524 – Artificial Intelligence in Mechanical Engineering</span>
           <span class="role-badge Lecturer">Lecturer</span>
@@ -142,12 +224,27 @@
         <p class="teaching-desc">
           This course introduces the fundamentals of artificial intelligence and machine learning in mechanical engineering applications.
         </p>
-        <button class="materials-toggle" type="button" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.7.9L11.6 7H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>
-          <span class="materials-label">Show materials</span>
+        <button class="materials-toggle" type="button" aria-expanded="false" aria-controls="me524-materials">
+          <svg class="i" aria-hidden="true"><use href="#i-folder"/></svg>
+          <span class="materials-label">Course materials</span>
+          <span class="materials-count"></span>
+          <svg class="i chev" aria-hidden="true"><use href="#i-chevron"/></svg>
         </button>
-        <div class="materials-list">
-          <a href="https://abl.gtu.edu.tr/ects/?duzey=ucuncu&amp;modul=ders_bilgi_formu&amp;dno=MAK%20524&amp;bolum=109&amp;tip=yukseklisans&amp;dil=en" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.7.9L11.6 7H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>Syllabus</a>
+        <div class="materials-panel" id="me524-materials">
+          <div class="materials-inner">
+            <section class="mat-group" aria-label="Course documents">
+              <p class="mat-group-label">Course documents</p>
+              <ul class="mat-docs">
+                <li class="mat-doc is-external">
+                  <a class="mat-open" href="https://abl.gtu.edu.tr/ects/?duzey=ucuncu&amp;modul=ders_bilgi_formu&amp;dno=MAK%20524&amp;bolum=109&amp;tip=yukseklisans&amp;dil=en" target="_blank" rel="noopener noreferrer">
+                    <span class="mat-icon k-syllabus"><svg class="i" aria-hidden="true"><use href="#i-syllabus"/></svg></span>
+                    <span class="mat-text"><span class="mat-title">Syllabus</span><span class="mat-meta">External link</span></span>
+                  </a>
+                  <span class="mat-dl" aria-hidden="true"><svg class="i"><use href="#i-external"/></svg></span>
+                </li>
+              </ul>
+            </section>
+          </div>
         </div>
         <div class="tag-list">
           <span>#Graduate</span><span>#Theoretical</span><span>#Project-based</span>
@@ -189,7 +286,7 @@
     <div class="teaching-section">
 
       <!-- Copy one full teaching-card block below to add a new past course -->
-      <div class="teaching-card">
+      <div class="teaching-card" id="me231">
         <div class="teaching-meta">
           <span class="course-title">ME 231 – Statics</span>
           <span class="role-badge Lecturer">Lecturer</span>
@@ -198,21 +295,198 @@
         <p class="teaching-desc">
           The main purpose of this course is to provide students with a clear and thorough presentation of the theory and application of engineering mechanics.
         </p>
-        <button class="materials-toggle" type="button" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.7.9L11.6 7H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>
-          <span class="materials-label">Show materials</span>
+        <button class="materials-toggle" type="button" aria-expanded="false" aria-controls="me231-materials">
+          <svg class="i" aria-hidden="true"><use href="#i-folder"/></svg>
+          <span class="materials-label">Course materials</span>
+          <span class="materials-count"></span>
+          <svg class="i chev" aria-hidden="true"><use href="#i-chevron"/></svg>
         </button>
-        <div class="materials-list">
-          <a href="https://gtu-my.sharepoint.com/:u:/g/personal/slotfan_gtu_edu_tr/Ebfxg8o-Db5OpEbXa8JY4ssB_UIfbo0W1e_I3ArdPqsz9w?e=58QauY" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v5h5"/><path d="M7 3h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/></svg>Lecture Notes</a>
-          <a href="TeachingMaterials/ME 231 Statics Exam Samples GTU.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Exam Archive</a>
-          <a href="TeachingMaterials/ME231-Statics-Syllabus.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.7.9L11.6 7H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>Syllabus</a>
+        <div class="materials-panel" id="me231-materials">
+          <div class="materials-inner">
+            <section class="mat-group" aria-label="Course documents">
+              <p class="mat-group-label">Course documents</p>
+              <ul class="mat-docs">
+                <li class="mat-doc">
+                  <a class="mat-open" href="TeachingMaterials/ME231-Statics-Syllabus.pdf" target="_blank" rel="noopener" data-pdf>
+                    <span class="mat-icon k-syllabus"><svg class="i" aria-hidden="true"><use href="#i-syllabus"/></svg></span>
+                    <span class="mat-text"><span class="mat-title">Syllabus</span><span class="mat-meta">PDF<span class="mat-size"></span></span></span>
+                  </a>
+                  <a class="mat-dl" href="TeachingMaterials/ME231-Statics-Syllabus.pdf" download aria-label="Download syllabus (PDF)"><svg class="i" aria-hidden="true"><use href="#i-download"/></svg></a>
+                </li>
+                <li class="mat-doc">
+                  <a class="mat-open" href="TeachingMaterials/ME%20231%20Statics%20Exam%20Samples%20GTU.pdf" target="_blank" rel="noopener" data-pdf>
+                    <span class="mat-icon k-exam"><svg class="i" aria-hidden="true"><use href="#i-exam"/></svg></span>
+                    <span class="mat-text"><span class="mat-title">Exam archive</span><span class="mat-meta">PDF<span class="mat-size"></span></span></span>
+                  </a>
+                  <a class="mat-dl" href="TeachingMaterials/ME%20231%20Statics%20Exam%20Samples%20GTU.pdf" download aria-label="Download exam archive (PDF)"><svg class="i" aria-hidden="true"><use href="#i-download"/></svg></a>
+                </li>
+              </ul>
+            </section>
+            <section class="mat-group" aria-label="Weekly materials">
+              <p class="mat-group-label">Weekly materials</p>
+              <ol class="mat-weeks">
+                  <li class="mat-week">
+                    <span class="mat-week-no">W01</span>
+                    <div class="mat-week-body">
+                      <div class="mat-topic">
+                        <span class="mat-week-topic"><span class="mat-ch">01</span>General Principles</span>
+                        <span class="mat-week-files"><a class="mat-chip k-lecture" href="TeachingMaterials/ME231-Statics/1.%20General%20Principles%202024.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 1 · 1. General Principles"><svg class="i" aria-hidden="true"><use href="#i-lecture"/></svg>Slides</a></span>
+                      </div>
+                      <div class="mat-topic">
+                        <span class="mat-week-topic"><span class="mat-ch">02</span>Force Vectors (Geometric Analysis)</span>
+                        <span class="mat-week-files"><a class="mat-chip k-lecture" href="TeachingMaterials/ME231-Statics/2.%20Force%20Vectors%20%28Geometric%20Analysis%29%202024.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 1 · 2. Force Vectors (Geometric Analysis)"><svg class="i" aria-hidden="true"><use href="#i-lecture"/></svg>Slides</a></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="mat-week">
+                    <span class="mat-week-no">W02</span>
+                    <div class="mat-week-body">
+                      <div class="mat-topic">
+                        <span class="mat-week-topic"><span class="mat-ch">03</span>Force Vectors (Mathematical Analysis)</span>
+                        <span class="mat-week-files"><a class="mat-chip k-lecture" href="TeachingMaterials/ME231-Statics/3.%20Force%20Vectors%20%28Mathematical%20Analysis%29%202024.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 2 · 3. Force Vectors (Mathematical Analysis)"><svg class="i" aria-hidden="true"><use href="#i-lecture"/></svg>Slides</a></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="mat-week">
+                    <span class="mat-week-no">W03</span>
+                    <div class="mat-week-body">
+                      <div class="mat-topic">
+                        <span class="mat-week-topic"><span class="mat-ch">04</span>Equilibrium of a Particle</span>
+                        <span class="mat-week-files"><a class="mat-chip k-lecture" href="TeachingMaterials/ME231-Statics/4.%20Equilibrium%20of%20a%20Particle%202024.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 3 · 4. Equilibrium of a Particle"><svg class="i" aria-hidden="true"><use href="#i-lecture"/></svg>Slides</a></span>
+                      </div>
+                      <div class="mat-topic">
+                        <span class="mat-week-topic"><span class="mat-ch">05</span>Force System Resultants (Part 1)</span>
+                        <span class="mat-week-files"><a class="mat-chip k-lecture" href="TeachingMaterials/ME231-Statics/5.%20Force%20System%20Resultants%20%28Part%201%29%202024.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 3 · 5. Force System Resultants (Part 1)"><svg class="i" aria-hidden="true"><use href="#i-lecture"/></svg>Slides</a></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="mat-week">
+                    <span class="mat-week-no">W04</span>
+                    <div class="mat-week-body">
+                      <div class="mat-topic">
+                        <span class="mat-week-topic"><span class="mat-ch">06</span>Force System Resultants (Part 2)</span>
+                        <span class="mat-week-files"><a class="mat-chip k-lecture" href="TeachingMaterials/ME231-Statics/6.%20Force%20System%20Resultants%20%28Part%202%29%202024.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 4 · 6. Force System Resultants (Part 2)"><svg class="i" aria-hidden="true"><use href="#i-lecture"/></svg>Slides</a></span>
+                      </div>
+                      <div class="mat-topic">
+                        <span class="mat-week-topic"><span class="mat-ch">07</span>Equilibrium of Rigid Body in 2D</span>
+                        <span class="mat-week-files"><a class="mat-chip k-lecture" href="TeachingMaterials/ME231-Statics/7.%20Equilibrium%20of%20Rigid%20Body%20in%202D%202024.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 4 · 7. Equilibrium of Rigid Body in 2D"><svg class="i" aria-hidden="true"><use href="#i-lecture"/></svg>Slides</a></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="mat-week">
+                    <span class="mat-week-no">W05</span>
+                    <div class="mat-week-body">
+                      <div class="mat-topic">
+                        <span class="mat-week-topic"><span class="mat-ch">08</span>Equilibrium of Rigid Body in 3D</span>
+                        <span class="mat-week-files"><a class="mat-chip k-lecture" href="TeachingMaterials/ME231-Statics/8.%20Equilibrium%20of%20Rigid%20Body%20in%203D%202024.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 5 · 8. Equilibrium of Rigid Body in 3D"><svg class="i" aria-hidden="true"><use href="#i-lecture"/></svg>Slides</a></span>
+                      </div>
+                      <div class="mat-topic">
+                        <span class="mat-week-topic"><span class="mat-ch">09</span>Structural Analysis</span>
+                        <span class="mat-week-files"><a class="mat-chip k-lecture" href="TeachingMaterials/ME231-Statics/9.%20Structural%20Analysis%202024.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 5 · 9. Structural Analysis"><svg class="i" aria-hidden="true"><use href="#i-lecture"/></svg>Slides</a></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="mat-week">
+                    <span class="mat-week-no">W06</span>
+                    <div class="mat-week-body">
+                      <div class="mat-topic">
+                        <span class="mat-week-topic"><span class="mat-ch">10</span>Frames and Machines</span>
+                        <span class="mat-week-files"><a class="mat-chip k-lecture" href="TeachingMaterials/ME231-Statics/10.%20Frames%20and%20Machines%202024.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 6 · 10. Frames and Machines"><svg class="i" aria-hidden="true"><use href="#i-lecture"/></svg>Slides</a></span>
+                      </div>
+                      <div class="mat-topic">
+                        <span class="mat-week-topic"><span class="mat-ch">11</span>Internal Forces</span>
+                        <span class="mat-week-files"><a class="mat-chip k-lecture" href="TeachingMaterials/ME231-Statics/11.%20Internal%20Forces%202024.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 6 · 11. Internal Forces"><svg class="i" aria-hidden="true"><use href="#i-lecture"/></svg>Slides</a></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="mat-week is-exam">
+                    <span class="mat-week-no">W07</span>
+                    <div class="mat-week-body"><span class="mat-exam"><svg class="i" aria-hidden="true"><use href="#i-exam"/></svg>Midterm Exam 1</span></div>
+                  </li>
+                  <li class="mat-week">
+                    <span class="mat-week-no">W08</span>
+                    <div class="mat-week-body">
+                      <div class="mat-topic">
+                        <span class="mat-week-topic"><span class="mat-ch">12</span>Cables</span>
+                        <span class="mat-week-files"><a class="mat-chip k-lecture" href="TeachingMaterials/ME231-Statics/12.%20Cables%202024.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 8 · 12. Cables"><svg class="i" aria-hidden="true"><use href="#i-lecture"/></svg>Slides</a></span>
+                      </div>
+                      <div class="mat-topic">
+                        <span class="mat-week-topic"><span class="mat-ch">13</span>Friction</span>
+                        <span class="mat-week-files"><a class="mat-chip k-lecture" href="TeachingMaterials/ME231-Statics/13.%20Friction%202024.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 8 · 13. Friction"><svg class="i" aria-hidden="true"><use href="#i-lecture"/></svg>Slides</a></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="mat-week">
+                    <span class="mat-week-no">W09</span>
+                    <div class="mat-week-body">
+                      <div class="mat-topic">
+                        <span class="mat-week-topic"><span class="mat-ch">14</span>Friction in Applications</span>
+                        <span class="mat-week-files"><a class="mat-chip k-lecture" href="TeachingMaterials/ME231-Statics/14.%20Friction%20in%20Applications%202024.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 9 · 14. Friction in Applications"><svg class="i" aria-hidden="true"><use href="#i-lecture"/></svg>Slides</a></span>
+                      </div>
+                      <div class="mat-topic">
+                        <span class="mat-week-topic"><span class="mat-ch">15</span>Center of Gravity and Centroid</span>
+                        <span class="mat-week-files"><a class="mat-chip k-lecture" href="TeachingMaterials/ME231-Statics/15.%20Center%20of%20Gravity%20and%20Centroid%202024.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 9 · 15. Center of Gravity and Centroid"><svg class="i" aria-hidden="true"><use href="#i-lecture"/></svg>Slides</a></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="mat-week">
+                    <span class="mat-week-no">W10</span>
+                    <div class="mat-week-body">
+                      <div class="mat-topic">
+                        <span class="mat-week-topic"><span class="mat-ch">16</span>Fluid Statics</span>
+                        <span class="mat-week-files"><a class="mat-chip k-lecture" href="TeachingMaterials/ME231-Statics/16.%20Fluid%20Statics%202024.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 10 · 16. Fluid Statics"><svg class="i" aria-hidden="true"><use href="#i-lecture"/></svg>Slides</a></span>
+                      </div>
+                      <div class="mat-topic">
+                        <span class="mat-week-topic"><span class="mat-ch">17</span>Moments of Inertia</span>
+                        <span class="mat-week-files"><a class="mat-chip k-lecture" href="TeachingMaterials/ME231-Statics/17.%20Moments%20of%20Inertia%202024.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 10 · 17. Moments of Inertia"><svg class="i" aria-hidden="true"><use href="#i-lecture"/></svg>Slides</a></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="mat-week">
+                    <span class="mat-week-no">W11</span>
+                    <div class="mat-week-body">
+                      <div class="mat-topic">
+                        <span class="mat-week-topic"><span class="mat-ch">18</span>Max and Min of Moments of Inertia</span>
+                        <span class="mat-week-files"><a class="mat-chip k-lecture" href="TeachingMaterials/ME231-Statics/18.%20Max%20and%20Min%20of%20Moments%20of%20Inertia%202024.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 11 · 18. Max and Min of Moments of Inertia"><svg class="i" aria-hidden="true"><use href="#i-lecture"/></svg>Slides</a></span>
+                      </div>
+                      <div class="mat-topic">
+                        <span class="mat-week-topic"><span class="mat-ch">19</span>Mass Moments of Inertia</span>
+                        <span class="mat-week-files"><a class="mat-chip k-lecture" href="TeachingMaterials/ME231-Statics/19.%20Mass%20moments%20of%20Inertia%202024.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 11 · 19. Mass Moments of Inertia"><svg class="i" aria-hidden="true"><use href="#i-lecture"/></svg>Slides</a></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="mat-week is-exam">
+                    <span class="mat-week-no">W12</span>
+                    <div class="mat-week-body"><span class="mat-exam"><svg class="i" aria-hidden="true"><use href="#i-exam"/></svg>Midterm Exam 2</span></div>
+                  </li>
+                  <li class="mat-week">
+                    <span class="mat-week-no">W13</span>
+                    <div class="mat-week-body">
+                      <div class="mat-topic">
+                        <span class="mat-week-topic"><span class="mat-ch">20</span>Virtual Work and Potential Energy</span>
+                        <span class="mat-week-files"><a class="mat-chip k-lecture" href="TeachingMaterials/ME231-Statics/20.%20Virtual%20Work%20and%20Potential%20Energy%202024.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 13 · 20. Virtual Work and Potential Energy"><svg class="i" aria-hidden="true"><use href="#i-lecture"/></svg>Slides</a></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="mat-week">
+                    <span class="mat-week-no">W14</span>
+                    <div class="mat-week-body">
+                      <div class="mat-topic">
+                        <span class="mat-week-topic">Review Problems</span>
+                        <span class="mat-week-files"><a class="mat-chip k-lecture" href="TeachingMaterials/ME231-Statics/Review%20Problems.pdf" target="_blank" rel="noopener" data-pdf data-title="Week 14 · Review Problems"><svg class="i" aria-hidden="true"><use href="#i-lecture"/></svg>Problems</a></span>
+                      </div>
+                    </div>
+                  </li>
+              </ol>
+            </section>
+          </div>
         </div>
         <div class="tag-list">
           <span>#Undergraduate</span><span>#Theoretical</span>
         </div>
       </div>
 
-      <div class="teaching-card">
+      <div class="teaching-card" id="me434">
         <div class="teaching-meta">
           <span class="course-title">ME 434 – Introduction to Robotics</span>
           <span class="role-badge Lecturer">Lecturer</span>
@@ -222,12 +496,27 @@
           This course introduces robotics from a mechanical engineering perspective, with emphasis on computational aspects,
           forward kinematics, and inverse kinematics.
         </p>
-        <button class="materials-toggle" type="button" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.7.9L11.6 7H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>
-          <span class="materials-label">Show materials</span>
+        <button class="materials-toggle" type="button" aria-expanded="false" aria-controls="me434-materials">
+          <svg class="i" aria-hidden="true"><use href="#i-folder"/></svg>
+          <span class="materials-label">Course materials</span>
+          <span class="materials-count"></span>
+          <svg class="i chev" aria-hidden="true"><use href="#i-chevron"/></svg>
         </button>
-        <div class="materials-list">
-          <a href="TeachingMaterials/ME434-Syllabus.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.7.9L11.6 7H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>Syllabus</a>
+        <div class="materials-panel" id="me434-materials">
+          <div class="materials-inner">
+            <section class="mat-group" aria-label="Course documents">
+              <p class="mat-group-label">Course documents</p>
+              <ul class="mat-docs">
+                <li class="mat-doc">
+                  <a class="mat-open" href="TeachingMaterials/ME434-Syllabus.pdf" target="_blank" rel="noopener" data-pdf>
+                    <span class="mat-icon k-syllabus"><svg class="i" aria-hidden="true"><use href="#i-syllabus"/></svg></span>
+                    <span class="mat-text"><span class="mat-title">Syllabus</span><span class="mat-meta">PDF<span class="mat-size"></span></span></span>
+                  </a>
+                  <a class="mat-dl" href="TeachingMaterials/ME434-Syllabus.pdf" download aria-label="Download syllabus (PDF)"><svg class="i" aria-hidden="true"><use href="#i-download"/></svg></a>
+                </li>
+              </ul>
+            </section>
+          </div>
         </div>
         <div class="tag-list">
           <span>#Undergraduate</span><span>#Elective</span><span>#Project-based</span>
@@ -308,20 +597,30 @@
     &copy; 2026 Saeed Lotfan · Gebze Technical University · All rights reserved.
   </div>
 
-  <!-- ========================= PAGE SCRIPT ========================= -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('.materials-toggle').forEach(function (button) {
-        button.addEventListener('click', function () {
-          var list = this.nextElementSibling;
-          var isOpen = list.classList.toggle('open');
-          var label = this.querySelector('.materials-label');
-          if (label) label.textContent = isOpen ? 'Hide materials' : 'Show materials';
-          this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        });
-      });
-    });
-  </script>
+  <!-- ========================= PDF READER ========================= -->
+  <dialog class="pdf-viewer" aria-labelledby="pv-title">
+    <div class="pv-bar">
+      <div class="pv-heading">
+        <p class="pv-course"></p>
+        <h2 class="pv-title" id="pv-title"></h2>
+      </div>
+      <div class="pv-actions">
+        <span class="pv-pos" aria-live="polite"></span>
+        <button class="pv-btn pv-prev" type="button" aria-label="Previous document"><svg class="i" aria-hidden="true"><use href="#i-prev"/></svg></button>
+        <button class="pv-btn pv-next" type="button" aria-label="Next document"><svg class="i" aria-hidden="true"><use href="#i-next"/></svg></button>
+        <span class="pv-sep" aria-hidden="true"></span>
+        <a class="pv-btn pv-open" href="#" target="_blank" rel="noopener" aria-label="Open in new tab"><svg class="i" aria-hidden="true"><use href="#i-external"/></svg></a>
+        <a class="pv-btn pv-btn-primary pv-download" href="#" download><svg class="i" aria-hidden="true"><use href="#i-download"/></svg><span>Download</span></a>
+        <button class="pv-btn pv-close" type="button" aria-label="Close reader"><svg class="i" aria-hidden="true"><use href="#i-close"/></svg></button>
+      </div>
+    </div>
+    <div class="pv-stage">
+      <div class="pv-loading" aria-hidden="true"><span class="pv-spinner"></span>Loading document…</div>
+      <iframe class="pv-frame" title="Document"></iframe>
+    </div>
+  </dialog>
+
+  <script src="teaching.js" defer></script>
   <script src="site.js" defer></script>
 </body>
 </html>
