@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" role="img" aria-labelledby="t">
+  <title id="t">Learning-based motion cueing for a six-DOF Stewart platform</title>
+  <style>
+    .card{fill:#f6f8fb} .base{fill:#d9dee6;stroke:#5b6573;stroke-width:1.6}
+    .top{fill:#cfe0f5;stroke:#14417a;stroke-width:1.8} .cyl{stroke:#5b6573;stroke-width:6.5;stroke-linecap:round}
+    .rod{stroke:#9aa5b4;stroke-width:3;stroke-linecap:round} .j{fill:#14417a}
+    .nnl{stroke:#2f7ea8;stroke-width:.9;opacity:.55} .nnn{fill:#fff;stroke:#2f7ea8;stroke-width:1.6}
+    .arr{fill:none;stroke:#d97706;stroke-width:2.4;stroke-linecap:round} .ah{fill:#d97706}
+    .lbl{font:600 11px Inter,Segoe UI,Arial,sans-serif;fill:#3a424d;letter-spacing:.06em}
+  </style>
+  <rect class="card" width="300" height="200" rx="12"/>
+  <line x1="30" y1="34" x2="56" y2="28" class="nnl"/><line x1="30" y1="34" x2="56" y2="48" class="nnl"/><line x1="30" y1="34" x2="56" y2="68" class="nnl"/><line x1="30" y1="34" x2="56" y2="88" class="nnl"/><line x1="30" y1="54" x2="56" y2="28" class="nnl"/><line x1="30" y1="54" x2="56" y2="48" class="nnl"/><line x1="30" y1="54" x2="56" y2="68" class="nnl"/><line x1="30" y1="54" x2="56" y2="88" class="nnl"/><line x1="30" y1="74" x2="56" y2="28" class="nnl"/><line x1="30" y1="74" x2="56" y2="48" class="nnl"/><line x1="30" y1="74" x2="56" y2="68" class="nnl"/><line x1="30" y1="74" x2="56" y2="88" class="nnl"/><line x1="56" y1="28" x2="82" y2="44" class="nnl"/><line x1="56" y1="28" x2="82" y2="64" class="nnl"/><line x1="56" y1="48" x2="82" y2="44" class="nnl"/><line x1="56" y1="48" x2="82" y2="64" class="nnl"/><line x1="56" y1="68" x2="82" y2="44" class="nnl"/><line x1="56" y1="68" x2="82" y2="64" class="nnl"/><line x1="56" y1="88" x2="82" y2="44" class="nnl"/><line x1="56" y1="88" x2="82" y2="64" class="nnl"/><circle cx="30" cy="34" r="4.2" class="nnn"/><circle cx="30" cy="54" r="4.2" class="nnn"/><circle cx="30" cy="74" r="4.2" class="nnn"/><circle cx="56" cy="28" r="4.2" class="nnn"/><circle cx="56" cy="48" r="4.2" class="nnn"/><circle cx="56" cy="68" r="4.2" class="nnn"/><circle cx="56" cy="88" r="4.2" class="nnn"/><circle cx="82" cy="44" r="4.2" class="nnn"/><circle cx="82" cy="64" r="4.2" class="nnn"/>
+  <text x="56" y="110" text-anchor="middle" class="lbl">LEARNING</text>
+  <path d="M96 58 C 108 58, 112 66, 118 72" class="arr" style="stroke:#2f7ea8;opacity:.8"/>
+  <polygon points="254.0,166.0 206.0,183.3 110.0,183.3 62.0,166.0 110.0,148.7 206.0,148.7" class="base"/>
+  <line x1="65.7" y1="160.5" x2="82.6" y2="120.4" class="cyl"/><line x1="82.6" y1="120.4" x2="96.5" y2="87.6" class="rod"/><line x1="88.9" y1="152.1" x2="118.4" y2="107.7" class="cyl"/><line x1="118.4" y1="107.7" x2="142.5" y2="71.4" class="rod"/><line x1="227.1" y1="152.1" x2="197.6" y2="107.7" class="cyl"/><line x1="197.6" y1="107.7" x2="173.5" y2="71.4" class="rod"/><line x1="250.3" y1="160.5" x2="233.4" y2="120.4" class="cyl"/><line x1="233.4" y1="120.4" x2="219.5" y2="87.6" class="rod"/>
+  <polygon points="222.0,84.0 190.0,95.3 126.0,95.3 94.0,84.0 126.0,72.7 190.0,72.7" class="top"/>
+  <line x1="181.2" y1="185.4" x2="193.8" y2="134.6" class="cyl"/><line x1="193.8" y1="134.6" x2="204.0" y2="93.0" class="rod"/><line x1="134.8" y1="185.4" x2="122.2" y2="134.6" class="cyl"/><line x1="122.2" y1="134.6" x2="112.0" y2="93.0" class="rod"/>
+  <circle cx="181.2" cy="185.4" r="3.2" class="j"/><circle cx="204.0" cy="93.0" r="3.2" class="j"/><circle cx="134.8" cy="185.4" r="3.2" class="j"/><circle cx="112.0" cy="93.0" r="3.2" class="j"/><circle cx="65.7" cy="160.5" r="3.2" class="j"/><circle cx="96.5" cy="87.6" r="3.2" class="j"/><circle cx="88.9" cy="152.1" r="3.2" class="j"/><circle cx="142.5" cy="71.4" r="3.2" class="j"/><circle cx="227.1" cy="152.1" r="3.2" class="j"/><circle cx="173.5" cy="71.4" r="3.2" class="j"/><circle cx="250.3" cy="160.5" r="3.2" class="j"/><circle cx="219.5" cy="87.6" r="3.2" class="j"/>
+  <path d="M206 50 A 54 14 0 0 1 238 72" class="arr"/><polygon points="238,79 233,69 243,69" class="ah"/>
+  <path d="M158 62 V 34" class="arr"/><polygon points="158,27 152,37 164,37" class="ah"/>
+  <text x="270" y="190" text-anchor="end" class="lbl">6-DOF</text>
+</svg>
