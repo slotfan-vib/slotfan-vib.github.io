@@ -61,203 +61,215 @@
     </div>
   </nav>
 
-  <main id="main" class="container">
+  <main id="main" class="container people-page">
     <!-- ========================= Page Header ========================= -->
-    <p class="eyebrow"><span class="idx">01</span> Group</p>
-    <h2>People</h2>
+    <header class="people-hero">
+      <h1 class="page-title">People</h1>
+      <p class="people-intro">Graduate and undergraduate researchers in the Vibrations Lab at Gebze Technical University, working on rotor dynamics, nonlinear vibrations, wave propagation in periodic structures, condition monitoring and learning-based control.</p>
+      <ul class="people-stats" aria-label="Group at a glance">
+        <li><span class="people-stat-n" data-count-for="current-heading-list">2</span><span class="people-stat-l">Current students</span></li>
+        <li><span class="people-stat-n" data-count-for="grad-heading-list">3</span><span class="people-stat-l">M.Sc. alumni</span></li>
+        <li><span class="people-stat-n" data-count-for="ug-heading-list">9</span><span class="people-stat-l">Undergraduate alumni</span></li>
+      </ul>
+    </header>
 
-    <!-- ========================= Filters ========================= -->
-    <div class="people-filter" data-filter-group="role">
-      <strong>Role</strong>
-      <button class="filter-btn active" type="button" data-role="All">All</button>
-      <button class="filter-btn" type="button" data-role="Graduate">Graduate</button>
-      <button class="filter-btn" type="button" data-role="Undergraduate">Undergraduate</button>
-    </div>
+    <!--
+      To add a person: copy one <article class="person-card"> block into the right
+      section, put a square photo (at least 256 x 256 px) in PeoplePage/, and
+      update the name, role, thesis/project title and LinkedIn link.
+      Section and header counts update automatically.
+      Ph.D. students: role "Ph.D. student", label "Dissertation", in Current Students.
+      Ph.D. graduates: add a "Ph.D. Alumni" section above M.Sc. Alumni.
+    -->
 
-    <div class="people-filter" data-filter-group="status">
-      <strong>Status</strong>
-      <button class="filter-btn active" type="button" data-status="All">All</button>
-      <button class="filter-btn" type="button" data-status="Current">Current</button>
-      <button class="filter-btn" type="button" data-status="Alumni">Alumni</button>
-    </div>
-
-    <!-- ========================= People List ========================= -->
-    <!-- Copy one person-card block below to add a new person. -->
-    <div class="people-list">
-
-      <!-- Current Graduate Students -->
-      <div class="person-card Graduate Current">
-        <img src="PeoplePage/Said Burak Güzel.jpg" alt="Said Burak Güzel" loading="lazy">
-        <div class="person-name">Said Burak Güzel</div>
-        <div class="person-role">M.Sc. student</div>
-        <div class="person-topic">Learning-Based Physics-Aware Motion Cueing for Stewart Platforms</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/saidburakguzel/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+    <section class="people-section" aria-labelledby="current-heading">
+      <p class="eyebrow"><span class="idx">01</span> Now</p>
+      <div class="people-section-head">
+        <h2 id="current-heading">Current Students</h2>
+        <span class="people-count" data-count-for="current-heading-list">2</span>
       </div>
+      <div class="people-grid is-featured" id="current-heading-list">
+        <article class="person-card">
+          <img class="person-photo" src="PeoplePage/Said Burak Güzel.jpg" alt="Said Burak Güzel" width="120" height="120" loading="lazy" decoding="async">
+          <div class="person-body">
+            <h3 class="person-name">Said Burak Güzel</h3>
+            <p class="person-role">M.Sc. student</p>
+            <p class="person-topic"><span class="person-topic-label">Thesis</span>Learning-Based Physics-Aware Motion Cueing for Stewart Platforms</p>
+            <a class="person-link" href="https://www.linkedin.com/in/saidburakguzel/" target="_blank" rel="noopener noreferrer" aria-label="Said Burak Güzel on LinkedIn"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+          </div>
+        </article>
 
-      <div class="person-card Graduate Current">
-        <img src="PeoplePage/Furkan Seyran.jpg" alt="Furkan Seyran" loading="lazy">
-        <div class="person-name">Furkan Seyran</div>
-        <div class="person-role">M.Sc. student</div>
-        <div class="person-topic">Nonlinear Dynamic Analysis of an Electromagnetically Actuated Flexible Rotor Under Uncontrolled and Controlled Operating Conditions</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/furkan-seyran-a450231b2/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+        <article class="person-card">
+          <img class="person-photo" src="PeoplePage/Furkan Seyran.jpg" alt="Furkan Seyran" width="120" height="120" loading="lazy" decoding="async">
+          <div class="person-body">
+            <h3 class="person-name">Furkan Seyran</h3>
+            <p class="person-role">M.Sc. student</p>
+            <p class="person-topic"><span class="person-topic-label">Thesis</span>Nonlinear Dynamic Analysis of an Electromagnetically Actuated Flexible Rotor Under Uncontrolled and Controlled Operating Conditions</p>
+            <a class="person-link" href="https://www.linkedin.com/in/furkan-seyran-a450231b2/" target="_blank" rel="noopener noreferrer" aria-label="Furkan Seyran on LinkedIn"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+          </div>
+        </article>
       </div>
+    </section>
 
-      <!-- Graduate Alumni -->
-      <div class="person-card Graduate Alumni">
-        <img src="PeoplePage/Murat Kutlu.jpg" alt="Murat Kutlu" loading="lazy">
-        <div class="person-name">Murat Kutlu</div>
-        <div class="person-role">M.Sc. alumnus</div>
-        <div class="person-topic">Dynamic Behavior of Rotor Systems With Belleville Washer-Induced Support Nonlinearity</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/muratkutlu/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+    <section class="people-section" aria-labelledby="grad-heading">
+      <p class="eyebrow"><span class="idx">02</span> Graduates</p>
+      <div class="people-section-head">
+        <h2 id="grad-heading">M.Sc. Alumni</h2>
+        <span class="people-count" data-count-for="grad-heading-list">3</span>
       </div>
+      <div class="people-grid is-compact" id="grad-heading-list">
+        <article class="person-card">
+          <img class="person-photo" src="PeoplePage/Murat Kutlu.jpg" alt="Murat Kutlu" width="72" height="72" loading="lazy" decoding="async">
+          <div class="person-body">
+            <h3 class="person-name">Murat Kutlu</h3>
+            <p class="person-role">M.Sc. alumnus</p>
+            <p class="person-topic"><span class="person-topic-label">Thesis</span>Dynamic Behavior of Rotor Systems With Belleville Washer-Induced Support Nonlinearity</p>
+            <a class="person-link" href="https://www.linkedin.com/in/muratkutlu/" target="_blank" rel="noopener noreferrer" aria-label="Murat Kutlu on LinkedIn"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+          </div>
+        </article>
 
-      <div class="person-card Graduate Alumni">
-        <img src="PeoplePage/Onur Erdoğan.jpg" alt="Onur Erdoğan" loading="lazy">
-        <div class="person-name">Onur Erdoğan</div>
-        <div class="person-role">M.Sc. alumnus</div>
-        <div class="person-topic">Mathematical Modeling and Analysis of a Ship-Mounted Crane With Shock Absorber</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/onur--erdogan/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+        <article class="person-card">
+          <img class="person-photo" src="PeoplePage/Onur Erdoğan.jpg" alt="Onur Erdoğan" width="72" height="72" loading="lazy" decoding="async">
+          <div class="person-body">
+            <h3 class="person-name">Onur Erdoğan</h3>
+            <p class="person-role">M.Sc. alumnus</p>
+            <p class="person-topic"><span class="person-topic-label">Thesis</span>Mathematical Modeling and Analysis of a Ship-Mounted Crane With Shock Absorber</p>
+            <a class="person-link" href="https://www.linkedin.com/in/onur--erdogan/" target="_blank" rel="noopener noreferrer" aria-label="Onur Erdoğan on LinkedIn"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+          </div>
+        </article>
+
+        <article class="person-card">
+          <img class="person-photo" src="PeoplePage/Furkan Çopur.jpg" alt="Furkan Çopur" width="72" height="72" loading="lazy" decoding="async">
+          <div class="person-body">
+            <h3 class="person-name">Furkan Çopur</h3>
+            <p class="person-role">M.Sc. alumnus</p>
+            <p class="person-topic"><span class="person-topic-label">Thesis</span>A Unified Model for Internal Rotordynamic Stability Based on Complex Coordinates Formulation</p>
+            <a class="person-link" href="https://www.linkedin.com/in/furkancopur/" target="_blank" rel="noopener noreferrer" aria-label="Furkan Çopur on LinkedIn"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+          </div>
+        </article>
       </div>
+    </section>
 
-      <div class="person-card Graduate Alumni">
-        <img src="PeoplePage/Furkan Çopur.jpg" alt="Furkan Çopur" loading="lazy">
-        <div class="person-name">Furkan Çopur</div>
-        <div class="person-role">M.Sc. alumnus</div>
-        <div class="person-topic">A Unified Model for Internal Rotordynamic Stability Based on Complex Coordinates Formulation</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/furkancopur/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+    <section class="people-section" aria-labelledby="ug-heading">
+      <p class="eyebrow"><span class="idx">03</span> Projects</p>
+      <div class="people-section-head">
+        <h2 id="ug-heading">Undergraduate Alumni</h2>
+        <span class="people-count" data-count-for="ug-heading-list">9</span>
       </div>
+      <div class="people-grid is-compact" id="ug-heading-list">
+        <article class="person-card">
+          <img class="person-photo" src="PeoplePage/Hüseyin Aydın.jpg" alt="Hüseyin Aydın" width="72" height="72" loading="lazy" decoding="async">
+          <div class="person-body">
+            <h3 class="person-name">Hüseyin Aydın</h3>
+            <p class="person-role">Undergraduate alumnus</p>
+            <p class="person-topic"><span class="person-topic-label">Project</span>Wave Propagation Analysis in Periodic Sandwich Structures</p>
+            <a class="person-link" href="https://www.linkedin.com/in/h%C3%BCseyin-ayd%C4%B1n-a29242207/?locale=en" target="_blank" rel="noopener noreferrer" aria-label="Hüseyin Aydın on LinkedIn"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+          </div>
+        </article>
 
-      <!-- Undergraduate Alumni -->
-      <div class="person-card Undergraduate Alumni">
-        <img src="PeoplePage/Hüseyin Aydın.jpg" alt="Hüseyin Aydın" loading="lazy">
-        <div class="person-name">Hüseyin Aydın</div>
-        <div class="person-role">Undergraduate alumnus</div>
-        <div class="person-topic">Wave Propagation Analysis in Periodic Sandwich Structures</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/h%C3%BCseyin-ayd%C4%B1n-a29242207/?locale=en" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+        <article class="person-card">
+          <img class="person-photo" src="PeoplePage/Emir Mert Polat.jpg" alt="Emir Mert Polat" width="72" height="72" loading="lazy" decoding="async">
+          <div class="person-body">
+            <h3 class="person-name">Emir Mert Polat</h3>
+            <p class="person-role">Undergraduate alumnus</p>
+            <p class="person-topic"><span class="person-topic-label">Project</span>Wave Propagation Analysis in Periodic Sandwich Structures</p>
+            <a class="person-link" href="https://www.linkedin.com/in/emir-mert-polat-468abb220/" target="_blank" rel="noopener noreferrer" aria-label="Emir Mert Polat on LinkedIn"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+          </div>
+        </article>
+
+        <article class="person-card">
+          <img class="person-photo" src="PeoplePage/Onur Söylemez.jpg" alt="Onur Söylemez" width="72" height="72" loading="lazy" decoding="async">
+          <div class="person-body">
+            <h3 class="person-name">Onur Söylemez</h3>
+            <p class="person-role">Undergraduate alumnus</p>
+            <p class="person-topic"><span class="person-topic-label">Project</span>Health Monitoring of Rotor Bearing System Based on Time–Frequency Vibration Signals Using EMD and Clustering Techniques</p>
+            <a class="person-link" href="https://www.linkedin.com/in/onur-s%C3%B6ylemez-089674362/" target="_blank" rel="noopener noreferrer" aria-label="Onur Söylemez on LinkedIn"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+          </div>
+        </article>
+
+        <article class="person-card">
+          <img class="person-photo" src="PeoplePage/Hıdır Can KAYA.jpg" alt="Hıdır Can Kaya" width="72" height="72" loading="lazy" decoding="async">
+          <div class="person-body">
+            <h3 class="person-name">Hıdır Can Kaya</h3>
+            <p class="person-role">Undergraduate alumnus</p>
+            <p class="person-topic"><span class="person-topic-label">Project</span>Health Monitoring of Rotor Bearing System Based on Time–Frequency Vibration Signals Using EMD and Clustering Techniques</p>
+            <a class="person-link" href="https://www.linkedin.com/in/h%C4%B1d%C4%B1r-can-kaya-907712355/" target="_blank" rel="noopener noreferrer" aria-label="Hıdır Can Kaya on LinkedIn"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+          </div>
+        </article>
+
+        <article class="person-card">
+          <img class="person-photo" src="PeoplePage/Eren Bilici.jpg" alt="Eren Bilici" width="72" height="72" loading="lazy" decoding="async">
+          <div class="person-body">
+            <h3 class="person-name">Eren Bilici</h3>
+            <p class="person-role">Undergraduate alumnus</p>
+            <p class="person-topic"><span class="person-topic-label">Project</span>Health Monitoring of Rotor Bearing System Based on Time–Frequency Vibration Signals Using EMD and Clustering Techniques</p>
+            <a class="person-link" href="https://www.linkedin.com/in/eren-bilici-32814024a/" target="_blank" rel="noopener noreferrer" aria-label="Eren Bilici on LinkedIn"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+          </div>
+        </article>
+
+        <article class="person-card">
+          <img class="person-photo" src="PeoplePage/İbrahim Ethem Kaya.jpg" alt="İbrahim Ethem Kaya" width="72" height="72" loading="lazy" decoding="async">
+          <div class="person-body">
+            <h3 class="person-name">İbrahim Ethem Kaya</h3>
+            <p class="person-role">Undergraduate alumnus</p>
+            <p class="person-topic"><span class="person-topic-label">Project</span>Kinematics of Multi-Degree-of-Freedom Robot Arm</p>
+            <a class="person-link" href="https://www.linkedin.com/in/ibrahim-ethem-kaya-8b82b9209/" target="_blank" rel="noopener noreferrer" aria-label="İbrahim Ethem Kaya on LinkedIn"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+          </div>
+        </article>
+
+        <article class="person-card">
+          <img class="person-photo" src="PeoplePage/Emre Eyüboğlu.jpg" alt="Emre Eyüboğlu" width="72" height="72" loading="lazy" decoding="async">
+          <div class="person-body">
+            <h3 class="person-name">Emre Eyüboğlu</h3>
+            <p class="person-role">Undergraduate alumnus</p>
+            <p class="person-topic"><span class="person-topic-label">Project</span>Dynamics of Rotating Blades</p>
+            <a class="person-link" href="https://www.linkedin.com/in/emreeyuboglu/" target="_blank" rel="noopener noreferrer" aria-label="Emre Eyüboğlu on LinkedIn"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+          </div>
+        </article>
+
+        <article class="person-card">
+          <img class="person-photo" src="PeoplePage/Merve Kaya.jpg" alt="Merve Kaya" width="72" height="72" loading="lazy" decoding="async">
+          <div class="person-body">
+            <h3 class="person-name">Merve Kaya</h3>
+            <p class="person-role">Undergraduate alumna</p>
+            <p class="person-topic"><span class="person-topic-label">Project</span>Anomaly Detection of Rotor Bearing Systems With AI and Vibration Signals</p>
+            <a class="person-link" href="https://www.linkedin.com/in/mervekayaa/" target="_blank" rel="noopener noreferrer" aria-label="Merve Kaya on LinkedIn"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+          </div>
+        </article>
+
+        <article class="person-card">
+          <img class="person-photo" src="PeoplePage/Kadir Sağlam.jpg" alt="Kadir Sağlam" width="72" height="72" loading="lazy" decoding="async">
+          <div class="person-body">
+            <h3 class="person-name">Kadir Sağlam</h3>
+            <p class="person-role">Undergraduate alumnus</p>
+            <p class="person-topic"><span class="person-topic-label">Project</span>Health Monitoring of Rotor-Bearing Systems Based on Vibration Signals</p>
+            <a class="person-link" href="https://www.linkedin.com/in/saglamkadir/" target="_blank" rel="noopener noreferrer" aria-label="Kadir Sağlam on LinkedIn"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+          </div>
+        </article>
       </div>
+    </section>
 
-      <div class="person-card Undergraduate Alumni">
-        <img src="PeoplePage/Emir Mert Polat.jpg" alt="Emir Mert Polat" loading="lazy">
-        <div class="person-name">Emir Mert Polat</div>
-        <div class="person-role">Undergraduate alumnus</div>
-        <div class="person-topic">Wave Propagation Analysis in Periodic Sandwich Structures</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/emir-mert-polat-468abb220/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+    <!-- ========================= Join ========================= -->
+    <section class="people-join" aria-labelledby="join-heading">
+      <div>
+        <p class="eyebrow"><span class="idx">04</span> Openings</p>
+        <h2 id="join-heading">Join the Lab</h2>
+        <p>Students interested in vibrations, structural dynamics or rotor dynamics, for a Ph.D. or M.Sc. thesis or an undergraduate project, are welcome to get in touch.</p>
       </div>
-
-      <div class="person-card Undergraduate Alumni">
-        <img src="PeoplePage/Onur Söylemez.jpg" alt="Onur Söylemez" loading="lazy">
-        <div class="person-name">Onur Söylemez</div>
-        <div class="person-role">Undergraduate alumnus</div>
-        <div class="person-topic">Health Monitoring of Rotor Bearing System Based on Time–Frequency Vibration Signals Using EMD and Clustering Techniques</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/onur-s%C3%B6ylemez-089674362/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
-      </div>
-
-      <div class="person-card Undergraduate Alumni">
-        <img src="PeoplePage/Hıdır Can KAYA.jpg" alt="Hıdır Can Kaya" loading="lazy">
-        <div class="person-name">Hıdır Can Kaya</div>
-        <div class="person-role">Undergraduate alumnus</div>
-        <div class="person-topic">Health Monitoring of Rotor Bearing System Based on Time–Frequency Vibration Signals Using EMD and Clustering Techniques</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/h%C4%B1d%C4%B1r-can-kaya-907712355/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
-      </div>
-
-      <div class="person-card Undergraduate Alumni">
-        <img src="PeoplePage/Eren Bilici.jpg" alt="Eren Bilici" loading="lazy">
-        <div class="person-name">Eren Bilici</div>
-        <div class="person-role">Undergraduate alumnus</div>
-        <div class="person-topic">Health Monitoring of Rotor Bearing System Based on Time–Frequency Vibration Signals Using EMD and Clustering Techniques</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/eren-bilici-32814024a/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
-      </div>
-
-      <div class="person-card Undergraduate Alumni">
-        <img src="PeoplePage/İbrahim Ethem Kaya.jpg" alt="İbrahim Ethem Kaya" loading="lazy">
-        <div class="person-name">İbrahim Ethem Kaya</div>
-        <div class="person-role">Undergraduate alumnus</div>
-        <div class="person-topic">Kinematics of Multi-Degree-of-Freedom Robot Arm</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/ibrahim-ethem-kaya-8b82b9209/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
-      </div>
-
-      <div class="person-card Undergraduate Alumni">
-        <img src="PeoplePage/Emre Eyüboğlu.jpg" alt="Emre Eyüboğlu" loading="lazy">
-        <div class="person-name">Emre Eyüboğlu</div>
-        <div class="person-role">Undergraduate alumnus</div>
-        <div class="person-topic">Dynamics of Rotating Blades</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/emreeyuboglu/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
-      </div>
-
-      <div class="person-card Undergraduate Alumni">
-        <img src="PeoplePage/Merve Kaya.jpg" alt="Merve Kaya" loading="lazy">
-        <div class="person-name">Merve Kaya</div>
-        <div class="person-role">Undergraduate alumna</div>
-        <div class="person-topic">Anomaly Detection of Rotor Bearing Systems With AI and Vibration Signals</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/mervekayaa/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
-      </div>
-
-      <div class="person-card Undergraduate Alumni">
-        <img src="PeoplePage/Kadir Sağlam.jpg" alt="Kadir Sağlam" loading="lazy">
-        <div class="person-name">Kadir Sağlam</div>
-        <div class="person-role">Undergraduate alumnus</div>
-        <div class="person-topic">Health Monitoring of Rotor-Bearing Systems Based on Vibration Signals</div>
-        <a class="linkedin-link" href="https://www.linkedin.com/in/saglamkadir/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
-      </div>
-
-    </div>
-
-    <div id="people-empty-state" class="people-empty-state" hidden aria-live="polite">
-      <strong>No people found</strong>
-      <span id="people-empty-text">No people match the selected filters.</span>
-    </div>
+      <a class="btn-primary" href="contact.html">Get in touch<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </section>
   </main>
 
-  <!-- ========================= Filtering Script ========================= -->
+  <svg class="icon-sprite" aria-hidden="true">
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  </svg>
+
   <script>
-    let selectedRole = 'All';
-    let selectedStatus = 'All';
-
-    function getEmptyStateMessage() {
-      if (selectedStatus === 'Current' && selectedRole === 'All') {
-        return 'No current members are listed at the moment. Please check back later or contact me for openings.';
-      }
-      if (selectedStatus === 'Current') {
-        return `No current ${selectedRole.toLowerCase()} members are listed at the moment.`;
-      }
-      if (selectedRole !== 'All') {
-        return `No ${selectedRole.toLowerCase()} people match the selected status.`;
-      }
-      return 'No people match the selected filters.';
-    }
-
-    function applyFilters() {
-      let visibleCount = 0;
-      document.querySelectorAll('.person-card').forEach(card => {
-        const matchesRole = (selectedRole === 'All') || card.classList.contains(selectedRole);
-        const matchesStatus = (selectedStatus === 'All') || card.classList.contains(selectedStatus);
-        const isVisible = matchesRole && matchesStatus;
-        card.style.display = isVisible ? 'flex' : 'none';
-        if (isVisible) visibleCount += 1;
-      });
-
-      const emptyState = document.getElementById('people-empty-state');
-      const emptyText = document.getElementById('people-empty-text');
-      emptyState.hidden = visibleCount !== 0;
-      emptyText.textContent = getEmptyStateMessage();
-    }
-
-    document.querySelectorAll('[data-role]').forEach(button => {
-      button.addEventListener('click', function () {
-        selectedRole = this.dataset.role;
-        document.querySelectorAll('[data-role]').forEach(btn => btn.classList.remove('active'));
-        this.classList.add('active');
-        applyFilters();
-      });
-    });
-
-    document.querySelectorAll('[data-status]').forEach(button => {
-      button.addEventListener('click', function () {
-        selectedStatus = this.dataset.status;
-        document.querySelectorAll('[data-status]').forEach(btn => btn.classList.remove('active'));
-        this.classList.add('active');
-        applyFilters();
-      });
+    /* Keep the counts in sync with the cards actually on the page */
+    document.querySelectorAll('[data-count-for]').forEach(function (el) {
+      var list = document.getElementById(el.getAttribute('data-count-for'));
+      if (list) el.textContent = list.querySelectorAll('.person-card').length;
     });
   </script>
 
