@@ -111,6 +111,15 @@
       el.style.setProperty('--reveal-delay', Math.min(idx, 6) * 0.05 + 's');
       el.classList.add('visible');
       observer.unobserve(el);
+      // Once revealed, drop the reveal styles so the element's own hover
+      // transitions (lift, shadow) run at their normal speed.
+      var done = function () { el.classList.remove('reveal'); el.style.removeProperty('--reveal-delay'); };
+      el.addEventListener('transitionend', function te(ev) {
+        if (ev.target !== el || ev.propertyName !== 'opacity') return;
+        el.removeEventListener('transitionend', te);
+        done();
+      });
+      setTimeout(done, 1600);
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 

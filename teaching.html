@@ -101,34 +101,52 @@
     File counts and file sizes are filled in automatically.
   -->
 
-  <main id="main" class="container">
+  <main id="main" class="container teaching-page">
+    <!-- ========================= Page Header ========================= -->
     <header class="page-hero">
       <h1>Teaching</h1>
       <p class="page-intro">Undergraduate and graduate courses at Gebze Technical University and the University of Tabriz. Syllabi, lecture slides and recitations are available as PDFs under each course.</p>
+      <ul class="page-stats" aria-label="Teaching at a glance">
+        <li><span class="page-stat-n" data-stat="current">4</span><span class="page-stat-l">Current courses</span></li>
+        <li><span class="page-stat-n" data-stat="courses">10</span><span class="page-stat-l">Courses taught</span></li>
+        <li><span class="page-stat-n" data-stat="pdfs">41</span><span class="page-stat-l">PDF documents</span></li>
+      </ul>
+      <nav class="course-jump" aria-label="Jump to course materials">
+        <span class="course-jump-label">Materials</span>
+        <a href="#me331">ME 331</a>
+        <a href="#me332">ME 332</a>
+        <a href="#me524">ME 524</a>
+        <a href="#me664">ME 664</a>
+        <a href="#me231">ME 231</a>
+        <a href="#me434">ME 434</a>
+      </nav>
     </header>
-    <!-- ========================= CURRENT COURSES ========================= -->
-    <p class="eyebrow"><span class="idx">01</span> Now teaching</p>
-    <h2>Current Courses</h2>
-    <div class="teaching-section">
 
-      <!-- Copy one full teaching-card block below to add a new current course -->
-      <div class="teaching-card" id="me331">
-        <div class="teaching-meta">
-          <span class="course-title">ME 331 – System Dynamics and Vibration</span>
-          <span class="role-badge Lecturer">Lecturer</span>
-          <span class="teaching-semester">2025–Present · GTU</span>
+    <!-- ========================= CURRENT COURSES ========================= -->
+    <section class="page-section" aria-labelledby="current-heading">
+      <p class="eyebrow"><span class="idx">01</span> Now teaching</p>
+      <div class="section-head">
+        <h2 id="current-heading">Current Courses</h2>
+        <span class="section-count" data-count-for="current-list">4</span>
+      </div>
+      <div class="course-list" id="current-list">
+      <!-- Copy one full <article class="teaching-card"> block to add a course -->
+      <article class="teaching-card is-current" id="me331">
+        <div class="course-head">
+          <p class="course-kicker"><span class="course-code">ME 331</span><span class="course-level lvl-ug">Undergraduate</span></p>
+          <p class="course-when">Instructor · 2025–Present · GTU</p>
         </div>
-        <p class="teaching-desc">
-          This course covers the fundamental concepts of how systems vibrate.
-          Basic aspects of vibrations for mathematical modeling,
-          derivation/solution of equations of motion, and subsequent system analysis is covered for discrete systems.
-        </p>
-        <button class="materials-toggle" type="button" aria-expanded="false" aria-controls="me331-materials">
-          <svg class="i" aria-hidden="true"><use href="#i-folder"/></svg>
-          <span class="materials-label">Course materials</span>
-          <span class="materials-count"></span>
-          <svg class="i chev" aria-hidden="true"><use href="#i-chevron"/></svg>
-        </button>
+        <h3 class="course-title">System Dynamics and Vibration</h3>
+        <p class="teaching-desc">This course covers the fundamental concepts of how systems vibrate. Basic aspects of vibrations for mathematical modeling, derivation/solution of equations of motion, and subsequent system analysis is covered for discrete systems.</p>
+        <div class="course-foot">
+          <button class="materials-toggle" type="button" aria-expanded="false" aria-controls="me331-materials">
+            <svg class="i" aria-hidden="true"><use href="#i-folder"/></svg>
+            <span class="materials-label">Course materials</span>
+            <span class="materials-count"></span>
+            <svg class="i chev" aria-hidden="true"><use href="#i-chevron"/></svg>
+          </button>
+          <ul class="course-tags" aria-label="Course format"><li>Theoretical</li></ul>
+        </div>
         <div class="materials-panel" id="me331-materials">
           <div class="materials-inner">
             <section class="mat-group" aria-label="Course documents">
@@ -210,28 +228,24 @@
             </section>
           </div>
         </div>
-        <div class="tag-list">
-          <span>#Undergraduate</span><span>#Theoretical</span>
-        </div>
-      </div>
+      </article>
 
-      <!-- Copy one full teaching-card block below to add a new current course -->
-      <div class="teaching-card" id="me332">
-        <div class="teaching-meta">
-          <span class="course-title">ME 332 – Control Systems Theory</span>
-          <span class="role-badge Lecturer">Lecturer</span>
-          <span class="teaching-semester">2022–Present · GTU</span>
+      <article class="teaching-card is-current" id="me332">
+        <div class="course-head">
+          <p class="course-kicker"><span class="course-code">ME 332</span><span class="course-level lvl-ug">Undergraduate</span></p>
+          <p class="course-when">Instructor · 2022–Present · GTU</p>
         </div>
-        <p class="teaching-desc">
-          This course covers mathematical modeling of mechanical, electrical, and electromechanical systems,
-          with emphasis on transient response, steady-state error, stability, and control design using PID and lag–lead compensators.
-        </p>
-        <button class="materials-toggle" type="button" aria-expanded="false" aria-controls="me332-materials">
-          <svg class="i" aria-hidden="true"><use href="#i-folder"/></svg>
-          <span class="materials-label">Course materials</span>
-          <span class="materials-count"></span>
-          <svg class="i chev" aria-hidden="true"><use href="#i-chevron"/></svg>
-        </button>
+        <h3 class="course-title">Control Systems Theory</h3>
+        <p class="teaching-desc">This course covers mathematical modeling of mechanical, electrical, and electromechanical systems, with emphasis on transient response, steady-state error, stability, and control design using PID and lag–lead compensators.</p>
+        <div class="course-foot">
+          <button class="materials-toggle" type="button" aria-expanded="false" aria-controls="me332-materials">
+            <svg class="i" aria-hidden="true"><use href="#i-folder"/></svg>
+            <span class="materials-label">Course materials</span>
+            <span class="materials-count"></span>
+            <svg class="i chev" aria-hidden="true"><use href="#i-chevron"/></svg>
+          </button>
+          <ul class="course-tags" aria-label="Course format"><li>Theoretical</li></ul>
+        </div>
         <div class="materials-panel" id="me332-materials">
           <div class="materials-inner">
             <section class="mat-group" aria-label="Course documents">
@@ -262,26 +276,24 @@
             </section>
           </div>
         </div>
-        <div class="tag-list">
-          <span>#Undergraduate</span><span>#Theoretical</span>
-        </div>
-      </div>
+      </article>
 
-      <div class="teaching-card" id="me524">
-        <div class="teaching-meta">
-          <span class="course-title">ME 524 – Artificial Intelligence in Mechanical Engineering</span>
-          <span class="role-badge Lecturer">Lecturer</span>
-          <span class="teaching-semester">2022–Present · GTU</span>
+      <article class="teaching-card is-current" id="me524">
+        <div class="course-head">
+          <p class="course-kicker"><span class="course-code">ME 524</span><span class="course-level lvl-grad">Graduate</span></p>
+          <p class="course-when">Instructor · 2022–Present · GTU</p>
         </div>
-        <p class="teaching-desc">
-          This course introduces the fundamentals of artificial intelligence and machine learning in mechanical engineering applications.
-        </p>
-        <button class="materials-toggle" type="button" aria-expanded="false" aria-controls="me524-materials">
-          <svg class="i" aria-hidden="true"><use href="#i-folder"/></svg>
-          <span class="materials-label">Course materials</span>
-          <span class="materials-count"></span>
-          <svg class="i chev" aria-hidden="true"><use href="#i-chevron"/></svg>
-        </button>
+        <h3 class="course-title">Artificial Intelligence in Mechanical Engineering</h3>
+        <p class="teaching-desc">This course introduces the fundamentals of artificial intelligence and machine learning in mechanical engineering applications.</p>
+        <div class="course-foot">
+          <button class="materials-toggle" type="button" aria-expanded="false" aria-controls="me524-materials">
+            <svg class="i" aria-hidden="true"><use href="#i-folder"/></svg>
+            <span class="materials-label">Course materials</span>
+            <span class="materials-count"></span>
+            <svg class="i chev" aria-hidden="true"><use href="#i-chevron"/></svg>
+          </button>
+          <ul class="course-tags" aria-label="Course format"><li>Theoretical</li><li>Project-based</li></ul>
+        </div>
         <div class="materials-panel" id="me524-materials">
           <div class="materials-inner">
             <section class="mat-group" aria-label="Course documents">
@@ -298,28 +310,24 @@
             </section>
           </div>
         </div>
-        <div class="tag-list">
-          <span>#Graduate</span><span>#Theoretical</span><span>#Project-based</span>
-        </div>
-      </div>
+      </article>
 
-      <div class="teaching-card" id="me664">
-        <div class="teaching-meta">
-          <span class="course-title">ME 664 – Nonlinear Oscillations</span>
-          <span class="role-badge Lecturer">Lecturer</span>
-          <span class="teaching-semester">2022–Present · GTU</span>
+      <article class="teaching-card is-current" id="me664">
+        <div class="course-head">
+          <p class="course-kicker"><span class="course-code">ME 664</span><span class="course-level lvl-grad">Graduate</span></p>
+          <p class="course-when">Instructor · 2022–Present · GTU</p>
         </div>
-        <p class="teaching-desc">
-          This course covers the modeling and analysis of nonlinear mechanical oscillations in discrete and continuous systems,
-          with emphasis on physical interpretation, perturbation methods, harmonic balance, resonance, stability,
-          modal interactions, and nonlinear model reduction.
-        </p>
-        <button class="materials-toggle" type="button" aria-expanded="false" aria-controls="me664-materials">
-          <svg class="i" aria-hidden="true"><use href="#i-folder"/></svg>
-          <span class="materials-label">Course materials</span>
-          <span class="materials-count"></span>
-          <svg class="i chev" aria-hidden="true"><use href="#i-chevron"/></svg>
-        </button>
+        <h3 class="course-title">Nonlinear Oscillations</h3>
+        <p class="teaching-desc">This course covers the modeling and analysis of nonlinear mechanical oscillations in discrete and continuous systems, with emphasis on physical interpretation, perturbation methods, harmonic balance, resonance, stability, modal interactions, and nonlinear model reduction.</p>
+        <div class="course-foot">
+          <button class="materials-toggle" type="button" aria-expanded="false" aria-controls="me664-materials">
+            <svg class="i" aria-hidden="true"><use href="#i-folder"/></svg>
+            <span class="materials-label">Course materials</span>
+            <span class="materials-count"></span>
+            <svg class="i chev" aria-hidden="true"><use href="#i-chevron"/></svg>
+          </button>
+          <ul class="course-tags" aria-label="Course format"><li>Theoretical</li><li>Project-based</li></ul>
+        </div>
         <div class="materials-panel" id="me664-materials">
           <div class="materials-inner">
             <section class="mat-group" aria-label="Course documents">
@@ -385,61 +393,70 @@
             </section>
           </div>
         </div>
-        <div class="tag-list">
-          <span>#Graduate</span><span>#Theoretical</span><span>#Project-based</span>
-        </div>
+      </article>
       </div>
-    </div>
+    </section>
 
     <!-- ========================= SAMPLE LECTURE VIDEOS ========================= -->
-    <div class="lecture-section">
+    <section class="page-section" aria-labelledby="videos-heading">
       <p class="eyebrow"><span class="idx">02</span> Watch</p>
-      <h2>Sample Lecture Videos</h2>
-      <p class="lecture-intro">
-        Here are selected lecture recordings from my courses at Gebze Technical University.
-        More videos are available on my
-        <a href="https://youtube.com/@saeedlotfan?si=-NPxC6RdmePAPD0M" target="_blank" rel="noopener noreferrer">YouTube channel</a>.
-      </p>
-
-      <div class="youtube-grid">
-        <div class="youtube-video">
-          <h4 class="video-title">Compensator Design (Part 1)</h4>
-          <iframe src="https://www.youtube.com/embed/cHS0Pcb3-bA" title="Compensator Design Part 1" loading="lazy" frameborder="0" allowfullscreen></iframe>
-        </div>
-
-        <div class="youtube-video">
-          <h4 class="video-title">Compensator Design (Part 2)</h4>
-          <iframe src="https://www.youtube.com/embed/0iPFbgStM8c" title="Compensator Design Part 2" loading="lazy" frameborder="0" allowfullscreen></iframe>
-        </div>
-
-        <div class="youtube-video">
-          <h4 class="video-title">Compensator Design (Part 3)</h4>
-          <iframe src="https://www.youtube.com/embed/hVrfgH28-Ms" title="Compensator Design Part 3" loading="lazy" frameborder="0" allowfullscreen></iframe>
-        </div>
+      <div class="section-head">
+        <h2 id="videos-heading">Sample Lecture Videos</h2>
       </div>
-    </div>
+      <p class="section-intro">Selected lecture recordings from my courses at Gebze Technical University. More videos are on my <a href="https://www.youtube.com/@saeedlotfan" target="_blank" rel="noopener noreferrer">YouTube channel</a>.</p>
+      <!-- To add a video: copy one <figure class="video-card"> and replace the video id (3 places) -->
+      <div class="video-grid">
+        <figure class="video-card">
+          <a class="video-facade" href="https://www.youtube.com/watch?v=cHS0Pcb3-bA" target="_blank" rel="noopener noreferrer" data-yt="cHS0Pcb3-bA" aria-label="Play Compensator Design, Part 1 (YouTube)">
+            <img src="https://i.ytimg.com/vi/cHS0Pcb3-bA/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
+            <span class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5Z"/></svg></span>
+          </a>
+          <figcaption><span class="video-title">Compensator Design</span><span class="video-part">Part 1</span></figcaption>
+        </figure>
+
+        <figure class="video-card">
+          <a class="video-facade" href="https://www.youtube.com/watch?v=0iPFbgStM8c" target="_blank" rel="noopener noreferrer" data-yt="0iPFbgStM8c" aria-label="Play Compensator Design, Part 2 (YouTube)">
+            <img src="https://i.ytimg.com/vi/0iPFbgStM8c/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
+            <span class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5Z"/></svg></span>
+          </a>
+          <figcaption><span class="video-title">Compensator Design</span><span class="video-part">Part 2</span></figcaption>
+        </figure>
+
+        <figure class="video-card">
+          <a class="video-facade" href="https://www.youtube.com/watch?v=hVrfgH28-Ms" target="_blank" rel="noopener noreferrer" data-yt="hVrfgH28-Ms" aria-label="Play Compensator Design, Part 3 (YouTube)">
+            <img src="https://i.ytimg.com/vi/hVrfgH28-Ms/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
+            <span class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5Z"/></svg></span>
+          </a>
+          <figcaption><span class="video-title">Compensator Design</span><span class="video-part">Part 3</span></figcaption>
+        </figure>
+      </div>
+    </section>
 
     <!-- ========================= PAST TEACHING ========================= -->
-    <p class="eyebrow"><span class="idx">03</span> Archive</p>
-    <h2>Past Teaching</h2>
-    <div class="teaching-section">
-
-      <!-- Copy one full teaching-card block below to add a new past course -->
-      <div class="teaching-card" id="me231">
-        <div class="teaching-meta">
-          <span class="course-title">ME 231 – Statics</span>
-          <span class="role-badge Lecturer">Lecturer</span>
-          <span class="teaching-semester">2022–2025 · GTU</span>
+    <section class="page-section" aria-labelledby="past-heading">
+      <p class="eyebrow"><span class="idx">03</span> Archive</p>
+      <div class="section-head">
+        <h2 id="past-heading">Past Teaching</h2>
+        <span class="section-count" data-count-for="past-list">6</span>
+      </div>
+      <div id="past-list">
+        <div class="course-list">
+      <article class="teaching-card" id="me231">
+        <div class="course-head">
+          <p class="course-kicker"><span class="course-code">ME 231</span><span class="course-level lvl-ug">Undergraduate</span></p>
+          <p class="course-when">Instructor · 2022–2025 · GTU</p>
         </div>
-        <p class="teaching-desc">
-          The main purpose of this course is to provide students with a clear and thorough presentation of the theory and application of engineering mechanics.
-        </p>
-        <button class="materials-toggle" type="button" aria-expanded="false" aria-controls="me231-materials">
-          <svg class="i" aria-hidden="true"><use href="#i-folder"/></svg>
-          <span class="materials-label">Course materials</span>
-          <span class="materials-count"></span>
-          <svg class="i chev" aria-hidden="true"><use href="#i-chevron"/></svg>
-        </button>
+        <h3 class="course-title">Statics</h3>
+        <p class="teaching-desc">The main purpose of this course is to provide students with a clear and thorough presentation of the theory and application of engineering mechanics.</p>
+        <div class="course-foot">
+          <button class="materials-toggle" type="button" aria-expanded="false" aria-controls="me231-materials">
+            <svg class="i" aria-hidden="true"><use href="#i-folder"/></svg>
+            <span class="materials-label">Course materials</span>
+            <span class="materials-count"></span>
+            <svg class="i chev" aria-hidden="true"><use href="#i-chevron"/></svg>
+          </button>
+          <ul class="course-tags" aria-label="Course format"><li>Theoretical</li></ul>
+        </div>
         <div class="materials-panel" id="me231-materials">
           <div class="materials-inner">
             <section class="mat-group" aria-label="Course documents">
@@ -620,27 +637,24 @@
             </section>
           </div>
         </div>
-        <div class="tag-list">
-          <span>#Undergraduate</span><span>#Theoretical</span>
-        </div>
-      </div>
+      </article>
 
-      <div class="teaching-card" id="me434">
-        <div class="teaching-meta">
-          <span class="course-title">ME 434 – Introduction to Robotics</span>
-          <span class="role-badge Lecturer">Lecturer</span>
-          <span class="teaching-semester">2022–2025 · GTU</span>
+      <article class="teaching-card" id="me434">
+        <div class="course-head">
+          <p class="course-kicker"><span class="course-code">ME 434</span><span class="course-level lvl-ug">Undergraduate</span></p>
+          <p class="course-when">Instructor · 2022–2025 · GTU</p>
         </div>
-        <p class="teaching-desc">
-          This course introduces robotics from a mechanical engineering perspective, with emphasis on computational aspects,
-          forward kinematics, and inverse kinematics.
-        </p>
-        <button class="materials-toggle" type="button" aria-expanded="false" aria-controls="me434-materials">
-          <svg class="i" aria-hidden="true"><use href="#i-folder"/></svg>
-          <span class="materials-label">Course materials</span>
-          <span class="materials-count"></span>
-          <svg class="i chev" aria-hidden="true"><use href="#i-chevron"/></svg>
-        </button>
+        <h3 class="course-title">Introduction to Robotics</h3>
+        <p class="teaching-desc">This course introduces robotics from a mechanical engineering perspective, with emphasis on computational aspects, forward kinematics, and inverse kinematics.</p>
+        <div class="course-foot">
+          <button class="materials-toggle" type="button" aria-expanded="false" aria-controls="me434-materials">
+            <svg class="i" aria-hidden="true"><use href="#i-folder"/></svg>
+            <span class="materials-label">Course materials</span>
+            <span class="materials-count"></span>
+            <svg class="i chev" aria-hidden="true"><use href="#i-chevron"/></svg>
+          </button>
+          <ul class="course-tags" aria-label="Course format"><li>Elective</li><li>Project-based</li></ul>
+        </div>
         <div class="materials-panel" id="me434-materials">
           <div class="materials-inner">
             <section class="mat-group" aria-label="Course documents">
@@ -657,78 +671,56 @@
             </section>
           </div>
         </div>
-        <div class="tag-list">
-          <span>#Undergraduate</span><span>#Elective</span><span>#Project-based</span>
+      </article>
         </div>
-      </div>
+        <p class="archive-label">Other courses</p>
+        <!-- Courses without materials: copy one <li class="archive-row"> -->
+        <ul class="course-archive">
+        <li class="archive-row" id="me431">
+          <span class="archive-code">ME 431</span>
+          <div class="archive-body">
+            <h3 class="archive-title">Control Systems Design</h3>
+            <p class="archive-desc">This course focuses on control-system design using root-locus, frequency-domain, and state-space techniques.</p>
+          </div>
+          <p class="archive-meta"><span>Instructor</span><span>2022 · GTU</span></p>
+        </li>
 
-      <div class="teaching-card">
-        <div class="teaching-meta">
-          <span class="course-title">ME 431 – Control Systems Design</span>
-          <span class="role-badge Lecturer">Lecturer</span>
-          <span class="teaching-semester">2022 · GTU</span>
-        </div>
-        <p class="teaching-desc">
-          This course focuses on control-system design using root-locus, frequency-domain, and state-space techniques.
-        </p>
-        <div class="tag-list">
-          <span>#Undergraduate</span><span>#Elective</span><span>#Project-based</span>
-        </div>
-      </div>
+        <li class="archive-row" id="me515">
+          <span class="archive-code">ME 515</span>
+          <div class="archive-body">
+            <h3 class="archive-title">Mechanical Vibrations</h3>
+            <p class="archive-desc">The course covered modeling of free and forced vibrations in single- and multi-degree-of-freedom systems, including force and displacement transmissibility concepts and applications.</p>
+          </div>
+          <p class="archive-meta"><span>Teaching Assistant</span><span>2014–2018 · University of Tabriz</span></p>
+        </li>
 
-      <div class="teaching-card">
-        <div class="teaching-meta">
-          <span class="course-title">ME 515 – Mechanical Vibrations</span>
-          <span class="role-badge TA">Teaching Assistant</span>
-          <span class="teaching-semester">2014–2018 · University of Tabriz</span>
-        </div>
-        <p class="teaching-desc">
-          The course covered modeling of free and forced vibrations in single- and multi-degree-of-freedom systems,
-          including force and displacement transmissibility concepts and applications.
-        </p>
-        <div class="tag-list">
-          <span>#Undergraduate</span><span>#Project-based</span>
-        </div>
-      </div>
+        <li class="archive-row" id="me995">
+          <span class="archive-code">ME 995</span>
+          <div class="archive-body">
+            <h3 class="archive-title">Dynamics I</h3>
+            <p class="archive-desc">The course covered kinematics, kinetics, and force-momentum formulation for systems of particles in planar and three-dimensional motion, as well as rigid bodies in planar motion.</p>
+          </div>
+          <p class="archive-meta"><span>Teaching Assistant</span><span>2011–2014 · University of Tabriz</span></p>
+        </li>
 
-      <div class="teaching-card">
-        <div class="teaching-meta">
-          <span class="course-title">ME 995 – Dynamics I</span>
-          <span class="role-badge TA">Teaching Assistant</span>
-          <span class="teaching-semester">2011–2014 · University of Tabriz</span>
-        </div>
-        <p class="teaching-desc">
-          The course covered kinematics, kinetics, and force-momentum formulation for systems of particles in planar and three-dimensional motion,
-          as well as rigid bodies in planar motion.
-        </p>
-        <div class="tag-list">
-          <span>#Undergraduate</span><span>#Theoretical</span>
-        </div>
+        <li class="archive-row" id="me985">
+          <span class="archive-code">ME 985</span>
+          <div class="archive-body">
+            <h3 class="archive-title">Dynamics II</h3>
+            <p class="archive-desc">The course covered kinematics, kinetics, and force-momentum formulation for systems of particles and rigid bodies in three-dimensional motion.</p>
+          </div>
+          <p class="archive-meta"><span>Teaching Assistant</span><span>2012–2015 · University of Tabriz</span></p>
+        </li>
+        </ul>
       </div>
-
-      <div class="teaching-card">
-        <div class="teaching-meta">
-          <span class="course-title">ME 985 – Dynamics II</span>
-          <span class="role-badge TA">Teaching Assistant</span>
-          <span class="teaching-semester">2012–2015 · University of Tabriz</span>
-        </div>
-        <p class="teaching-desc">
-          The course covered kinematics, kinetics, and force-momentum formulation for systems of particles and rigid bodies in three-dimensional motion.
-        </p>
-        <div class="tag-list">
-          <span>#Undergraduate</span><span>#Theoretical</span>
-        </div>
-      </div>
-    </div>
+    </section>
 
     <!-- ========================= TEACHING PHILOSOPHY ========================= -->
-    <p class="eyebrow"><span class="idx">04</span> Approach</p>
-    <h2>Teaching Philosophy</h2>
-    <p class="teaching-philosophy">
-      I view teaching as a collaborative exploration where theoretical rigor meets real-world application.
-      My approach integrates active learning, open-ended assignments, and research-driven examples to foster deep understanding.
-      I aim to create an inclusive, feedback-driven classroom where students grow technically and critically.
-    </p>
+    <section class="teaching-approach" aria-labelledby="approach-heading">
+      <p class="eyebrow"><span class="idx">04</span> Approach</p>
+      <h2 id="approach-heading">Teaching Philosophy</h2>
+      <p class="approach-text">I view teaching as a collaborative exploration where theoretical rigor meets real-world application. My approach integrates active learning, open-ended assignments, and research-driven examples to foster deep understanding. I aim to create an inclusive, feedback-driven classroom where students grow technically and critically.</p>
+    </section>
   </main>
 
   <!-- ========================= FOOTER ========================= -->
