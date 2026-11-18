@@ -1,5 +1,6 @@
 /* Teaching page: collapsible course-material panels, automatic file
-   counts/sizes, and an in-page PDF reader on desktop.
+   counts/sizes, header counts, click-to-load lecture videos and an
+   in-page PDF reader on desktop.
    Progressive enhancement — without JS every panel is open and every
    link opens its PDF directly. */
 (function () {
@@ -29,6 +30,36 @@
       });
     });
   }
+
+  /* ------------------------------------------- Counts in the header */
+  function setCount(sel, n) {
+    document.querySelectorAll(sel).forEach(function (el) { el.textContent = n; });
+  }
+  var pdfs = {};
+  document.querySelectorAll('a[data-pdf]').forEach(function (a) { pdfs[a.getAttribute('href')] = 1; });
+  setCount('[data-stat="pdfs"]', Object.keys(pdfs).length);
+  setCount('[data-stat="current"]', document.querySelectorAll('#current-list .teaching-card').length);
+  setCount('[data-stat="courses"]', document.querySelectorAll('.teaching-card, .archive-row').length);
+  document.querySelectorAll('[data-count-for]').forEach(function (el) {
+    var list = document.getElementById(el.getAttribute('data-count-for'));
+    if (list) el.textContent = list.querySelectorAll('.teaching-card, .archive-row').length;
+  });
+
+  /* ------------------------------------------ Lecture video facades */
+  // The thumbnail is a plain link to YouTube; with JS it swaps in the
+  // player on click, so no YouTube scripts load until someone presses play.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a.video-facade[data-yt]');
+    if (!a || e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(a.getAttribute('data-yt')) + '?autoplay=1&rel=0';
+    f.title = (a.getAttribute('aria-label') || 'Lecture video').replace(/^Play /, '');
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    a.replaceWith(f);
+    f.focus();
+  });
 
   /* ------------------------------------------------ Material panels */
   document.querySelectorAll('.materials-toggle').forEach(function (btn) {
@@ -88,10 +119,12 @@
     var a = list[i];
     var url = a.getAttribute('href');
     var card = a.closest('.teaching-card');
+    var code = card && card.querySelector('.course-code');
     var course = card && card.querySelector('.course-title');
     var size = a.getAttribute('data-size');
+    var label = [code && code.textContent, course && course.textContent].filter(Boolean).join(' – ');
 
-    elCourse.textContent = (course ? course.textContent : '') + (size ? ' · PDF · ' + size : '');
+    elCourse.textContent = label + (size ? ' · PDF · ' + size : '');
     elTitle.textContent = titleOf(a);
     frame.title = titleOf(a);
     lnkOpen.href = url;
