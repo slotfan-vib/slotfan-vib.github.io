@@ -50,27 +50,30 @@
   }
 
   /* ------------------------------------------------------ News interaction */
-  /* Desktop (hover-capable) reveals news on hover via CSS — nothing to click.
-     Touch devices have no hover, so make each card tap-to-toggle instead. */
-  var canHover = window.matchMedia &&
-    window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  if (!canHover) {
-    document.querySelectorAll('.news-item').forEach(function (item) {
-      item.setAttribute('role', 'button');
-      item.setAttribute('tabindex', '0');
-      item.setAttribute('aria-expanded', 'false');
-      var toggle = function () {
-        var open = item.classList.toggle('open');
-        item.setAttribute('aria-expanded', open ? 'true' : 'false');
-      };
-      item.addEventListener('click', function (e) {
-        if (e.target.closest('a')) return; // let links work normally
-        toggle();
-      });
-      item.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
-      });
+  /* Each card shows two lines of text; a "Read more" button appears only
+     when the text is actually cut off, and works the same on every device. */
+  var newsCards = document.querySelectorAll('.news-item');
+  function syncReadMore() {
+    newsCards.forEach(function (item) {
+      var desc = item.querySelector('.news-desc');
+      var btn = item.querySelector('.news-more');
+      if (!desc || !btn || item.classList.contains('open')) return;
+      btn.hidden = desc.scrollHeight <= desc.clientHeight + 2;
     });
+  }
+  newsCards.forEach(function (item) {
+    var btn = item.querySelector('.news-more');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var open = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.textContent = open ? 'Show less' : 'Read more';
+    });
+  });
+  if (newsCards.length) {
+    syncReadMore();
+    window.addEventListener('resize', syncReadMore);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncReadMore);
   }
 
   /* --------------------------------------------- Self-healing stat counts */
