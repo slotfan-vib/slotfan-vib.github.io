@@ -23,11 +23,38 @@ Numbers are never typed by hand: `site.js` / `teaching.js` recount them in the b
 
 ```bash
 python build_seo.py
+python check_site.py
 ```
 
-It regenerates the paper pages, the publications JSON-LD and plain list, `sitemap.xml` and
+`build_seo.py` regenerates the paper pages, the publications JSON-LD and plain list, `sitemap.xml` and
 `robots.txt`, writes `ASSET_V` into every page, and recounts the numbers in the HTML. It is safe to
 run repeatedly; "Pages brought up to date: none" means everything was already in step.
+
+`check_site.py` checks the conventions below (versions, links, image sizes, news labels and dates,
+publication fields, wording, PDF names and sizes) and must end with `0 error(s)` before a push.
+
+## Checklist for every update (handoff)
+
+Read this file first, then make the edit in its source and finish with the two commands above.
+
+1. **Source, not copies.** Change the fact where it lives (table above). Never type a count by hand.
+2. **Same wording as the existing cards.** Copy the nearest existing block of the same kind and
+   follow the patterns under *Wording conventions*. Paper titles exactly as in
+   `publications_data.json`; project titles as on `research.html`; people's titles by the Prof./Dr. rule.
+3. **One update touches every place it belongs:**
+   - *New paper* → `publications_data.json` (+ `"project"` if any) → news card → `build_seo.py`.
+   - *Paper accepted/presented* → news card titled exactly as the data entry, linking the title to
+     `papers/<slug>.html` and "Read paper ↗" to the DOI (or "View abstract ↗" before a DOI exists).
+   - *Funded project* → project card on Research + "Funded project" news card (date funded);
+     on completion, a second news card linking to its story page.
+   - *Student* → People card + thesis news card when they defend.
+   - *Course material* → PDF in `TeachingMaterials/<COURSE>/`, named and compressed, + its row on Teaching.
+4. **Images:** compress (news thumbnails ≲ 150 KB, figures ≲ 400 KB), give `alt`, `width` and `height`
+   (news thumbnails are `width="164" height="108"`).
+5. **Links:** pages on this site in the same tab with →; other sites in a new tab with ↗ and
+   `rel="noopener noreferrer"`.
+6. **CSS/JS changed?** Bump `ASSET_V`.
+7. **Check on localhost** (desktop, mobile, dark mode) before pushing.
 
 ## How to add…
 
