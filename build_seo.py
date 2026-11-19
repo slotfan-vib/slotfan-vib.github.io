@@ -26,6 +26,15 @@ TODAY = date.today().isoformat()
 # ORCID iD, e.g. "0000-0002-1825-0097". Leave "" to omit ORCID markup.
 ORCID = "0000-0001-8616-2120"
 
+# Cache-busting version for shared CSS/JS. Keep it equal to the ?v= used in
+# the top-level *.html pages and bump it whenever style.css / site.js change.
+ASSET_V = "20261119"
+
+# Display names for publication types (data keys stay Journal/Conference/
+# Presentation so filters and ?type= links keep working). Same wording as the
+# home-page news tags and the publications page.
+TYPE_LABELS = {"Journal": "Journal paper", "Conference": "Conference paper", "Presentation": "Talk"}
+
 STATIC_PAGES = [
     ("index.html", "1.0", "weekly"),
     ("research.html", "0.8", "monthly"),
@@ -163,9 +172,7 @@ def build_paper_page(pub, slug):
         jsonld["identifier"] = {"@type": "PropertyValue", "propertyName": "DOI", "value": doi}
         jsonld["sameAs"] = f"https://doi.org/{doi}"
 
-    type_label = {"Journal": "Journal Article", "Conference": "Conference Paper"}.get(
-        pub["type"], pub["type"]
-    )
+    type_label = TYPE_LABELS.get(pub["type"], pub["type"])
     desc = (pub["abstract"][:180].rsplit(" ", 1)[0] + "…") if pub["abstract"] else title
 
     return f"""<!DOCTYPE html>
@@ -189,8 +196,8 @@ def build_paper_page(pub, slug):
   <meta property="og:site_name" content="Saeed Lotfan" />
 
   <link rel="icon" href="../favicon.png" type="image/png" />
-  <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="../publications-style.css" />
+  <link rel="stylesheet" href="../style.css?v={ASSET_V}" />
+  <link rel="stylesheet" href="../publications-style.css?v={ASSET_V}" />
   <script>(function(){{try{{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}}catch(e){{}}}})();</script>
 
   <script type="application/ld+json">
@@ -240,7 +247,7 @@ def build_paper_page(pub, slug):
   </main>
 
   <footer class="footer">&copy; {date.today().year} Saeed Lotfan &middot; Gebze Technical University &middot; All rights reserved.</footer>
-  <script src="../site.js" defer></script>
+  <script src="../site.js?v={ASSET_V}" defer></script>
 </body>
 </html>
 """

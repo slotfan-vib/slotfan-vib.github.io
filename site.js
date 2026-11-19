@@ -77,7 +77,7 @@
   }
 
   /* --------------------------------------------- Self-healing stat counts */
-  /* Keep the homepage "Journal articles" / "Publications" numbers in sync with
+  /* Keep the homepage "Journal papers" / "Publications" numbers in sync with
      publications_data.json, so they never drift when a paper is added. */
   if (document.querySelector('[data-count]')) {
     fetch('publications_data.json')
