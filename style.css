@@ -583,6 +583,24 @@ a.metric:active { transform: scale(0.99); }
 .news-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .news-toggle .news-toggle-n { font-family: var(--font-mono); font-size: 0.78rem; font-weight: 500; color: var(--muted); }
 
+/* News type label: the first thing on each card, in the colour of its kind */
+.news-meta .pub-tag {
+  --k: var(--accent);
+  padding: 5px 13px 5px 11px; gap: 8px;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--k); border-color: transparent;
+  background: color-mix(in srgb, var(--k) 12%, var(--surface));
+}
+.news-meta .pub-tag::before { background: var(--k); }
+.news-meta .pub-tag.Journal { --k: var(--c-journal); }
+.news-meta .pub-tag.Conference { --k: var(--c-conference); }
+.news-meta .pub-tag.Presentation, .news-meta .pub-tag.Poster,
+.news-meta .pub-tag.Students, .news-meta .pub-tag.Teaching { --k: var(--c-presentation); }
+.news-meta .pub-tag.Thesis { --k: var(--c-thesis); }
+.news-meta .pub-tag.Project, .news-meta .pub-tag.Award { --k: var(--c-project); }
+.news-meta .pub-tag.Hiring { --k: var(--accent); }
+.news-meta .news-date { color: var(--muted); font-weight: 500; }
+
 /* News type tags reuse .pub-tag; extra kinds used only here */
 .pub-tag.Project::before, .pub-tag.Award::before { background: var(--c-project, #b7791f); }
 .pub-tag.Students::before, .pub-tag.Teaching::before { background: var(--c-presentation); }
@@ -778,17 +796,12 @@ a.metric:active { transform: scale(0.99); }
   box-shadow: var(--shadow-sm);
   transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
 }
-/* Current courses carry an accent stripe that brightens on hover */
-.teaching-card.is-current::before {
-  content: ''; position: absolute; top: -1px; bottom: -1px; left: -1px; width: 4px;
-  border-radius: var(--radius) 0 0 var(--radius);
-  background: linear-gradient(180deg, var(--c-conference), var(--accent));
-  opacity: 0.85; transition: opacity var(--dur) var(--ease), width var(--dur) var(--ease);
-}
-.teaching-card.is-current { padding-left: 30px; }
+/* Current courses carry the same accent edge as the home news cards: a real
+   left border, so it follows the rounded corners. */
+.teaching-card.is-current { border-left: 3px solid var(--accent); }
 @media (hover: hover) and (pointer: fine) {
   .teaching-card:hover { transform: translateY(-3px); border-color: var(--line-strong); box-shadow: var(--shadow-md); }
-  .teaching-card.is-current:hover::before { opacity: 1; width: 5px; }
+  .teaching-card.is-current:hover { border-left-color: var(--accent); }
   .teaching-card:hover .course-title { color: var(--accent-hover); }
   .teaching-card.is-open:hover { transform: none; }
 }
@@ -983,7 +996,6 @@ a.mat-dl:hover { color: var(--accent); background: var(--accent-soft); }
   .course-jump-label { width: 100%; margin: 0 0 2px; }
   .course-list { gap: 12px; }
   .teaching-card { padding: 18px 16px; }
-  .teaching-card.is-current { padding-left: 20px; }
   .course-title { font-size: 1.08rem; }
   .teaching-desc { font-size: 0.9rem; }
   .course-foot { margin-top: 14px; }
