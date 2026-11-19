@@ -540,6 +540,29 @@ a.metric:active { transform: scale(0.99); }
   transition: transform var(--dur) var(--ease);
 }
 
+/* Latest six by default; the rest open with "Show all news" (site.js).
+   Without JS every item stays visible. */
+.news-list.is-limited > .news-item:nth-child(n+7) { display: none; }
+.news-toggle-row { display: flex; justify-content: center; margin-top: 22px; }
+.news-toggle-row:not(:has(> :not([hidden]))) { display: none; }
+.news-toggle {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 22px;
+  font: inherit; font-size: 0.9rem; font-weight: 600; color: var(--accent);
+  background: var(--surface); border: 1px solid var(--line-strong); border-radius: 999px;
+  box-shadow: var(--shadow-sm); cursor: pointer; touch-action: manipulation;
+  transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+.news-toggle[hidden] { display: none; }
+.news-toggle::after {
+  content: ''; width: 7px; height: 7px; margin: -3px 0 0 2px;
+  border-right: 1.8px solid currentColor; border-bottom: 1.8px solid currentColor;
+  transform: rotate(45deg); transition: transform var(--dur) var(--ease), margin var(--dur) var(--ease);
+}
+.news-toggle[aria-expanded="true"]::after { transform: rotate(-135deg); margin-top: 4px; }
+.news-toggle:hover { background: var(--accent-soft); border-color: var(--accent); box-shadow: var(--shadow-md); }
+.news-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.news-toggle .news-toggle-n { font-family: var(--font-mono); font-size: 0.78rem; font-weight: 500; color: var(--muted); }
+
 /* News type tags reuse .pub-tag; extra kinds used only here */
 .pub-tag.Project::before, .pub-tag.Award::before { background: var(--c-project, #b7791f); }
 .pub-tag.Students::before, .pub-tag.Teaching::before { background: var(--c-presentation); }
@@ -660,7 +683,7 @@ a.metric:active { transform: scale(0.99); }
 .pub-tag::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--muted); }
 .pub-tag.Journal::before { background: var(--c-journal); }
 .pub-tag.Conference::before { background: var(--c-conference); }
-.pub-tag.Presentation::before { background: var(--c-presentation); }
+.pub-tag.Presentation::before, .pub-tag.Poster::before { background: var(--c-presentation); }
 .pub-tag.Preprint::before { background: var(--c-preprint); }
 .pub-tag.Thesis::before { background: var(--c-thesis); }
 

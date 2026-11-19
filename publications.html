@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Journal articles, conference papers, and presentations by Saeed Lotfan in nonlinear vibrations, structural dynamics, rotating blades, rotordynamics, reduced-order modeling, computational mechanics, and machine learning in engineering."
+    content="Journal papers, conference papers, talks and posters by Saeed Lotfan in nonlinear vibrations, structural dynamics, rotating blades, rotordynamics, reduced-order modeling, computational mechanics, and machine learning in engineering."
   />
   <meta
     name="keywords"
@@ -23,7 +23,7 @@
   <meta property="og:title" content="Publications | Saeed Lotfan" />
   <meta
     property="og:description"
-    content="Journal articles, conference papers, and presentations by Saeed Lotfan in vibrations, structural dynamics, rotordynamics, and computational mechanics."
+    content="Journal papers, conference papers, talks and posters by Saeed Lotfan in vibrations, structural dynamics, rotordynamics, and computational mechanics."
   />
   <meta property="og:image" content="https://saeedlotfan.com/profile.jpg" />
   <meta property="og:url" content="https://saeedlotfan.com/publications.html" />
@@ -37,8 +37,8 @@
   <meta name="twitter:image" content="https://saeedlotfan.com/profile.jpg" />
 
   <link rel="icon" href="favicon.png" type="image/png" />
-  <link rel="stylesheet" href="style.css?v=20261119" />
-  <link rel="stylesheet" href="publications-style.css" />
+  <link rel="stylesheet" href="style.css?v=20261119b" />
+  <link rel="stylesheet" href="publications-style.css?v=20261119b" />
 
   <script type="application/ld+json">
   {
@@ -1034,7 +1034,7 @@
   <main id="main" class="container">
     <header class="page-hero">
       <h1>Publications</h1>
-      <p class="page-intro">Journal articles, conference papers, and presentations by Saeed Lotfan in mechanical vibrations, structural dynamics, nonlinear dynamics, rotordynamics, reduced-order modeling, computational mechanics, and machine learning in engineering.</p>
+      <p class="page-intro">Journal papers, conference papers, talks and posters by Saeed Lotfan in mechanical vibrations, structural dynamics, nonlinear dynamics, rotordynamics, reduced-order modeling, computational mechanics, and machine learning in engineering.</p>
     </header>
 
     <section aria-labelledby="publication-controls-heading">
@@ -1051,9 +1051,9 @@
 
       <div class="publication-filter" role="toolbar" aria-label="Publication filters">
         <button type="button" class="filter-btn active" data-filter="All" aria-pressed="true">All</button>
-        <button type="button" class="filter-btn" data-filter="Journal" aria-pressed="false">Journal</button>
-        <button type="button" class="filter-btn" data-filter="Conference" aria-pressed="false">Conference</button>
-        <button type="button" class="filter-btn" data-filter="Presentation" aria-pressed="false">Presentation</button>
+        <button type="button" class="filter-btn" data-filter="Journal" aria-pressed="false">Journal papers</button>
+        <button type="button" class="filter-btn" data-filter="Conference" aria-pressed="false">Conference papers</button>
+        <button type="button" class="filter-btn" data-filter="Presentation" aria-pressed="false">Talks &amp; posters</button>
       </div>
     </section>
 
@@ -1296,8 +1296,10 @@
     }
 
     function getPublicationLabel(type) {
-      if (type === 'Journal') return 'Journal Article';
-      if (type === 'Conference') return 'Conference Paper';
+      if (type === 'Journal') return 'Journal paper';
+      if (type === 'Conference') return 'Conference paper';
+      if (type === 'Presentation') return 'Talk';
+      if (type === 'Poster') return 'Poster';
       return type;
     }
 
@@ -1395,7 +1397,9 @@
     function applyPublicationControls() {
       let visibleCount = 0;
       allCards.forEach(card => {
-        const matchesType = activeFilter === 'All' || card.dataset.type === activeFilter;
+        // 'Talks & posters' covers both kinds of conference presentation.
+        const matchesType = activeFilter === 'All' || card.dataset.type === activeFilter ||
+          (activeFilter === 'Presentation' && card.dataset.type === 'Poster');
         const matchesSearch = !searchTerm || card.dataset.search.includes(searchTerm);
         const isVisible = matchesType && matchesSearch;
         card.classList.toggle('show', isVisible);
@@ -1450,6 +1454,6 @@
       loadPublications();
     });
   </script>
-  <script src="site.js?v=20261119" defer></script>
+  <script src="site.js?v=20261119b" defer></script>
 </body>
 </html>
