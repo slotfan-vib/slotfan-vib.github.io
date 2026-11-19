@@ -28,12 +28,12 @@ ORCID = "0000-0001-8616-2120"
 
 # Cache-busting version for shared CSS/JS. Keep it equal to the ?v= used in
 # the top-level *.html pages and bump it whenever style.css / site.js change.
-ASSET_V = "20261119"
+ASSET_V = "20261119b"
 
 # Display names for publication types (data keys stay Journal/Conference/
 # Presentation so filters and ?type= links keep working). Same wording as the
 # home-page news tags and the publications page.
-TYPE_LABELS = {"Journal": "Journal paper", "Conference": "Conference paper", "Presentation": "Talk"}
+TYPE_LABELS = {"Journal": "Journal paper", "Conference": "Conference paper", "Presentation": "Talk", "Poster": "Poster"}
 
 STATIC_PAGES = [
     ("index.html", "1.0", "weekly"),

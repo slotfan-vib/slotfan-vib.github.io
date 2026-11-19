@@ -70,6 +70,36 @@
       btn.textContent = open ? 'Show less' : 'Read more';
     });
   });
+  /* Show the latest six items; "Show all news" reveals the rest in place. */
+  var LATEST = 6;
+  var newsList = document.getElementById('news-list');
+  var newsToggle = document.querySelector('.news-toggle');
+  if (newsList && newsToggle && newsCards.length > LATEST) {
+    var total = newsCards.length;
+    var setToggle = function (expanded) {
+      newsList.classList.toggle('is-limited', !expanded);
+      newsToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      newsToggle.innerHTML = expanded
+        ? 'Show latest only'
+        : 'Show all news <span class="news-toggle-n">(' + total + ')</span>';
+    };
+    setToggle(false);
+    newsToggle.hidden = false;
+    newsToggle.addEventListener('click', function () {
+      var expand = newsToggle.getAttribute('aria-expanded') !== 'true';
+      setToggle(expand);
+      if (expand) {
+        syncReadMore();   // newly shown cards decide whether they need "Read more"
+      } else {
+        // Collapsing removes a lot of height; keep the button in view.
+        var top = newsToggle.getBoundingClientRect().top;
+        if (top < 0 || top > window.innerHeight) {
+          newsToggle.scrollIntoView({ block: 'center', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+        }
+      }
+    });
+  }
+
   if (newsCards.length) {
     syncReadMore();
     window.addEventListener('resize', syncReadMore);
