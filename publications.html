@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Journal papers, conference papers, talks, and posters by Saeed Lotfan in nonlinear vibrations, structural dynamics, rotating blades, rotordynamics, reduced-order modeling, computational mechanics, and machine learning in engineering."
+    content="Journal papers, conference papers, talks, and posters by Saeed Lotfan on nonlinear vibrations, structural dynamics, rotordynamics and reduced-order modeling."
   />
   <meta
     name="keywords"
@@ -37,8 +37,8 @@
   <meta name="twitter:image" content="https://saeedlotfan.com/profile.jpg" />
 
   <link rel="icon" href="favicon.png" type="image/png" />
-  <link rel="stylesheet" href="style.css?v=20261119j" />
-  <link rel="stylesheet" href="publications-style.css?v=20261119j" />
+  <link rel="stylesheet" href="style.css?v=20261119n" />
+  <link rel="stylesheet" href="publications-style.css?v=20261119n" />
 
   <script type="application/ld+json">
   {
@@ -1309,6 +1309,16 @@
       return div.innerHTML;
     }
 
+    // Keep in sync with PROJECTS in build_seo.py
+    const PROJECT_PAGES = {
+      'rotating-blades': { name: 'Dynamics of Rotating Blades', url: 'projects/rotating-blades.html' }
+    };
+    // Same slug rule as build_seo.py, so cards can link to papers/<slug>.html
+    function paperSlug(title) {
+      return (title || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-')
+        .replace(/^-|-$/g, '').slice(0, 80).replace(/-+$/, '');
+    }
+
     function createPublicationCard(pub) {
       const card = document.createElement('article');
       card.className = `publication-card ${pub.type} show`;
@@ -1324,6 +1334,7 @@
       const safeDoi = escapeHtml(pub.doi);
       const safeTypeLabel = escapeHtml(getPublicationLabel(pub.type));
       const isLongAbstract = (pub.abstract || '').length > 320;
+      const project = PROJECT_PAGES[pub.project];
 
       card.innerHTML = `
         <div class="pub-summary">
@@ -1334,6 +1345,7 @@
             <span class="pub-tag ${pub.type}">${safeTypeLabel}</span>
           </div>
           <p class="pub-cite"><em>${safeCite}</em></p>
+          ${project ? `<a class="pub-project" href="${project.url}">Part of project: ${escapeHtml(project.name)}<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>` : ''}
         </div>
 
         <div class="pub-details" aria-hidden="true">
@@ -1346,7 +1358,10 @@
               <img src="${safeImage}" alt="Figure for ${safeTitle}" loading="lazy" />
             </div>
           </div>
-          <a href="${safeDoi}" target="_blank" rel="noopener noreferrer">View Paper</a>
+          <div class="news-actions">
+            <a class="news-link" href="${safeDoi}" target="_blank" rel="noopener noreferrer">Read paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a class="news-link" href="papers/${paperSlug(pub.title)}.html">Paper page<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
         </div>
       `;
 
@@ -1359,7 +1374,8 @@
         });
       }
 
-      const toggleCard = () => {
+      const toggleCard = (event) => {
+        if (event && event.target && event.target.closest && event.target.closest('a')) return;  // links just navigate
         document.querySelectorAll('.publication-card.open').forEach(openCard => {
           if (openCard !== card) {
             openCard.classList.remove('open');
@@ -1454,6 +1470,6 @@
       loadPublications();
     });
   </script>
-  <script src="site.js?v=20261119j" defer></script>
+  <script src="site.js?v=20261119n" defer></script>
 </body>
 </html>

@@ -8,7 +8,7 @@
   <title>Research | Saeed Lotfan | Gebze Technical University</title>
 
   <!-- ========================= SEO Meta Tags ========================= -->
-  <meta name="description" content="Research activities of Saeed Lotfan at Gebze Technical University, including structural dynamics, nonlinear vibrations, reduced-order modeling, computational mechanics, and machine learning in engineering." />
+  <meta name="description" content="Research of Saeed Lotfan at Gebze Technical University: structural dynamics, nonlinear vibrations, reduced-order modeling and funded TÜBİTAK projects." />
   <meta name="keywords" content="Saeed Lotfan, research, mechanical engineering, structural dynamics, nonlinear vibrations, reduced-order modeling, computational mechanics, machine learning in engineering, Gebze Technical University" />
   <meta name="author" content="Saeed Lotfan" />
   <meta name="robots" content="index, follow" />
@@ -29,8 +29,46 @@
   <link rel="icon" href="favicon.png" type="image/png" />
 
   <!-- =========================== Main CSS ============================ -->
-  <link href="style.css?v=20261119j" rel="stylesheet" />
+  <link href="style.css?v=20261119n" rel="stylesheet" />
   <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Research | Saeed Lotfan",
+    "url": "https://saeedlotfan.com/research.html",
+    "about": {
+      "@type": "Person",
+      "name": "Saeed Lotfan",
+      "url": "https://saeedlotfan.com/",
+      "sameAs": "https://orcid.org/0000-0001-8616-2120"
+    },
+    "hasPart": [
+      {
+        "@type": "ResearchProject",
+        "name": "Design and Fabrication of Phononic Sandwich Composite Structures",
+        "alternateName": "Innovative integrated design and 4D printing for the development of phononic sandwich composite structures with tunable bandgap behavior",
+        "identifier": "225M347",
+        "url": "https://saeedlotfan.com/research.html#project-phononic",
+        "funder": {
+          "@type": "Organization",
+          "name": "TÜBİTAK – Scientific and Technological Research Council of Türkiye"
+        }
+      },
+      {
+        "@type": "ResearchProject",
+        "name": "Dynamics of Rotating Blades",
+        "alternateName": "Nonlinear vibrations of a high-fidelity model of rotating pre-twisted blades with thickness and chord length variations including nonlinear centrifugal effects",
+        "identifier": "123M046",
+        "url": "https://saeedlotfan.com/projects/rotating-blades.html",
+        "funder": {
+          "@type": "Organization",
+          "name": "TÜBİTAK – Scientific and Technological Research Council of Türkiye"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -113,8 +151,9 @@
         - Tags: "Ongoing" or "Completed", then your role "Principal investigator" or "Researcher".
         - Meta line: programme · project number · years (add · Budget only when known).
         - Team: Principal investigator / Researchers / Advisor, Prof. for full professors, Dr. otherwise.
-        - Details (opened by "Read more"): overview paragraphs; for completed projects add the
-          <div class="project-outputs"> list of output papers (link each to papers/<slug>.html).
+        - Details (opened by "Read more"): overview paragraphs. A completed project gets its own
+          write-up page in projects/ (story, results, output papers) linked from its card;
+          list its papers in PROJECTS in build_seo.py so the paper pages link back.
       -->
       <div class="research-projects">
 
@@ -158,6 +197,9 @@
               <div><dt>Principal investigator</dt><dd><strong class="team-me">Saeed Lotfan</strong></dd></div>
               <div><dt>Researcher</dt><dd>Prof. Ender Ciğeroğlu (Middle East Technical University)</dd></div>
             </dl>
+            <a class="project-story-cta" href="projects/rotating-blades.html">
+              <span class="cta-text"><span class="cta-title">Read the project story</span><span class="cta-sub">The problem, our approach, key results and 4 output papers</span></span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
             <div class="project-actions">
               <button class="news-more project-more" type="button" aria-expanded="false" aria-controls="project-blades-details" hidden>Read more</button>
             </div>
@@ -168,11 +210,7 @@
             <p>To ensure reliable, efficient, and economical design of rotating equipment, a high-fidelity model and solution methodology are developed for analyzing the mechanical vibrations of the system, balancing accuracy and efficiency in dynamic modeling. Unlike simplified models that neglect key effects such as Coriolis forces or steady-state equilibrium deformations (SSEDs), the approach incorporates rotation-induced force fields, geometric complexities (pre-set and pre-twist angles, thickness and chord length variations), and nonlinear dynamics.</p>
             <p>Using a two-dimensional nonlinear spectral solution method and one-to-one mapping, the model achieves computational efficiency and accuracy, validated through finite element simulations. A novel model order reduction followed by the multi-harmonic balance method is developed to explore primary and internal resonances. The resulting model enables precise predictions of vibration behavior, supporting the economical and reliable design of blades for a range of rotating equipment.</p>
             <p class="project-ack">Supported by the Scientific and Technological Research Council of Türkiye (TÜBİTAK) under the 1001 – The Scientific and Technological Research Projects Funding Program, project number 123M046.</p>
-            <!-- Output papers (step 2): add
-            <div class="project-outputs">
-              <h4 class="project-subhead">Output papers</h4>
-              <ul> <li><a href="papers/....html">Title</a> <span>Journal, Year</span></li> </ul>
-            </div> -->
+<!-- Results, figures and output papers: projects/rotating-blades.html -->
           </div>
         </article>
 
@@ -203,6 +241,6 @@
     &copy; 2026 Saeed Lotfan · Gebze Technical University · All rights reserved.
   </footer>
 
-  <script src="site.js?v=20261119j" defer></script>
+  <script src="site.js?v=20261119n" defer></script>
 </body>
 </html>

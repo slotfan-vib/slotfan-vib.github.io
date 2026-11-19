@@ -17,6 +17,7 @@ import json
 import re
 import os
 import html
+import subprocess
 from datetime import date
 
 SITE = "https://saeedlotfan.com"
@@ -28,7 +29,7 @@ ORCID = "0000-0001-8616-2120"
 
 # Cache-busting version for shared CSS/JS. Keep it equal to the ?v= used in
 # the top-level *.html pages and bump it whenever style.css / site.js change.
-ASSET_V = "20261119j"
+ASSET_V = "20261119n"
 
 # Display names for publication types (data keys stay Journal/Conference/
 # Presentation so filters and ?type= links keep working). Same wording as the
@@ -42,7 +43,25 @@ STATIC_PAGES = [
     ("teaching.html", "0.6", "monthly"),
     ("people.html", "0.6", "monthly"),
     ("contact.html", "0.5", "yearly"),
+    ("projects/rotating-blades.html", "0.8", "monthly"),
 ]
+
+# Funded projects with their own write-up page. A paper belongs to a project
+# when its entry in publications_data.json has "project": "<key>"; it then gets
+# a "Part of project" link and grant metadata (publications.html shows it too).
+PROJECTS = {
+    "rotating-blades": {
+        "name": "Dynamics of Rotating Blades",
+        "page": "projects/rotating-blades.html",
+        "program": "TÜBİTAK 1001",
+        "grant": "123M046",
+        "years": "2023–2025",
+    },
+}
+
+STOPWORDS = set("""a an and the of in on for with to by from using based via under
+including its their into toward towards new study analysis approach model models
+method methods system systems""".split())
 
 
 # --------------------------------------------------------------------------- #
@@ -113,7 +132,40 @@ def esc(s):
 # --------------------------------------------------------------------------- #
 # Per-paper landing pages
 # --------------------------------------------------------------------------- #
-def build_paper_page(pub, slug):
+def project_of(pub):
+    return PROJECTS.get(pub.get("project", ""))
+
+
+def title_tokens(title):
+    return {w for w in re.findall(r"[a-z0-9]+", title.lower()) if len(w) > 3 and w not in STOPWORDS}
+
+
+def related_for(i, pubs, slugs, n=4):
+    """Most similar other papers by shared title words (same project first)."""
+    me = title_tokens(pubs[i]["title"])
+    pr = project_of(pubs[i])
+    scored = []
+    for j, other in enumerate(pubs):
+        if j == i:
+            continue
+        score = len(me & title_tokens(other["title"]))
+        if pr and project_of(other) is pr:
+            score += 5
+        if score:
+            scored.append((-score, j))
+    scored.sort()
+    picked = [j for _, j in scored[:n]]
+    # Top up with the papers nearest in the (chronological) list, so every
+    # paper page links to a few others.
+    for j in sorted(range(len(pubs)), key=lambda k: abs(k - i)):
+        if len(picked) >= n:
+            break
+        if j != i and j not in picked:
+            picked.append(j)
+    return [(pubs[j], slugs[j]) for j in picked]
+
+
+def build_paper_page(pub, slug, related=(), project=None):
     title = pub["title"]
     authors = parse_authors(pub["authors"])
     year = parse_year(pub["cite"])
@@ -171,6 +223,34 @@ def build_paper_page(pub, slug):
     if doi:
         jsonld["identifier"] = {"@type": "PropertyValue", "propertyName": "DOI", "value": doi}
         jsonld["sameAs"] = f"https://doi.org/{doi}"
+    if project:
+        jsonld["funding"] = {
+            "@type": "Grant",
+            "identifier": project["grant"],
+            "name": project["name"],
+            "url": f"{SITE}/{project['page']}",
+            "funder": {"@type": "Organization",
+                       "name": "TÜBİTAK – Scientific and Technological Research Council of Türkiye"},
+        }
+
+    project_html = ""
+    if project:
+        project_html = (
+            '\n      <aside class="paper-project">\n'
+            '        <p class="paper-project-label">Part of a funded project</p>\n'
+            f'        <p><a href="../{project["page"]}">{esc(project["name"])}</a>'
+            f' <span>{esc(project["program"])} · No. {esc(project["grant"])} · {esc(project["years"])}</span></p>\n'
+            '      </aside>'
+        )
+    related_html = ""
+    if related:
+        rows = []
+        for p2, s2 in related:
+            y2 = parse_year(p2["cite"])
+            rows.append(f'        <li><a href="{s2}.html">{esc(p2["title"])}</a>'
+                        f' <span>{esc(TYPE_LABELS.get(p2["type"], p2["type"]))}{" · " + esc(y2) if y2 else ""}</span></li>')
+        related_html = ('\n\n      <h2>Related publications</h2>\n      <ul class="related-list">\n'
+                        + "\n".join(rows) + '\n      </ul>')
 
     type_label = TYPE_LABELS.get(pub["type"], pub["type"])
     desc = (pub["abstract"][:180].rsplit(" ", 1)[0] + "…") if pub["abstract"] else title
@@ -242,7 +322,7 @@ def build_paper_page(pub, slug):
       <h2>Abstract</h2>
       <p>{esc(pub['abstract'])}</p>
 
-      <p><a href="{esc(source)}" target="_blank" rel="noopener noreferrer">View published paper &rarr;</a></p>
+      <p><a class="news-link" href="{esc(source)}" target="_blank" rel="noopener noreferrer">Read paper <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></p>{project_html}{related_html}
     </article>
   </main>
 
@@ -367,22 +447,38 @@ def build_robots():
     return "\n".join(lines) + "\n"
 
 
+def lastmod(path):
+    """Date the file last really changed: its last commit, or today if it has
+    uncommitted edits. Google ignores <lastmod> when every page says "today"."""
+    try:
+        dirty = subprocess.run(["git", "status", "--porcelain", "--", path], cwd=ROOT,
+                               capture_output=True, text=True).stdout.strip()
+        if dirty:
+            return TODAY
+        out = subprocess.run(["git", "log", "-1", "--format=%cs", "--", path], cwd=ROOT,
+                             capture_output=True, text=True).stdout.strip()
+        return out or TODAY
+    except Exception:
+        return TODAY
+
+
 def build_sitemap(slugs):
     urls = []
     for page, prio, freq in STATIC_PAGES:
         loc = f"{SITE}/" if page == "index.html" else f"{SITE}/{page}"
-        urls.append((loc, prio, freq))
+        urls.append((loc, prio, freq, lastmod(page)))
     for slug in slugs:
-        urls.append((f"{SITE}/papers/{slug}.html", "0.7", "yearly"))
+        page = f"papers/{slug}.html"
+        urls.append((f"{SITE}/{page}", "0.7", "yearly", lastmod(page)))
 
     body = "\n".join(
         f"  <url>\n"
         f"    <loc>{loc}</loc>\n"
-        f"    <lastmod>{TODAY}</lastmod>\n"
+        f"    <lastmod>{mod}</lastmod>\n"
         f"    <changefreq>{freq}</changefreq>\n"
         f"    <priority>{prio}</priority>\n"
         f"  </url>"
-        for loc, prio, freq in urls
+        for loc, prio, freq, mod in urls
     )
     return (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -407,9 +503,9 @@ def main():
         slugs.append(slug)
 
     os.makedirs(os.path.join(ROOT, "papers"), exist_ok=True)
-    for pub, slug in zip(pubs, slugs):
+    for i, (pub, slug) in enumerate(zip(pubs, slugs)):
         with open(os.path.join(ROOT, "papers", f"{slug}.html"), "w", encoding="utf-8") as f:
-            f.write(build_paper_page(pub, slug))
+            f.write(build_paper_page(pub, slug, related_for(i, pubs, slugs), project_of(pub)))
 
     inject_publications_html(pubs, slugs)
 

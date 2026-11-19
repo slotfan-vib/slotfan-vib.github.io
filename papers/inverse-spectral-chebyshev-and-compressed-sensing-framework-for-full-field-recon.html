@@ -29,8 +29,8 @@
   <meta property="og:site_name" content="Saeed Lotfan" />
 
   <link rel="icon" href="../favicon.png" type="image/png" />
-  <link rel="stylesheet" href="../style.css?v=20261119j" />
-  <link rel="stylesheet" href="../publications-style.css?v=20261119j" />
+  <link rel="stylesheet" href="../style.css?v=20261119n" />
+  <link rel="stylesheet" href="../publications-style.css?v=20261119n" />
   <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 
   <script type="application/ld+json">
@@ -110,11 +110,19 @@
       <h2>Abstract</h2>
       <p>This paper presents an inverse spectral Chebyshev (ISC) operator framework and its compressed-sensing extension (ISC-CS) for full-field reconstruction of structural responses from sparse and noisy measurement data. The ISC formulation is developed as a deterministic variational/least-squares inverse technique in which the equations governing the unknown structural fields are discretized based on spectral Chebyshev (SC) method with boundary conditions, strain–displacement relations, and equilibrium constraints enforced through the associated spectral operators. When the available measurements are far fewer than the unknown degrees-of-freedom (DOFs), the framework is extended to ISC-CS by exploiting the intrinsic sparsity/compressibility of mechanical fields in the Chebyshev coefficient space. The Chebyshev representation is particularly suitable for bounded non-periodic structural domains because it provides endpoint-compatible interpolation, rapid coefficient decay for smooth fields, and direct construction of differentiation, integration, and inner-product operators. The sparse inverse problem is solved using an equilibrium-informed iterative hard-thresholding algorithm with adaptive step-size control and momentum acceleration, tailored to the matrix-operator structure of the SC method. This enables robust reconstruction without requiring prior knowledge of the external loads. A theory-guided sparsity selection strategy based on Bernstein-type analyticity arguments is introduced, linking spectral coefficient decay to measurement noise levels and providing conservative, physics-informed sparsity bounds. Dedicated numerical studies using a forward SC method substantiate these theoretical insights by quantifying effective sparsity levels for displacement, curvature, and shear strain fields, demonstrating their suitability for compressed-sensing-based reconstruction despite the presence of spatial derivatives. Building on these findings, the proposed framework is validated through numerical case studies involving a Timoshenko beam and a Mindlin plate under both two-sided and single-sided strain-based sensing configurations. In the two-sided plate case, a purely kinematic ISC reconstruction is achieved, whereas the single-sided configuration, which is known to be ill-conditioned in classical inverse finite element formulations, is stabilized by enforcing equilibrium constraints. Across all cases, accurate recovery of displacement, rotation, curvature, and shear strain fields is demonstrated using significantly fewer sensors than DOFs, with low reconstruction errors even in the presence of additive Gaussian noise. The results highlight the robustness, noise tolerance, and scalability of the proposed ISC/ISC-CS framework, establishing it as a promising alternative to conventional inverse finite element approaches for shape sensing and structural health monitoring applications.</p>
 
-      <p><a href="https://doi.org/10.1016/j.ymssp.2026.114766" target="_blank" rel="noopener noreferrer">View published paper &rarr;</a></p>
+      <p><a class="news-link" href="https://doi.org/10.1016/j.ymssp.2026.114766" target="_blank" rel="noopener noreferrer">Read paper <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></p>
+
+      <h2>Related publications</h2>
+      <ul class="related-list">
+        <li><a href="reduced-order-spectral-chebyshev-models-for-geometrically-nonlinear-vibrations-o.html">Reduced-order spectral Chebyshev models for geometrically nonlinear vibrations of thin-walled structures</a> <span>Journal paper · 2025</span></li>
+        <li><a href="a-weak-form-spectral-chebyshev-technique-for-nonlinear-vibrations-of-rotating-fu.html">A weak-form spectral Chebyshev technique for nonlinear vibrations of rotating functionally graded beams</a> <span>Journal paper · 2024</span></li>
+        <li><a href="the-effect-of-calibrated-nonlocal-constant-on-the-modal-parameters-and-stability.html">The effect of calibrated nonlocal constant on the modal parameters and stability of axially compressed CNTs</a> <span>Journal paper · 2016</span></li>
+        <li><a href="learning-based-motion-cueing-for-a-six-dof-stewart-platform.html">Learning-Based Motion Cueing for a Six-DOF Stewart Platform</a> <span>Conference paper · 2026</span></li>
+      </ul>
     </article>
   </main>
 
   <footer class="footer">&copy; 2026 Saeed Lotfan &middot; Gebze Technical University &middot; All rights reserved.</footer>
-  <script src="../site.js?v=20261119j" defer></script>
+  <script src="../site.js?v=20261119n" defer></script>
 </body>
 </html>
