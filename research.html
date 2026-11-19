@@ -29,7 +29,7 @@
   <link rel="icon" href="favicon.png" type="image/png" />
 
   <!-- =========================== Main CSS ============================ -->
-  <link href="style.css?v=20261119h" rel="stylesheet" />
+  <link href="style.css?v=20261119j" rel="stylesheet" />
   <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 
@@ -109,69 +109,70 @@
       <h2 id="research-projects-heading">Research Projects</h2>
 
       <!--
-        HOW TO ADD A NEW PROJECT CARD:
-        1. Copy one complete <article class="project-card"> ... </article>
-        2. Paste it below the last project card inside the .research-projects container
-        3. Update image, title, metadata lines, and abstract text
-        4. Keep the structure/order the same for styling consistency
+        HOW TO ADD A PROJECT: copy one <article class="project-card"> block.
+        - Tags: "Ongoing" or "Completed", then your role "Principal investigator" or "Researcher".
+        - Meta line: programme · project number · years (add · Budget only when known).
+        - Team: Principal investigator / Researchers / Advisor, Prof. for full professors, Dr. otherwise.
+        - Details (opened by "Read more"): overview paragraphs; for completed projects add the
+          <div class="project-outputs"> list of output papers (link each to papers/<slug>.html).
       -->
       <div class="research-projects">
 
-        <!-- ================= Project 1 ================= -->
-        <article class="project-card" data-project-card>
-          <img src="ResearchPage/Tubitak1001-BG.svg" alt="Phononic sandwich composite structures project" />
-
+        <!-- ================= Project: phononic sandwich composites ================= -->
+        <article class="project-card" id="project-phononic">
+          <figure class="project-figure">
+            <img src="ResearchPage/Tubitak1001-BG.svg" alt="Transmission loss versus frequency of a phononic sandwich composite, showing the bandgap" width="158" height="150" loading="lazy" decoding="async">
+          </figure>
           <div class="project-info">
-            <h3>Design and Fabrication of Phononic Sandwich Composite Structures</h3>
-            <p><strong>Funding Program:</strong> TÜBİTAK 1001 – The Scientific and Technological Research Projects Funding Program (2026–2029)</p>
-            <p><strong>Project Title:</strong> Innovative integrated design and 4D printing for the development of phononic sandwich composite structures with tunable bandgap behavior</p>
-            <p><strong>Principal Investigator:</strong> Dr. Bekir Bediz (Sabancı University)</p>
-            <p><strong>Researchers:</strong> Prof. Bahattin Koç (Sabancı University), Dr. Ali Fallah (Atılım University), Saeed Lotfan</p>
-            <p><strong>Advisor:</strong> Dr. Kamer Kaya (Sabancı University)</p>
+            <p class="project-tags"><span class="pub-tag Ongoing">Ongoing</span><span class="pub-tag Researcher">Researcher</span></p>
+            <h3 class="project-title">Design and Fabrication of Phononic Sandwich Composite Structures</h3>
+            <p class="project-official">Innovative integrated design and 4D printing for the development of phononic sandwich composite structures with tunable bandgap behavior</p>
+            <p class="project-meta"><span>TÜBİTAK 1001</span><span>No. 225M347</span><span>2026–2029</span><span>Budget 3,000,000 TL</span></p>
+            <dl class="project-team">
+              <div><dt>Principal investigator</dt><dd>Dr. Bekir Bediz (Sabancı University)</dd></div>
+              <div><dt>Researchers</dt><dd>Prof. Bahattin Koç (Sabancı University), Dr. Ali Fallah (Atılım University), <strong class="team-me">Saeed Lotfan</strong></dd></div>
+              <div><dt>Advisor</dt><dd>Dr. Kamer Kaya (Sabancı University)</dd></div>
+            </dl>
+            <div class="project-actions">
+              <button class="news-more project-more" type="button" aria-expanded="false" aria-controls="project-phononic-details" hidden>Read more</button>
+            </div>
           </div>
-
-          <div class="project-abstract">
-            <p>
-              This project focuses on the integrated design, analysis, and 4D printing of
-              <strong>phononic sandwich composite structures</strong> with tunable bandgap behavior.
-              The overall aim is to develop advanced structural concepts whose dynamic response can be
-              tailored through geometry, material architecture, and smart design strategies. The project
-              combines design methodology, fabrication, and vibration-based performance evaluation to
-              explore new possibilities for controllable wave propagation and vibration attenuation in
-              engineered composite systems.
-            </p>
+          <div class="project-details" id="project-phononic-details">
+            <h4 class="project-subhead">Overview</h4>
+            <p>This project focuses on the integrated design, analysis, and 4D printing of <strong>phononic sandwich composite structures</strong> with tunable bandgap behavior. The overall aim is to develop advanced structural concepts whose dynamic response can be tailored through geometry, material architecture, and smart design strategies.</p>
+            <p>The project combines design methodology, fabrication, and vibration-based performance evaluation to explore new possibilities for controllable wave propagation and vibration attenuation in engineered composite systems.</p>
           </div>
         </article>
 
-        <!-- ================= Project 2 ================= -->
-        <article class="project-card" data-project-card>
-          <img src="ResearchPage/Tubitak1001-Blade.svg" alt="Dynamics of rotating blades project" />
-
+        <!-- ================= Project: dynamics of rotating blades ================= -->
+        <article class="project-card" id="project-blades">
+          <figure class="project-figure">
+            <img src="ResearchPage/Tubitak1001-Blade.svg" alt="Rotating pre-twisted blade model with coordinate frames" width="170" height="150" loading="lazy" decoding="async">
+          </figure>
           <div class="project-info">
-            <h3>Dynamics of Rotating Blades</h3>
-            <p><strong>Funding Program:</strong> TÜBİTAK 1001 – The Scientific and Technological Research Projects Funding Program (2023–2025)</p>
-            <p><strong>Project Title:</strong> Nonlinear vibrations of a high-fidelity model of rotating pre-twisted blades with thickness and chord length variations including nonlinear centrifugal effects</p>
-            <p><strong>Principal Investigator:</strong> Saeed Lotfan</p>
-            <p><strong>Researcher:</strong> Prof. Ender Ciğeroğlu (Middle East Technical University)</p>
-            <p><strong>Budget:</strong> 1,236,159.2 TL</p>
+            <p class="project-tags"><span class="pub-tag Completed">Completed</span><span class="pub-tag PI">Principal investigator</span></p>
+            <h3 class="project-title">Dynamics of Rotating Blades</h3>
+            <p class="project-official">Nonlinear vibrations of a high-fidelity model of rotating pre-twisted blades with thickness and chord length variations including nonlinear centrifugal effects</p>
+            <p class="project-meta"><span>TÜBİTAK 1001</span><span>No. 123M046</span><span>2023–2025</span><span>Budget 1,236,159.2 TL</span></p>
+            <dl class="project-team">
+              <div><dt>Principal investigator</dt><dd><strong class="team-me">Saeed Lotfan</strong></dd></div>
+              <div><dt>Researcher</dt><dd>Prof. Ender Ciğeroğlu (Middle East Technical University)</dd></div>
+            </dl>
+            <div class="project-actions">
+              <button class="news-more project-more" type="button" aria-expanded="false" aria-controls="project-blades-details" hidden>Read more</button>
+            </div>
           </div>
-
-          <div class="project-abstract">
-            <p>
-              In this project, studies are conducted to develop a new reduced-order modeling approach to investigate the nonlinear vibrations of rotating pre-twisted blades with variations in thickness and chord length,
-              based on nonlinear centrifugal effects.
-              <br>
-              To ensure reliable, efficient, and economical design of rotating equipment, high-fidelity model and solution methodology are developed for analyzing mechanical vibrations of the system,
-              addressing the challenges of balancing accuracy and efficiency in dynamic modeling. Unlike simplified models that neglect key effects like Coriolis forces or steady-state
-              equilibrium deformations (SSEDs), the proposed approach incorporates rotation-induced force fields, geometric complexities (e.g., pre-set and pre-twist angles,
-              thickness, and chord length variations), and nonlinear dynamics. Using a two-dimensional nonlinear spectral solution method and one-to-one mapping, the model achieves
-              computational efficiency and accuracy, validated through finite element simulations. Additionally, a novel model order reduction followed by multi-harmonic harmonic
-              balance method is developed to explore primary and internal resonances. The resulting model enables precise predictions of vibration behavior, facilitating the economical
-              and reliable design of blades for various rotating equipment applications.
-              <br>
-              This work is supported by the Scientific and Technological Research Council of Türkiye (TÜBİTAK) under the 1001 - The Scientific and Technological Research Projects Funding
-              Program with project number 123M046. The project team includes 1 principal investigator, 1 researcher, 1 postdoctoral fellow, and 1 master student.
-            </p>
+          <div class="project-details" id="project-blades-details">
+            <h4 class="project-subhead">Overview</h4>
+            <p>This project develops a new reduced-order modeling approach to investigate the nonlinear vibrations of rotating pre-twisted blades with variations in thickness and chord length, based on nonlinear centrifugal effects.</p>
+            <p>To ensure reliable, efficient, and economical design of rotating equipment, a high-fidelity model and solution methodology are developed for analyzing the mechanical vibrations of the system, balancing accuracy and efficiency in dynamic modeling. Unlike simplified models that neglect key effects such as Coriolis forces or steady-state equilibrium deformations (SSEDs), the approach incorporates rotation-induced force fields, geometric complexities (pre-set and pre-twist angles, thickness and chord length variations), and nonlinear dynamics.</p>
+            <p>Using a two-dimensional nonlinear spectral solution method and one-to-one mapping, the model achieves computational efficiency and accuracy, validated through finite element simulations. A novel model order reduction followed by the multi-harmonic balance method is developed to explore primary and internal resonances. The resulting model enables precise predictions of vibration behavior, supporting the economical and reliable design of blades for a range of rotating equipment.</p>
+            <p class="project-ack">Supported by the Scientific and Technological Research Council of Türkiye (TÜBİTAK) under the 1001 – The Scientific and Technological Research Projects Funding Program, project number 123M046.</p>
+            <!-- Output papers (step 2): add
+            <div class="project-outputs">
+              <h4 class="project-subhead">Output papers</h4>
+              <ul> <li><a href="papers/....html">Title</a> <span>Journal, Year</span></li> </ul>
+            </div> -->
           </div>
         </article>
 
@@ -181,13 +182,18 @@
 
   <!-- ============================== Script ============================== -->
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const projectCards = document.querySelectorAll('[data-project-card]');
-
-      projectCards.forEach((card) => {
-        card.addEventListener('click', function () {
-          card.classList.toggle('expanded');
-        });
+    /* Project details are open without JS; with JS each card gets a
+       "Read more" button (same control as the home news cards). */
+    document.querySelectorAll('.project-card').forEach(function (card) {
+      var btn = card.querySelector('.project-more');
+      var details = card.querySelector('.project-details');
+      if (!btn || !details) return;
+      card.classList.add('is-collapsible');
+      btn.hidden = false;
+      btn.addEventListener('click', function () {
+        var open = card.classList.toggle('expanded');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.textContent = open ? 'Show less' : 'Read more';
       });
     });
   </script>
@@ -197,6 +203,6 @@
     &copy; 2026 Saeed Lotfan · Gebze Technical University · All rights reserved.
   </footer>
 
-  <script src="site.js?v=20261119h" defer></script>
+  <script src="site.js?v=20261119j" defer></script>
 </body>
 </html>
