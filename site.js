@@ -148,7 +148,9 @@
   /* Keep the homepage numbers in sync with their source so they never drift:
      "Journal papers" / "Publications" come from publications_data.json and
      "Students mentored" counts the student cards on people.html and
-     "Funded projects" counts the project cards on research.html. */
+     "Funded projects" counts the project cards on research.html.
+     data-count="project:<key>" counts one project's papers ("project" field).
+     build_seo.py writes the same numbers into the HTML as the fallback. */
   function setStat(key, n) {
     document.querySelectorAll('[data-count="' + key + '"]').forEach(function (el) {
       el.textContent = n;
@@ -156,7 +158,7 @@
       if (link) link.setAttribute('aria-label', link.getAttribute('aria-label').replace(/^\d+/, n));
     });
   }
-  if (document.querySelector('[data-count="publications"], [data-count="journal"], [data-count="project-papers"], [data-theme-count]')) {
+  if (document.querySelector('[data-count="publications"], [data-count="journal"], [data-count="project-papers"], [data-count^="project:"], [data-theme-count]')) {
     fetch('publications_data.json')
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) {
@@ -164,6 +166,10 @@
         setStat('publications', data.length);
         setStat('journal', data.filter(function (p) { return p.type === 'Journal'; }).length);
         setStat('project-papers', data.filter(function (p) { return !!p.project; }).length);
+        document.querySelectorAll('[data-count^="project:"]').forEach(function (el) {
+          var key = el.getAttribute('data-count').slice(8);
+          setStat('project:' + key, data.filter(function (p) { return p.project === key; }).length);
+        });
         document.querySelectorAll('[data-theme-count]').forEach(function (el) {
           var th = window.SiteThemes.get(el.getAttribute('data-theme-count'));
           if (th) el.textContent = data.filter(function (p) { return inTheme(p, th); }).length;
