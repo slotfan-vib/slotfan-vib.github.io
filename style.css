@@ -584,14 +584,14 @@ a.metric:active { transform: scale(0.99); }
 .news-toggle .news-toggle-n { font-family: var(--font-mono); font-size: 0.78rem; font-weight: 500; color: var(--muted); }
 
 /* News type label: the first thing on each card, in the colour of its kind */
-.news-meta .pub-tag {
+.news-meta .pub-tag, .project-tags .pub-tag {
   --k: var(--accent);
   padding: 5px 13px 5px 11px; gap: 8px;
   font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
   color: var(--k); border-color: transparent;
   background: color-mix(in srgb, var(--k) 12%, var(--surface));
 }
-.news-meta .pub-tag::before { background: var(--k); }
+.news-meta .pub-tag::before, .project-tags .pub-tag::before { background: var(--k); }
 .news-meta .pub-tag.Journal { --k: var(--c-journal); }
 .news-meta .pub-tag.Conference { --k: var(--c-conference); }
 .news-meta .pub-tag.Presentation, .news-meta .pub-tag.Poster,
@@ -641,29 +641,69 @@ a.metric:active { transform: scale(0.99); }
   text-transform: uppercase; color: var(--muted);
 }
 
+/* Project cards: the same big box as the news and teaching cards */
 .project-card {
-  display: grid; grid-template-columns: 240px 1fr; gap: 24px; align-items: start;
-  padding: 22px 24px; cursor: pointer;
+  display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 26px; align-items: start;
+  padding: 24px 26px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-left: 3px solid var(--accent);
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
+  scroll-margin-top: calc(var(--nav-h) + 20px);
   transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
-.project-card:hover { border-color: var(--line-strong); transform: translateY(-2px); box-shadow: var(--shadow-md); }
-.project-card img { width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--line); background: var(--surface-2); }
-:root[data-theme='dark'] .project-card img { filter: invert(0.92) hue-rotate(180deg); }
-.project-info { min-width: 0; }
-.project-info h3 { margin: 0 0 10px; color: var(--ink); }
-.project-info p { margin: 3px 0; font-size: 0.92rem; color: var(--ink-2); }
-.project-abstract { grid-column: 1 / -1; display: none; margin-top: 8px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 0.92rem; line-height: 1.7; }
-.project-card.expanded .project-abstract { display: block; }
-.project-card::after {
-  content: 'Read more'; grid-column: 1 / -1; justify-self: start;
-  font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent);
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover { border-color: var(--line-strong); border-left-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .project-card:hover .project-title { color: var(--accent-hover, var(--accent)); }
+  .project-card.expanded:hover { transform: none; }
 }
-.project-card.expanded::after { content: 'Show less'; }
+.project-card.expanded { border-color: var(--line-strong); border-left-color: var(--accent); box-shadow: var(--shadow-md); }
+.project-figure { margin: 0; }
+.project-figure img {
+  display: block; width: 100%; height: auto; max-height: 220px; object-fit: contain;
+  padding: 8px; border-radius: var(--radius-sm); border: 1px solid var(--line); background: var(--surface-2);
+}
+:root[data-theme='dark'] .project-figure img { filter: invert(0.92) hue-rotate(180deg); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme='light']) .project-figure img { filter: invert(0.92) hue-rotate(180deg); } }
+
+.project-info { min-width: 0; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 10px; }
+.project-title { margin: 0 0 6px; color: var(--ink); font-size: 1.2rem; line-height: 1.35; transition: color var(--dur) var(--ease); }
+.project-official { margin: 0 0 12px; color: var(--muted); font-size: 0.9rem; line-height: 1.55; font-style: italic; }
+.project-meta {
+  display: flex; flex-wrap: wrap; gap: 4px 0; margin: 0 0 14px;
+  font-family: var(--font-mono); font-size: 0.76rem; color: var(--accent); font-variant-numeric: tabular-nums;
+}
+.project-meta span:not(:last-child)::after { content: '·'; margin: 0 9px; color: var(--muted); }
+.project-team { margin: 0; display: grid; gap: 6px; padding-top: 12px; border-top: 1px solid var(--line); }
+.project-team > div { display: grid; grid-template-columns: 196px minmax(0, 1fr); gap: 12px; align-items: baseline; }
+.project-team dt { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+.project-team dd { margin: 0; font-size: 0.92rem; line-height: 1.5; color: var(--ink-2); }
+.project-team .team-me { color: var(--ink); font-weight: 600; }
+.project-actions { margin-top: 12px; }
+.project-actions:not(:has(> :not([hidden]))) { display: none; }
+
+.project-details { grid-column: 1 / -1; padding-top: 18px; border-top: 1px solid var(--line); }
+.project-card.is-collapsible:not(.expanded) .project-details { display: none; }
+.project-details p { margin: 0 0 12px; color: var(--ink-2); font-size: 0.94rem; line-height: 1.75; }
+.project-details p:last-child { margin-bottom: 0; }
+.project-subhead {
+  margin: 0 0 10px; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+}
+.project-ack { font-size: 0.86rem !important; color: var(--muted) !important; }
+.project-outputs { margin-top: 20px; }
+.project-outputs ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.project-outputs li { font-size: 0.92rem; line-height: 1.5; color: var(--ink-2); }
+.project-outputs li span { color: var(--muted); font-size: 0.86rem; }
+
+/* Status and role labels share the coloured style of the news type labels */
+.project-tags .pub-tag.Ongoing { --k: var(--c-presentation); }
+.project-tags .pub-tag.Completed { --k: var(--muted); }
+.project-tags .pub-tag.PI { --k: var(--accent); }
+.project-tags .pub-tag.Researcher { --k: var(--c-conference); }
+@media (prefers-reduced-motion: reduce) { .project-card, .project-card:hover { transform: none !important; } }
 
 /* ----------------------------------------------------------- Publications */
 .publication-intro { color: var(--ink-2); margin: -6px 0 26px; max-width: var(--measure); }
@@ -823,7 +863,7 @@ a.metric:active { transform: scale(0.99); }
 .course-level.lvl-grad { --k: var(--c-thesis); }
 .course-when { margin: 0; font-family: var(--font-mono); font-size: 0.74rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 .course-title { margin: 0 0 8px; font-size: 1.2rem; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); }
-.teaching-desc { max-width: 80ch; margin: 0; font-size: 0.93rem; line-height: 1.65; color: var(--ink-2); }
+.teaching-desc { margin: 0; font-size: 0.93rem; line-height: 1.65; color: var(--ink-2); }
 
 .course-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 16px; margin-top: 18px; }
 .course-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
@@ -1083,7 +1123,7 @@ html.pv-lock { overflow: hidden; }
   background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius);
 }
 .teaching-approach h2 { margin-bottom: 12px; }
-.approach-text { max-width: 66ch; margin: 0; font-size: 1.06rem; line-height: 1.8; color: var(--ink); }
+.approach-text { margin: 0; font-size: 1.06rem; line-height: 1.8; color: var(--ink); }
 @media (max-width: 560px) {
   .teaching-approach { padding: 22px 20px; }
   .approach-text { font-size: 0.98rem; line-height: 1.75; }
@@ -1240,8 +1280,10 @@ html.pv-lock { overflow: hidden; }
 @media (max-width: 860px) {
   .research-summary { grid-template-columns: 1fr; gap: 22px; }
   .pub-details-layout { grid-template-columns: 1fr; }
-  .project-card { grid-template-columns: 1fr; }
-  .project-card img { max-width: 320px; }
+  .project-card { grid-template-columns: 1fr; gap: 16px; padding: 18px 16px; }
+  .project-figure img { max-height: 170px; }
+  .project-team > div { grid-template-columns: 1fr; gap: 0; }
+  .project-title { font-size: 1.08rem; }
 }
 
 @media (max-width: 680px) {
