@@ -135,6 +135,15 @@
   window.SiteThemes = { list: THEMES, inTheme: inTheme,
     get: function (key) { return THEMES.filter(function (th) { return th.key === key; })[0]; } };
 
+  /* Theme links on other pages (Research) are rebuilt from THEMES, so adding or
+     renaming a theme here updates every page that lists them. */
+  document.querySelectorAll('[data-theme-links]').forEach(function (ul) {
+    ul.innerHTML = THEMES.map(function (th) {
+      return '<li><a class="theme-link" href="publications.html?theme=' + th.key + '">' + th.name +
+        '<span class="theme-count" data-theme-count="' + th.key + '"></span></a></li>';
+    }).join('');
+  });
+
   /* --------------------------------------------- Self-healing stat counts */
   /* Keep the homepage numbers in sync with their source so they never drift:
      "Journal papers" / "Publications" come from publications_data.json and
