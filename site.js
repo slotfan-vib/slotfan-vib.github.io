@@ -107,17 +107,34 @@
   }
 
   /* --------------------------------------------- Self-healing stat counts */
-  /* Keep the homepage "Journal papers" / "Publications" numbers in sync with
-     publications_data.json, so they never drift when a paper is added. */
-  if (document.querySelector('[data-count]')) {
+  /* Keep the homepage numbers in sync with their source so they never drift:
+     "Journal papers" / "Publications" come from publications_data.json and
+     "Students mentored" counts every student card on people.html. */
+  function setStat(key, n) {
+    document.querySelectorAll('[data-count="' + key + '"]').forEach(function (el) {
+      el.textContent = n;
+      var link = el.closest('[aria-label]');   // keep the screen-reader label in step
+      if (link) link.setAttribute('aria-label', link.getAttribute('aria-label').replace(/^\d+/, n));
+    });
+  }
+  if (document.querySelector('[data-count="publications"], [data-count="journal"]')) {
     fetch('publications_data.json')
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) {
         if (!Array.isArray(data)) return;
-        var total = data.length;
-        var journal = data.filter(function (p) { return p.type === 'Journal'; }).length;
-        document.querySelectorAll('[data-count="publications"]').forEach(function (el) { el.textContent = total; });
-        document.querySelectorAll('[data-count="journal"]').forEach(function (el) { el.textContent = journal; });
+        setStat('publications', data.length);
+        setStat('journal', data.filter(function (p) { return p.type === 'Journal'; }).length);
+      })
+      .catch(function () {});
+  }
+  if (document.querySelector('[data-count="students"]') && window.DOMParser) {
+    fetch('people.html')
+      .then(function (r) { return r.ok ? r.text() : ''; })
+      .then(function (page) {
+        if (!page) return;
+        var doc = new DOMParser().parseFromString(page, 'text/html');
+        var n = doc.querySelectorAll('.people-grid .person-card').length;
+        if (n) setStat('students', n);
       })
       .catch(function () {});
   }

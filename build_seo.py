@@ -28,7 +28,7 @@ ORCID = "0000-0001-8616-2120"
 
 # Cache-busting version for shared CSS/JS. Keep it equal to the ?v= used in
 # the top-level *.html pages and bump it whenever style.css / site.js change.
-ASSET_V = "20261119c"
+ASSET_V = "20261119e"
 
 # Display names for publication types (data keys stay Journal/Conference/
 # Presentation so filters and ?type= links keep working). Same wording as the
@@ -313,7 +313,7 @@ def build_static_index(pubs, slugs):
         source = pub.get("doi", "")
         rows.append(
             f"""      <article class="publication-seo-item">
-        <h4><a href="papers/{slug}.html">{esc(pub['title'])}</a></h4>
+        <h3><a href="papers/{slug}.html">{esc(pub['title'])}</a></h3>
         <p>{esc(pub['authors'])} <em>{esc(pub['cite'])}</em></p>
         <a href="{esc(source)}" target="_blank" rel="noopener noreferrer">View paper</a>
       </article>"""
@@ -338,7 +338,7 @@ def inject_publications_html(pubs, slugs):
     # Replace the static index rows (between the heading and the section close).
     static_rows = build_static_index(pubs, slugs)
     html_doc = re.sub(
-        r'(<h3 id="publication-static-heading">Selected Publication Index</h3>)'
+        r'(<h2 id="publication-static-heading">Selected Publication Index</h2>)'
         r"(.*?)(\n\s*</section>)",
         lambda m: m.group(1) + "\n\n" + static_rows + m.group(3),
         html_doc,
