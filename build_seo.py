@@ -29,7 +29,7 @@ ORCID = "0000-0001-8616-2120"
 
 # Cache-busting version for shared CSS/JS. Keep it equal to the ?v= used in
 # the top-level *.html pages and bump it whenever style.css / site.js change.
-ASSET_V = "20261119s"
+ASSET_V = "20261119u"
 
 # Display names for publication types (data keys stay Journal/Conference/
 # Presentation so filters and ?type= links keep working). Same wording as the
@@ -395,7 +395,7 @@ def build_static_index(pubs, slugs):
             f"""      <article class="publication-seo-item">
         <h3><a href="papers/{slug}.html">{esc(pub['title'])}</a></h3>
         <p>{esc(pub['authors'])} <em>{esc(pub['cite'])}</em></p>
-        <a href="{esc(source)}" target="_blank" rel="noopener noreferrer">View paper</a>
+        <a class="news-link" href="{esc(source)}" target="_blank" rel="noopener noreferrer">Read paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
       </article>"""
         )
     return "\n\n".join(rows)
@@ -415,12 +415,14 @@ def inject_publications_html(pubs, slugs):
         flags=re.S,
     )
 
-    # Replace the static index rows (between the heading and the section close).
+    # Replace the static index (a folded plain list that search engines read)
+    # between its two markers, including the count in the summary line.
     static_rows = build_static_index(pubs, slugs)
     html_doc = re.sub(
-        r'(<h2 id="publication-static-heading">Selected Publication Index</h2>)'
-        r"(.*?)(\n\s*</section>)",
-        lambda m: m.group(1) + "\n\n" + static_rows + m.group(3),
+        r"(<!-- static-index:start -->).*?(<!-- static-index:end -->)",
+        lambda m: (m.group(1)
+                   + f'\n      <summary>Show all {len(pubs)} publications as a plain list</summary>\n\n'
+                   + static_rows + "\n      " + m.group(2)),
         html_doc,
         count=1,
         flags=re.S,
