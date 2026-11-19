@@ -109,7 +109,8 @@
   /* --------------------------------------------- Self-healing stat counts */
   /* Keep the homepage numbers in sync with their source so they never drift:
      "Journal papers" / "Publications" come from publications_data.json and
-     "Students mentored" counts every student card on people.html. */
+     "Students mentored" counts the student cards on people.html and
+     "Funded projects" counts the project cards on research.html. */
   function setStat(key, n) {
     document.querySelectorAll('[data-count="' + key + '"]').forEach(function (el) {
       el.textContent = n;
@@ -127,17 +128,20 @@
       })
       .catch(function () {});
   }
-  if (document.querySelector('[data-count="students"]') && window.DOMParser) {
-    fetch('people.html')
+  function countOnPage(key, url, selector) {
+    if (!document.querySelector('[data-count="' + key + '"]') || !window.DOMParser) return;
+    fetch(url)
       .then(function (r) { return r.ok ? r.text() : ''; })
       .then(function (page) {
         if (!page) return;
         var doc = new DOMParser().parseFromString(page, 'text/html');
-        var n = doc.querySelectorAll('.people-grid .person-card').length;
-        if (n) setStat('students', n);
+        var n = doc.querySelectorAll(selector).length;
+        if (n) setStat(key, n);
       })
       .catch(function () {});
   }
+  countOnPage('students', 'people.html', '.people-grid .person-card');
+  countOnPage('projects', 'research.html', '#research-projects .project-card');
 
   /* ------------------------------------------------------- Scroll reveal */
   var reduce = window.matchMedia &&
