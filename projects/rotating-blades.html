@@ -17,7 +17,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Saeed Lotfan" />
   <meta property="og:title" content="Dynamics of Rotating Blades | TÜBİTAK 1001 Project" />
-  <meta property="og:description" content="High-fidelity and reduced-order models for nonlinear vibrations of rotating pre-twisted blades: the problem, the approach, the results and four output papers." />
+  <meta property="og:description" content="High-fidelity and reduced-order models for nonlinear vibrations of rotating pre-twisted blades: the problem, the approach, the results, and four output papers." />
   <meta property="og:image" content="https://saeedlotfan.com/profile.jpg" />
   <meta property="og:url" content="https://saeedlotfan.com/projects/rotating-blades.html" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -26,7 +26,7 @@
   <meta name="twitter:image" content="https://saeedlotfan.com/profile.jpg" />
 
   <link rel="icon" href="../favicon.png" type="image/png" />
-  <link href="../style.css?v=20261119v" rel="stylesheet" />
+  <link href="../style.css?v=20261119w" rel="stylesheet" />
   <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 
   <script type="application/ld+json">
@@ -128,23 +128,23 @@
     <!-- ============================ Story ============================ -->
     <section class="project-story" aria-labelledby="story-problem">
       <h2 id="story-problem">The problem</h2>
-      <p>Blades in turbines, compressors and other rotating machinery work under strong centrifugal forces, and often under sudden heating from the flow around them. Their shape is rarely simple: they are mounted at a pre-set angle, twisted along the span, and their thickness and chord length change from root to tip. Designing them reliably and economically needs models that predict how such blades vibrate, including at large amplitudes, where the behavior becomes nonlinear.</p>
+      <p>Blades in turbines, compressors, and other rotating machinery work under strong centrifugal forces, and often under sudden heating from the flow around them. Their shape is rarely simple: they are mounted at a pre-set angle, twisted along the span, and their thickness and chord length change from root to tip. Designing them reliably and economically needs models that predict how such blades vibrate, including at large amplitudes, where the behavior becomes nonlinear.</p>
       <p>Most existing models make the problem tractable by simplifying it: beam or plate theories instead of the real geometry, only part of the rotation-induced forces, or reduced models that keep just a few dominant modes. Detailed finite element models capture more, but are too expensive for the many runs that design studies and nonlinear analyses require. One question in particular had no clear answer: how much does the way we model centrifugal stiffening change the predicted vibrations?</p>
 
       <h2 id="story-approach">Our approach</h2>
-      <p>The project built one modeling framework that keeps the geometry, the physics and the numerics at high fidelity at the same time.</p>
+      <p>The project built one modeling framework that keeps the geometry, the physics, and the numerics at high fidelity at the same time.</p>
       <ul class="project-pillars">
         <li>
           <h3>Real blade geometry</h3>
-          <p>The blade is described with the theory of surfaces, including pre-set and pre-twist angles, thickness and chord-length variations and tapering. A one-to-one mapping turns this complex shape into a simple computational domain.</p>
+          <p>The blade is described with the theory of surfaces, including pre-set and pre-twist angles, thickness and chord-length variations, and tapering. A one-to-one mapping turns this complex shape into a simple computational domain.</p>
         </li>
         <li>
           <h3>Complete rotational physics</h3>
-          <p>Coriolis, centrifugal stiffening and rotational softening effects are included. Centrifugal stiffening is modeled in two widely used ways, direct integration of centrifugal forces (DICFs) and pre-stressed analysis about the steady-state equilibrium deformations (SSEDs), in linear and nonlinear form, so the two can be compared within the same model. The framework also covers coupled thermo-elasticity under thermal shock and full geometric nonlinearity.</p>
+          <p>Coriolis, centrifugal stiffening, and rotational softening effects are included. Centrifugal stiffening is modeled in two widely used ways, direct integration of centrifugal forces (DICFs) and pre-stressed analysis about the steady-state equilibrium deformations (SSEDs), in linear and nonlinear form, so the two can be compared within the same model. The framework also covers coupled thermo-elasticity under thermal shock and full geometric nonlinearity.</p>
         </li>
         <li>
           <h3>Fast and accurate numerics</h3>
-          <p>The equations are discretized with the spectral Chebyshev technique, a meshless method with spectral accuracy. An analytical Jacobian, a new reduced-order modeling framework and the harmonic balance method with arc-length continuation make large nonlinear frequency-response studies practical. All models are validated against commercial finite element software.</p>
+          <p>The equations are discretized with the spectral Chebyshev technique, a meshless method with spectral accuracy. An analytical Jacobian, a new reduced-order modeling framework, and the harmonic balance method with arc-length continuation make large nonlinear frequency-response studies practical. All models are validated against commercial finite element software.</p>
         </li>
       </ul>
 
@@ -160,14 +160,14 @@
         <li><strong>There is no universal "high-speed" threshold.</strong> At low rotation speeds the DICFs and nonlinear pre-stressed models agree; as speed rises they diverge, because DICFs ignores the steady-state deformations. When this happens depends on the size of those deformations, not on a fixed RPM: blades with larger chords or asymmetric thickness can enter the high-speed regime at much lower speeds.</li>
         <li><strong>A linear pre-stressed analysis can be misleading.</strong> For pre-set or pre-twisted blades at high speed it can produce spurious natural frequencies and misrepresent out-of-plane deformation; it is safe only for blades without pre-set and pre-twist.</li>
         <li><strong>Under thermal shock, the steady-state deformation matters.</strong> Total deformation must include both thermal deformation and the SSEDs. The DICFs model, which leaves the SSEDs out, gives markedly different total deformation even at low speeds, and the thermo-elastic coupling becomes important once the blade is both twisted and rotating.</li>
-        <li><strong>Low-order models exaggerate nonlinear behavior.</strong> Models with only a few modes show sharp loops, branches and modal interactions that smooth out as more modes are kept, so they are useful for insight but not for quantitative prediction. The high-order models reveal resonance-peak shifts, extra resonance peaks, multi-valued responses, internal resonances, mode coupling and frequency veering.</li>
+        <li><strong>Low-order models exaggerate nonlinear behavior.</strong> Models with only a few modes show sharp loops, branches, and modal interactions that smooth out as more modes are kept, so they are useful for insight but not for quantitative prediction. The high-order models reveal resonance-peak shifts, extra resonance peaks, multi-valued responses, internal resonances, mode coupling, and frequency veering.</li>
         <li><strong>In-plane modes carry the nonlinearity.</strong> Choosing modes only by their contribution to the displacement misses the backbone of the frequency response. A second, force-based criterion keeps in-plane modes that barely move the blade but carry its nonlinear restoring forces.</li>
       </ul>
 
       <figure class="project-page-figure is-plot">
-        <img src="../ResearchPage/rotating-blades-frc-nody.png" alt="Three 3D plots of nonlinear frequency response curves of the pre-twisted blade: spanwise, chordwise and flapwise displacement against excitation frequency ratio from 0.6 to 1.3, for pre-twist angles from 0 to 30 degrees" width="1600" height="548" loading="lazy" decoding="async">
+        <img src="../ResearchPage/rotating-blades-frc-nody.png" alt="Three 3D plots of nonlinear frequency response curves of the pre-twisted blade: spanwise, chordwise, and flapwise displacement against excitation frequency ratio from 0.6 to 1.3, for pre-twist angles from 0 to 30 degrees" width="1600" height="548" loading="lazy" decoding="async">
         <figcaption>
-          Nonlinear frequency response of the pre-twisted blade under a flapwise harmonic force: spanwise, chordwise and flapwise amplitudes against excitation frequency (ω/ω<sub>1</sub>) as the pre-twist angle θ<sub>a</sub> grows from 0° to 30°. The chordwise resonance amplitude rises with twist, while the spanwise and flapwise amplitudes jump around 3.75° and 11.25°.
+          Nonlinear frequency response of the pre-twisted blade under a flapwise harmonic force: spanwise, chordwise, and flapwise amplitudes against excitation frequency (ω/ω<sub>1</sub>) as the pre-twist angle θ<sub>a</sub> grows from 0° to 30°. The chordwise resonance amplitude rises with twist, while the spanwise and flapwise amplitudes jump around 3.75° and 11.25°.
           <span class="figure-credit">Figure: S. Lotfan, E. Ciğeroğlu, <a href="https://doi.org/10.1007/s11071-025-11434-3" target="_blank" rel="noopener noreferrer"><em>Nonlinear Dynamics</em> 113 (2025) 25753–25785</a>, Fig. 10, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>.</span>
         </figcaption>
       </figure>
@@ -185,7 +185,7 @@
           <div class="news-content">
             <p class="news-meta"><span class="pub-tag Journal">Journal paper</span><time class="news-date" datetime="2025">2025</time></p>
             <h3 class="news-title"><a href="../papers/coupled-thermo-elastic-dynamics-of-rotating-pre-twisted-blades-exposed-to-therma.html">Coupled thermo-elastic dynamics of rotating pre-twisted blades exposed to thermal shock including nonlinear rotational effects</a></h3>
-            <p class="news-desc"><em>Journal of Sound and Vibration</em>, 594, 118669. The first study of the coupled thermo-elastic dynamics of rotating pre-twisted blades exposed to thermal shock. Coriolis, centrifugal stiffening and rotational softening are included, and DICFs is compared with linear and nonlinear pre-stressed dynamics about large-amplitude SSEDs. The paper shows that total deformation must include the SSEDs, that a linear pre-stressed analysis can give spurious natural frequencies, and that the spectral solution finds natural frequencies 57 times faster than finite element software.</p>
+            <p class="news-desc"><em>Journal of Sound and Vibration</em>, 594, 118669. The first study of the coupled thermo-elastic dynamics of rotating pre-twisted blades exposed to thermal shock. Coriolis, centrifugal stiffening, and rotational softening are included, and DICFs is compared with linear and nonlinear pre-stressed dynamics about large-amplitude SSEDs. The paper shows that total deformation must include the SSEDs, that a linear pre-stressed analysis can give spurious natural frequencies, and that the spectral solution finds natural frequencies 57 times faster than finite element software.</p>
             <div class="news-actions">
               <a class="news-link" href="https://doi.org/10.1016/j.jsv.2024.118669" target="_blank" rel="noopener noreferrer">Read paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
             </div>
@@ -197,7 +197,7 @@
           <div class="news-content">
             <p class="news-meta"><span class="pub-tag Journal">Journal paper</span><time class="news-date" datetime="2025">2025</time></p>
             <h3 class="news-title"><a href="../papers/reduced-order-spectral-chebyshev-models-for-geometrically-nonlinear-vibrations-o.html">Reduced-order spectral Chebyshev models for geometrically nonlinear vibrations of thin-walled structures</a></h3>
-            <p class="news-desc"><em>Nonlinear Dynamics</em>, 113, 25753–25785 (open access). Extends the two-dimensional spectral Chebyshev technique to geometrically nonlinear beams, plates and shells with arbitrary boundary shapes, validated in five case studies from a clamped beam to a pre-twisted blade. An analytical Jacobian cuts the cost of each harmonic-balance iteration about 200 times, and a two-criteria reduced-order model keeps the in-plane modes that carry the nonlinear restoring forces.</p>
+            <p class="news-desc"><em>Nonlinear Dynamics</em>, 113, 25753–25785 (open access). Extends the two-dimensional spectral Chebyshev technique to geometrically nonlinear beams, plates, and shells with arbitrary boundary shapes, validated in five case studies from a clamped beam to a pre-twisted blade. An analytical Jacobian cuts the cost of each harmonic-balance iteration about 200 times, and a two-criteria reduced-order model keeps the in-plane modes that carry the nonlinear restoring forces.</p>
             <div class="news-actions">
               <a class="news-link" href="https://doi.org/10.1007/s11071-025-11434-3" target="_blank" rel="noopener noreferrer">Read paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
             </div>
@@ -209,7 +209,7 @@
           <div class="news-content">
             <p class="news-meta"><span class="pub-tag Journal">Journal paper</span><time class="news-date" datetime="2026">2026</time></p>
             <h3 class="news-title"><a href="../papers/nonlinear-vibrations-and-modal-interactions-in-rotating-pre-twisted-blades-with.html">Nonlinear vibrations and modal interactions in rotating pre-twisted blades with thickness and chord variations using high-fidelity models with DICFs and PA</a></h3>
-            <p class="news-desc"><em>Thin-Walled Structures</em>, 218, 114134. Brings the project together: high-order nonlinear models of rotating pre-twisted blades with variable thickness and chord, comparing DICFs with linear and nonlinear pre-stressed analysis in one framework. It shows that there is no universal speed at which the models diverge, since this depends on the steady-state deformation and hence the geometry, and that low-order models exaggerate nonlinear features while high-order models reveal internal resonances, mode coupling and frequency veering.</p>
+            <p class="news-desc"><em>Thin-Walled Structures</em>, 218, 114134. Brings the project together: high-order nonlinear models of rotating pre-twisted blades with variable thickness and chord, comparing DICFs with linear and nonlinear pre-stressed analysis in one framework. It shows that there is no universal speed at which the models diverge, since this depends on the steady-state deformation and hence the geometry, and that low-order models exaggerate nonlinear features while high-order models reveal internal resonances, mode coupling, and frequency veering.</p>
             <div class="news-actions">
               <a class="news-link" href="https://doi.org/10.1016/j.tws.2025.114134" target="_blank" rel="noopener noreferrer">Read paper<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
             </div>
@@ -240,6 +240,6 @@
     &copy; 2026 Saeed Lotfan · Gebze Technical University · All rights reserved.
   </footer>
 
-  <script src="../site.js?v=20261119v" defer></script>
+  <script src="../site.js?v=20261119w" defer></script>
 </body>
 </html>

@@ -4,13 +4,20 @@ build_seo.py — regenerate SEO assets from publications_data.json.
 
 Produces / updates:
   * publications.html  -> JSON-LD ItemList + static crawlable index (ALL papers)
+                          + the project links used by the cards (from PROJECTS)
   * papers/<slug>.html -> one landing page per paper (Highwire citation_* meta
                           tags + ScholarlyArticle JSON-LD, for Scholar / AI tools)
   * sitemap.xml        -> every page including the per-paper landing pages
   * robots.txt         -> crawler policy (AI crawlers welcomed) + sitemap pointer
+  * every top-level page -> ?v=ASSET_V on style.css / site.js / teaching.js, and
+                          the numbers written in the HTML (home tiles, Research,
+                          Publications and Teaching headers) recounted from
+                          their sources, so the page is right even before
+                          site.js / teaching.js run (search engines, no-JS)
 
-Run after editing publications_data.json:  python3 build_seo.py
-The script is idempotent — safe to run repeatedly.
+Run after editing publications_data.json, people.html, research.html,
+teaching.html or style.css / site.js:  python3 build_seo.py
+The script is idempotent — safe to run repeatedly. See README.md.
 """
 
 import json
@@ -27,9 +34,9 @@ TODAY = date.today().isoformat()
 # ORCID iD, e.g. "0000-0002-1825-0097". Leave "" to omit ORCID markup.
 ORCID = "0000-0001-8616-2120"
 
-# Cache-busting version for shared CSS/JS. Keep it equal to the ?v= used in
-# the top-level *.html pages and bump it whenever style.css / site.js change.
-ASSET_V = "20261119v"
+# Cache-busting version for shared CSS/JS. Bump it whenever style.css,
+# site.js or teaching.js change; running this script writes it into every page.
+ASSET_V = "20261119w"
 
 # Display names for publication types (data keys stay Journal/Conference/
 # Presentation so filters and ?type= links keep working). Same wording as the
@@ -253,7 +260,7 @@ def build_paper_page(pub, slug, related=(), project=None):
                         + "\n".join(rows) + '\n      </ul>')
 
     type_label = TYPE_LABELS.get(pub["type"], pub["type"])
-    desc = (pub["abstract"][:180].rsplit(" ", 1)[0] + "…") if pub["abstract"] else title
+    desc = (pub["abstract"][:155].rsplit(" ", 1)[0] + "…") if pub["abstract"] else title
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -316,7 +323,7 @@ def build_paper_page(pub, slug, related=(), project=None):
         <span class="pub-tag {pub['type']}">{esc(type_label)}</span></p>
 
       <figure class="pub-figure">
-        <img src="../{esc(pub.get('image',''))}" alt="Figure for {esc(title)}" loading="lazy" />
+        <img src="../{esc(pub.get('image',''))}" alt="Figure for {esc(title)}"{size_attrs(pub.get('image',''))} loading="lazy" />
       </figure>
 
       <h2>Abstract</h2>
@@ -433,6 +440,145 @@ def inject_publications_html(pubs, slugs):
 
 
 # --------------------------------------------------------------------------- #
+# Image sizes (width/height on <img> reserve space while the image loads)
+
+
+def image_size(rel):
+    """(width, height) of a PNG, JPEG or SVG file, read with the standard library."""
+    path = os.path.join(ROOT, rel)
+    try:
+        with open(path, "rb") as f:
+            head = f.read(64 * 1024)
+    except OSError:
+        return None
+    if head[:8] == b"\x89PNG\r\n\x1a\n":
+        return int.from_bytes(head[16:20], "big"), int.from_bytes(head[20:24], "big")
+    if head[:2] == b"\xff\xd8":
+        with open(path, "rb") as f:
+            data = f.read()
+        i = 2
+        while i + 9 < len(data):
+            if data[i] != 0xFF:
+                i += 1
+                continue
+            marker = data[i + 1]
+            if marker in (0xC0, 0xC1, 0xC2, 0xC3, 0xC5, 0xC6, 0xC7, 0xC9, 0xCA, 0xCB, 0xCD, 0xCE, 0xCF):
+                return int.from_bytes(data[i + 7:i + 9], "big"), int.from_bytes(data[i + 5:i + 7], "big")
+            i += 2 + int.from_bytes(data[i + 2:i + 4], "big")
+        return None
+    if rel.lower().endswith(".svg"):
+        tag = re.search(rb"<svg\b[^>]*>", head, re.S)
+        if not tag:
+            return None
+        vb = re.search(rb'viewBox="\s*[-\d.]+[\s,]+[-\d.]+[\s,]+([\d.]+)[\s,]+([\d.]+)', tag.group(0))
+        if vb:
+            return round(float(vb.group(1))), round(float(vb.group(2)))
+    return None
+
+
+def size_attrs(rel):
+    wh = image_size(rel) if rel else None
+    return f' width="{wh[0]}" height="{wh[1]}"' if wh else ""
+
+
+# --------------------------------------------------------------------------- #
+# Keep the hand-written pages in step with their sources
+
+
+def strip_comments(doc):
+    return re.sub(r"<!--.*?-->", "", doc, flags=re.S)
+
+
+def read_page(page):
+    with open(os.path.join(ROOT, page), encoding="utf-8", newline="") as f:
+        return f.read()
+
+
+def site_counts(pubs):
+    """Every number the pages show, counted from where it really lives."""
+    c = {
+        "publications": len(pubs),
+        "journal": sum(p["type"] == "Journal" for p in pubs),
+        "project-papers": sum(bool(p.get("project")) for p in pubs),
+    }
+    for key in PROJECTS:
+        c[f"project:{key}"] = sum(p.get("project") == key for p in pubs)
+    # Publications page header (Talks & posters together, as on the filters)
+    c["pub:All"] = len(pubs)
+    c["pub:Journal"] = c["journal"]
+    c["pub:Conference"] = sum(p["type"] == "Conference" for p in pubs)
+    c["pub:Presentation"] = sum(p["type"] in ("Presentation", "Poster") for p in pubs)
+    # Same selectors as site.js: student cards on People, project cards on Research
+    people = strip_comments(read_page("people.html"))
+    c["students"] = len(re.findall(r'<article class="person-card[" ]', people))
+    research = strip_comments(read_page("research.html"))
+    c["projects"] = len(re.findall(r'<article class="project-card[" ]', research))
+    # Same rules as teaching.js
+    teach = strip_comments(read_page("teaching.html"))
+    cut = teach.find('id="past-list"')
+    card = r'class="(?:teaching-card|archive-row)[" ]'
+    c["teach:current"] = len(re.findall(card, teach[teach.find('id="current-list"'):cut]))
+    c["teach:past"] = len(re.findall(card, teach[cut:]))
+    c["teach:courses"] = c["teach:current"] + c["teach:past"]
+    c["teach:pdfs"] = len(set(re.findall(r'<a\b(?=[^>]*\bdata-pdf\b)[^>]*\bhref="([^"]+)"', teach)))
+    # People groups (current students, M.Sc. alumni, ...): the cards in each list
+    for gid in sorted(set(re.findall(r'data-count-for="([^"]+)"', people))):
+        start = people.find(f'id="{gid}"')
+        end = people.find("</section>", start)
+        c[f"people:{gid}"] = len(re.findall(r'<article class="person-card[" ]', people[start:end])) if start >= 0 else 0
+    return c
+
+
+def set_numbers(doc, attr, value, n):
+    """Write n into every element carrying attr="value" (and into the
+    leading number of an aria-label on the link around it)."""
+    q = re.escape(f'{attr}="{value}"')
+    doc = re.sub(r'(<[a-zA-Z][^<>]*\b' + q + r'[^<>]*>)\s*\d*\s*(<)', lambda m: f"{m.group(1)}{n}{m.group(2)}", doc)
+    doc = re.sub(r'(aria-label=")\d+(\b[^"<>]*"[^<>]*>\s*<[a-zA-Z][^<>]*\b' + q + ')', lambda m: f"{m.group(1)}{n}{m.group(2)}", doc)
+    return doc
+
+
+def build_project_pages_js():
+    rows = ",\n".join(f"      '{k}': {{ name: '{p['name']}', url: '{p['page']}' }}" for k, p in PROJECTS.items())
+    return "const PROJECT_PAGES = {\n" + rows + "\n    };"
+
+
+def sync_static_pages(pubs):
+    counts = site_counts(pubs)
+    changed = []
+    for page, _, _ in STATIC_PAGES:
+        raw = read_page(page)
+        eol = "\r\n" if "\r\n" in raw else "\n"   # keep each file's own line endings
+        doc = raw.replace("\r\n", "\n")
+        new = re.sub(r'((?:style|site|teaching|publications-style)\.(?:css|js))\?v=[\w.-]+', rf"\1?v={ASSET_V}", doc)
+        for key in ("publications", "journal", "project-papers", "students", "projects"):
+            new = set_numbers(new, "data-count", key, counts[key])
+        for key in PROJECTS:
+            new = set_numbers(new, "data-count", f"project:{key}", counts[f"project:{key}"])
+        if page == "research.html":
+            new = set_numbers(new, "data-stat", "projects", counts["projects"])
+        if page == "publications.html":
+            for k in ("All", "Journal", "Conference", "Presentation"):
+                new = set_numbers(new, "data-pubstat", k, counts[f"pub:{k}"])
+                new = set_numbers(new, "data-filter-count", k, counts[f"pub:{k}"])
+            new = re.sub(r"const PROJECT_PAGES = \{.*?\n    \};", lambda m: build_project_pages_js(), new, count=1, flags=re.S)
+        if page == "teaching.html":
+            for k in ("current", "courses", "pdfs"):
+                new = set_numbers(new, "data-stat", k, counts[f"teach:{k}"])
+            new = set_numbers(new, "data-count-for", "current-list", counts["teach:current"])
+            new = set_numbers(new, "data-count-for", "past-list", counts["teach:past"])
+        if page == "people.html":
+            for k in [k for k in counts if k.startswith("people:")]:
+                new = set_numbers(new, "data-count-for", k[len("people:"):], counts[k])
+        new = new.replace("\n", eol)
+        if new != raw:
+            with open(os.path.join(ROOT, page), "w", encoding="utf-8", newline="") as f:
+                f.write(new)
+            changed.append(page)
+    return counts, changed
+
+
+# --------------------------------------------------------------------------- #
 # robots.txt + sitemap.xml
 # --------------------------------------------------------------------------- #
 def build_robots():
@@ -510,6 +656,7 @@ def main():
             f.write(build_paper_page(pub, slug, related_for(i, pubs, slugs), project_of(pub)))
 
     inject_publications_html(pubs, slugs)
+    counts, changed = sync_static_pages(pubs)
 
     with open(os.path.join(ROOT, "robots.txt"), "w", encoding="utf-8") as f:
         f.write(build_robots())
@@ -518,6 +665,8 @@ def main():
 
     print(f"Generated {len(pubs)} paper pages, sitemap.xml, robots.txt, "
           f"and updated publications.html.")
+    print("Counts: " + ", ".join(f"{k} {v}" for k, v in counts.items()))
+    print("Pages brought up to date: " + (", ".join(changed) if changed else "none (already in step)"))
 
 
 if __name__ == "__main__":
