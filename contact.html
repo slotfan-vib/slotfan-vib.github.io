@@ -39,6 +39,14 @@
     "department": "Department of Mechanical Engineering",
     "email": "mailto:slotfan@gtu.edu.tr",
     "telephone": "+90-262-605-2658",
+    "sameAs": [
+      "https://scholar.google.com/citations?user=_agboNoAAAAJ",
+      "https://orcid.org/0000-0001-8616-2120",
+      "https://www.researchgate.net/profile/Saeed-Lotfan",
+      "https://www.linkedin.com/in/saeed-lotfan-47357898/",
+      "https://youtube.com/@saeedlotfan",
+      "https://github.com/slotfan-vib"
+    ],
     "url": "https://saeedlotfan.com/contact.html",
     "address": {
       "@type": "PostalAddress",
@@ -53,7 +61,7 @@
 
   <!-- ========================= ASSETS ========================= -->
   <link rel="icon" href="favicon.png" type="image/png" />
-  <link href="style.css?v=20261119u" rel="stylesheet" />
+  <link href="style.css?v=20261119v" rel="stylesheet" />
   <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
@@ -81,46 +89,136 @@
   </nav>
 
   <!-- ========================= MAIN CONTENT ========================= -->
-  <main id="main" class="container">
+  <main id="main" class="container contact-page">
     <header class="page-hero">
       <h1>Contact</h1>
       <p class="page-intro">For research collaborations, student inquiries, or academic correspondence, please feel free to get in touch by email.</p>
     </header>
 
-    <!-- ========================= CONTACT DETAILS ========================= -->
-    <div class="contact-info">
-      <div class="contact-row"><strong>Name</strong> <span>Saeed Lotfan</span></div>
-      <div class="contact-row"><strong>Position</strong> <span>Assistant Professor</span></div>
-      <div class="contact-row"><strong>Department</strong> <span>Mechanical Engineering</span></div>
-      <div class="contact-row"><strong>Faculty</strong> <span>Engineering</span></div>
-      <div class="contact-row"><strong>University</strong> <span>Gebze Technical University</span></div>
-      <div class="contact-row"><strong>Building</strong> <span>Faculty of Engineering, Building H2</span></div>
-      <div class="contact-row"><strong>Room</strong> <span>123</span></div>
-      <div class="contact-row"><strong>Email</strong> <span><a href="mailto:slotfan@gtu.edu.tr">slotfan@gtu.edu.tr</a></span></div>
-      <div class="contact-row"><strong>Phone</strong> <span>+90 (262) 605 26 58</span></div>
-      <div class="contact-row"><strong>Office Address</strong> <span>Gebze Technical University, 41400 Gebze, Kocaeli, Türkiye</span></div>
-    </div>
+    <!-- ========================= EMAIL + OFFICE ========================= -->
+    <section class="contact-grid" aria-label="Contact details">
+      <div class="contact-card contact-card-primary">
+        <p class="contact-label">Email</p>
+        <a class="contact-email" href="mailto:slotfan@gtu.edu.tr">slotfan@gtu.edu.tr</a>
+        <div class="contact-actions">
+          <a class="btn-primary" href="mailto:slotfan@gtu.edu.tr">Email me<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <button class="btn-secondary contact-copy" type="button" data-copy="slotfan@gtu.edu.tr" hidden>Copy address</button>
+          <span class="contact-copy-status" aria-live="polite"></span>
+        </div>
+        <p class="contact-label">Phone</p>
+        <a class="contact-phone" href="tel:+902626052658">+90 (262) 605 26 58</a>
+      </div>
 
-    <!-- ========================= LOCATION MAP ========================= -->
-    <div class="map-container">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20315.785081781174!2d29.35393126959313!3d40.80688330320153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cadffb16caa905%3A0x505c2d18fd2d4798!2zTWFraW5lIE3DvGhlbmRpc2xpxJ9pIEJpbmFzxLE!5e0!3m2!1sen!2str!4v1745788725885!5m2!1sen!2str"
-        width="100%"
-        height="320"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Map showing Gebze Technical University Faculty of Engineering building location">
-      </iframe>
-    </div>
+      <div class="contact-card">
+        <p class="contact-label">Office</p>
+        <address class="contact-address">
+          <strong>Saeed Lotfan</strong><br>
+          Assistant Professor, Department of Mechanical Engineering<br>
+          Room 123, Building H2, Faculty of Engineering<br>
+          Gebze Technical University<br>
+          41400 Gebze, Kocaeli, Türkiye
+        </address>
+        <a class="news-link" href="https://www.google.com/maps/search/?api=1&amp;query=Makine+M%C3%BChendisli%C4%9Fi+Binas%C4%B1+Gebze+Teknik+%C3%9Cniversitesi" target="_blank" rel="noopener noreferrer">Open in Google Maps<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      </div>
+    </section>
+
+    <!-- ========================= WHO IS WRITING ========================= -->
+    <section class="contact-section" aria-labelledby="paths-heading">
+      <p class="eyebrow"><span class="idx">01</span> Writing to me</p>
+      <h2 id="paths-heading">What Are You Writing About?</h2>
+      <ul class="contact-paths">
+        <li>
+          <a class="contact-path" href="people.html#join-heading">
+            <span class="contact-path-title">Prospective students</span>
+            <span class="contact-path-text">Ph.D. and M.Sc. theses or undergraduate projects in vibrations, structural dynamics and rotordynamics.</span>
+            <span class="news-link">Join the Lab<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a class="contact-path" href="research.html">
+            <span class="contact-path-title">Research collaboration</span>
+            <span class="contact-path-text">Joint research and projects on nonlinear vibrations, reduced-order modeling and computational mechanics.</span>
+            <span class="news-link">Research<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a class="contact-path" href="teaching.html">
+            <span class="contact-path-title">Course questions</span>
+            <span class="contact-path-text">Syllabi, lecture slides and recitations for my courses at Gebze Technical University are on the Teaching page.</span>
+            <span class="news-link">Teaching<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ========================= PROFILES ========================= -->
+    <section class="contact-section" aria-labelledby="profiles-heading">
+      <p class="eyebrow"><span class="idx">02</span> Online</p>
+      <h2 id="profiles-heading">Academic Profiles</h2>
+      <!-- Same links as the home page icons -->
+      <ul class="profile-links">
+        <li><a href="https://scholar.google.com/citations?user=_agboNoAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer"><img src="icons/scholar.png" alt="" width="20" height="20">Google Scholar</a></li>
+        <li><a href="https://orcid.org/0000-0001-8616-2120" target="_blank" rel="noopener noreferrer"><img src="icons/orcid.svg" alt="" width="20" height="20">ORCID</a></li>
+        <li><a href="https://www.researchgate.net/profile/Saeed-Lotfan" target="_blank" rel="noopener noreferrer"><img src="icons/rg.png" alt="" width="20" height="20">ResearchGate</a></li>
+        <li><a href="https://www.linkedin.com/in/saeed-lotfan-47357898/" target="_blank" rel="noopener noreferrer"><img src="icons/lin.png" alt="" width="20" height="20">LinkedIn</a></li>
+        <li><a href="https://youtube.com/@saeedlotfan" target="_blank" rel="noopener noreferrer"><img src="icons/YouTube.png" alt="" width="20" height="20">YouTube</a></li>
+        <li><a href="https://github.com/slotfan-vib" target="_blank" rel="noopener noreferrer"><img src="icons/github.png" alt="" width="20" height="20">GitHub</a></li>
+      </ul>
+    </section>
+
+    <!-- ========================= MAP (click to load) ========================= -->
+    <!-- Nothing loads from Google until "Show map" is pressed (like the Teaching videos). -->
+    <section class="contact-section" aria-labelledby="map-heading">
+      <p class="eyebrow"><span class="idx">03</span> Location</p>
+      <h2 id="map-heading">Finding the Office</h2>
+      <div class="map-facade" data-map-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20315.785081781174!2d29.35393126959313!3d40.80688330320153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cadffb16caa905%3A0x505c2d18fd2d4798!2zTWFraW5lIE3DvGhlbmRpc2xpxJ9pIEJpbmFzxLE!5e0!3m2!1sen!2str!4v1745788725885!5m2!1sen!2str">
+        <svg class="map-pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+        <p class="map-facade-title">Building H2, Faculty of Engineering</p>
+        <p class="map-facade-text">Gebze Technical University, Gebze, Kocaeli</p>
+        <button class="btn-secondary map-show" type="button">Show map</button>
+        <p class="map-facade-note">Loads a Google Maps view.</p>
+      </div>
+    </section>
   </main>
+
+  <script>
+    /* Copy the email address (button shown only when the browser allows it) */
+    (function () {
+      var btn = document.querySelector('.contact-copy');
+      var status = document.querySelector('.contact-copy-status');
+      if (!btn || !navigator.clipboard) return;
+      btn.hidden = false;
+      btn.addEventListener('click', function () {
+        navigator.clipboard.writeText(btn.getAttribute('data-copy')).then(function () {
+          btn.textContent = 'Copied';
+          status.textContent = 'Email address copied';
+          setTimeout(function () { btn.textContent = 'Copy address'; status.textContent = ''; }, 2000);
+        });
+      });
+    })();
+
+    /* Click-to-load map: nothing loads from Google until the visitor asks */
+    (function () {
+      var box = document.querySelector('.map-facade');
+      if (!box) return;
+      box.querySelector('.map-show').addEventListener('click', function () {
+        var f = document.createElement('iframe');
+        f.src = box.getAttribute('data-map-src');
+        f.title = 'Map showing Gebze Technical University, Faculty of Engineering, Building H2';
+        f.referrerPolicy = 'no-referrer-when-downgrade';
+        f.allowFullscreen = true;
+        f.className = 'map-frame';
+        box.replaceWith(f);
+        f.focus();
+      });
+    })();
+  </script>
 
   <!-- ========================= FOOTER ========================= -->
   <footer class="footer">
     &copy; 2026 Saeed Lotfan · Gebze Technical University · All rights reserved.
   </footer>
 
-  <script src="site.js?v=20261119u" defer></script>
+  <script src="site.js?v=20261119v" defer></script>
 </body>
 </html>
