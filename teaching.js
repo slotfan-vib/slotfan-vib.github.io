@@ -45,6 +45,43 @@
     if (list) el.textContent = list.querySelectorAll('.teaching-card, .archive-row').length;
   });
 
+  /* ------------------------------------------ Clear download names */
+  // Files are stored as e.g. ME231/syllabus.pdf; downloads are saved as
+  // ME231-Statics-Syllabus.pdf or ME331-Lecture06-Harmonic-Force-Response.pdf
+  // so they stay recognisable in a Downloads folder.
+  var small = { and: 1, of: 1, in: 1, a: 1, an: 1, the: 1, to: 1, for: 1, with: 1, on: 1 };
+  function titleCase(text) {
+    return text.split(/[\s\-–_]+/).filter(Boolean).map(function (w, i) {
+      var lw = w.toLowerCase();
+      if (/^\d+d$/.test(lw)) return lw.toUpperCase();          // 2d -> 2D
+      if (i > 0 && small[lw]) return lw;
+      return lw.charAt(0).toUpperCase() + lw.slice(1);
+    }).join('-').replace(/[^A-Za-z0-9\-]/g, '');
+  }
+  function downloadName(a) {
+    var href = a.getAttribute('href') || '';
+    var stem = href.split('/').pop().replace(/\.pdf$/i, '');
+    var card = a.closest('.teaching-card');
+    var code = card && card.querySelector('.course-code');
+    var course = card && card.querySelector('.course-title');
+    var parts = [code ? code.textContent.replace(/\s+/g, '') : ''];
+    var m = stem.match(/^(lecture|recitation)(\d+)-?(.*)$/i);
+    if (m) {
+      parts.push(titleCase(m[1]) + m[2]);
+      if (m[3]) parts.push(titleCase(m[3]));
+    } else {
+      if (course) parts.push(titleCase(course.textContent));
+      parts.push(titleCase(stem));
+    }
+    return parts.filter(Boolean).join('-') + '.pdf';
+  }
+  document.querySelectorAll('a[href^="TeachingMaterials/"]').forEach(function (a) {
+    if (!/\.pdf$/i.test(a.getAttribute('href'))) return;
+    var name = downloadName(a);
+    a.setAttribute('data-download-name', name);
+    if (a.hasAttribute('download')) a.setAttribute('download', name);
+  });
+
   /* ------------------------------------------ Lecture video facades */
   // The thumbnail is a plain link to YouTube; with JS it swaps in the
   // player on click, so no YouTube scripts load until someone presses play.
@@ -129,6 +166,7 @@
     frame.title = titleOf(a);
     lnkOpen.href = url;
     lnkDownload.href = url;
+    lnkDownload.setAttribute('download', a.getAttribute('data-download-name') || '');
 
     var many = list.length > 1;
     btnPrev.hidden = btnNext.hidden = !many;
