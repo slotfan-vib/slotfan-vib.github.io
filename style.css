@@ -732,11 +732,11 @@ a.metric:active { transform: scale(0.99); }
 
 /* Static crawlable SEO index */
 .publication-static-index { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--line); }
-.publication-static-index h3 { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+.publication-static-index h2 { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
 .publication-seo-item { padding: 14px 0; border-bottom: 1px solid var(--line); }
-.publication-seo-item h4 { margin: 0 0 4px; font-size: 0.98rem; }
-.publication-seo-item h4 a { color: var(--ink); }
-.publication-seo-item h4 a:hover { color: var(--accent); }
+.publication-seo-item h3 { margin: 0 0 4px; font-size: 0.98rem; }
+.publication-seo-item h3 a { color: var(--ink); }
+.publication-seo-item h3 a:hover { color: var(--accent); }
 .publication-seo-item p { margin: 0 0 4px; color: var(--muted); font-size: 0.85rem; }
 .publication-seo-item > a { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); }
 
