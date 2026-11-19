@@ -610,25 +610,38 @@ a.metric:active { transform: scale(0.99); }
 }
 
 /* --------------------------------------------------------------- Research */
-.research-summary { display: grid; grid-template-columns: 2fr 1fr; gap: 32px; align-items: start; margin-bottom: 8px; }
-.research-summary > p { color: var(--ink-2); line-height: 1.75; margin: 0; }
-
-.interests-box {
-  padding: 22px 24px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
+/* Research themes: links to the matching papers */
+.theme-links { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+.theme-link {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 6px 0 14px;
+  font-size: 0.88rem; font-weight: 500; color: var(--ink-2); text-decoration: none;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
+  transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+.theme-count {
+  min-width: 26px; padding: 2px 8px; border-radius: 999px; text-align: center;
+  font-family: var(--font-mono); font-size: 0.74rem; font-weight: 600; font-variant-numeric: tabular-nums;
+  color: var(--accent); background: var(--accent-soft);
+}
+.theme-count:empty { display: none; }
+.theme-link:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+.theme-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+/* Large, highlighted version (Research page section) */
+.theme-links.is-large { gap: 12px; margin-top: 22px; }
+.theme-links.is-large .theme-link {
+  min-height: 52px; padding: 0 10px 0 20px; gap: 12px;
+  font-size: 1rem; font-weight: 600; color: var(--accent);
+  background: var(--accent-soft); border-color: transparent; border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
 }
-.interests-box h3 { margin: 0 0 12px; padding-bottom: 10px; border-bottom: 1px solid var(--line); font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; font-family: var(--font-mono); font-weight: 500; color: var(--muted); }
-.interests-box ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.interests-box li { position: relative; padding-left: 18px; color: var(--ink-2); font-size: 0.94rem; }
-.interests-box li::before { content: ''; position: absolute; left: 0; top: 0.62em; width: 6px; height: 6px; border-radius: 2px; background: var(--accent); }
+.theme-links.is-large .theme-count { min-width: 34px; padding: 4px 10px; font-size: 0.82rem; background: var(--surface); }
+.theme-links.is-large .theme-link:hover { border-color: var(--accent); box-shadow: var(--shadow-md); }
+#research-themes { margin: 52px 0 20px; }
 
 /* Signature FRF figure — real research data shown as a data-art band.
    Colours are kept (they carry the science); the ends dissolve so it reads as
    an intentional band rather than a boxed plot. Works in light and dark. */
-.frf-divider { margin: 30px 0 10px; }
+.frf-divider { margin: 8px 0 40px; }
 .frf-divider img {
   width: 100%; max-height: 190px; object-fit: contain; display: block; opacity: 0.95;
   -webkit-mask-image: linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%);
@@ -1222,7 +1235,7 @@ html.pv-lock { overflow: hidden; }
 /* ---------------------------------------------------------------- People */
 .page-hero { padding-bottom: 28px; margin-bottom: 40px; border-bottom: 1px solid var(--line); }
 .page-hero h1 { margin-bottom: 14px; }
-.page-intro { max-width: var(--measure); color: var(--ink-2); font-size: 1.05rem; line-height: 1.7; margin-bottom: 26px; }
+.page-intro { max-width: none; color: var(--ink-2); font-size: 1.05rem; line-height: 1.7; margin-bottom: 26px; }
 .page-intro:last-child { margin-bottom: 0; }
 .people-stats, .page-stats { display: flex; flex-wrap: wrap; gap: 12px 40px; list-style: none; margin: 0; padding: 0; }
 .people-stats li, .page-stats li { display: flex; align-items: baseline; gap: 10px; }
@@ -1365,7 +1378,6 @@ html.pv-lock { overflow: hidden; }
 
 /* --------------------------------------------------------- Responsive */
 @media (max-width: 860px) {
-  .research-summary { grid-template-columns: 1fr; gap: 22px; }
   .pub-details-layout { grid-template-columns: 1fr; }
   .project-card { grid-template-columns: 1fr; gap: 16px; padding: 18px 16px; }
   .project-figure img { max-height: 170px; }

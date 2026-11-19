@@ -106,6 +106,35 @@
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncReadMore);
   }
 
+  /* ------------------------------------------------------ Research themes */
+  /* One list for the whole site: the Research page counts each theme's papers
+     and publications.html?theme=<key> filters by it. A paper belongs to a theme
+     when its title contains one of the words (or, for "abstract", the abstract
+     contains one of those phrases). A paper can also be placed by hand with
+     "themes": ["rotating", ...] in publications_data.json. */
+  var THEMES = [
+    { key: 'nonlinear', name: 'Nonlinear vibrations',
+      title: ['nonlinear', 'non-linear', 'large amplitude', 'bifurcation'] },
+    { key: 'rotating', name: 'Rotating structures and rotordynamics',
+      title: ['rotating', 'rotor', 'blade'] },
+    { key: 'spectral', name: 'Spectral and reduced-order modeling',
+      title: ['spectral', 'reduced-order'], abstract: ['spectral chebyshev', 'reduced-order model'] },
+    { key: 'inverse', name: 'Inverse problems and monitoring',
+      title: ['inverse', 'identification', 'monitoring', 'reconstruction', 'fault detection', 'modal analysis'] },
+    { key: 'learning', name: 'Machine learning in engineering',
+      title: ['learning', 'neural', 'support vector', 'ann-based'] },
+    { key: 'nano', name: 'Nanostructures and nonlocal mechanics',
+      title: ['nanotube', 'nanoscale', 'nonlocal', 'cnts'] }
+  ];
+  function inTheme(pub, theme) {
+    if (Array.isArray(pub.themes) && pub.themes.indexOf(theme.key) !== -1) return true;
+    var t = (pub.title || '').toLowerCase(), a = (pub.abstract || '').toLowerCase();
+    return theme.title.some(function (w) { return t.indexOf(w) !== -1; }) ||
+      (theme.abstract || []).some(function (w) { return a.indexOf(w) !== -1; });
+  }
+  window.SiteThemes = { list: THEMES, inTheme: inTheme,
+    get: function (key) { return THEMES.filter(function (th) { return th.key === key; })[0]; } };
+
   /* --------------------------------------------- Self-healing stat counts */
   /* Keep the homepage numbers in sync with their source so they never drift:
      "Journal papers" / "Publications" come from publications_data.json and
@@ -118,13 +147,18 @@
       if (link) link.setAttribute('aria-label', link.getAttribute('aria-label').replace(/^\d+/, n));
     });
   }
-  if (document.querySelector('[data-count="publications"], [data-count="journal"]')) {
+  if (document.querySelector('[data-count="publications"], [data-count="journal"], [data-count="project-papers"], [data-theme-count]')) {
     fetch('publications_data.json')
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) {
         if (!Array.isArray(data)) return;
         setStat('publications', data.length);
         setStat('journal', data.filter(function (p) { return p.type === 'Journal'; }).length);
+        setStat('project-papers', data.filter(function (p) { return !!p.project; }).length);
+        document.querySelectorAll('[data-theme-count]').forEach(function (el) {
+          var th = window.SiteThemes.get(el.getAttribute('data-theme-count'));
+          if (th) el.textContent = data.filter(function (p) { return inTheme(p, th); }).length;
+        });
       })
       .catch(function () {});
   }

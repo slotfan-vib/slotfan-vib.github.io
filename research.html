@@ -29,7 +29,7 @@
   <link rel="icon" href="favicon.png" type="image/png" />
 
   <!-- =========================== Main CSS ============================ -->
-  <link href="style.css?v=20261119n" rel="stylesheet" />
+  <link href="style.css?v=20261119s" rel="stylesheet" />
   <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <script type="application/ld+json">
   {
@@ -99,38 +99,16 @@
   <main id="main" class="container">
     <header class="page-hero">
       <h1>Research</h1>
-      <p class="page-intro">Structural dynamics, vibrations and computational mechanics at Gebze Technical University: research focus, interests and funded projects.</p>
+      <p class="page-intro">Structural dynamics, linear and nonlinear vibrations and computational mechanics at Gebze Technical University: high-fidelity and reduced-order models for rotating blades and thin-walled structures, fast spectral solution methods, inverse problems and signal-based analysis, and machine learning for mechanics and engineering design.</p>
+      <!-- Numbers count themselves: projects from the cards below; journal papers
+           and project papers (entries with a "project" field) from
+           publications_data.json (site.js). -->
+      <ul class="page-stats" aria-label="Research at a glance">
+        <li><span class="page-stat-n" data-stat="projects">2</span><span class="page-stat-l">Funded projects</span></li>
+        <li><span class="page-stat-n" data-count="journal">29</span><span class="page-stat-l">Journal papers</span></li>
+        <li><span class="page-stat-n" data-count="project-papers">4</span><span class="page-stat-l">Project papers</span></li>
+      </ul>
     </header>
-
-    <!-- ======================== Research Summary ======================== -->
-    <section aria-labelledby="research-summary-heading">
-      <p class="eyebrow"><span class="idx">01</span> Focus</p>
-      <h2 id="research-summary-heading">Research Summary</h2>
-
-      <div class="research-summary">
-        <p>
-          My research focuses on <strong>structural dynamics</strong>, <strong>linear and nonlinear vibrations</strong>,
-          and <strong>computational mechanics</strong>, with particular emphasis on the development of high-fidelity
-          and reduced-order models for complex engineering structures. I am especially interested in mathematically
-          rigorous and computationally efficient methods for analyzing challenging dynamic behavior in rotating and
-          distributed-parameter systems. My recent work also includes <strong>model reduction</strong>,
-          <strong>inverse problems and signal-based analysis</strong>, and the integration of
-          <strong>machine learning</strong> into mechanics and engineering design.
-        </p>
-
-        <div class="interests-box">
-          <h3>Interests</h3>
-          <ul>
-            <li>Vibrations</li>
-            <li>Nonlinear Vibrations</li>
-            <li>Structural Dynamics</li>
-            <li>Computational Mechanics</li>
-            <li>Reduced-Order Modeling</li>
-            <li>Machine Learning in Engineering</li>
-          </ul>
-        </div>
-      </div>
-    </section>
 
     <!-- ================= Signature figure: real FRF data ================= -->
     <figure class="frf-divider">
@@ -143,7 +121,7 @@
 
     <!-- ======================== Research Projects ======================= -->
     <section id="research-projects" aria-labelledby="research-projects-heading">
-      <p class="eyebrow"><span class="idx">02</span> Funded work</p>
+      <p class="eyebrow"><span class="idx">01</span> Funded work</p>
       <h2 id="research-projects-heading">Research Projects</h2>
 
       <!--
@@ -216,10 +194,33 @@
 
       </div>
     </section>
+
+    <!-- ======================== Research Themes ======================== -->
+    <!-- Matching rules and paper counts live in site.js (THEMES); each link opens
+         the Publications page filtered to that theme. -->
+    <section id="research-themes" aria-labelledby="themes-heading-2">
+      <p class="eyebrow"><span class="idx">02</span> Themes</p>
+      <h2 id="themes-heading-2">Research Themes</h2>
+      <ul class="theme-links is-large" aria-labelledby="themes-heading-2">
+        <li><a class="theme-link" href="publications.html?theme=nonlinear">Nonlinear vibrations<span class="theme-count" data-theme-count="nonlinear"></span></a></li>
+        <li><a class="theme-link" href="publications.html?theme=rotating">Rotating structures and rotordynamics<span class="theme-count" data-theme-count="rotating"></span></a></li>
+        <li><a class="theme-link" href="publications.html?theme=spectral">Spectral and reduced-order modeling<span class="theme-count" data-theme-count="spectral"></span></a></li>
+        <li><a class="theme-link" href="publications.html?theme=inverse">Inverse problems and monitoring<span class="theme-count" data-theme-count="inverse"></span></a></li>
+        <li><a class="theme-link" href="publications.html?theme=learning">Machine learning in engineering<span class="theme-count" data-theme-count="learning"></span></a></li>
+        <li><a class="theme-link" href="publications.html?theme=nano">Nanostructures and nonlocal mechanics<span class="theme-count" data-theme-count="nano"></span></a></li>
+      </ul>
+    </section>
+
   </main>
 
   <!-- ============================== Script ============================== -->
   <script>
+    /* Header number: funded projects = the project cards on this page. */
+    (function () {
+      var n = document.querySelectorAll('#research-projects .project-card').length;
+      document.querySelectorAll('[data-stat="projects"]').forEach(function (el) { el.textContent = n; });
+    })();
+
     /* Project details are open without JS; with JS each card gets a
        "Read more" button (same control as the home news cards). */
     document.querySelectorAll('.project-card').forEach(function (card) {
@@ -241,6 +242,6 @@
     &copy; 2026 Saeed Lotfan · Gebze Technical University · All rights reserved.
   </footer>
 
-  <script src="site.js?v=20261119n" defer></script>
+  <script src="site.js?v=20261119s" defer></script>
 </body>
 </html>
