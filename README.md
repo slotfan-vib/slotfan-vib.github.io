@@ -10,7 +10,7 @@ Change a fact in its source and every page that shows it follows.
 |---|---|---|
 | Publications (title, authors, abstract, DOI, figure) | `publications_data.json` | Publications, paper pages `papers/*.html`, home counts, Research counts and themes |
 | Which project a paper belongs to | `"project": "<key>"` in `publications_data.json` | "Part of project" on Publications and paper pages, project paper counts |
-| Funded projects with a story page | `PROJECTS` in `build_seo.py` + the card on `research.html` | Research, paper pages, Publications links, home "Funded projects" |
+| Funded projects that have papers | `PROJECTS` in `build_seo.py` (page = its story page, or its card `research.html#project-…`) + the card on `research.html` | Research, paper pages, Publications links, home "Funded projects" |
 | Research themes | `THEMES` in `site.js` (optional `"themes": [...]` in a paper places it by hand) | Research theme links and counts, Publications theme filter |
 | Students | `<article class="person-card">` blocks on `people.html` | People, home "Students mentored" |
 | Courses and PDFs | `teaching.html` (folders in `TeachingMaterials/`) | Teaching header counts, download names (`teaching.js`) |

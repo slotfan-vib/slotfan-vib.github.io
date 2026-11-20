@@ -57,6 +57,13 @@ STATIC_PAGES = [
 # when its entry in publications_data.json has "project": "<key>"; it then gets
 # a "Part of project" link and grant metadata (publications.html shows it too).
 PROJECTS = {
+    "phononic-sandwich": {
+        "name": "Design and Fabrication of Phononic Sandwich Composite Structures",
+        "page": "research.html#project-phononic",
+        "program": "TÜBİTAK 1001",
+        "grant": "225M347",
+        "years": "2026–2029",
+    },
     "rotating-blades": {
         "name": "Dynamics of Rotating Blades",
         "page": "projects/rotating-blades.html",
