@@ -36,7 +36,7 @@ ORCID = "0000-0001-8616-2120"
 
 # Cache-busting version for shared CSS/JS. Bump it whenever style.css,
 # site.js or teaching.js change; running this script writes it into every page.
-ASSET_V = "20261119w"
+ASSET_V = "20261125a"
 
 # Display names for publication types (data keys stay Journal/Conference/
 # Presentation so filters and ?type= links keep working). Same wording as the

@@ -50,10 +50,12 @@
   // ME231-Statics-Syllabus.pdf or ME331-Lecture06-Harmonic-Force-Response.pdf
   // so they stay recognisable in a Downloads folder.
   var small = { and: 1, of: 1, in: 1, a: 1, an: 1, the: 1, to: 1, for: 1, with: 1, on: 1 };
+  var acronyms = { sdof: 'SDOF', mdof: 'MDOF', dof: 'DOF', frf: 'FRF', fft: 'FFT', pid: 'PID' };
   function titleCase(text) {
     return text.split(/[\s\-–_]+/).filter(Boolean).map(function (w, i) {
       var lw = w.toLowerCase();
       if (/^\d+d$/.test(lw)) return lw.toUpperCase();          // 2d -> 2D
+      if (acronyms[lw]) return acronyms[lw];                    // sdof -> SDOF
       if (i > 0 && small[lw]) return lw;
       return lw.charAt(0).toUpperCase() + lw.slice(1);
     }).join('-').replace(/[^A-Za-z0-9\-]/g, '');
